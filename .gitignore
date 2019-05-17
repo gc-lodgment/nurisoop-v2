@@ -1,3 +1,13 @@
+#etc
+_bak/
+_document/
+_draft/
+_work/
+_media/
+_tmp/
+img/
+dist/
+
 # Logs
 logs
 *.log
