@@ -1,6 +1,8 @@
 @charset "utf-8";
 
+
 @import "../parts/common";
+
 
 /* 콘텐츠 영역 */
 .contents {
@@ -24,20 +26,31 @@
         width: 100%;
         margin: 0 auto;
         text-align: center;
+        .bx-viewport {
+			height: 500px !important;
+		}
         .main-visual-list {
             @include bx;
             width: 100%;
             height: 500px;
             margin: 0 auto;
             li {
-                a {
+				a {
                     @include bx;
-                    display: block;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
+					overflow: hidden;
+					display: block;
+					width: 100%;
+					height: 100%;
+					img {
+						position: absolute;
+						top: 0;
+						left: 50%;
+						position: relative;
+						max-width: inherit;
+						height: 500px;
+						margin-left: -100%;
+					}
+				}
             }
         } 
         
@@ -82,7 +95,7 @@
     
     /* top banner */
     .top-bn-sect {
-        padding: 50px 0 100px;
+        padding: 47px 0 100px;
         .container {
             .row {
                 float: left;
@@ -92,7 +105,7 @@
                 width: 390px;
                 height: 150px;
                 margin-left: 45px;
-                padding: 30px 28px 30px 40px;
+                padding: 30px 28px 30px 41px;
                 @include trasBase(1, $time:0.5s);
                 background: url(http://static.nurisoop.co.kr/img/renew/main/bg_top_off.png) no-repeat center center;
                 &:first-child {
@@ -107,7 +120,7 @@
                 }
                 .txt-box {
                     display: table-cell;
-                    padding-left: 32px;
+                    padding-left: 16px;
                     vertical-align: middle;
                     p {
                         letter-spacing: -1px;
@@ -125,6 +138,18 @@
                 }
                 &:hover {
                     @include trasBase(1, $bg: url(http://static.nurisoop.co.kr/img/renew/main/bg_top_on.png) no-repeat center center, $time:0.5s);
+                }
+            }
+            
+            &.mid {
+                .txt-box {
+                    padding-left: 21px;
+                }
+            }
+            
+            &.lst {
+                .txt-box {
+                    padding-left: 20px;
                 }
             }
         }
@@ -288,7 +313,7 @@
                 width: 49%;
                 height: 100%;
                 a {
-                    @includ bx;
+                    @include bx;
                     display: block;
                     @include trasBase(1);
                 }
@@ -315,52 +340,23 @@
         margin-top: 120px;
         
         .container {
-            .prd-area {
-                @include bx;
-                @include clearfix;
-                
-                .prd-list {
-                    @include bx;
-                    @include clearfix;
-                    margin: 0 -10px 0 -10px;
-                    li {
-                        @include bx;
-                        float: left;
-                        width: 25%;
-                        padding: 0 10px;
-                        .prd-box {
-                            @include bx;
-                            .prd-link {
-                                @include bx;
-                                display: block;
-                                width: 100%;
-                                height: 300px;
-                                .img-prd {
-                                    img {
-                                        position: absolute;
-                                        &.off {
-                                            @include trasBase(1);
-                                        }
-                                        &.on {
-                                            @include trasBase(0);
-                                        }
-                                    }
-                                }
-                                @include icon-box;
-                                .ico-box {
-                                    @include trasBase(0);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            @include prd-list;
         }
     }
     
     /* WEEKLY 1+1 */
     .weekly-sect {
         margin-top: 120px;
+		padding-bottom: 20px;
+		text-align: center;
+        .container {
+            @include timer;
+            
+            @include wk-list;
+        }
     }
+    
+    //bot banner
+    @include bot-bn-sec;
     
 }
