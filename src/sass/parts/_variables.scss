@@ -3,22 +3,47 @@
 // Scss변수
 // --------------
 // 주요 폰트 및 벌러
-$font-stack: "NanumSquareRound", "Nanum Square", "NanumSquare", "Nanum Gothic", sans-serif;
-$primary-color: #5c5c5c;
+$font-stack: "Noto Sans KR", "Nanum Gothic", sans-serif;
+$primary-color: #333;
 // 폰트
-$font-nnGothic: "Nanum Gothic", Sans-serif;
-// $font-nnSquare: "Nanum Square", "NanumSquare", Sans-serif;
-// $font-nnrSquare: "NanumSquareRound", Sans-serif;
+//$font-nnGothic: "Nanum Gothic", Sans-serif;
+
+// width
+$wd: 1260px;
 
 // 색상
-$fg-menu-color: #48433f;
+$fg-gray-01: #646464;
+$fg-gray-02: #bbb;
+$fg-gray-03: #999;
+$fg-gray-04: #888;
+$fg-gray-05: #878787; //btn more
+$fg-gray-06: #666; 
+
+$fg-green-01: #4caca2;
+
+$fg-red-01: #d20000; //ft red
 
 
 // 배경
-$bg-table: #fdfbed;
+$bg-black-01: #333;
+
+$bg-gray-01: #ebebeb;
+$bg-gray-02: #f0f0f0; //ft event하단, prd bg
+$bg-gray-03: #b2b2b2;
+
+$bg-green-01: #75b8b1;
 
 
 
 //보더
-$bor-sub-menu: #d8d8d8;
+$bor-gray-01: #e6e6e6;
+$bor-gray-02: #ebebeb;
+$bor-gray-03: #dcdcdc;
+$bor-gray-04: #999;
+$bor-gray-05: #bebebe; //ft bank
+$bor-gray-06: #f0f0f0;
+
+$bor-black-01: #333;
+
+$bor-green-01: #75b8b1;
 

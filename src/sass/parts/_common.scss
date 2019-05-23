@@ -2,3 +2,36 @@
 
 @import "./variables";
 @import "./mixins";
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* 초기화 */
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select::-ms-expand { 
+    display: none; 
+}
+button {
+    border: 0;
+}
+a {
+    color: inherit;
+}
+img {
+	max-width: 100%;
+}

@@ -4,5 +4,363 @@
 
 /* 콘텐츠 영역 */
 .contents {
+    padding-bottom: 50px;
+    
+    /* 메인 타이틀 */
+    .main-tit {
+        display: block;
+        font-size: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-weight: 500;
+        
+        @include btn-more;
+    }
+    
+    
+    /* 비주얼 */
+    .main-visual {
+        @include bx;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        .main-visual-list {
+            @include bx;
+            width: 100%;
+            height: 500px;
+            margin: 0 auto;
+            li {
+                a {
+                    @include bx;
+                    display: block;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        } 
+        
+        //btn
+        @include btn-controls($bx:-($wd/2));
+        
+        //custom pager 
+        .pager-box {
+            @include bx;
+            @include position(absolute, $left:0, $bottom:0);
+            width: 100%;
+            text-align: center;
+            line-height: 0;
+            .pager-list {
+                z-index: 52;
+                @include bx;
+                @include clearfix;
+                display: inline-block;
+                li {
+                    float: left;
+                    a {
+                        @include bx;
+                        display: block;
+                        width: 252px;
+                        height: 40px;
+                        line-height: 40px;
+                        border: 1px solid $bor-gray-01;
+                        color: $fg-gray-01;
+                        background: #fff;
+                        
+                        &:hover {
+                            @include trasBase(1, $fg-gray-03, $bg-gray-02);
+                        }
+                        &.active {
+                            @include trasBase(1, #fff, $bg-black-01);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* top banner */
+    .top-bn-sect {
+        padding: 50px 0 100px;
+        .container {
+            .row {
+                float: left;
+                @include bx;
+                @include clearfix;
+                display: table;
+                width: 390px;
+                height: 150px;
+                margin-left: 45px;
+                padding: 30px 28px 30px 40px;
+                @include trasBase(1, $time:0.5s);
+                background: url(http://static.nurisoop.co.kr/img/renew/main/bg_top_off.png) no-repeat center center;
+                &:first-child {
+                    margin-left: 0;
+                }
+                .img {
+                    display: table-cell;
+                    vertical-align: middle;
+                    img {
+                        
+                    }
+                }
+                .txt-box {
+                    display: table-cell;
+                    padding-left: 32px;
+                    vertical-align: middle;
+                    p {
+                        letter-spacing: -1px;
+                        &.top-tit {
+                            font-size: 20px;
+                            line-height: 1;
+                        }
+                        &.top-txt {
+                            padding-top: 8px;
+                            font-size: 16px;
+                            font-weight: 300;
+                            color: $fg-gray-04;
+                        }
+                    }
+                }
+                &:hover {
+                    @include trasBase(1, $bg: url(http://static.nurisoop.co.kr/img/renew/main/bg_top_on.png) no-repeat center center, $time:0.5s);
+                }
+            }
+        }
+    }
+    
+    /* 상품들 */
+    .prd-sect {
+        .container {
+            @include tab($num:4);
+            min-height: 697px;
+            
+            .prd-area {
+                @include bx;
+                @include clearfix;
+                .prd-list {
+                    @include bx;
+                    margin: 0 -10px 0 -10px;
+                    li {
+                        @include bx;
+                        float: left;
+                        width: 25%;
+                        padding: 20px 10px 0;
+                        .prd-box {
+                            @include bx;
+                            display: block;
+                            cursor: pointer;
+
+                            .sale-txt {
+                                @include trasBase(0);
+                            }
+                            
+                            .hover-box {
+                                z-index: 4;
+                                @include position(absolute, 0, 0);
+                                display: table;
+                                width: 100%;
+                                height: 300px;
+                                background: rgba(0, 0, 0, 0.5);
+                                .ie8 & {
+                                    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr=#50000000,endColorStr=#50000000)";
+                                }
+                                @include trasBase(0);
+                                
+                                .txt-box {
+                                    display: table-cell;
+                                    width: 100%;
+                                    vertical-align: middle;
+                                    text-align: center;
+                                    p {
+                                        @include bx;
+                                        font-size: 16px;
+                                        color: #fff;
+                                        &.prd-tit {
+                                            
+                                        }
+                                        &.prd-price {
+                                            display: inline-block;
+                                            padding: 12px 0 6px;
+                                            &:before {
+                                                @include position(absolute, 50%, 0);
+                                                content: '';
+                                                width: 100%;
+                                                height: 1px;
+                                                margin-top: 1px;
+                                                background: #fff;
+                                            }
+                                        }
+                                        &.prd-sale {
+                                            
+                                        }
+                                    }
+                                }
+                                @include icon-box;
+                                .ico-box {
+                                    @include trasBase(0);
+                                }
+                            }
+                            
+                            &:hover {
+                                .sale-txt {
+                                    @include trasBase(1, $bg:$bg-black-01, $time:0.5s, $ds:0.2s);
+                                }
+                                .hover-box {
+                                    @include trasBase(1);
+                                    [class*='box'] {
+                                        @include trasBase(1, $time:0.5s, $ds:0.2s);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                /*&.on {
+                    @include trasBase(1);
+                }*/
+            }
+        }
+    }
+    
+    /* mid banner */
+    .mid-bn-sect {
+        padding: 95px 0 90px;
+        .container {
+            $ht:620px;
+            height: $ht;
+            .mid-slide {
+                @include bx;
+                width: 49%;
+                height: 100%;
+                .bx-viewport {
+                    height: $ht !important;
+                }
+                .mid-slide-list {
+                    li {
+                        .slide-box {
+                            @include bx;
+                            display: block;
+                            height: $ht;
+                            .txt-box {
+                                @include position(absolute, $left:0, $bottom:0);
+                                width: 100%;
+                                padding: 30px 0 25px;
+                                text-align: center;
+                                background: rgba(255, 255, 255, 0.7);
+                                .ie8 & {
+                                    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr=#70ffffff,endColorStr=#70ffffff)";
+                                }
+                                p {
+                                    letter-spacing: -0.2px;
+                                    &.slide-tit {
+                                        font-size: 30px;
+                                        font-weight: 500;
+                                    }
+                                    &.slide-txt {
+                                        margin-top: 4px;
+                                        font-size: 20px;
+                                        font-weight: 300;
+                                        color: $fg-gray-01;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        &.slide-1 {
+                            background: url(http://static.nurisoop.co.kr/img/renew/main/bn_mid_01.jpg) no-repeat center center;
+                            background-size: cover;
+                        }
+                        
+                        &.slide-2 {
+                            background: url(http://static.nurisoop.co.kr/img/renew/main/bn_mid_01.jpg) no-repeat center center;
+                            background-size: cover;
+                        }
+                    }
+                } 
+                @include btn-controls($left:0, $wd:100%, $bx:11px);
+            }
+            
+            .mid-img-box {
+                @include bx;
+                width: 49%;
+                height: 100%;
+                a {
+                    @includ bx;
+                    display: block;
+                    @include trasBase(1);
+                }
+                .img-bot-box {
+                    position: absolute;
+                    bottom: 0;
+                }
+                a:hover {
+                    @include trasBase;
+                }
+            }
+        }
+    }
+    
+    /* 리얼 베스트 후기 */
+    .review-sect {
+        .container {
+            @include review-list;
+        }
+    }
+    
+    /* BEST SELLERS */
+    .seller-sect {
+        margin-top: 120px;
+        
+        .container {
+            .prd-area {
+                @include bx;
+                @include clearfix;
+                
+                .prd-list {
+                    @include bx;
+                    @include clearfix;
+                    margin: 0 -10px 0 -10px;
+                    li {
+                        @include bx;
+                        float: left;
+                        width: 25%;
+                        padding: 0 10px;
+                        .prd-box {
+                            @include bx;
+                            .prd-link {
+                                @include bx;
+                                display: block;
+                                width: 100%;
+                                height: 300px;
+                                .img-prd {
+                                    img {
+                                        position: absolute;
+                                        &.off {
+                                            @include trasBase(1);
+                                        }
+                                        &.on {
+                                            @include trasBase(0);
+                                        }
+                                    }
+                                }
+                                @include icon-box;
+                                .ico-box {
+                                    @include trasBase(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* WEEKLY 1+1 */
+    .weekly-sect {
+        margin-top: 120px;
+    }
     
 }
