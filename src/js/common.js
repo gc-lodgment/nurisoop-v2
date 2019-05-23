@@ -10,8 +10,17 @@ $(function(){
     
     //메뉴
     $('.btn-menu').on('click', function(){
+        var menuArea = $('.menu-area');
         $(this).toggleClass('on');
-        $('.menu-area').stop().fadeToggle();
+        if( $('html').hasClass('ie8') ){
+            if( $('.btn-menu').hasClass('on') ){
+                menuArea.stop().show();
+            }else{
+                menuArea.stop().hide();
+            }
+        }else {
+            menuArea.stop().fadeToggle();
+        }
     });
     
 });

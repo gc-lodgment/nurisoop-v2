@@ -255,6 +255,10 @@ $hd-ht: ($gnb-ht+31);
                             background: url(http://static.nurisoop.co.kr/img/renew/common/btn_bg.png) no-repeat;
                             background-position: right -48px;
                             @include trasBase(0, $time:0.5s);
+                            
+                            .ie8 & {
+                                background: none;
+                            }
                         }
 
                         &.on {
@@ -268,6 +272,11 @@ $hd-ht: ($gnb-ht+31);
                             
                             &:before {
                                 @include trasBase(1, $time:0.5s);
+                            
+                                .ie8 & {
+                                    background: url(http://static.nurisoop.co.kr/img/renew/common/btn_bg.png) no-repeat;
+                                    background-position: right -48px;
+                                }
                             }
                             
                             &:hover {
@@ -499,6 +508,7 @@ $hd-ht: ($gnb-ht+31);
     margin-top: $hd-ht;
     
     div[class*='-sect'] {
+        @include bx;
         .container {
             @include com-wd;
         }

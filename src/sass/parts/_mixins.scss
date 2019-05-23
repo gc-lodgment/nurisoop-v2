@@ -161,6 +161,18 @@
     }
 }
 
+//price line
+@mixin line-row($wd:100%, $ht:1px, $mt:3px, $bg:#fff){
+    &:before {
+        @include position(absolute, 50%, 0);
+        content: '';
+        width: $wd;
+        height: $ht;
+        margin-top: $mt;
+        background: $bg;
+    }
+}
+
 //button
 @mixin btn-com($dis:inline-block, $wd:null, $ht:22px, $pd:0, $fs:13px, $t-line:center, $fg:$fg-gray-01, $bor-w:1px, $bor-g:$bor-gray-05, $bg:#fff){
     box-sizing: border-box;
@@ -278,8 +290,173 @@
     }
 }
 
+//time
+@mixin timer($mg:40px auto 20px, $r-ml:24px, $p-ml:4px, $wd:30px, $ht:40px, $n-fs:20px, $t-fs:18px){
+    .time-box {
+        @include bx;
+        @include clearfix;
+        margin: $mg;
+        display: inline-block;
+        .row {
+            @include bx;
+            display: inline-block;
+            float: left;
+            margin-left: $r-ml;
+            &:first-child {
+                margin-left: 0;
+            }
+            p {
+                display: inline-block;
+                margin-left: $p-ml;
+                height: $ht;
+                &.sq {
+                    width: $wd;
+                    text-align: center;
+                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                    background-position: -140px 0;
+                    span {
+                        font-size: $n-fs;
+                        font-weight: 500;
+                        line-height: $ht;
+                    }
+                }
+                &.time-txt {
+                    font-size: $t-fs;
+                    line-height: $ht;
+                    font-weight: 500;
+                    color: $fg-gray-04;
+                }
+            }
+        }
+    }
+}
+
+//상품리스트 
+@mixin prd-list($wd:25%, $ht:300px, $t-ht:190px){
+    .prd-area {
+        @include bx;
+        @include clearfix;
+
+        .prd-list {
+            @include bx;
+            @include clearfix;
+            margin: 0 -10px 0 -10px;
+            li {
+                @include bx;
+                float: left;
+                width: $wd;
+                padding: 50px 10px 0;
+                .prd-box {
+                    @include bx;
+                    .prd-link {
+                        @include bx;
+                        cursor: pointer;
+                        width: 100%;
+                        height: $ht;
+                        .img-prd {
+                            img {
+                                @include position(absolute, 0, 0);
+                                &.off {
+                                }
+                                &.on {
+                                    @include trasBase(0);
+                                }
+                            }
+                        }
+                        @include icon-box;
+                        .ico-box {
+                            @include trasBase(0);
+                        }
+
+                        &:hover {
+                            .sale-txt {
+                                @include trasBase(1, $bg:$bg-black-01);
+                            }
+                            .img-prd {
+                                img {
+                                    &.on {
+                                        @include trasBase(1, $time:0.8s, $ds:0.6);
+                                    }
+                                }
+                            }
+                            .ico-box {
+                                @include trasBase(1, $time:0.7s, $ds:0.3s);
+                            }
+                        }
+                    }
+
+                    .txt-box {
+                        @include bx;
+                        height: $t-ht;
+                        .prd-txt-box {
+                            @include bx;
+                            padding-bottom: 15px;
+                            border-bottom: 1px solid $bor-gray-01;
+                            .prd-tit {
+                                padding: 15px 0;
+                                font-size: 16px;
+                                font-weight: 500;
+                                line-height: 1.5;
+                            }
+                            .prd-txt {
+                                @include bx;
+                                @include clearfix;
+                                span {
+                                    @include bx;
+                                    float: left;
+                                    display: inline-block;
+                                    font-weight: 300;
+                                    line-height: 20px;
+                                    letter-spacing: -0.2px;
+                                    &.b-ingred {
+                                        width: 20%;
+                                        height: 20px;
+                                        font-size: 14px;
+                                        text-align: center;
+                                        color: #fff;
+                                        background: $bg-green-02;
+                                    }
+                                    &.t-ingred {
+                                        width: 80%;
+                                        padding: 0 20px 0 5px;
+                                        font-size: 15px;
+                                        color: $fg-gray-04;
+                                        word-break: keep-all;
+                            
+                                        .ie8 & {
+                                            letter-spacing: -0.7px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .price-box {
+                            padding-top: 17px;
+                            span {
+                                @include bx;
+                                display: inline-block;
+                                font-size: 15px;
+                                &.txt-price {
+                                    color: $fg-gray-04;
+                                    @include line-row($mt:0, $bg:$fg-gray-04);
+                                }
+                                &.txt-sale {
+                                    margin-left: 15px;
+                                    font-weight: 500;
+                                    color: $fg-red-02;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
 //리뷰 
-@mixin review-list($ht:540px){
+@mixin review-list($wd:25%, $ht:540px){
     .review-area {
         @include bx;
         @include clearfix;
@@ -289,7 +466,7 @@
             li {
                 @include bx;
                 float: left;
-                width: 25%;
+                width: $wd;
                 padding: 50px 10px 0;
                 .review-box {
                     @include bx;
@@ -312,27 +489,30 @@
                             font-size: 16px;
                         }
 
-                        .rv-prd {
-                            @include bx;
-                            padding: 10px 0;
+                        .rv-txt-box {
                             border-top: 1px solid $bor-gray-01;
                             border-bottom: 1px solid $bor-gray-01;
-                            .img-rv-prd {
-                                display: inline-block;
-                                width: 40px;
-                                height: 40px;
-                                background: url(http://static.nurisoop.co.kr/img/renew/review/bg_prd.png)no-repeat;
-                                background-size: cover;
-                                img {
+                            .rv-prd {
+                                @include bx;
+                                padding: 10px 0;
+                                border-bottom: 1px solid $bor-gray-01;
+                                .img-rv-prd {
+                                    display: inline-block;
+                                    width: 40px;
+                                    height: 40px;
+                                    background: url(http://static.nurisoop.co.kr/img/renew/review/bg_prd.png)no-repeat;
+                                    background-size: cover;
+                                    img {
 
-                                }   
-                            }
-                            .rv-prd-txt {
-                                padding-left: 8px;
-                                font-size: 14px;
-                                font-weight: 300;
-                                line-height: 40px;
-                                color: $fg-gray-04;
+                                    }   
+                                }
+                                .rv-prd-txt {
+                                    padding-left: 8px;
+                                    font-size: 14px;
+                                    font-weight: 300;
+                                    line-height: 40px;
+                                    color: $fg-gray-04;
+                                }
                             }
                         }
 
@@ -348,6 +528,10 @@
                             font-weight: 300;
                             word-break: keep-all;
                             color: $fg-gray-06;
+                            
+                            .ie8 & {
+                                letter-spacing: -0.7px;
+                            }
                         }
 
                         //하단
@@ -355,7 +539,6 @@
                             @include bx;
                             @include clearfix;
                             padding-top: 15px;
-                            border-top: 1px solid $bor-gray-01;
                             p {
                                 span {
                                     display: inline-block;
@@ -394,5 +577,184 @@
         }
     }
 }
+            
+//weekly 상품 리스트 
+@mixin wk-list($wd:50%, $ht:250px, $t-pd:0 39px 0 40px, $t-sub-pd:15px 0 25px, $wk-tit-fs:16px, $wk-txt-fs:15px, $price-fs:15px){
+    .weekly-area {
+        @include bx;
+        @include clearfix;
+        .wk-list {
+            @include bx;
+            @include clearfix;
+            margin: 0 -10px 0 -10px;
+            li {
+                @include bx;
+                float: left;
+                width: $wd;
+                padding: 20px 10px 0;
+                .wk-box {
+                    @include bx;
+                    cursor: pointer;
+                    display: table;
+                    width: 100%;
+                    height: $ht;
+                    border: 1px solid $bor-gray-01;
+
+                    .ico-heart-sel {
+                        top : -1px;
+                        left: -1px;
+                    }
+
+                    .img-box {
+                        @include bx;
+                        display: table-cell;
+                        vertical-align: middle;
+                        width: ($ht)-(1);
+                        overflow: hidden;
+                        &:before {
+                            @include position(absolute, 0, $right:0);
+                            content: '';
+                            width: 1px;
+                            height: 100%;
+                            background: $bor-gray-01;
+                        }
+                        .img-prd {
+                            @include position(absolute, 0, 0);
+                            img {
+                                @include position(absolute, 0, 0);
+                                &.off {
+                                }
+                                &.on {
+                                    @include trasBase(0);
+                                }
+                            }
+                        }
+                        @include icon-box;
+                        .ico-box {
+                            @include trasBase(0);
+                        }
+                    }
+
+                    .txt-box {
+                        @include bx;
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: left;
+                        padding: $t-pd;
+                        .wk-txt-box {
+                            @include bx;
+                            word-break: keep-all;
+                            border-bottom: 1px solid $bor-gray-01;
+                            .wk-tit {
+                                font-size: $wk-tit-fs;
+                            }
+                            .wk-txt {
+                                padding: $t-sub-pd;
+                                font-size: $wk-txt-fs;
+                                font-weight: 300;
+                                color: $fg-gray-04;
+                            }
+                        }
+
+                        .price-box {
+                            @include bx;
+                            @include clearfix;
+                            padding-top: 18px;
+                            span {
+                                display: inline-block;
+                                font-size: $price-fs;
+                                letter-spacing: 0;
+
+                                &.txt-price {
+                                    color: $fg-gray-04;
+                                }
+
+                                &.txt-sale {
+                                    float: right;
+                                    color: #333;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        border-color: $bor-black-01;
+                        @include trasBase(1);
+                        .sale-txt {
+                            @include trasBase(1, $bg:$bg-black-01);
+                        }
+                        .img-prd {
+                            img {
+                                &.on {
+                                    @include trasBase(1, $time:0.8s, $ds:0.6);
+                                }
+                            }
+                        }
+                        .ico-box {
+                            @include trasBase(1, $time:0.7s, $ds:0.3s);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
+//bottom banner - 메인 / 서브
+@mixin bot-bn-sec($ht:285px){
+    /* bot banner */
+    .bot-bn-sect {
+        margin-top: 80px;
+        background: url(http://static.nurisoop.co.kr/img/renew/main/bot_bn.png) no-repeat center;
+        background-size: cover;
+        .container {
+            display: table !important;
+            height: $ht;
+            .bot-bn-box {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: left;
+                color: #fff;
+                
+                .bn-tit {
+                    letter-spacing: 0;
+                    span {
+                        font-size: 18px;
+                        font-weight: 300;
+                        word-spacing: 10px;
+                        opacity: 0.5;
+                        filter: alpha(opacity=50);
+                    }
+                    em {
+                        display: block;
+                        font-size: 32px;
+                        opacity: 0.9;
+                        filter: alpha(opacity=90);
+                    }
+                }
+                .bn-txt {
+                    padding: 22px 0 26px;
+                    font-size: 22px;
+                    font-weight: 300;
+                    line-height: 1.2;
+                    opacity: 0.5;
+                    filter: alpha(opacity=50);
+                }
+                .btn-link {
+                    @include btn-com($wd:100px, $ht:30px, $fs:16px, $fg:#302f3c, $bor-w:0, $bg:rgba(240, 240, 240, 0.7));
+                    font-weight: 500;
+                    @include trasBase(1);
+                        
+                    .ie8 & {
+                        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#70f0f0f0,endColorstr=#70f0f0f0);
+                    }
+                    
+                    &:hover {
+                        @include trasBase(0.6);
+                    }
+                }
+            }
+        }
+    }
+}
