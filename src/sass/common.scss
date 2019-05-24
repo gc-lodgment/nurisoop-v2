@@ -3,6 +3,9 @@
 @import "reset";
 // 페이지 공통 common
 @import "parts/common";
+@import "parts/common";
+//include
+@import "include/pop";
 
 body {
 	font-family: $font-stack; 
@@ -595,6 +598,7 @@ $hd-ht: ($gnb-ht+31);
                     }
                 }
                 #family_list {
+                    z-index: 52;
                     display: none;
                     overflow: hidden;
                     @include bx;

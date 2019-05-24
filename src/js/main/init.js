@@ -2,6 +2,10 @@ $(function () {
     //함수실행
     mainSlideFn();
     midSlideFn();
+    //main pop
+    if( $('.main-pop-wrap').css('display') == 'block' ) {
+        mainPopFn();
+    }
 });
 
 
@@ -35,5 +39,19 @@ function midSlideFn(){
         duration: 6000,
         prevText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_left_02.png" alt="이전">',
         nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_02.png" alt="다음">',
+    });
+}
+
+/* main slider */
+function mainPopFn(){
+    $('#mainSlidePop').bxSlider({
+        auto: true,
+        autoHover: true,
+        autoControls: false,
+        controls: false,
+        pager: true,
+        pagerCustom: '#mainSlidePopPager',
+        speed: 1000,
+        duration: 6000
     });
 }

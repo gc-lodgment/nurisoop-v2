@@ -65,7 +65,7 @@
 }
 
 //tab
-@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:17px 0 16px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:#333){
+@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:18px 0 17px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:#333){
     // num = li가 여러개일 경우, li가 한개일경우 $tab-li-wd 값 설정
     @if( $num  == null ){
         .tab-box {
@@ -162,7 +162,7 @@
 }
 
 //price line
-@mixin line-row($wd:100%, $ht:1px, $mt:3px, $bg:#fff){
+@mixin line-row($wd:100%, $ht:1px, $mt:0, $bg:#fff){
     &:before {
         @include position(absolute, 50%, 0);
         content: '';
@@ -291,19 +291,19 @@
 }
 
 //time
-@mixin timer($mg:40px auto 20px, $r-ml:24px, $p-ml:4px, $wd:30px, $ht:40px, $n-fs:20px, $t-fs:18px){
+@mixin timer($mg:37px auto 17px, $r-ml:28px, $r-pl-fir:4px, $p-ml:2px, $p-t-ml:1px, $wd:30px, $ht:40px, $n-fs:20px, $t-fs:18px){
     .time-box {
         @include bx;
         @include clearfix;
-        margin: $mg;
         display: inline-block;
+        margin: $mg;
         .row {
             @include bx;
             display: inline-block;
             float: left;
             margin-left: $r-ml;
             &:first-child {
-                margin-left: 0;
+                padding-left: $r-pl-fir;
             }
             p {
                 display: inline-block;
@@ -321,6 +321,7 @@
                     }
                 }
                 &.time-txt {
+                    margin-left: $p-t-ml;
                     font-size: $t-fs;
                     line-height: $ht;
                     font-weight: 500;
@@ -332,7 +333,7 @@
 }
 
 //상품리스트 
-@mixin prd-list($wd:25%, $ht:300px, $t-ht:190px){
+@mixin prd-list($wd:25%, $ht:300px, $pt:46px, $t-ht:190px){
     .prd-area {
         @include bx;
         @include clearfix;
@@ -345,7 +346,7 @@
                 @include bx;
                 float: left;
                 width: $wd;
-                padding: 50px 10px 0;
+                padding: $pt 10px 0;
                 .prd-box {
                     @include bx;
                     .prd-link {
@@ -363,7 +364,7 @@
                                 }
                             }
                         }
-                        @include icon-box;
+                        @include icon-box(30px);
                         .ico-box {
                             @include trasBase(0);
                         }
@@ -390,10 +391,10 @@
                         height: $t-ht;
                         .prd-txt-box {
                             @include bx;
-                            padding-bottom: 15px;
+                            padding: 15px 0 18px;
                             border-bottom: 1px solid $bor-gray-01;
                             .prd-tit {
-                                padding: 15px 0;
+                                padding-bottom:17px;
                                 font-size: 16px;
                                 font-weight: 500;
                                 line-height: 1.5;
@@ -431,7 +432,7 @@
                             }
                         }
                         .price-box {
-                            padding-top: 17px;
+                            padding-top: 14px;
                             span {
                                 @include bx;
                                 display: inline-block;
@@ -441,7 +442,7 @@
                                     @include line-row($mt:0, $bg:$fg-gray-04);
                                 }
                                 &.txt-sale {
-                                    margin-left: 15px;
+                                    margin-left: 18px;
                                     font-weight: 500;
                                     color: $fg-red-02;
                                 }
@@ -456,7 +457,7 @@
 }
 
 //리뷰 
-@mixin review-list($wd:25%, $ht:540px){
+@mixin review-list($wd:25%, $ht:540px, $pt:50px){
     .review-area {
         @include bx;
         @include clearfix;
@@ -467,13 +468,13 @@
                 @include bx;
                 float: left;
                 width: $wd;
-                padding: 50px 10px 0;
+                padding: $pt 10px 0;
                 .review-box {
                     @include bx;
                     cursor: pointer;
                     display: block;
                     height: $ht;
-                    padding: 10px;
+                    padding: 9px;
                     border: 1px solid transparent;
                     @include trasBase(1);
 
@@ -485,7 +486,7 @@
 
                     .txt-box {
                         .rv-tit {
-                            padding: 14px 0 8px;
+                            padding: 16px 0 8px;
                             font-size: 16px;
                         }
 
@@ -494,7 +495,7 @@
                             border-bottom: 1px solid $bor-gray-01;
                             .rv-prd {
                                 @include bx;
-                                padding: 10px 0;
+                                padding: 9px 0 6px;
                                 border-bottom: 1px solid $bor-gray-01;
                                 .img-rv-prd {
                                     display: inline-block;
@@ -507,7 +508,7 @@
                                     }   
                                 }
                                 .rv-prd-txt {
-                                    padding-left: 8px;
+                                    padding-left: 5px;
                                     font-size: 14px;
                                     font-weight: 300;
                                     line-height: 40px;
@@ -522,7 +523,7 @@
                             overflow: hidden;
                             display: block;
                             height: 63px;
-                            margin: 13px 0 11px 0;
+                            margin: 16px 0 17px 0;
                             font-size: 15px;
                             line-height: 1.4;
                             font-weight: 300;
@@ -538,7 +539,7 @@
                         .rv-bot {
                             @include bx;
                             @include clearfix;
-                            padding-top: 15px;
+                            padding-top: 13px;
                             p {
                                 span {
                                     display: inline-block;
@@ -579,7 +580,7 @@
 }
             
 //weekly 상품 리스트 
-@mixin wk-list($wd:50%, $ht:250px, $t-pd:0 39px 0 40px, $t-sub-pd:15px 0 25px, $wk-tit-fs:16px, $wk-txt-fs:15px, $price-fs:15px){
+@mixin wk-list($wd:50%, $ht:250px, $wd-r:368px, $pt:20px, $t-pd:45px 39px 30px 40px, $t-sub-pd:18px 0 28px, $wk-tit-fs:16px, $wk-txt-fs:15px, $price-pd-t:14px, $price-fs:15px){
     .weekly-area {
         @include bx;
         @include clearfix;
@@ -591,11 +592,11 @@
                 @include bx;
                 float: left;
                 width: $wd;
-                padding: 20px 10px 0;
+                padding: $pt 10px 0;
                 .wk-box {
                     @include bx;
+                    @include clearfix;
                     cursor: pointer;
-                    display: table;
                     width: 100%;
                     height: $ht;
                     border: 1px solid $bor-gray-01;
@@ -607,9 +608,10 @@
 
                     .img-box {
                         @include bx;
-                        display: table-cell;
-                        vertical-align: middle;
+                        float: left;
+                        display: inline-block;
                         width: ($ht)-(1);
+                        height: ($ht)-(2);
                         overflow: hidden;
                         &:before {
                             @include position(absolute, 0, $right:0);
@@ -637,14 +639,16 @@
 
                     .txt-box {
                         @include bx;
-                        display: table-cell;
-                        vertical-align: middle;
+                        float: right;
+                        display: inline-block; 
+                        //width: calc(100% - #{$ht});
+                        width: $wd-r;
+                        height: ($ht)-(1);
                         text-align: left;
                         padding: $t-pd;
                         .wk-txt-box {
                             @include bx;
                             word-break: keep-all;
-                            border-bottom: 1px solid $bor-gray-01;
                             .wk-tit {
                                 font-size: $wk-tit-fs;
                             }
@@ -659,14 +663,17 @@
                         .price-box {
                             @include bx;
                             @include clearfix;
-                            padding-top: 18px;
+                            padding-top: $price-pd-t;
+                            border-top: 1px solid $bor-gray-01;
                             span {
+                                @include bx;
                                 display: inline-block;
                                 font-size: $price-fs;
                                 letter-spacing: 0;
 
                                 &.txt-price {
                                     color: $fg-gray-04;
+                                    @include line-row($bg:$fg-gray-04);
                                 }
 
                                 &.txt-sale {
@@ -700,9 +707,8 @@
     }
 }
 
-
 //bottom banner - 메인 / 서브
-@mixin bot-bn-sec($ht:285px){
+@mixin bot-bn-sec($ht:285px, $pl:51px, $txt-pd:24px 0 29px){
     /* bot banner */
     .bot-bn-sect {
         margin-top: 80px;
@@ -713,11 +719,13 @@
             height: $ht;
             .bot-bn-box {
                 display: table-cell;
+                padding-left: 51px;
                 vertical-align: middle;
                 text-align: left;
                 color: #fff;
                 
                 .bn-tit {
+                    padding-top: 2px;
                     letter-spacing: 0;
                     span {
                         font-size: 18px;
@@ -734,7 +742,7 @@
                     }
                 }
                 .bn-txt {
-                    padding: 22px 0 26px;
+                    padding: $txt-pd;
                     font-size: 22px;
                     font-weight: 300;
                     line-height: 1.2;

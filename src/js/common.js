@@ -23,6 +23,10 @@ $(function(){
         }
     });
     
+    //btn pop close
+    $('.btn-pop-close').on('click', function(){
+        $(this).parents('div[class*="pop-wrap"]').fadeOut();
+    });
 });
 
 /* tab */
