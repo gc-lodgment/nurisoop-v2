@@ -85,7 +85,7 @@ $hd-ht: ($gnb-ht+31);
 /* header 영역 */
 .header {
     @include position(fixed, 0, 0);
-    z-index: 999;
+    z-index: 995;
     width: 100%;
     line-height: 0;
     background: #fff;

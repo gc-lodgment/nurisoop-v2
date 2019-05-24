@@ -4,7 +4,20 @@ $(function () {
     midSlideFn();
     //main pop
     if( $('.main-pop-wrap').css('display') == 'block' ) {
+        var scltop;
+        
         mainPopFn();
+        
+        //scroll
+        $(window).scroll(function(){
+            scltop = $(window).scrollTop();
+            if ( scltop <= 0 ) {
+                $('.main-pop-wrap').removeClass('on');
+            }else {
+                $('.main-pop-wrap').addClass('on');
+            }
+        });
+        
     }
 });
 

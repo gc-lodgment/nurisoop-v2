@@ -22,7 +22,7 @@
 /* 메인 공지 팝업 */
 .main-pop-wrap {
     z-index: 999;
-    @include position(fixed, 150px, 50%);
+    @include position(absolute, 150px, 50%);
     box-sizing: border-box;
     //width: $wd;
     margin-left: -($wd/2);
@@ -146,6 +146,10 @@
             }
             
         }
+    }
+    
+    &.on {
+        z-index: 990;
     }
 }
 
