@@ -2,8 +2,10 @@ $(function () {
     //함수실행
     mainSlideFn();
     midSlideFn();
+    
     //main pop
-    if( $('.main-pop-wrap').css('display') == 'block' ) {
+    var mainPop = $('.main-pop-wrap');
+    if( mainPop.css('display') == 'block' ) {
         var scltop;
         
         mainPopFn();
@@ -12,9 +14,9 @@ $(function () {
         $(window).scroll(function(){
             scltop = $(window).scrollTop();
             if ( scltop <= 0 ) {
-                $('.main-pop-wrap').removeClass('on');
+                mainPop.removeClass('on');
             }else {
-                $('.main-pop-wrap').addClass('on');
+                mainPop.addClass('on');
             }
         });
         

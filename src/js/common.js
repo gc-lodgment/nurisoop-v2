@@ -47,7 +47,7 @@ function tabFn(){
             $(atr).stop().delay().fadeIn(1000);
 
             $('html, body').stop().animate({
-                scrollTop : (offsetTop-(ht+15)); // 15 - 예쁜여유분공간
+                scrollTop : (offsetTop-(ht+15)) // 15 - 예쁜여유분공간
             }, 500);
         }
     });
