@@ -170,8 +170,9 @@
             //min-height: 697px;
             height: 588px;
             .prd-area {
-                @include bx;
                 @include clearfix;
+                @include position(absolute, 60px, 0);
+                box-sizing: border-box;
                 .prd-list {
                     @include bx;
                     margin: 0 -10px 0 -10px;

@@ -241,8 +241,9 @@
         z-index: 7;
         @include position(absolute, $left:50%, $bottom:$bt);
         margin-left: -$wt;
-        a {
+        [class*='ico-'] {
             @include bx;
+            cursor: pointer;
             overflow: hidden;
             display: inline-block;
             float: left;
@@ -351,7 +352,7 @@
                     @include bx;
                     .prd-link {
                         @include bx;
-                        cursor: pointer;
+                        display: block;
                         width: 100%;
                         height: $ht;
                         .img-prd {
@@ -471,7 +472,6 @@
                 padding: $pt 10px 0;
                 .review-box {
                     @include bx;
-                    cursor: pointer;
                     display: block;
                     height: $ht;
                     padding: 9px;
@@ -596,7 +596,7 @@
                 .wk-box {
                     @include bx;
                     @include clearfix;
-                    cursor: pointer;
+                    display: block;
                     width: 100%;
                     height: $ht;
                     border: 1px solid $bor-gray-01;

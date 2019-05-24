@@ -43,11 +43,11 @@ function tabFn(){
             var ht = $('header').height();
             var offsetTop = $(this).parents('.tab-box').offset().top;
             
-            $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().fadeOut(500);
-            $(atr).stop().fadeIn(700);
+            $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().delay().fadeOut(500);
+            $(atr).stop().delay().fadeIn(1000);
 
             $('html, body').stop().animate({
-                scrollTop : (offsetTop-(ht+15))
+                scrollTop : (offsetTop-(ht+15)); // 15 - 예쁜여유분공간
             }, 500);
         }
     });
