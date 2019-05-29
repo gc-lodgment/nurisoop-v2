@@ -1,0 +1,398 @@
+@@include('../include/_head.html', {
+	"page": "product"
+})
+
+<body class="page-product">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+    <!-- 스킨케어 리스트 -->
+	<div class="contents detail">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">스킨케어</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 탑 영역 -->
+        <div class="top-sect">
+            <div class="container">
+                <div class="img-area fl-left">
+                    <div class="img-slide-box">
+                        <p class="txt-dt plus">1+1</p>
+                        <!-- 다른유형 -->
+                        <!--<p class="txt-dt gift">GIFT</p>-->
+                        <!--<p class="txt-dt sale">SALE</p>-->
+                        
+                        <!-- 최대 8개 -->
+                        <ul id="prdDtailSlide" class="prd-img-list">
+                            <li class="slide slide-1"><span><img src="http://static.nurisoop.co.kr/img/renew/product/item/formcleanser.png" alt="포레스트 녹삼초 폼클랜저 이미지1"></span></li>
+                            <li class="slide slide-2"><span><img src="http://static.nurisoop.co.kr/img/renew/product/item/formcleanser_on.png" alt="포레스트 녹삼초 폼클랜저 이미지2"></span></li>
+                            <li class="slide slide-3"><span><img src="http://static.nurisoop.co.kr/img/renew/product/item/formcleanser_on_02.png" alt="포레스트 녹삼초 폼클랜저 이미지3"></span></li>
+                        </ul>
+                    </div>
+                    <div class="pager-box">
+                        <!-- 배너 이미지 바뀌면 썸네일 이미지도 수정해야함 -->
+                        <!-- 최대 8개 -->
+                        <ul id="slidePager" class="pager-list">
+                            <li class="nth-1"><a href="#none" data-slide-index="0"><span><img src="http://static.nurisoop.co.kr/img/renew/product/item/formcleanser.png" alt="포레스트 녹삼초 폼클랜저 이미지1"></span></a></li>
+                            <li class="nth-2"><a href="#none" data-slide-index="1"><span><img src="http://static.nurisoop.co.kr/img/renew/product/item/formcleanser_on.png" alt="포레스트 녹삼초 폼클랜저 이미지2"></span></a></li>
+                            <li class="nth-3"><a href="#none" data-slide-index="2"><span><img src="http://static.nurisoop.co.kr/img/renew/product/item/formcleanser_on_02.png" alt="포레스트 녹삼초 폼클랜저 이미지3"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="txt-area fl-right">
+                    <div class="name-box">
+                        <h2 class="dt-tit">포레스트 녹삼초 폼클렌저</h2>
+                        <p class="dt-tag">
+                            <span>#딥클렌징</span><span>#천연폼클렌저</span><span>#트러블전용</span><span>#여드름폼플렌징</span><span>#폼클</span><span>#클렌징폼</span>
+                        </p>
+                    </div>
+                    
+                    <div class="info-box info-price-box">
+                        <dl class="prd-info">
+                            <dt class="info-tit">판매가</dt>
+                            <dd class="info-txt">
+                                <em class="f-bd">8,500원</em>
+                                <span>(씨앗등급)</span>
+                                <a href="#none" class="btn-link">등급별 혜택</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="info-box">
+                        <dl class="prd-info price">
+                            <dt class="info-tit">소비자 가격</dt>
+                            <dd class="info-txt">
+                                <p class="line">10,000</p>
+                            </dd>
+                        </dl>
+                        <dl class="prd-info ingred">
+                            <dt class="info-tit">주요성분</dt>
+                            <dd class="info-txt">
+                                <p>녹차추출물, 삼백초잎/뿌리추출물, 어성초추출물, EGCG</p>
+                            </dd>
+                        </dl>
+                        <dl class="prd-info date">
+                            <dt class="info-tit">유통기한</dt>
+                            <dd class="info-txt">
+                                <p>2022년 02월 19일까지</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="info-box info-prd-box">
+                        <dl class="prd-info">
+                            <dt class="info-tit">제품 한줄 소개</dt>
+                            <dd class="info-txt">
+                                <!-- 최대 4개 : 공통 ico-prd-info에 해당 클래스 및 텍스트 추가 -->
+                                <ul class="info-prd-list">
+                                    <li class="ico-prd-info pore"><span></span>모공관리</li>
+                                    <li class="ico-prd-info blhead"><span></span>블랙헤드</li>
+                                    <li class="ico-prd-info corneous"><span></span>각질관리</li>
+                                    <li class="ico-prd-info sebum"><span></span>과다피지</li>
+                                </ul>
+                                <p>건강하고 매끈한 피부로 가꾸는 모공 비누</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    
+                    <div class="price-box">
+                        <div class="top-box">
+                            <p>(최소주문수량 1개 이상)</p>
+                        </div>
+                        <div class="tbl-col">
+                            <table class="tbl">
+                                <colgroup>
+                                    <col style="width: 60%">
+                                    <col style="width: 20%">
+                                    <col style="width: 20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="tl-left">상품명</th>
+                                        <th>수량</th>
+                                        <th>가격</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tl-left">포레스트 녹삼초 폼클렌저</td>
+                                        <td>
+                                            <div class="num-box">
+                                                <input type="number" class="ip-txt" value="1">
+                                                <span class="up"></span>
+                                                <span class="down"></span>
+                                            </div>
+                                        </td>
+                                        <td>8,500원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="price-total">
+                            <div class="total-box">
+                                <span>총 상품금액(수량) : </span><em class="fg-grn">8,500원</em><span>(1개)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-box">
+                        <ul class="btn-list">
+                            <li><a href="#none" class="btn-buy">바로구매</a></li>
+                            <li><a href="#none" class="btn-cart">장바구니</a></li>
+                            <li><a href="#none" class="btn-wish">위시리스트</a></li>
+                        </ul>
+                        
+                        <div class="pay-box">
+                            <script type="text/javascript" src="https://pay.naver.com/customer/js/naverPayButton.js" charset="UTF-8"></script>
+                            <script type="text/javascript" >
+                                //<![CDATA[
+                                    naver.NaverPayButton.apply({
+                                        BUTTON_KEY: "F42C184C-32CF-41B5-97CD-711665D5C260", // 네이버 페이에서 제공받은 버튼 인증 키 입력
+                                        TYPE: "C", // 버튼 모음 종류 설정
+                                        COLOR: 2, // 버튼 모음의 색 설정
+                                        COUNT: 2, // 버튼 개수 설정. 구매하기 버튼만 있으면(장바구니 페이지) 1, 찜하기 버튼도 있으면(상품 상세 페이지) 2를 입력.
+                                        ENABLE: "Y", // 품절 등의 이유로 버튼 모음을 비활성화할 때에는 "N" 입력
+                                        //BUY_BUTTON_HANDLER: buy_nc, // 구매하기 버튼 이벤트 Handler 함수 등록, 품절인 경우 not_buy_nc 함수 사용
+                                        //WISHLIST_BUTTON_HANDLER: wishlist_nc, // 구매하기 버튼 이벤트 Handler 함수 등록, 품절인 경우 not_buy_nc 함수 사용 "":""
+                                    });
+                                //]]>
+                            </script>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 상품 추천 영역 -->
+        <div class="ad-sect">
+            <div class="container">
+                <!-- js 안되게 prdList 클래스 -->
+                <div class="tab-box prdList">
+                    <ul class="tab-list">
+                        <li class="nth-1 on"><a href="#none">함께 사용하면 더 좋은 상품</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 추천 -->
+                <div class="ad-area">
+                    <div class="gd-box">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 14%;">
+                                <col style="width: 39%;">
+                                <col style="width: 27%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>이미지</th>
+                                    <th>상품명</th>
+                                    <th>가격</th>
+                                    <th>옵션</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <figure class="img">
+                                            <img src="http://static.nurisoop.co.kr/img/renew/product/item/bb.png" alt="톤업 워너 비비크림">
+                                        </figure>
+                                    </td>
+                                    <td class="tl-left">론리비즈 프로폴리스 85 앰플</td>
+                                    <td>19,500원</td>
+                                    <td>
+                                        <span class="s-1 f-bd">상품선택</span>
+                                        <div class="sel-box">
+                                            <p class="sel-txt">- [필수] 상품선택 -</p>
+                                            <ul class="sel-list">
+                                                <li class=""><a href="#none">- [필수] 상품선택 -</a></li>
+                                                <li class=""><a href="#none">론리비즈 프로폴리스 85 앰플</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <figure class="img">
+                                            <img src="http://static.nurisoop.co.kr/img/renew/product/item/bb.png" alt="톤업 워너 비비크림">
+                                        </figure>
+                                    </td>
+                                    <td class="tl-left">[10+3] 물찬피부 세트_워터밸런스 마스크팩 13장</td>
+                                    <td>9,900원</td>
+                                    <td>
+                                        <span class="s-1 f-bd">상품선택</span>
+                                        <div class="sel-box">
+                                            <p class="sel-txt">- [필수] 상품선택 -</p>
+                                            <ul class="sel-list">
+                                                <li class=""><a href="#none">- [필수] 상품선택 -</a></li>
+                                                <li class=""><a href="#none">[10+3] 물찬피부 세트_워터밸런스 마스크팩 13장</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <figure class="img">
+                                            <img src="http://static.nurisoop.co.kr/img/renew/product/item/nuriberry_emulsion.png" alt="누리촉촉워터밸런스2종세트(스킨+로션)">
+                                        </figure>
+                                    </td>
+                                    <td class="tl-left">누리촉촉워터밸런스2종세트(스킨+로션)</td>
+                                    <td>17,500원</td>
+                                    <td>
+                                        <span class="s-1 f-bd">상품선택</span>
+                                        <div class="sel-box">
+                                            <p class="sel-txt">- [필수] 상품선택 -</p>
+                                            <ul class="sel-list">
+                                                <li class=""><a href="#none">- [필수] 상품선택 -</a></li>
+                                                <li class=""><a href="#none">누리촉촉워터밸런스2종세트(스킨+로션)</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 상품 후기 영역 -->
+        <div class="ad-sect">
+            <div class="container">
+                <!-- js 안되게 prdList 클래스 -->
+                <div class="tab-box prdList">
+                    <ul class="tab-list">
+                        <li class="nth-1 on"><a href="#none">상품후기</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 상품 후기 -->
+                <div class="ad-area">
+                    <div class="review-area">
+                        <div class="rv-top-box">
+                            <div class="btn-list fl-left">
+                                <!-- 평점순, 최신순 나열 -->
+                                <a href="#none" class="on">평점순(224)</a>
+                                <a href="#none">최신순</a>
+                            </div>
+                            <div class="srch-box fl-right">
+                                <!-- 포토리뷰만 보기 클릭시 포토리뷰만 -->
+                                <p class="p-1"><label class="srch-txt"><input type="checkbox"><span class="btn-chk"></span>포토리뷰만 보기</label></p>
+                                
+                                <select name="" id="" class="form-sel">
+                                    <option value="">내용</option>
+                                    <option value="">상품명</option>
+                                    <option value="">아이디</option>
+                                </select>
+                                <p class="srch-ip"><input type="text" class="ip-txt" placeholder="검색어 입력"><a href="javascript:;" class="btn-srch"><span>검색</span></a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="rv-list-box">
+                            <ul class="rv-list">
+                                <!-- 포토리뷰의 경우 -->
+                                <li class="nth-1">
+                                    <div class="rv-box">
+                                        <div class="view-box">
+                                            <a href="#none" class="btn-img">
+                                                <div class="img-box">
+                                                    <div class="img-ct">
+                                                        <!--<img src="http://static.nurisoop.co.kr/img/renew/review/img_review_04.jpg" alt="리뷰 이미지">-->
+                                                        <img src="http://file.nurisoop.co.kr/community/201905/1556687872phpUdTEfn.jpg" alt="리뷰 이미지">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            
+                                            <div class="view-top">
+                                                <!-- 별 개수 5개 -->
+                                                <p class="ico-star">
+                                                    <span class="on"></span>
+                                                    <span class="on"></span>
+                                                    <span class="on"></span>
+                                                    <span class="on"></span>
+                                                    <span class=""></span>
+                                                </p>
+                                                <p class="user-name">푸른**</p>
+                                                <p class="etc-box">
+                                                    <span>좋아요 : 0</span>
+                                                    <span>조회수 : 0</span>
+                                                    <span>작성일 : 2019-02-06</span>
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="view-mid">
+                                                <p class="txt ico-phone"><span></span>포레스트 녹삼초 폼클렌저</p>
+                                                <figure class="img">
+                                                    <img src="http://file.nurisoop.co.kr/community/201905/1556687872phpUdTEfn.jpg" alt="리뷰 이미지">
+                                                </figure>
+                                            </div>
+                                            
+                                            <div class="view-bot">
+                                                <p class="desc">댓글<em>1</em></p>
+                                                <!-- 클릭된 상태일 때 on, 아닐 때 멀티클래스 없음 -->
+                                                <button type="button" class="btn-gd on"><span>좋아요</span></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="answer-box">
+                                            <div class="answer-top">
+                                                <p class="mmg-name">누리숲</p>
+                                                <p class="date">2019.05.09</p>
+                                            </div>
+                                            <div class="answer-mid">
+                                                <p class="txt">
+                                                    안녕하세요.<br> 
+                                                    숲이들려주는 피부이야기, 누리숲입니다.<br>
+                                                    <br>
+                                                    고객님, 소중한 후기 감사합니다.<br>
+                                                    <br>
+                                                    누리촉촉 워터밸런스 스킨은 화학방부를 최소화하고 천연방부로 만든 순한 화장품으로 공인기관 임상실험을 통해 여드름피부 적합성 평가를 통과한 제품인만큼
+                                                    10대부터 전연령대 사용가능하답니다. 가벼운 사용감과 오일프리 물스킨 타입으로, 7스킨법이나 스킨팩용도로 사용하시기에도 적합한 제품이랍니다.<br>
+                                                    <br>
+                                                    예쁜 피부 가꾸시고 또 찾아주세요.<br>
+                                                    <br>
+                                                    누리숲은 고객님의 건강하고 아름다운 피부를 위해 더욱 노력하겠습니다.<br>
+                                                    <br>
+                                                    감사합니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- bot banner -->
+        <div class="bot-bn-sect">
+            <div class="container">
+                <div class="bot-bn-box">
+                    <p class="bn-tit">
+                        <span>FOREST REPAIR CREAM</span>
+                        <em>숲에서 온 선물, 포레스트 리페어 크림</em>
+                    </p>
+                    <p class="bn-txt">
+                        푸석푸석, 칙칙, 각질파티... EGF, 펩타이드, 효모 등 고영양, 고수분 성분이<br>최고의 휴식을 선사합니다.
+                    </p>
+                    <a href="#none" class="btn-link">바로가기</a>
+                </div>
+            </div>
+        </div>
+	</div>
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

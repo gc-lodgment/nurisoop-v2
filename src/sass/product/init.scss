@@ -5,5 +5,743 @@
 
 /* 콘텐츠 영역 */
 .contents {
+    /* 상품 리스트 영역 */
+    &.list {
+        padding: 0 0 110px;
+        
+        /* 서브 탑 배너 */
+        .sub-top-sect {
+            padding: 20px 0;
+        }
+        
+        /* 타이틀 */
+        .sub-tit {
+            padding: 19px 0 31px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1;
+            text-align: center;
+        }
+        
+        /* 서브 제품 검색 창 */
+        .prd-srch-sect {
+            .container {
+                .srch-area { 
+                    @include bx;
+                    border: 1px solid $bor-gray-03;
+                    .srch-box {
+                        @include bx;
+                        display: table;
+                        width: 100%;
+                        .srch-txt {
+                            $wt:12px;
+                            @include bx;
+                            display: inline-block;
+                            font-size: 13px;
+                            line-height: 1;
+                            
+                            @include chkbox;
+                            
+                        }
+                        .srch-tit {
+                            display: table-cell;
+                            box-sizing: border-box;
+                            width: 146px;
+                            padding: 10px 19px 13px;
+                            vertical-align: middle;
+                            border-right: 1px solid $bor-gray-03;
+                            border-top: 1px solid $bor-gray-03;
+                            background: $bg-gray-02;
+                            .srch-txt {
+                                padding-right: 23px;
+                                input[type=checkbox], .btn-chk {
+                                    left: auto;
+                                    right: 0;
+                                }
+                            }
+                        }
+                        .srch-list {
+                            display: table-cell;
+                            box-sizing: border-box;
+                            vertical-align: middle;
+                            padding: 10px 0 13px;
+                            border-top: 1px solid $bor-gray-08;
+                            li {
+                                @include clearfix;
+                                float: left;
+                                padding: 0 13px 0 17px;
+                                .srch-txt {
+                                    padding-left: 18px;
+                                    input {
+                                        left: 0;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        &:first-child {
+                            .srch-tit, .srch-list {
+                                border-top: 0;
+                            }
+                        }
+                        
+                        &.lst {
+                            padding: 8px 88px 8px 99px;
+                            border-top: 1px solid $bor-gray-03;
+                            
+                            .btn-all-del {
+                                $d-ht:15px;
+                                @include position(absolute, 50%, 18px);
+                                display: inline-block;
+                                box-sizing: border-box;
+                                margin-top: -($d-ht/2);
+                                padding-left: 20px;
+                                font-size: 14px;
+                                line-height: $d-ht;
+                                font-weight: 300;
+                            }
+                            .srch-btn-box {
+                                @include bx;
+                                margin-left: 10px;
+                                padding-left: 11px;
+                                @include line($bg:$bor-gray-09);
+                                .btn-srch-cls {
+                                    position: relative;
+                                    @include btn-base($ht:28px, $fg:$fg-green-01);
+                                    margin-left: 9px;
+                                    padding: 0 40px 0 7px;
+                                    border: 1px solid $bor-gray-03;
+                                    .ico-srch-cls {
+                                        right: 6px;
+                                    }
+                                }
+                            }
+                            .btn-srch {
+                                $b-ht:28px;
+                                @include position(absolute, 50%, $right:7px);
+                                @include btn-bor-com(70px, $b-ht, $bor-g:$bor-gray-09);
+                                margin-top: -($b-ht/2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        /* 상품 리스트 */
+        .prd-sect {
+            margin-top: 64px;
+            .container {
+                .top-area { 
+                    @include bx;
+                    @include clearfix;
+                    border-bottom: 1px solid $bor-gray-03;
+                    .txt-total {
+                        float: left;
+                        line-height: 38px;
+                    }
+                    
+                    @include tab(1px, $bor-gray-07, $bor-g:$bor-gray-03, $a-pd:11px 0 11px, $fs:12px);
+                    .tab-box {
+                        float: right;
+                        border-bottom: 0;
+                        .tab-list {
+                            margin-bottom: -1px;
+                            li {    
+                                margin-left: -1px;
+                                padding-left: 1px;
+                                a {
+                                    width: 68px;
+                                }
+                                &.on {
+                                    padding-left: 0;
+                                    & + li {
+                                        border-left: 0;
+                                    }
+                                    &:before {
+                                        height: 2px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                @include prd-list{
+                    .prd-list {
+                        top: -25px;
+                    }
+                };
+                
+                .page-area {
+                    @include pagenation;
+                }
+            }
+        }
+    }
     
+    /* 상품 상세 영역 */
+    &.detail {
+        padding: 0 0 50px;
+        .top-sect {
+            @include bx;
+            @include clearfix;
+            padding: 60px 0 65px;
+            .container {
+                //이미지
+                .img-area {
+                    $wt:560px;
+                    @include bx;
+                    width: $wt;
+                    .img-slide-box {
+                        @include bx;
+                        height: $wt;
+                        border: 1px solid $bor-gray-10;
+                        
+                        @include txtDt;
+                        
+                        .prd-img-list {
+                            li {
+                                @include bx;
+                                cursor: pointer;
+                                display: table;
+                                width: 100%;
+                                height: ($wt)-(2px);
+                                span {
+                                    display: table-cell;
+                                    width: 100%;
+                                    text-align: center;
+                                    vertical-align: middle;
+                                    img {
+                                        width: 100%;
+                                        background: $bg-gray-02;
+                                    }
+                                }
+                            }
+                        }
+                        @include btn-controls($left:0, $wd:100%, $bx:11px);
+                    }
+                    
+                    //썸네일
+                    .pager-box {
+                        @include bx;
+                        padding-top: 32px;
+                        .pager-list {
+                            @include bx;
+                            @include clearfix;
+                            margin: 0 -10px 0 -10px;
+                            li {
+                                @include bx;
+                                float: left;
+                                width: 25%;
+                                height: 125px;
+                                margin-top: 10px;
+                                padding: 0 10px;
+                                a {
+                                    @include bx;
+                                    display: table;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 1px solid $bor-gray-10;
+                                    @include trasBase(0.6);
+                                    span {
+                                        display: table-cell;
+                                        width: 100%;
+                                        text-align: center;
+                                        vertical-align: middle;
+                                        img {
+                                            width: 100%;
+                                            background: $bg-gray-02;
+                                        }
+                                    }
+                                    
+                                    &:hover, &.active {
+                                        @include trasBase(1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                //텍스트
+                .txt-area {
+                    width: 630px;
+                    //타이틀
+                    .name-box {
+                        .dt-tit {
+                            padding: 18px 0 16px;
+                            font-size: 24px;
+                            font-weight: 300;
+                            line-height: 1;
+                            border-bottom: 2px solid $bor-gray-07;
+                        }
+                        .dt-tag {
+                            padding: 14px 0 12px;
+                            border-bottom: 1px solid $bor-gray-04;
+                            span {
+                                display: inline-block;
+                                padding-right: 3px;
+                                font-size: 14px;
+                                color: $fg-green-01;
+                            }
+                        }
+                    }
+                    
+                    //정보
+                    .info-box {
+                        @include bx;
+                        padding: 16px 0 15px;
+                        border-bottom: 1px solid $bor-gray-03;
+                        .prd-info {
+                            $lh:18px;
+                            @include bx;
+                            display: table;
+                            width: 100%;
+                            padding: 10px 0;
+                            .info-tit {
+                                display: table-cell;
+                                vertical-align: top;
+                                width: 145px;
+                                font-size: 14px;
+                                line-height: $lh;
+                            }
+                            .info-txt {
+                                display: table-cell;
+                                vertical-align: top;
+                                p {
+                                    font-size: 15px;
+                                    font-weight: 300;
+                                    line-height: $lh;
+                                    color: $fg-gray-04;
+                                    &.line {
+                                        
+                                    }
+                                }
+                            }
+                        }
+                        
+                        &.info-price-box {
+                            padding: 17px 0 13px;
+                            .prd-info {
+                                $lh:24px;
+                                .info-tit {
+                                    line-height: $lh;
+                                }
+                                .info-txt {
+                                    .f-bd {
+                                        font-size: $lh;
+                                        font-weight: 500;
+                                        line-height: $lh;
+                                        vertical-align: middle;
+                                    }
+                                    span {
+                                        font-size: 13px;
+                                        line-height: $lh;
+                                        vertical-align: middle;
+                                        color: $fg-gray-04; 
+                                    }
+                                    .btn-link {
+                                        $ht:25px; 
+                                        @include position(absolute, 50%, $right:0);
+                                        margin-top: -($ht/2);
+                                        @include btn-bor-com(90px, $ht, $bor-g:$bor-gray-03);
+                                    }
+                                }
+                            }
+                        }
+                        
+                        &.info-prd-box {
+                            .prd-info {
+                                .info-txt {
+                                    .info-prd-list {
+                                        @include ico-prd-info;
+                                    }
+                                    p {
+                                        padding-top: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    //금액
+                    .price-box {
+                        .top-box {
+                            padding: 20px 0 18px;
+                            p {
+                                font-size: 13px;
+                                font-weight: 300;
+                                line-height: 1;
+                                color: $fg-gray-03;
+                            }
+                        }
+                        
+                        @include tbl-col-prd;
+                        
+                        .price-total {
+                            @include bx;
+                            @include clearfix;
+                            padding: 20px 0 20px;
+                            border-bottom: 1px solid $bor-gray-03;
+                            .total-box {
+                                float: right;
+                                span {
+                                    display: inline-block;
+                                    font-size: 14px;
+                                    line-height: 22px;
+                                    vertical-align: middle;
+                                }
+                                em {
+                                    padding: 0 5px 0 10px;
+                                    font-size: 22px;
+                                    line-height: 1;
+                                    vertical-align: middle;
+                                    &.fg-grn {
+                                        color: $fg-green-01;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    //버튼
+                    .btn-box {
+                        @include bx;
+                        @include clearfix;
+                        padding-top: 38px;
+                        .btn-list {
+                            @include bx;
+                            @include clearfix;
+                            margin: 0 -4px;
+                            li {
+                                @include bx;
+                                float: left;
+                                padding: 0 4px 15px;
+                                a {
+                                    @include btn-gary-bg;
+                                    &.btn-buy {
+                                        @include btn-green-bg;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .pay-box {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .ad-sect {
+            .container {
+                @include tab($tab-li-wd:240px, $a-pd:9px 0 8px);
+                .ad-area {
+                    padding-top: 30px;
+                    
+                    //굿상품
+                    .gd-box {
+                        .tbl {
+                            border-top: 1px solid $bor-gray-03;
+                            th, td {
+                                font-size: 14px;
+                                border-bottom: 1px solid $bor-gray-03;
+                            }
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 10px 0;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 10px 20px;
+                                        .img {
+                                            @include bx;
+                                            width: 90px;
+                                            margin: 0 auto;
+                                            background: $bg-gray-02;
+                                        }
+                                        
+                                        .s-1 {
+                                            display: inline-block;
+                                            font-size: initial;
+                                            line-height: 28px;
+                                            vertical-align: middle;
+                                        }
+                                        .sel-box {
+                                            @include bx;
+                                            display: inline-block;
+                                            width: 140px;
+                                            height: 28px;
+                                            margin-left: 18px;
+                                            font-size: 14px;
+                                            font-weight: 300;
+                                            line-height: 28px;
+                                            vertical-align: middle;
+                                            text-align: left;
+                                            color: $fg-gray-01;
+                                            .sel-txt {
+                                                @include bx;
+                                                overflow: hidden;
+                                                cursor: pointer;
+                                                padding: 0 20px 0 5px;
+                                                white-space: nowrap;
+                                                text-overflow: ellipsis;
+                                                border: 1px solid $bor-gray-03;
+                                                background: url(http://static.nurisoop.co.kr/img/renew/common/bg_sel.png) no-repeat right center;
+                                            }
+                                            .sel-list {
+                                                z-index: 2;
+                                                @include position(absolute, $left:0);
+                                                display: none;
+                                                margin-top: -1px;
+                                                border: 1px solid $bor-gray-03;
+                                                background: #fff;
+                                                li {
+                                                    a {
+                                                        @include bx;
+                                                        display: block;
+                                                        padding: 4px 10px 5px 5px;
+                                                        line-height: 1.3;
+                                                        &:hover {
+                                                            @include trasBase(1, $bg:$bg-gray-02);
+                                                        }
+                                                    }
+                                                }
+                                                
+                                                &.on {
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    //후기
+                    .review-area {
+                        .rv-top-box {
+                            @include rv-top-box;
+
+                            //input search
+                            .srch-ip {
+                                float: left;
+                                @include ip-srch;
+                            }
+                        }
+                        
+                        .rv-list-box {
+                            @include bx;
+                            margin-top: 30px;
+                            .rv-list {
+                                @include bx;
+                                border-top: 1px solid $bor-gray-03;
+                                li {
+                                    @include bx;
+                                    border-bottom: 1px solid $bor-gray-03;
+                                    .rv-box {
+                                        @include bx;
+                                        display: block;
+                                        .view-box {
+                                            padding: 26px 30px 15px;
+                                            .btn-img {
+                                                z-index: 1;
+                                                @include position(absolute, 27px, $right:30px);
+                                                display: block;
+                                                width: 75px;
+                                                height: 75px;
+                                                .img-box {
+                                                    position: relative; 
+                                                    padding-top: 100%;
+                                                    overflow: hidden;
+                                                    .img-ct {
+                                                        @include position(absolute, 0, 0, 0, 0);
+                                                        -webkit-transform: translate(50%, 50%); 
+                                                        -ms-transform: translate(50%, 50%); 
+                                                        transform: translate(50%, 50%);
+                                                        img {
+                                                            @include position(absolute, 0, 0);
+                                                            max-width: inherit;
+                                                            height: 100%;
+                                                            -webkit-transform: translate(-50%, -50%); 
+                                                            -ms-transform: translate(-50%, -50%); 
+                                                            transform: translate(-50%, -50%); 
+
+                                                            /*.ie8 & {
+
+                                                            }*/
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            
+                                            .view-top {
+                                                .ico-star {
+                                                    @include ico-star;
+                                                }
+                                                .user-name {
+                                                    cursor: pointer;
+                                                    @include bx;
+                                                    display: inline-block;
+                                                    margin-left: 15px;
+                                                    padding-left: 16px;
+                                                    font-size: 14px;
+                                                    line-height: 20px;
+                                                    vertical-align: middle;
+                                                    font-weight: 500;
+                                                    @include line($ht:12px, $bg:$bor-gray-03);
+                                                    @include trasBase(1);
+                                                    
+                                                    &:hover {
+                                                        @include trasBase;
+                                                    }
+                                                }
+                                                .etc-box {
+                                                    @include bx;
+                                                    display: inline-block;
+                                                    margin-left: 3px;
+                                                    span {
+                                                        padding-left: 20px;
+                                                        font-size: 12px;
+                                                        line-height: 20px;
+                                                        color: $fg-gray-03;
+                                                    }
+                                                }
+                                            }
+                                            
+                                            .view-mid {
+                                                cursor: pointer;
+                                                display: inline-block;
+                                                @include trasBase(1);
+                                                margin: 20px 0 16px;
+                                                .txt {
+                                                    @include bx;
+                                                    font-size: 14px;
+                                                    font-weight: 300;
+                                                    line-height: 1.3;
+                                                    &.ico-phone {
+                                                        padding-left: 16px;
+                                                    }
+                                                }
+                                                .img {
+                                                    display: none;
+                                                    padding: 20px 20px;
+                                                    text-align: center;
+                                                }
+                                                &:hover {
+                                                    @include trasBase;
+                                                }
+                                            }
+                                            
+                                            .view-bot {
+                                                .desc {
+                                                    cursor: pointer;
+                                                    display: inline-block;
+                                                    margin-right: 50px;
+                                                    font-size: 14px;
+                                                    font-weight: 300;
+                                                    line-height: 30px;
+                                                    color: $fg-gray-03;
+                                                    vertical-align: middle;
+                                                    em {
+                                                        padding-left: 3px;   
+                                                        font-weight: 500;
+                                                        color: #333;
+                                                    }
+                                                    @include trasBase(1);
+                                                    &:hover {
+                                                        @include trasBase;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
+                                        .answer-box {
+                                            @include bx;
+                                            padding: 30px 30px 28px;
+                                            border-top: 1px solid $bor-gray-03;
+                                            .answer-top {
+                                                @include bx
+                                                .mmg-name {
+                                                    display: inline-block;
+                                                    font-size: 14px;
+                                                    font-weight: 600;
+                                                    color: $fg-gray-01;
+                                                    
+                                                }
+                                                .date {
+                                                    @include bx;
+                                                    display: inline-block;
+                                                    font-size: 12px;
+                                                    font-weight: 300;
+                                                    color: $fg-gray-03;
+                                                    @include line($ht:12px, $bg:$bor-gray-03);
+                                                }
+                                            }
+                                            
+                                            .answer-mid {
+                                                .txt {
+                                                    font-size: 14px;
+                                                    line-height: 1.4;
+                                                    word-break: keep-all;
+                                                    color: $fg-gray-01;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            & + .ad-sect {
+                padding-top: 100px;
+            }
+        }
+    
+        
+        //bot banner
+        @include bot-bn-sec;
+    }
+}
+
+
+
+
+
+/*
+ * safari 
+ */
+
+/* 콘텐츠 영역 */
+.safari .contents {
+    /* 상품 리스트 영역 */
+    &.list {
+        /* 검색 */
+        .srch-sect {
+            .container {
+                
+                .srch-area { 
+                    .srch-box {
+                        .srch-txt {
+                            input {
+                                margin-top: -4px;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

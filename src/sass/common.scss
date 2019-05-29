@@ -16,6 +16,25 @@ body {
 	color: $primary-color;
 }
 
+table {
+    @include bx;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    th, td {
+        @include bx;
+        font-weight: 300;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input::placeholder {
+    color: $fg-gray-07;
+    letter-spacing: -0.5px;
+	font-family: $font-stack; 
+}
 
 /* common */     
 //상품리스트 bg
@@ -28,6 +47,21 @@ body {
 
     }   
 }  
+//total txt
+.txt-total {
+    span {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0;
+        font-weight: 300;
+        color: $fg-gray-01;
+        em {
+            font-weight: 500;
+            color: #333;
+        }
+    }
+}
 
 /* icon */
 //찜 클릭하면 상단에 위치하게 되는 태그
@@ -41,6 +75,42 @@ body {
     border: 1px solid $bor-gray-06;
     background: #fff url(http://static.nurisoop.co.kr/img/renew/common/icon_btn_pd.png) no-repeat;
     background-position: -85px -42px;
+}
+//전체삭제에 들어가는 리셋모양 아이콘
+.ico-reset {
+    $wt:15px;
+    @include position(absolute, 50%, 0);
+    display: inline-block;
+    box-sizing: border-box;
+    width: $wt;
+    height: $wt;
+    margin-top: -($wt/2);
+    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+    background-position: -50px -173px;
+}
+//cls 
+.ico-srch-cls {
+    $wt:11px;
+    @include position(absolute, 50%, $right:0);
+    display: inline-block;
+    box-sizing: border-box;
+    width: $wt;
+    height: $wt;
+    margin-top: -($wt/2);
+    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+    background-position: -89px -83px;
+}
+//phone
+.ico-phone {
+    span {
+        @include position(absolute, 50%, 0);
+        display: inline-block;
+        width: 10px;
+        height: 15px;
+        margin-top: -7px;
+        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: -1px -173px;
+    }
 }
 
 .sale-txt {
@@ -58,6 +128,60 @@ body {
     @include trasBase(1);
 }
 
+/* btn */
+.btn-gd {
+    @include bx;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+    background-position: -182px 0;
+    span {
+        font-size: 0;
+        text-indent: -999px;
+    }
+    &.on {
+        background-position: -224px 0;
+    }
+}
+
+/* input */
+.num-box {
+    @include bx;
+    width: 45px;
+    height: 25px;
+    margin: 0 auto;
+    line-height: 0;
+    border: 1px solid $bor-gray-03;
+    .ip-txt {
+        @include position(absolute, 0, 0);
+        box-sizing: border-box;
+        width: 24px;
+        padding: 0 4px;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 23px;
+    }
+    span {
+        @include position(absolute, $right:0);
+        box-sizing: border-box;
+        cursor: pointer;
+        width: 19px;
+        height: 12px;
+        background: #fff url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        border-left: 1px solid $bor-gray-03;
+        &.up {
+            top: 0;
+            background-position: -67px -224px;
+        }
+        &.down {
+            bottom: 0;
+            border-top: 1px solid $bor-gray-03;
+            background-position: -92px -224px;
+        }
+    }
+}
+
 /* custom */
 .fl-left {
     float: left;
@@ -67,6 +191,15 @@ body {
 }
 .f-bd {
     font-weight: 500;
+}
+.tl-left {
+    text-align: left !important;
+}
+.tl-center {
+    text-align: center !important;
+}
+.tl-right {
+    text-align: right !important;
 }
 
 /* com wid */
@@ -514,6 +647,24 @@ $hd-ht: ($gnb-ht+31);
         @include bx;
         .container {
             @include com-wd;
+            
+        }
+            
+        /* navigation */
+        &.lnb-sect {
+            .container {
+                .lnb-box {
+                    z-index: 1;
+                    @include position(absolute, 20px, $right:0);
+                    .btn-link, .txt {
+                        display: inline-block;
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 1;
+                        color: $fg-gray-03;
+                    }
+                }
+            }
         }
     }
 }
@@ -755,11 +906,11 @@ $hd-ht: ($gnb-ht+31);
                             
                             .btn-bank {
                                 @include position(absolute, 0, $right:0);
-                                @include btn-com(block, 120px);
-                                
+                                @include btn-bor-com(120px);
                                 &:hover {
                                     border-color: $bor-green-01;
-                                    @include trasBase(1, #fff, $bg-green-01);
+                                    color: #fff;
+                                    background: $bg-green-01;
                                 }
                             }
                         }
@@ -989,11 +1140,9 @@ $hd-ht: ($gnb-ht+31);
                 }
                 .btn-link {
                     position: relative;
-                    @include btn-com($pd:0 8px, $fg:inherit);
+                    @include btn-bor-com($fg:inherit);
+                    padding: 0 8px;
                     margin-left: 7px;
-                    &:hover {
-                        @include trasBase(1, $bg:$bg-gray-02)
-                    }
                 }
             }
             

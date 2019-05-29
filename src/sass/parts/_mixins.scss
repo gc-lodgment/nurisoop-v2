@@ -100,6 +100,7 @@
             @include clearfix;
             display: inline-block;
             li {
+                z-index: 1;
                 @include bx;
                 float: left;
                 padding-top: ($bor-w-on)-($bor-w);
@@ -124,6 +125,7 @@
                 }
 
                 &.on {
+                    z-index: 2;
                     padding-top: 0;
                     border-left: $bor-w-on solid;
                     border-width: $bor-w-on;
@@ -138,6 +140,7 @@
                     &:before {
                         @include position(absolute, $left:0, $bottom: (-$bor-w-on));
                         content: '';
+                        z-index: 3;
                         display: block;
                         width: 100%;
                         height: $bor-w-on;
@@ -174,7 +177,7 @@
 }
 
 //button
-@mixin btn-com($dis:inline-block, $wd:null, $ht:22px, $pd:0, $fs:13px, $t-line:center, $fg:$fg-gray-01, $bor-w:1px, $bor-g:$bor-gray-05, $bg:#fff){
+/*@mixin btn-com($dis:inline-block, $wd:null, $ht:22px, $pd:0, $fs:13px, $t-line:center, $fg:$fg-gray-01, $bor-w:1px, $bor-g:$bor-gray-05, $bg:#fff){
     box-sizing: border-box;
     display: $dis;
     width: $wd;
@@ -186,7 +189,49 @@
     line-height: $ht;
     border: $bor-w solid $bor-g;
     background: $bg;
+}*/
+//btn base
+@mixin btn-base($wd:null, $ht:22px, $fs:13px, $fg:$fg-gray-01){
+    box-sizing: border-box;
+    display: inline-block;
+    width: $wd;
+    height: $ht;
+    font-size: $fs;
+    line-height: $ht;
+    color: $fg;
+    //padding: $pd;
+    text-align: center;
 }
+
+//btn border 기본 border에 호버하면 회색배경
+@mixin btn-bor-com($wd:null, $ht:22px, $fs:13px, $fg:$fg-gray-01, $bor-w:1px, $bor-g:$bor-gray-05){
+    @include btn-base($wd, $ht, $fs, $fg);
+    border: $bor-w solid $bor-g;
+    @include trasBase(1, $bg:#fff); 
+    &:hover {
+        @include trasBase(1, $bg:$bg-gray-02);
+    }
+}
+
+//btn bg green
+@mixin btn-green-bg($wd:254px, $ht:50px, $fs:18px, $fg:#fff){
+    @include btn-base($wd, $ht, $fs, $fg);
+    @include trasBase(1, $bg:$bg-green-01);
+    &:hover {
+        @include trasBase(1, $bg:$bg-green-02);
+    }
+}
+
+//btn bg gray
+@mixin btn-gary-bg($wd:180px, $ht:50px, $fs:18px, $fg:#fff){
+    @include btn-base($wd, $ht, $fs, $fg);
+    @include trasBase(1, $bg:$bg-gray-05);
+    &:hover {
+        @include trasBase(1, $bg:$bg-gray-06);
+    }
+}
+
+
 
 //btn more
 @mixin btn-more($position:absolute, $fs:14px, $fg:$fg-gray-05){
@@ -233,6 +278,70 @@
             }
         }
     }
+}
+
+//text detail - 1+1, GIFT, SALE 
+@mixin txtDt($wd:100px, $ht:60px, $fs:28px, $top:-1px, $left:null, $right:-1px){
+    .txt-dt {
+        z-index: 55;
+        @include position(absolute, $top, $left, $right:$right);
+        display: block;
+        width: $wd;
+        height: $ht;
+        font-size: $fs;
+        font-weight: 500;
+        text-align: center;
+        line-height: $ht;
+        color: #fff;
+        &.plus {
+            background: #f175a4;
+        }
+        &.gift {
+            background: #619a41;
+        }
+        &.sale {
+            background: #528da8;
+        }
+    }
+}
+
+//checkbox
+@mixin chkbox($wt:12px, $bor-bg:$bor-black-01){
+    %chk {
+        cursor: pointer;
+        @include position(absolute, 50%, 0);
+        display: block;
+        box-sizing: border-box;
+        width: $wt;
+        height: $wt;
+        margin-top: -($wt/2);
+        vertical-align: middle;
+    }
+    
+    input[type=checkbox] {
+        display: none;
+    }
+    input[type=checkbox] + span {
+        @extend %chk;
+        border: 1px solid $bor-bg;
+        background: #fff;
+    }
+    input[type=checkbox]:checked + span {
+        background: #fff url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: -1px -225px;
+    }
+    
+    .ie8 & {
+        input[type=checkbox] {
+            @extend %chk;
+        }
+        
+        input[type=checkbox] + span {
+            display: none;
+        }
+    }
+    
+    @content
 }
 
 //ico heart + cert 
@@ -287,6 +396,167 @@
                     }
                 }
             }
+        }
+        @content
+    }
+}
+
+//ico star
+@mixin ico-star($wd:21px, $ht:20px, $bg-on-p:-33px 0){
+    @include bx;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0;
+    span {
+        display: inline-block;
+        width: $wd;
+        height: $ht;
+        margin-right: 1px;
+        font-size: 0;
+        text-indent: -999px;
+        background: url(http://static.nurisoop.co.kr/img/renew/common/icon_gd.png) no-repeat;
+        background-size: auto $ht;
+        background-position: 0 0;
+        &.on {
+            background-position: $bg-on-p;
+        }
+    }
+}
+
+//ico prd info list 
+@mixin ico-prd-info($pd:0 17px 0 27px, $fs:15px, $wt:20px){
+    @include bx;
+    @include clearfix;
+    line-height: 0;
+    .ico-prd-info {
+        @include bx;
+        float: left;
+        padding: $pd;
+        font-size: $fs;
+        line-height: $wt;
+        vertical-align: middle;
+        span {
+            @include position(absolute, 50%, 0);
+            display: inline-block;
+            width: $wt;
+            height: $wt;
+            margin-top: -($wt/2);
+            vertical-align: middle;
+            background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        }
+
+        &.pore {
+            span {
+                background-position: 0 -271px;
+            }
+        }
+        &.blhead {
+            span {
+                background-position: -32px -271px;
+            }
+        }
+        &.corneous {
+            span {
+                background-position: -64px -271px;
+            }
+        }
+        &.sebum {
+            span {
+                background-position: -96px -271px;
+            }
+        }
+    }
+}
+
+//btn search {
+@mixin ip-srch($wd:163px, $bor-bg:$bor-gray-03, $ht:26px, $pd:0 30px 0 12px, $fs:14px, $fg:$fg-gray-01, $ico-wd:13px, $ico-ht:15px, $ico-r:9px){
+    @include bx;
+    width: $wd;
+    border: 1px solid $bor-bg;
+    .ip-txt {
+        @include bx;
+        width: 100%;
+        height: $ht;
+        padding: $pd;
+        font-size: $fs;
+        line-height: $ht;
+        color: $fg;
+    }
+    .btn-srch {
+        @include position(absolute, 50%, $right:$ico-r);
+        display: block;
+        width: $ico-wd;
+        height: $ico-ht;
+        margin-top: -($ico-ht/2);
+        background: url(http://static.nurisoop.co.kr/img/renew/common/bg_ip_sch.png) no-repeat center;
+        span {
+            font-size: 0;
+            text-indent: -999px;
+        }
+    }
+}
+
+//select 
+@mixin sel-com($wd:73px, $ht:28px, $mg:0 8px 0 19px, $pd:0 15px 0 6px, $fs:14px, $fg:$fg-gray-01, $bor-bg:$bor-gray-03){
+    @include bx;
+    width: $wd;
+    height: $ht;
+    margin: $mg;
+    padding: $pd;
+    font-size: $fs;
+    font-weight: 300;
+    line-height: $ht;
+    color: $fg;
+    border: 1px solid $bor-bg;
+    background: url(http://static.nurisoop.co.kr/img/renew/common/bg_sel.png) no-repeat right center;
+}
+
+//review top box - 상품상세, 상품후기-일반리뷰
+@mixin rv-top-box($wd:73px, $ht:28px){
+    @include bx;
+    @include clearfix;
+    padding: 5px;
+    line-height: 0;
+    border: 1px solid $bor-gray-03;
+    .btn-list {
+        a {
+            @include bx;
+            padding: 0 14px 0 13px;
+            height: $ht;
+            font-size: 14px;
+            line-height: $ht;
+            font-weight: 300;
+            color: $fg-gray-01;
+            &.on {
+                font-weight: 400;
+                color: #333;
+            }
+
+            & + a {
+                @include line($ht:12px, $bg:$bor-gray-03);
+            }
+        }
+    }
+
+    .srch-box {
+        @include bx;
+        @include clearfix;
+        .p-1 {
+            @include bx;
+            float: left;
+            line-height: $ht;
+            .srch-txt {
+                @include bx;
+                padding-left: 20px;
+                font-size: 14px;
+                @include chkbox;
+            }
+        }
+        
+        //select
+        .form-sel {
+            float: left;
+            @include sel-com($wd:$wd, $ht:$ht);
         }
     }
 }
@@ -454,6 +724,8 @@
 
             }
         }
+        
+        @content
     }
 }
 
@@ -707,6 +979,56 @@
     }
 }
 
+//pagenation 
+@mixin pagenation($pt:40px, $ht:12px, $fs:13px, $m-l:12px, $m-r:9px){
+    padding-top: $pt;
+    text-align: center;
+    .page-box {
+        display: inline-block;
+        text-align: center;
+        a {
+            display: inline-block;
+            height: $ht;
+            font-size: $fs;
+            text-align: center;
+            vertical-align: middle;
+            line-height: $ht;
+            &.txt {
+                color: $fg-gray-06;
+
+                &.on {
+                    color: $fg-green-01;
+                }
+            }
+            &[class*='btn-']{
+                width: 8px;
+                background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                &[class*='btn-m-']{
+                    width: $ht;
+                }
+                &.btn-m-prev {
+                    background-position: 0 -200px;
+                }
+                &.btn-prev {
+                    margin-right: $m-r;
+                    background-position: -23px -200px;
+                }
+                &.btn-next {
+                    margin-left: ($m-l)+($m-r);
+                    background-position: -42px -200px;
+                }
+                &.btn-m-next {
+                    background-position: -61px -200px;
+                }
+            }
+            & + a {
+                margin-left: $m-l;
+            }
+
+        }
+    }
+}
+
 //bottom banner - 메인 / 서브
 @mixin bot-bn-sec($ht:285px, $pl:51px, $txt-pd:24px 0 29px){
     /* bot banner */
@@ -750,9 +1072,9 @@
                     filter: alpha(opacity=50);
                 }
                 .btn-link {
-                    @include btn-com($wd:100px, $ht:30px, $fs:16px, $fg:#302f3c, $bor-w:0, $bg:rgba(240, 240, 240, 0.7));
+                    @include btn-base(100px, 30px, $fs:16px, $fg:#302f3c);
                     font-weight: 500;
-                    @include trasBase(1);
+                    @include trasBase(1, $bg:rgba(240, 240, 240, 0.7));
                         
                     .ie8 & {
                         filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#70f0f0f0,endColorstr=#70f0f0f0);
@@ -760,6 +1082,37 @@
                     
                     &:hover {
                         @include trasBase(0.6);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//table - prd detail
+@mixin tbl-col-prd($bor-t-w:1px, $bor-t-bg:$bor-black-01, $th-pd:10px 22px, $th-fs:13px, $th-fg:$fg-gray-01, $th-bor-bg:$bor-gray-04, $td-pd:20px 20px, $td-fs:16px, $td-fg:$fg-gray-01, $td-bor-bg:$bor-gray-03){
+    .tbl-col {
+        @include bx;
+        .tbl {
+            border-top: $bor-t-w solid $bor-t-bg;
+
+            thead {
+                tr {
+                    th {
+                        padding: $th-pd;
+                        font-size: $th-fs;
+                        color: $th-fg;
+                        border-bottom: 1px solid $th-bor-bg;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        padding: $td-pd;
+                        font-weight: $td-fs;
+                        border-bottom: 1px solid $td-bor-bg;
                     }
                 }
             }

@@ -4,21 +4,6 @@
 
 /* 팝업 공통 */
 
-
-//오늘하루열지않음
-@mixin cls-box($wt:10px, $bor-w:1px){
-    @include position(absolute, 50%, $right:-14px);
-    display: block;
-    box-sizing: border-box;
-    width: $wt;
-    height: $wt;
-    margin-top: -(($wt)/2);
-    line-height: $wt;
-    text-align: center;
-    border: $bor-w solid $bor-gray-01;
-    background: $bg-gray-04;
-}
-
 /* 메인 공지 팝업 */
 .main-pop-wrap {
     z-index: 999;
@@ -116,25 +101,15 @@
                         @include bx;
                         float: left;
                         display: inline-block;
-                        input[type=checkbox] {
-                            display: none;
-                        }
+                        
                         label {
-                            display: inline-block;
-                            padding-right: 6px;
-                        } 
-                        input[type=checkbox] + label:before {
-                            content: '';
-                            @include cls-box;
-                            
-                            .ie & {
-                                margin-top: -6px;
+                            padding-right: 20px;
+                            @include chkbox;
+                            input[type=checkbox], input[type=checkbox] + .btn-chk {
+                                left: auto !important;
+                                right: 0;
                             }
-                        }
-                        input[type=checkbox]:checked + label:before {
-                            content: '\2714';
-                            color: $fg-gray-01;
-                        }
+                        } 
                     }
                     &.p-cls {
                         float: right;
@@ -154,10 +129,9 @@
 }
 
 /*
- * ie8
+ * ie
  */
-.ie8 {
-    
+.ie {
     /* 메인 공지 팝업 */
     .main-pop-wrap {
         .main-pop-contents {
@@ -166,38 +140,10 @@
                 .bot-box {
                     p {
                         &.p-day-cls {
-                            input[type=checkbox] {
-                                display: inline-block;
-                                @include cls-box(12px, 0);
-                            }
-                            input[type=checkbox] + label:before {
-                                content: none;
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-/*
- * safari
- */
-.safari {
-    
-    /* 메인 공지 팝업 */
-    .main-pop-wrap {
-        .main-pop-contents {
-            .main-pop-area {
-                /* 닫기 */
-                .bot-box {
-                    p {
-                        &.p-day-cls {
-                            input[type=checkbox]:checked + label:before {
-                                content: '';
-                                background: $bg-gray-03;
+                            label {
+                                .btn-chk {
+                                    margin-top: -7px;
+                                }
                             }
                         }
                     }

@@ -221,10 +221,9 @@
                                         }
                                     }
                                 }
-                                @include icon-box;
-                                .ico-box {
+                                @include icon-box{
                                     @include trasBase(0);
-                                }
+                                };
                             }
                             
                             &:hover {
@@ -346,10 +345,9 @@
         margin-top: 117px;
         
         .container {
-            @include prd-list;
-            .prd-area {
+            @include prd-list{
                 padding-top: 6px;
-            }
+            };
         }
     }
     

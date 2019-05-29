@@ -37,7 +37,7 @@ function mainSlideFn(){
         speed: 1000,
         duration: 6000,
         prevText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_left_01.png" alt="이전">',
-        nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_01.png" alt="다음">',
+        nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_01.png" alt="다음">'
     });
 }
 
@@ -53,7 +53,7 @@ function midSlideFn(){
         speed: 1000,
         duration: 6000,
         prevText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_left_02.png" alt="이전">',
-        nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_02.png" alt="다음">',
+        nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_02.png" alt="다음">'
     });
 }
 
