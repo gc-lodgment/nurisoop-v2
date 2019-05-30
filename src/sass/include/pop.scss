@@ -3,6 +3,76 @@
 @import "../parts/common";
 
 /* 팝업 공통 */
+.pop-wrap {
+    z-index: 9990;
+    @include position(fixed, 0, 0);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    .pop-container {
+        
+        /* 제품 디테일 리뷰 이미지 슬라이드 팝업 */
+        .pop-dt-rv-box {
+            $wd:850px;
+            $ht:700px;
+            @include position(absolute, 50%, 50%);
+            box-sizing: border-box;
+            overflow: hidden;
+            width: $wd;
+            height: $ht;
+            margin-left: -($wd/2);
+            margin-top: -($ht/2);
+            .img-list {
+                @include bx;
+                @include clearfix;
+                li {
+                    @include bx;
+                    display: table;
+                    width: $wd !important;
+                    height: $ht;
+                    margin: 0 auto;
+                    p {
+                        display: table-cell;
+                        text-align: center;
+                        vertical-align: middle;
+                        img {
+                            max-width: $wd;
+                            max-height: $ht;
+                        }
+                    }
+                }
+            }
+            @include btn-controls($wd:$wd){
+                .bx-controls {
+                    .bx-controls-direction {
+                        @include trasBase(1);
+                    }
+                }
+            };
+        }
+        
+        /* 닫기 */
+        .btn-pop-close {
+            z-index: 9999;
+            display: block;
+            span {
+                display: block;
+                font-size: 0;
+                text-indent: -999px;
+            }
+            &.btn-dt-rv {
+                @include position(fixed, 30px, $right:30px);
+                span {
+                    width: 25px;
+                    height: 26px;
+                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                    background-position: -111px -83px;
+                }
+            }
+        }
+    }
+}
 
 /* 메인 공지 팝업 */
 .main-pop-wrap {

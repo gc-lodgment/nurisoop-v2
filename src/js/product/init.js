@@ -4,6 +4,19 @@ $(function () {
     if( $('.contents').hasClass('detail') ){
         detailSlideFn();
         selFn();
+        
+        //리뷰 자세히보기
+        $('.rv-list-box .view-box .view-mid .txt, .rv-list-box .view-box .view-bot .desc').on('click', function(){
+            $('.rv-box').parent('li').removeClass('on');
+            $(this).parents('.rv-box').parent('li').addClass('on');
+            
+            var ht = $('header').height();
+            var offsetTop = $(this).parents('.rv-box').parent('li').offset().top;
+
+            $('html, body').stop().animate({
+                scrollTop : (offsetTop-(ht+10)) // 10 - 예쁜여유분공간
+            }, 500);
+        })
     }else {
        
     }

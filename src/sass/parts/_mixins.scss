@@ -204,13 +204,25 @@
 }
 
 //btn border 기본 border에 호버하면 회색배경
-@mixin btn-bor-com($wd:null, $ht:22px, $fs:13px, $fg:$fg-gray-01, $bor-w:1px, $bor-g:$bor-gray-05){
+@mixin btn-bor-com($wd:null, $ht:22px, $fs:13px, $fg:$fg-gray-01, $bor-g:$bor-gray-05){
     @include btn-base($wd, $ht, $fs, $fg);
-    border: $bor-w solid $bor-g;
+    border: 1px solid $bor-g;
     @include trasBase(1, $bg:#fff); 
     &:hover {
         @include trasBase(1, $bg:$bg-gray-02);
     }
+}
+
+//btn bor gray : hover black
+@mixin btn-gray-bor($wd:130px, $ht:30px, $fs:14px, $fg:$fg-gray-01, $bor-g:$bor-gray-03){
+    @include btn-base($wd, $ht, $fs, $fg);
+    border: 1px solid $bor-g;
+    @include trasBase(1, $bg:#fff);  
+    &:hover {
+        border-color: $bor-black-01;
+        @include trasBase(1);
+    }
+    
 }
 
 //btn bg green
@@ -233,17 +245,7 @@
 
 
 
-//btn more
-@mixin btn-more($position:absolute, $fs:14px, $fg:$fg-gray-05){
-    .btn-more {
-        @include position($position, 0, $right:0);
-        display: inline-block;
-        font-size: $fs;
-        font-weight: 400;
-        letter-spacing: 0;
-        color: $fg;
-    }
-}
+
 
 //slide btn control 
 @mixin btn-controls($top:50%, $left:50%, $mt:-22px, $wd:null, $a-wd:23px, $a-ht:41px, $bx:0){
@@ -253,6 +255,9 @@
             z-index: 51;
             margin-top: $mt;
             width: $wd;
+            @if( $wd != null ){
+                margin-left: -($wd/2);
+            }
             @include trasBase(0);
             a {
                 @include position(absolute, 0);
@@ -278,6 +283,7 @@
             }
         }
     }
+    @content
 }
 
 //text detail - 1+1, GIFT, SALE 

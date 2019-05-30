@@ -25,7 +25,11 @@ $(function(){
     
     //btn pop close
     $('.btn-pop-close').on('click', function(){
-        $(this).parents('div[class*="pop-wrap"]').fadeOut();
+        //console.log('닫기');
+        $(this).parents('div[class*="pop-wrap"]').stop().fadeOut();
+        
+        $('html').css({'overflow': 'auto', 'height': '100%'});
+        $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
     });
 });
 
@@ -38,14 +42,24 @@ function tabFn(){
         if( $(this).parents('.tab-box').hasClass('prdList') ){
             //상품리스트 - sub
         }else {
-            //ex) 메인 탭 상품 리스트
             var atr = $(this).find('a').attr('href');
             var ht = $('header').height();
             var offsetTop = $(this).parents('.tab-box').offset().top;
             
+           /* if( $(this).parents('.tab-box').hasClass('detail') ) {
+                //상품 디테일
+                console.log('dt');
+                $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().hide();
+                $(atr).stop().show();
+            }else {
+                //ex) 메인 탭 상품 리스트
+                $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().delay().fadeOut(500);
+                $(atr).stop().delay().fadeIn(1000);
+            }*/
+            
             $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().delay().fadeOut(500);
             $(atr).stop().delay().fadeIn(1000);
-
+            
             $('html, body').stop().animate({
                 scrollTop : (offsetTop-(ht+15)) // 15 - 예쁜여유분공간
             }, 500);

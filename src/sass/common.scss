@@ -103,11 +103,12 @@ input::placeholder {
 //phone
 .ico-phone {
     span {
-        @include position(absolute, 50%, 0);
+        //@include position(absolute, 50%, 0);
+        @include position(absolute, 4px, 0);
         display: inline-block;
         width: 10px;
         height: 15px;
-        margin-top: -7px;
+        //margin-top: -7px;
         background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
         background-position: -1px -173px;
     }
@@ -143,6 +144,34 @@ input::placeholder {
     &.on {
         background-position: -224px 0;
     }
+}
+//btn-more
+.ico-more {
+    box-sizing: border-box;
+    padding-left: 10px;
+    span {
+        $wt:10px;
+        $ht:2px;
+        @include position(absolute, 50%, 12px);
+        box-sizing: border-box;
+        display: inline-block;
+        width: $wt;
+        height: $ht;
+        //margin-top: -($ht/2);
+        background: $bg-green-01;
+        &:before {
+            content: '';
+            @include position(absolute, -4px, 50%);
+            box-sizing: border-box;
+            display: inline-block;
+            width: $ht;
+            height: $wt;
+            margin-left: -($ht/2);
+            background: $bg-green-01;
+            
+        }
+    }
+    
 }
 
 /* input */
