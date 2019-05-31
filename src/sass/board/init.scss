@@ -1,0 +1,567 @@
+@charset "utf-8";
+
+@import "../parts/common";
+
+
+/* 콘텐츠 영역 */
+.contents {
+    padding-bottom: 150px;
+    
+    /* sub top */
+    @include sub-top;
+                        
+    /* table */
+    @include tbl-col-gray;
+
+    /* page num */
+    .page-area {
+        @include pagenation;
+        margin-top: 10px;
+    }
+    
+    &.list {
+        .board-sect {
+            .container {
+                @include tab($num:5, $a-pd:10px 0 12px);
+                
+                .board-area {
+                    @include bx;
+                    padding-top: 50px;
+
+                    //select
+                    .form-sel {
+                        float: left;
+                        @include sel-com(73px, 28px, 0 8px 0 0);
+                    }
+
+                    //input search
+                    .srch-ip {
+                        float: left;
+                        @include ip-srch;
+                    }
+                        
+                    /* 검색영역 */
+                    .top-box {
+                        @include bx;
+                        @include clearfix;
+                        padding-bottom: 12px;
+                    }
+                    
+                    /* 하단 검색 + page */
+                    .bot-area {
+                        @include bx;
+                        @include clearfix;
+                        margin-top: 50px;
+                        .srch-box {
+                            @include position(absolute, 0, 0);
+                        }
+
+                        .page-area {
+                            margin-top: 0;
+                            padding-top: 0;
+                            line-height: 28px;
+                        }
+
+                        .btn-box {
+                            @include position(absolute, 0, $right:0);
+                            .btn-write {
+                                @include btn-green-bg(100px, 28px, 14px);
+                            }
+                        }
+                    }
+                    
+                    
+                    /* 공지사항 */
+                    .notice-area {
+                        @include bx;
+                        .txt-notice {
+                            display: inline-block;
+                            width: 50px;
+                            height: 20px;
+                            color: #fff;
+                            line-height: 20px;
+                            background: $bg-red-01;
+                        }
+                    }
+                    
+                    /* 자주묻는 질문 */
+                    .faq-area {
+                        @include bx;
+                        .top-box {
+                            //자주묻는질문 링크
+                            .txt-link {
+                                @include bx;
+                                @include clearfix;
+                                li {
+                                    @include bx;
+                                    float: left;
+                                    margin-left: 18px;
+                                    padding-left: 17px;
+                                    @include line($bg:$bor-gray-03);
+                                    a {
+                                        @include bx;
+                                        display: block;
+                                        font-size: 13px;
+                                        font-weight: 300;
+                                        line-height: 28px;
+                                        color: $fg-gray-01;
+                                        &.on {
+                                            font-weight: 500;
+                                            color: $fg-black;
+                                        }
+                                    }
+                                    &:first-child {
+                                        margin-left: 0;
+                                        padding-left: 0;
+                                        &:before {
+                                            content: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .tbl-col {
+                            .tbl {
+                                .q-box {
+                                    .ico-q {
+                                        @include bx;
+                                        padding-left: 33px;
+                                        .q {
+                                            @include position(absolute, 0, 0);
+                                            font-size: 15px;
+                                            font-weight: 500;
+                                            color: $fg-green-01;
+                                        }
+                                        letter-spacing: -0.2px;
+                                    }
+                                    
+                                    &.on {
+                                        td {
+                                            border-bottom: 0;
+                                        }
+                                    }
+                                }
+                                .a-box {
+                                    td {
+                                        padding: 30px 0 25px 21%;
+                                        background: $bg-gray-02;
+                                        .a-txt-box {
+                                            @include bx;
+                                            padding: 0 70px;
+                                            text-align: left;
+                                            .txt-box {
+                                                @include bx;
+                                                padding-left: 33px;
+                                                &.ico-a {
+                                                    .a {
+                                                        @include position(absolute, 3px, 0);
+                                                        font-size: 15px;
+                                                        font-weight: 500;
+                                                        color: $fg-red-03;
+                                                    }
+                                                }
+                                                .txt {
+                                                    margin-top: 21px;
+                                                    font-size: 15px;
+                                                    font-weight: 300;
+                                                    line-height: 1.5;
+                                                    letter-spacing: -0.2px;
+                                                    word-break: keep-all;
+                                                    color: $fg-black;
+                                                }
+                                                .a + .txt {
+                                                    margin-top: 0;
+                                                }
+                                                
+                                                .btn-link {
+                                                    margin-left: 15px;
+                                                    padding: 0;
+                                                    @include btn-gray-bor(110px, $fs:15px, $fg:$fg-black, $bor-g:$bor-gray-09);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    /* 1:1 문의하기 & 상품문의 */
+                    .contact-area {
+                        .txt-box {
+                            .txt-list {
+                                @include bx;
+                                li {
+                                    @include bx;
+                                    padding-left: 7px;
+                                    font-size: 13px;
+                                    font-weight: 300;
+                                    line-height: 1.5;
+                                    color: $fg-gray-01;
+                                    
+                                    &:before {
+                                        content: '';
+                                        @include position(absolute, 10px, 0);
+                                        width: 3px;
+                                        height: 1px;
+                                        background: $fg-gray-01;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .day-top-box {
+                            @include bx;
+                            @include clearfix;
+                            margin: 30px auto;
+                            padding: 5px 10px 5px 0;
+                            line-height: 0;
+                            border: 1px solid $bor-gray-03;
+                            
+                            .day-box {
+                                @include bx;
+                                @include clearfix;
+                                .day-lookup {
+                                    @include bx;
+                                    float: left;
+                                    display: inline-block;
+                                    padding-left: 30px;
+                                    .day-tit {
+                                        @include bx;
+                                        display: inline-block;
+                                        margin-right: 7px;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        line-height: 28px;
+                                        vertical-align: middle;
+                                    }
+                                    .day-list {
+                                        @include bx;
+                                        @include clearfix;
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        li {
+                                            @include bx;
+                                            float: left;
+                                            .srch-txt {
+                                                margin-left: 15px;
+                                                font-size: 13px;
+                                                line-height: 28px;
+                                                vertical-align: middle;
+                                                color: $fg-gray-01;
+                                                input[type="radio"] {
+                                                    cursor: pointer;
+                                                    margin-right: 5px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                    /* 달력 */
+                                    .cal-box {
+                                        @include bx;
+                                        display: inline-block;
+                                        margin-left: 20px;
+                                        .row {
+                                            @include cal;
+                                        }
+                                        .cal-txt {
+                                            display: inline-block;
+                                            padding: 0 8px;
+                                            font-size: 13px;
+                                            line-height: 28px;
+                                            color: $fg-gray-01;
+                                        }
+                                    }
+                                    
+                                    & + .day-lookup {
+                                        margin-left: 30px;
+                                        @include line($ht:12px, $bg:$bor-gray-03);
+                                    }
+                                }
+                            }
+                            
+                            .btn-box {
+                                .btn-srch {
+                                    @include btn-gray-bor(70px, 28px, 13px, $bor-g:$bor-gray-09);
+                                }
+                            }
+                        }
+                        
+                        .tbl-col {
+                            .tbl {
+                                td {
+                                    height: 50px;
+                                    padding: 7px 0 7px;
+                                    .img-prd {
+                                        @include bx;
+                                        overflow: hidden;
+                                        display: inline-block;
+                                        padding: 2px;
+                                        width: 35px;
+                                        height: 35px;
+                                        vertical-align: middle;
+                                        line-height: 0;
+                                        background: $bg-gray-02;
+                                        img {
+                                            @include bx;
+                                            line-height: 0;
+                                        }
+                                    }
+                                    a {
+                                        padding: 0 40px;
+                                        span {
+                                            margin-left: 4px;
+                                            &:first-child {
+                                                margin-left: 11px;
+                                            }
+                                        }
+                                    }
+                                } 
+                                .answer {
+                                    td {
+                                        a {
+                                            padding: 0 40px 0 51px;
+                                        }
+                                    }
+                                }
+                                
+                                /* 미답변 */
+                                .nope {
+                                    height: 300px;
+                                }
+                            }
+                        }
+                        
+                        .bot-area {
+                            .page-area {
+                                line-height: 30px;
+                            }
+                            
+                            .btn-box {
+                                .btn-write {
+                                    @include btn-green-bg(100px, 28px, 14px);
+                                }
+                                .btn-contact { 
+                                    @include btn-gray-bor(110px, 30px, $bor-g:$bor-gray-09);
+                                }
+                            }
+                        }
+                        
+                        &.inquie {
+                            .bot-area {
+                                .page-area {
+                                    line-height: 28px;
+                                }
+                            }
+                        }
+                    }
+                    
+                    /* 성분사전 */
+                    .ingred-area {
+                        .bn-box {
+                            padding-bottom: 30px;
+                            text-align: center;
+                            .img {
+                                
+                            }
+                        }
+                    }
+                    
+                    /* 비밀번호 */
+                    .pw-area {
+                        .tbl-col {
+                            .tbl {
+                                td {
+                                    .pw-box {
+                                        @include bx;
+                                        padding: 65px 0 71px;
+                                        .txt {
+                                            font-size: 15px;
+                                            font-weight: 300;
+                                            line-height: 1.6;
+                                            color: $fg-gray-04;
+                                            em {
+                                                color: $fg-black;
+                                            }
+                                        }
+                                        .pw-row {
+                                            @include bx;
+                                            padding: 60px 0 71px;
+                                            .pw-txt {
+                                                @include bx;
+                                                display: inline-block;
+                                                margin-right: 17px;
+                                                padding-left: 18px;
+                                                font-size: 14px;
+                                                line-height: 28px;
+                                                color: $fg-black;
+                                                .ico-lock {
+                                                    @include position(absolute, 50%, 0);
+                                                    margin-top: -6px;
+                                                }
+                                            }
+                                            .ip-txt {
+                                                @include bx;
+                                                width: 163px;
+                                                height: 28px;
+                                                padding: 0 8px;
+                                                line-height: 28px;
+                                                border: 1px solid $bor-gray-03;
+                                            }
+                                        }
+                                        .btn-box {
+                                            $wd:85px;
+                                            $ht:40px;
+                                            @include bx;
+                                            @include clearfix;
+                                            display: inline-block;
+                                            a {
+                                                padding: 0;
+                                                vertical-align: middle;
+                                                &.btn-list {
+                                                    @include btn-gray-bor($wd, $ht, 15px);
+                                                    background: $bg-gray-02;
+                                                }
+                                                &.btn-com {
+                                                    @include btn-green-bg($wd, $ht, 15px);
+                                                }
+                                                & + a {
+                                                    margin-left: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    //view & read 
+    &.view {
+        .view-sect {
+            .container {
+                
+                .view-area {
+                    @include bx;
+                    @include clearfix;
+                    
+                    .top-box {
+                        @include view-top;
+                    }
+                    
+                    .view-box {
+                        @include bx;
+                        padding: 40px 0;
+                        text-align: center;
+                        .img {
+
+                        }
+                    }
+
+                    .page-box {
+                        @include view-page;
+                    }
+
+                    .btn-box {
+                        @include bx;
+                        margin-top: 20px;
+                        float: right;
+                        .btn-list {
+                            @include btn-gray-bor(100px);
+                        }
+                    }
+                }
+            }
+            
+            &.read {
+                .container {
+                    .view-box {
+                        @include bx
+                        min-height: 205px;
+                        padding: 10px 0;
+                        text-align: left;
+                        border-bottom: 1px solid $bor-gray-03;
+                        .txt {
+                            font-size: 15px;
+                            font-weight: 300;
+                            line-height: 1.8;
+                            letter-spacing: 0;
+                            color: $fg-gray-04;
+                        }
+                    }
+                    
+                    .answer-box {
+                        @include bx;
+                        padding: 26px 0 28px;
+                        border-bottom: 1px solid $bor-gray-03;
+                        .answer-top {
+                            @include bx;
+                            margin-bottom: 15px;
+                            .mmg-name {
+                                display: inline-block;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: $fg-gray-01;
+
+                            }
+                            .date {
+                                @include bx;
+                                display: inline-block;
+                                margin-left: 16px;
+                                padding-left: 17px;
+                                font-size: 12px;
+                                font-weight: 300;
+                                color: $fg-gray-03;
+                                @include line($ht:12px, $bg:$bor-gray-03);
+                            }
+                        }
+                        .txt {
+                            font-size: 14px;
+                            font-weight: 300;
+                            line-height: 1.6;
+                            color: $fg-gray-01;
+                        }
+                    }
+                }
+            }
+            
+            &.ingred {
+                .container {
+                    .bn-box {
+                        padding-bottom: 30px;
+                        text-align: center;
+                    }
+                    
+                    .view-area {
+                        padding-bottom: 50px;
+                        .view-box {
+                            min-height: 270px;
+                            padding: 20px 0;
+                            text-align: left;
+                            .txt {
+                                font-size: 15px;
+                                font-weight: 300;
+                                line-height: 2;
+                                color: $fg-gray-04;
+                            }
+                        }
+                    }
+                    
+                    .tbl-col {
+                        .tbl {
+                            .on {
+                                border: 2px solid $bor-red-01;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

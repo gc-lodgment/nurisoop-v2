@@ -278,11 +278,11 @@
                             border-bottom: 2px solid $bor-gray-07;
                         }
                         .dt-tag {
-                            padding: 14px 0 12px;
+                            padding: 16px 0 17px;
                             border-bottom: 1px solid $bor-gray-04;
                             span {
                                 display: inline-block;
-                                padding-right: 3px;
+                                padding-right: 5px;
                                 font-size: 14px;
                                 color: $fg-green-01;
                             }
@@ -299,11 +299,11 @@
                             @include bx;
                             display: table;
                             width: 100%;
-                            padding: 10px 0;
+                            padding: 14px 0;
                             .info-tit {
                                 display: table-cell;
                                 vertical-align: top;
-                                width: 145px;
+                                width: 163px;
                                 font-size: 14px;
                                 line-height: $lh;
                             }
@@ -323,7 +323,7 @@
                         }
                         
                         &.info-price-box {
-                            padding: 17px 0 13px;
+                            padding: 14px 0 13px;
                             .prd-info {
                                 $lh:24px;
                                 .info-tit {
@@ -353,6 +353,7 @@
                         }
                         
                         &.info-prd-box {
+                            padding: 15px 0 14px;
                             .prd-info {
                                 .info-txt {
                                     .info-prd-list {
@@ -369,7 +370,7 @@
                     //금액
                     .price-box {
                         .top-box {
-                            padding: 20px 0 18px;
+                            padding: 22px 0 22px;
                             p {
                                 font-size: 13px;
                                 font-weight: 300;
@@ -383,7 +384,7 @@
                         .price-total {
                             @include bx;
                             @include clearfix;
-                            padding: 20px 0 20px;
+                            padding: 21px 0 23px;
                             border-bottom: 1px solid $bor-gray-03;
                             .total-box {
                                 float: right;
@@ -394,7 +395,7 @@
                                     vertical-align: middle;
                                 }
                                 em {
-                                    padding: 0 5px 0 10px;
+                                    padding: 0 9px 0 10px;
                                     font-size: 22px;
                                     line-height: 1;
                                     vertical-align: middle;
@@ -418,7 +419,7 @@
                             li {
                                 @include bx;
                                 float: left;
-                                padding: 0 4px 15px;
+                                padding: 0 4px 0;
                                 a {
                                     @include btn-gary-bg;
                                     &.btn-buy {
@@ -430,6 +431,7 @@
                         
                         .pay-box {
                             float: right;
+                            margin-top: 18px;
                         }
                     }
                 }
@@ -464,7 +466,7 @@
                                         padding: 10px 20px;
                                         .img {
                                             @include bx;
-                                            width: 90px;
+                                            width: 87px;
                                             margin: 0 auto;
                                             background: $bg-gray-02;
                                         }
@@ -552,14 +554,15 @@
                                         @include bx;
                                         display: block;
                                         .view-box {
-                                            padding: 26px 30px 10px;
+                                            padding: 22px 31px 13px;
                                             .btn-img-box {
                                                 z-index: 1;
-                                                @include position(absolute, 27px, $right:30px);
+                                                @include position(absolute, 25px, $right:30px);
                                                 .img-list {
                                                     @include bx;
                                                     @include clearfix;
                                                     li {
+                                                        @include bx;
                                                         float: left;
                                                         display: block;
                                                         width: 75px;
@@ -567,28 +570,29 @@
                                                         margin-left: 5px;
                                                         border: 1px solid $bor-gray-10;
                                                         .img-box {
+                                                            @include bx;
                                                             overflow: hidden;
-                                                            position: relative; 
                                                             padding-top: 100%;
-                                                            .img-ct {
+                                                            a {
                                                                 @include position(absolute, 0, 0, 0, 0);
+                                                                display: block;
+                                                                text-align: center;
                                                                 -webkit-transform: translate(50%, 50%); 
                                                                 -ms-transform: translate(50%, 50%); 
+                                                                -o-transform: translate(50%, 50%); 
                                                                 transform: translate(50%, 50%);
-                                                                a {
+                                                                img {
                                                                     @include position(absolute, 0, 0);
                                                                     display: block;
                                                                     max-width: inherit;
                                                                     height: 100%;
                                                                     -webkit-transform: translate(-50%, -50%); 
                                                                     -ms-transform: translate(-50%, -50%); 
+                                                                    -o-transform: translate(-50%, -50%); 
                                                                     transform: translate(-50%, -50%); 
-                                                                    img {
-                                                                        max-width: inherit;
-                                                                        height: 100%;
-                                                                        /*.ie8 & {
-
-                                                                        }*/
+                                                                    .ie8 & {
+                                                                        position: relative;
+                                                                        display: inline-block;
                                                                     }
                                                                 }
                                                             }
@@ -599,14 +603,14 @@
                                             
                                             .view-top {
                                                 .ico-star {
-                                                    @include ico-star;
+                                                    @include ico-star(15px, 14px);
                                                 }
                                                 .user-name {
                                                     cursor: pointer;
                                                     @include bx;
                                                     display: inline-block;
                                                     width: 74px;
-                                                    margin-left: 15px;
+                                                    margin-left: 13px;
                                                     padding-left: 16px;
                                                     font-size: 14px;
                                                     line-height: 20px;
@@ -637,7 +641,7 @@
                                             
                                             .view-mid {
                                                 display: inline-block;
-                                                margin: 20px 0 16px;
+                                                margin: 20px 0 19px;
                                                 .txt {
                                                     @include bx;
                                                     cursor: pointer;
@@ -691,7 +695,7 @@
                                                     em {
                                                         padding-left: 3px;   
                                                         font-weight: 500;
-                                                        color: #333;
+                                                        color: $fg-black;
                                                     }
                                                     @include trasBase(1);
                                                     &:hover {
@@ -748,9 +752,10 @@
                                                 }
                                                 
                                                 .view-mid {
+                                                    display: block;
                                                     .txt {
                                                         cursor: auto;
-                                                        width: 100%;
+                                                        width: auto;
                                                         text-overflow: inherit;
                                                         white-space: normal;
                                                         word-wrap: break-word;
@@ -834,12 +839,12 @@
                     @include bx;
                     box-sizing: border-box;
                     width: 100%;
-                    text-align: center;
-                    padding-top: 50px;
                     
                     //detail area
                     .dt-area {
+                        padding-top: 50px;
                         @include bx;
+                        text-align: center;
                         .img-bn {
                             padding-bottom: 50px;
                         }
@@ -847,17 +852,92 @@
                     
                     //필수고시정보, 사용시 주의사항
                     .necess-area {
-                        
+                        padding: 0 0 70px;
+                        .ness-box {
+                            .ness-tit {
+                                padding: 68px 0 20px;
+                                font-size: 17px;
+                                letter-spacing: 0;
+                                line-height: 1;
+                            }
+                            
+                            @include tbl-row-com;
+                            
+                            .using-box {
+                                @include bx;
+                                padding: 1px 30px 24px;
+                                border-top: 2px solid $bor-black-01;
+                                border-bottom: 1px solid $bor-gray-03;
+                                .using-list {
+                                    .dep-1 {
+                                        padding-top: 24px;
+                                        font-size: 15px;
+                                        line-height: 1.6;
+                                        font-weight: 300;
+                                        color: $fg-black;
+                                        .using-list-2 {
+                                            padding-left: 18px;
+                                            li {
+                                                color: $fg-gray-09;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                     
                     //구매금액별 사은품
                     .gift-area {
-                        
+                        padding: 50px 0 70px;
                     }
                     
                     //배송/샘플 안내 
                     .ssinfo-area {
-                        
+                        padding: 50px 0 70px;
+                        @include tbl-row-com(0){
+                            .tbl {
+                                border: 1px solid $bor-gray-03;
+                                border-bottom: 0;
+                                td {
+                                    padding-top: 25px;
+                                    padding-bottom: 24px;
+                                }
+                                .fg-red {
+                                    color: $fg-red-03 !important;
+                                }
+                                
+                                .info-tit {
+                                    padding: 26px 0 3px;
+                                    color: $fg-black;
+                                    
+                                    &:first-child {
+                                        margin-top: -25px;
+                                    }
+                                }
+                                
+                                .info-txt {
+                                    word-break: keep-all;
+                                    line-height: 1.7;
+                                }
+                                
+                                .info-list {
+                                    li {
+                                        @include bx;
+                                        padding-left: 10px;
+                                        word-break: keep-all;
+                                        line-height: 1.7;
+                                        &:before {
+                                            content: '';
+                                            @include position(absolute, 12px, 0);
+                                            width: 5px;
+                                            height: 1px;
+                                            background: #777;
+                                        }
+                                    }
+                                }
+                            }
+                        };
                     }
                 }
             }

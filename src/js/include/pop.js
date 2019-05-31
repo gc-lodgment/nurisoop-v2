@@ -17,6 +17,7 @@ function rvPopOpen(id){
         dtPopSlide(id, pager);
         
     });
+    
     $('html').css({'overflow': 'hidden', 'height': '100%'});
     $(id).on('scroll touchmove mousewheel', function(event) { 
         event.preventDefault();     

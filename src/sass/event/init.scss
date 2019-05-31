@@ -5,7 +5,296 @@
 
 /* 콘텐츠 영역 */
 .contents {
+    padding-bottom: 150px;
+    /* sub top */
+    @include sub-top;
     
+    /* 리스트 */
+    &.list {
+        .evt-sect {
+            .container {
+                @include tab($num:4, $a-pd:10px 0 12px);
+                
+                //이벤트 영역
+                .evt-area {
+                    @include bx;
+                    
+                    .page-area {
+                        @include pagenation;
+                    }
+                    
+                    /* 진행중, 지난 이벤트 */
+                    .evt-list-box {
+                        @include bx;
+                        margin: 0 -20px;
+                        .evt-list {
+                            @include bx;
+                            @include clearfix;
+                            > li {
+                                @include bx;
+                                float: left;
+                                width: 50%;
+                                margin-top: 29px;
+                                padding: 0 20px;
+                                .evt-box {
+                                    @include bx;
+                                    display: block;
+                                    @include trasBase(1);
+                                    .img-box {
+                                        @include bx;
+                                        width: 100%;
+                                        img {
+                                            border: 1px solid $bor-gray-03;
+                                        }
+                                    }
+
+                                    .txt-box {
+                                        padding: 10px 0 11px;
+                                        p {
+                                            &.evt-list-tit {
+                                                font-size: 20px;
+                                                line-height: 1.5;
+                                                letter-spacing: 0;
+                                            }
+                                            &.evt-list-txt {
+                                                font-size: 15px;
+                                                line-height: 1.5;
+                                                font-weight: 300;
+                                                letter-spacing: 0;
+                                                color: $fg-gray-04;
+                                            }
+                                            &.evt-list-day {
+                                                margin-top: 10px;
+                                                span {
+                                                    @include bx;
+                                                    display: inline-block;
+                                                    font-size: 15px;
+                                                    font-weight: 300;
+                                                    letter-spacing: 0;
+                                                    &.day-tit {
+                                                        color: $fg-gray-04;
+                                                    }
+                                                    &.day-txt {
+
+                                                        & + .day-txt { 
+                                                            margin-left: 16px;
+                                                            padding-left: 20px;
+                                                            @include line($bg:$bor-gray-09);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:hover {
+                                        @include trasBase;
+                                    }
+                                }  
+                            }
+                        }
+                        .page-area {
+                            margin-top: 24px;
+                        }
+                    }
+                    
+                    /* 출석체크 */
+                    .attend-box {
+                        @include bx;
+                        margin: 0 auto;
+                        padding-top: 30px;
+                        text-align: center;
+                        .attendance_back2 {
+                            @include bx;
+                            width: 950px; 
+                            height: 970px;
+                            margin: 0 auto;
+                            font-size: 12px;
+                            font-family: '돋움', Dotum, sans-serif;
+                            line-height: 1.5;
+                            letter-spacing: -0.1px;
+                            background-image: url(http://static.nurisoop.co.kr/images/event/20150901/event_back.jpg);
+                            table {
+                                width: auto;
+                                border-spacing: 0;
+                            }
+                            .poBox {
+                                position: absolute;
+                                .msgBox {
+                                    position: relative; 
+                                    top: 293px;
+                                    left: 220px;  
+                                    width: 340px; 
+                                    padding-top: 13px; 
+                                    text-align: center;
+                                    color: #fff; 
+                                }
+                                .checkedBtnBox {
+                                    position: relative; 
+                                    top: 293px; 
+                                    left: 590px; 
+                                    width: 157px;
+                                }
+                                .stampBox {
+                                    position: relative; 
+                                    top: 170px; 
+                                    left: 722px; 
+                                    width: 157px;
+                                }
+                            }
+                            .calendar_t {
+                                width: 630px;
+                                td {
+                                    width: 90px;
+                                    height: 83px;
+                                    padding: 6px;
+                                    border-right: 1px solid #454f4f;
+                                    border-bottom: 1px solid #454f4f;
+                                    background-color: #fff;    
+                                    div {
+                                        width: 20px; 
+                                        height: 20px;
+                                        font-size: 10px;
+                                        font-weight: bold;  
+                                        text-align: center;
+                                        line-height: 20px; 
+                                        background-color: #eee;
+                                    }
+                                }
+                            }
+                            .stamp {
+                                display: block;
+                                width: 51px;
+                                height: 51px;
+                                margin: 0 auto;
+                                text-align: center;
+                                img {
+                                    max-width: 51px;
+                                    max-height: 51px;
+                                }
+                            }
+
+                            //info
+                            .box-attendanc-info {
+                                position: relative; 
+                                box-sizing: border-box; 
+                                width: 950px; 
+                                margin: 0 auto; 
+                                padding: 0;
+                                figure {
+                                    position: relative; 
+                                    box-sizing: border-box; 
+                                    width: 100%; 
+                                    margin: 0; 
+                                    padding: 0;
+                                    img {
+                                        width: 100%; 
+                                        border: 0;
+                                    }
+                                }
+                            }
+
+                            //color
+                            .clime {
+                                color: #e3f193;
+                            }
+                            .cRed {
+                                color: #ea0000;
+                            }
+                            .cGray {
+                                color: #666;
+                            }
+                        }
+                    }
+                    
+                    /* 당첨자 발표 */
+                    .winner-box {
+                        padding-top: 50px;
+                        
+                        .top-box {
+                            @include bx;
+                            @include clearfix;
+                            padding-bottom: 12px;
+
+                            //select
+                            .form-sel {
+                                float: left;
+                                @include sel-com(73px, 28px, 0 8px 0 0);
+                            }
+                            
+                            //input search
+                            .srch-ip {
+                                float: left;
+                                @include ip-srch;
+                            }
+                        }
+                        
+                        @include tbl-col-gray;
+                        
+                        .page-area {
+                            margin-top: 5px;
+                        }
+                        
+                    }
+                    
+                }
+
+            }
+        }
+    }
     
-    
+
+    /* 디테일 뷰 */
+    &.view {
+        .view-sect {
+            .container {
+                .top-box {
+                    @include view-top;
+                }
+
+                .view-box {
+                    @include bx;
+                    padding: 40px 0;
+                    text-align: center;
+                    .img {
+                        
+                    }
+                    /* 당첨자 발표 */
+                    &.winner {
+                        .img {
+                            @include bx;
+                            max-width: 830px;
+                            margin: 0 auto;
+                        }
+                        .winner-box {
+                            @include bx;
+                            width: 830px;
+                            margin: 0 auto;
+                            padding: 33px 30px;
+                            background: #faf1e8;
+                            .txt {
+                                font-size: 12px;
+                                line-height: 2;
+                                color: #694932;
+                                font-family: '돋움', Dotum, sans-serif;
+                            }
+                        }
+                    }
+                }
+
+                .page-box {
+                    @include view-page;
+                }
+                
+                .btn-box {
+                    @include bx;
+                    margin-top: 20px;
+                    float: right;
+                    .btn-list {
+                        @include btn-gray-bor(100px);
+                    }
+                }
+            }
+        }
+    }
 }

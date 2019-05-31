@@ -15,6 +15,9 @@ body {
 	line-height: 1.3; 
 	color: $primary-color;
 }
+input, select, textarea {
+	font-family: $font-stack; 
+}
 
 table {
     @include bx;
@@ -27,9 +30,20 @@ table {
         text-align: center;
         vertical-align: middle;
     }
+    .ie & {
+        border-collapse: inherit;
+    }
 }
-input::-webkit-input-placeholder,
-input:-ms-input-placeholder,
+input::-webkit-input-placeholder {
+    color: $fg-gray-07;
+    letter-spacing: -0.5px;
+	font-family: $font-stack; 
+}
+input:-ms-input-placeholder {
+    color: $fg-gray-07;
+    letter-spacing: -0.5px;
+	font-family: $font-stack; 
+}
 input::placeholder {
     color: $fg-gray-07;
     letter-spacing: -0.5px;
@@ -58,7 +72,7 @@ input::placeholder {
         color: $fg-gray-01;
         em {
             font-weight: 500;
-            color: #333;
+            color: $fg-black;
         }
     }
 }
@@ -88,19 +102,57 @@ input::placeholder {
     background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
     background-position: -50px -173px;
 }
-//cls 
-.ico-srch-cls {
-    $wt:11px;
-    @include position(absolute, 50%, $right:0);
+//자물쇠 아이콘
+.ico-lock {
     display: inline-block;
-    box-sizing: border-box;
-    width: $wt;
-    height: $wt;
-    margin-top: -($wt/2);
+    width: 10px;
+    height: 12px;
     background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
-    background-position: -89px -83px;
+    background-position: 0px -247px;
 }
-//phone
+//new 아이콘 - 진회색
+.ico-new {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+    background-position: -46px -248px;
+}
+//file 첨부되어있다는 것을 알려주는 아이콘
+.ico-file {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+    background-position: -22px -247px;
+}
+//고객센터 view 본문 file 아이콘
+.ico-file-02 {
+    @include bx;
+    margin-left: 3px;
+    padding-left: 22px;
+    span {
+        $wt:15px;
+        @include position(absolute, 50%, 0);
+        display: inline-block;
+        box-sizing: border-box;
+        width: $wt;
+        height: $wt;
+        margin-top: -($wt/2);
+        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: -23px -173px;
+    }
+}
+//달력 아이콘
+.ico-cal {
+    display: inline-block;
+    width: 16px;
+    height: 18px;
+    vertical-align: middle;
+    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+    background-position: -84px -44px;
+}
+//모바일 리뷰 아이콘
 .ico-phone {
     span {
         //@include position(absolute, 50%, 0);
@@ -112,6 +164,18 @@ input::placeholder {
         background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
         background-position: -1px -173px;
     }
+}
+//cls 
+.ico-srch-cls {
+    $wt:11px;
+    @include position(absolute, 50%, $right:0);
+    display: inline-block;
+    box-sizing: border-box;
+    width: $wt;
+    height: $wt;
+    margin-top: -($wt/2);
+    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+    background-position: -89px -83px;
 }
 
 .sale-txt {
@@ -190,6 +254,9 @@ input::placeholder {
         font-size: 15px;
         font-weight: 300;
         line-height: 23px;
+        .firefox & {
+            width: 43px;
+        }
     }
     span {
         @include position(absolute, $right:0);
@@ -650,7 +717,7 @@ $hd-ht: ($gnb-ht+31);
                                         a {
                                             &:hover {
                                                 font-weight: 500;
-                                                color: #333;
+                                                color: $fg-black;
                                                 background: $bg-gray-01;
                                                 @include trasBase(1, $time:0.6s);
                                             }
@@ -684,7 +751,7 @@ $hd-ht: ($gnb-ht+31);
             .container {
                 .lnb-box {
                     z-index: 1;
-                    @include position(absolute, 20px, $right:0);
+                    @include position(absolute, 17px, $right:0);
                     .btn-link, .txt {
                         display: inline-block;
                         font-size: 14px;
@@ -725,7 +792,7 @@ $hd-ht: ($gnb-ht+31);
                             font-size: 14px;
                             color: $fg-gray-01;
                             &.f-bd {
-                                color: #333;
+                                color: $fg-black;
                             }
                             &:hover {
                                 @include trasBase(0.6);
@@ -1352,6 +1419,126 @@ $hd-ht: ($gnb-ht+31);
         }
     }
 }
+
+
+/* datepicker */
+.ui-datepicker {
+    * {
+	    font-family: $font-stack; 
+    }
+    @include bx;
+    margin-top: -1px;
+    padding: 3px;
+    border-radius: 0;
+    border: 1px solid #c7c7c7;
+    //제목
+    .ui-datepicker-header {
+        @include bx;
+        height: 36px;
+        line-height: 36px;
+        border: 0;
+        border-radius: 0;
+        background: $bg-gray-01;
+        .ui-corner-all {
+            @include position(absolute, 50%);
+            cursor: pointer;
+            width: 7px;
+            height: 10px;
+            margin-top: -5px;
+            .ui-icon {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                margin-top: 0;
+                margin-left: 0;
+                background: url(http://static.nurisoop.co.kr/img/renew/common/btn_cal.png) no-repeat;
+            }
+            &:hover {
+                border: 0;
+            }
+            &.ui-datepicker-prev {
+                left: 10px;
+                .ui-icon {
+                    @include bx;
+                    background-position: 0 0;
+                }
+                &:hover {
+                    .ui-icon {
+                        background-position: 0 -16px;
+                    }
+                }
+            }
+            &.ui-datepicker-next {
+                right: 7px;
+                .ui-icon {
+                    background-position: -13px 0;
+                }
+                &:hover {
+                    .ui-icon {
+                        background-position: -13px -16px;
+                    }
+                }
+            }
+            
+        }
+        .ui-datepicker-title {
+            span {
+                font-size: 14px;
+                font-weight: 300;
+                color: $fg-black;
+            }
+        }
+    }
+    
+    //달력
+    .ui-datepicker-calendar {
+        font-size: auto;
+        margin: 3px 0 10px;
+        padding: 0;
+        thead {
+            th {
+                span {
+                    height: 36px;
+                    padding: 0;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: $fg-black;
+                }
+            }
+        }
+        tbody {
+            td {
+                a {
+                    @include bx;
+                    display: inline-block;
+                    width: 27px;
+                    height: 27px;
+                    padding: 0;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 27px;
+                    color: $fg-gray-06;
+                    border: 0;
+                    background: #fff;
+                    &.ui-state-default, &.ui-state-highlight {
+                        color: $fg-gray-06;
+                    }  
+                    &.ui-state-active {
+                        color: #fff;
+                        background: #01787c;
+                    }
+                    //기간 
+                    &.ui-state-ing {
+                        background: #dcdcdc;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
 
 
 

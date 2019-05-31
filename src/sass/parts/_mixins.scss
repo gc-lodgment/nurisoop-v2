@@ -65,7 +65,7 @@
 }
 
 //tab
-@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:18px 0 17px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:#333){
+@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:18px 0 17px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:$fg-black){
     // num = li가 여러개일 경우, li가 한개일경우 $tab-li-wd 값 설정
     @if( $num  == null ){
         .tab-box {
@@ -244,18 +244,15 @@
 }
 
 
-
-
-
 //slide btn control 
-@mixin btn-controls($top:50%, $left:50%, $mt:-22px, $wd:null, $a-wd:23px, $a-ht:41px, $bx:0){
+@mixin btn-controls($top:50%, $left:50%, $mt:-22px, $wd:100%, $a-wd:23px, $a-ht:41px, $bx:0){
     .bx-controls {
         .bx-controls-direction {
             @include position(absolute, $top, $left);
             z-index: 51;
             margin-top: $mt;
             width: $wd;
-            @if( $wd != null ){
+            @if( $wd != 100% ){
                 margin-left: -($wd/2);
             }
             @include trasBase(0);
@@ -408,7 +405,7 @@
 }
 
 //ico star
-@mixin ico-star($wd:21px, $ht:20px, $bg-on-p:-33px 0){
+@mixin ico-star($wd:21px, $ht:20px){
     @include bx;
     display: inline-block;
     vertical-align: middle;
@@ -417,14 +414,24 @@
         display: inline-block;
         width: $wd;
         height: $ht;
-        margin-right: 1px;
         font-size: 0;
         text-indent: -999px;
-        background: url(http://static.nurisoop.co.kr/img/renew/common/icon_gd.png) no-repeat;
-        background-size: auto $ht;
-        background-position: 0 0;
+        background: url(http://static.nurisoop.co.kr/img/renew/common/icon_gd.png) no-repeat center;
+        background-size: cover;
         &.on {
-            background-position: $bg-on-p;
+            background: url(http://static.nurisoop.co.kr/img/renew/common/icon_gd_on.png) no-repeat center;
+            background-size: cover;
+        }
+        
+        .ie8 & {
+            background: none;
+            -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://static.nurisoop.co.kr/img/renew/common/icon_gd.png', sizingMethod='scale');
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://static.nurisoop.co.kr/img/renew/common/icon_gd.png', sizingMethod='scale');
+            &.on {
+                background: none;
+                -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://static.nurisoop.co.kr/img/renew/common/icon_gd_on.png', sizingMethod='scale');
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://static.nurisoop.co.kr/img/renew/common/icon_gd_on.png', sizingMethod='scale');
+            }
         }
     }
 }
@@ -487,6 +494,12 @@
         font-size: $fs;
         line-height: $ht;
         color: $fg;
+        
+        .safari & {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            line-height: 1;
+        }
     }
     .btn-srch {
         @include position(absolute, 50%, $right:$ico-r);
@@ -503,7 +516,7 @@
 }
 
 //select 
-@mixin sel-com($wd:73px, $ht:28px, $mg:0 8px 0 19px, $pd:0 15px 0 6px, $fs:14px, $fg:$fg-gray-01, $bor-bg:$bor-gray-03){
+@mixin sel-com($wd:73px, $ht:28px, $mg:0, $pd:0 15px 0 6px, $fs:14px, $fg:$fg-gray-01, $bor-bg:$bor-gray-03){
     @include bx;
     width: $wd;
     height: $ht;
@@ -515,13 +528,35 @@
     color: $fg;
     border: 1px solid $bor-bg;
     background: url(http://static.nurisoop.co.kr/img/renew/common/bg_sel.png) no-repeat right center;
+    
+    .ie9 &, .ie8 & {
+        padding-right: 0;
+    }
+}
+
+//datepicker
+@mixin cal($wd:94px, $ht:28px, $m-r:3px, $pd:0 8px, $fs:13px, $fg:$fg-gray-01, $bor-bg:$bor-gray-03){
+    @include bx;
+    cursor: pointer;
+    display: inline-block;
+    .ip-cal {
+        @include bx;
+        width: $wd;
+        height: $ht;
+        margin-right: $m-r;
+        padding: $pd;
+        font-size: $fs;
+        line-height: $ht;
+        color: $fg;
+        border: 1px solid $bor-bg;
+    }
 }
 
 //review top box - 상품상세, 상품후기-일반리뷰
-@mixin rv-top-box($wd:73px, $ht:28px){
+@mixin rv-top-box($wd:73px, $ht:28px, $mg:0 8px 0 21px){
     @include bx;
     @include clearfix;
-    padding: 5px;
+    padding: 5px 5px 4px;
     line-height: 0;
     border: 1px solid $bor-gray-03;
     .btn-list {
@@ -531,11 +566,12 @@
             height: $ht;
             font-size: 14px;
             line-height: $ht;
+            letter-spacing: 0;
             font-weight: 300;
             color: $fg-gray-01;
             &.on {
                 font-weight: 400;
-                color: #333;
+                color: $fg-black;
             }
 
             & + a {
@@ -555,6 +591,7 @@
                 @include bx;
                 padding-left: 20px;
                 font-size: 14px;
+                letter-spacing: 0;
                 @include chkbox;
             }
         }
@@ -562,7 +599,7 @@
         //select
         .form-sel {
             float: left;
-            @include sel-com($wd:$wd, $ht:$ht);
+            @include sel-com($wd:$wd, $ht:$ht, $mg:$mg);
         }
     }
 }
@@ -825,7 +862,7 @@
                                     line-height: 1;
                                     em {
                                         padding-left: 2px;
-                                        color: #333;
+                                        color: $fg-black;
                                         font-weight: 500;
                                     }
                                     &.rv-user {
@@ -956,7 +993,7 @@
 
                                 &.txt-sale {
                                     float: right;
-                                    color: #333;
+                                    color: $fg-black;
                                 }
                             }
                         }
@@ -1095,6 +1132,83 @@
     }
 }
 
+//table row
+@mixin tbl-row-com($bor-t-w:2px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:19px 15px 17px 29px, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:10px 15px 10px 29px, $td-fg:$fg-gray-09, $td-bg:#fff){
+    .tbl-row {
+        @include bx;
+        width: 100%;
+        .tbl {
+            border-top: $bor-t-w solid $bor-t-bg;
+            th, td {
+                font-size: $fs;
+                font-weight: 300;
+                text-align: left;
+                border-bottom: 1px solid $bor-b-bg;
+            }
+            th {
+                padding: $th-pd;
+                color: $th-fg;
+                background: $th-bg;
+            }
+            td {
+                padding: $td-pd;
+                color: $td-fg;
+                background: $td-bg;
+            }
+        }
+        @content
+    }    
+}
+
+//tbl col th gray
+@mixin tbl-col-gray($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:17px 0, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:15px 0, $td-fg:$fg-gray-04, $a-pd:0 70px){
+    .tbl-col {
+        @include bx;
+        .tbl {
+            border-top: $bor-t-w solid $bor-t-bg;
+            th, td {
+                font-size: $fs;
+                border-bottom: 1px solid $bor-b-bg;
+            }
+            thead {
+                tr {
+                    th {
+                        padding: $th-pd;
+                        font-weight: 400;
+                        color: $th-fg;
+                        background: $th-bg;
+                        @include line($ht:12px, $bg:$bor-gray-09);
+                        &:first-child {
+                            &:before {
+                                content: none;
+                            }
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        padding: $td-pd;
+                        color: $td-fg;
+                        a {
+                            display: block;
+                            padding: $a-pd;
+                            text-align: left;
+                            color: inherit;
+                            @include trasBase(1);
+                            &:hover {
+                                @include trasBase(0.6);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @content
+    }
+}
+
 //table - prd detail
 @mixin tbl-col-prd($bor-t-w:1px, $bor-t-bg:$bor-black-01, $th-pd:10px 22px, $th-fs:13px, $th-fg:$fg-gray-01, $th-bor-bg:$bor-gray-04, $td-pd:20px 20px, $td-fs:16px, $td-fg:$fg-gray-01, $td-bor-bg:$bor-gray-03){
     .tbl-col {
@@ -1125,3 +1239,139 @@
         }
     }
 }
+
+//sub - top tit / 이벤트, 상품후기, 고객센터
+@mixin sub-top($pd:54px 0 62px, $fs:20px, $pd-t:12px, $txt-fs:15px, $txt-fg:$fg-gray-03){
+    .top-sect {
+        padding: $pd;
+        .container {
+            text-align: center;
+            .evt-tit {
+                font-size: $fs;
+            }
+            .evt-txt {
+                padding-top: $pd-t;
+                font-size: $txt-fs;
+                line-height: 1.5;
+                color: $txt-fg;
+            }
+        }
+    }
+}
+
+//view - top
+@mixin view-top($bor-t-w:2px, $bor-t-bg:$bor-black-01, $tit-pd:15px 0 20px, $tit-fs:17px, $num-pd:12px 0, $num-bor-bg:$bor-gray-03, $num-fs:15px, $num-tit-fg:$fg-gray-04, $num-txt-fg:$fg-black){
+    @include bx;
+    .view-tit {
+        border-top: $bor-t-w solid $bor-t-bg;
+        padding: $tit-pd;
+        font-size: $tit-fs;
+        line-height: 1;
+        text-align: center;
+    }
+    .view-num-box {
+        padding: $num-pd;
+        border-top: 1px solid $num-bor-bg;
+        border-bottom: 1px solid $num-bor-bg;
+        .view-num {
+            @include bx;
+            display: inline-block;
+            line-height: 1;
+            span, a {
+                font-size: $num-fs;
+                line-height: 1;
+                &.num-tit {
+                    color: $num-tit-fg;
+                }
+                &.num-txt {
+                    color: $num-txt-fg;
+                }
+            }
+            a {
+                font-size: ($num-fs)-(1);
+                &.num-txt {
+                    color: $fg-gray-06;
+                }
+                @include trasBase(1);
+                &:hover {
+                    @include trasBase(0.6);
+                }
+            }
+            & + .view-num {
+                margin-left: 17px;
+                padding-left: 20px;
+                @include line($bg:$bor-gray-09);
+            }
+        }
+        
+        & + .view-num-box {
+            border-top: 0;
+        }
+    }
+}
+
+//view - page
+@mixin view-page($pd:0 20px, $bor-bg:$bor-gray-03, $fs:14px, $ht:38px, $fg:$fg-gray-01){
+    @include bx;
+    div {
+        @include bx;
+        display: table;
+        width: 100%;
+        padding: $pd;
+        border-bottom: 1px solid $bor-bg;
+        * {
+            font-size: $fs;
+            line-height: $ht;
+            color: $fg;
+        }
+        .txt {
+            @include bx;
+            display: table-cell;
+            padding-left: 15px;
+            width: 100px;
+            height: $ht;
+            span {
+                $ht:5px;
+                @include position(absolute, 50%, 0);
+                display: block;
+                width: 7px;
+                height: $ht;
+                margin-top: -($ht/2);
+                background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+            }
+        }
+        .link {
+            @include bx;
+            display: table-cell;
+            height: $ht;
+            a {
+                display: inline-block;
+                @include trasBase(1);
+                &:hover {
+                    @include trasBase
+                }
+            }
+        }
+        &.prev {
+            .txt {
+                span {
+                    background-position: -124px -227px;
+                }
+            }
+        }
+        &.next {
+            .txt {
+                span {
+                    margin-top: -1px;
+                    background-position: -137px -227px;
+                }
+            }
+        }
+
+        &:first-child {
+            border-top: 1px solid $bor-bg;
+        }
+    }
+}
+
+

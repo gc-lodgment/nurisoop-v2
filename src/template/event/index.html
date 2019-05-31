@@ -7,8 +7,371 @@
 <div class="wrapper">
 	@@include('../include/_header.html')
 	
-	<div class="contents">
-	    이벤트
+	<div class="contents list">
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">이벤트</h2>
+                <p class="evt-txt">
+                    유명한 연예인의 모델료가 고객님이 구매하시는 화장품값에 포함되어 있다는 사실, 알고 계신가요?<br>
+                    누리숲은 이러한 비용보다는 다양한 할인이벤트를 진행하여 고객님들께 직접 혜택을 드리고자 노력합니다.
+                </p>
+            </div>
+        </div>
+        
+        <div class="evt-sect">
+            <div class="container">
+                <div class="tab-box">
+                    <ul class="tab-list">
+                        <li class="nth-1 on"><a href="#evtIng">진행중 이벤트</a></li>
+                        <li class="nth-2"><a href="#evtOld">지난 이벤트</a></li>
+                        <li class="nth-3"><a href="#evtChk">출첵 이벤트</a></li>
+                        <li class="nth-4"><a href="#evtWinner">당첨자 발표</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 진행중 이벤트 -->
+                <div id="evtIng" class="evt-area" style="display: block;">
+                    <div class="evt-list-box">
+                        <ul class="evt-list">
+                            <li class="nth-1">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_weekly.jpg" alt="1+1 위클리 이벤트">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">1+1 위클리 이벤트</p>
+                                        <p class="evt-list-txt">매주 일요일 정오 12시 위클리 이벤트 제품이 공개됩니다.</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">매주</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nth-2">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_chk.jpg" alt="출석체크하면 2천원 할인쿠폰!!">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">출석체크하면 2천원 할인쿠폰!!</p>
+                                        <p class="evt-list-txt">출석체크 15회 이상 하신 고객님께 2,000원 할인쿠폰을 드립니다.</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">매달</span>
+                                            <span class="day-txt">매월 1일(공휴일/휴무일의 경우 익일 지급)</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 페이지 이동 예시 -->
+                            <li class="nth-3">
+                                <a href="./index_ing_view.html" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_review.jpg" alt="후기쓰고 적립금 받자!">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">후기쓰고 적립금 받자! ex-페이지이동</p>
+                                        <p class="evt-list-txt">제품 사용 후, 고객님들의 솔직한 생생후기를 들려주시면 적립금을 지급해드립니다.</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">매달</span>
+                                            <span class="day-txt">매월 초 베스트후기 발표</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nth-4">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_member.jpg" alt="누리숲 회원가입 혜택 안내">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">누리숲 회원가입 혜택 안내</p>
+                                        <p class="evt-list-txt">혜택가득! 사은품 가득! 누리숲 회원가입하면 혜택이 펑펑!</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">2014.10.27 ~ 준비수량 소진시까지</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <!-- board-page -->
+                        <div class="page-area">
+                            <div id="pagenation" class="page-box">
+                                <a class="btn-m-prev" href=""><span></span></a>
+                                <a class="btn-prev" href=""><span></span></a>
+                                <!-- 해당 페이지일때 on -->
+                                <a class="txt on" href=""><span>1</span></a>
+                                <!--<a class="txt" href=""><span>2</span></a>-->
+                                <a class="btn-next" href=""><span></span></a>
+                                <a class="btn-m-next" href=""><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 지난 이벤트 -->
+                <div id="evtOld" class="evt-area" style="display: none;">
+                    <div class="evt-list-box">
+                        <ul class="evt-list">
+                            <li class="nth-1">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_opening_2019.jpg" alt="오직 삼일간! 누리숲에서 피부 개강 대작전!">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">오직 삼일간! 누리숲에서 피부 개강 대작전!</p>
+                                        <p class="evt-list-txt">최대 60% 할인</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">2019.02.26 ~ 02.28</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nth-2">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_chris_2018.jpg" alt="오직 이틀! 최대 65% 누리 미리 크리스마스~">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">오직 이틀! 최대 65% 누리 미리 크리스마스~</p>
+                                        <p class="evt-list-txt">누리자! 미리 크리스마스!</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">2018.12.19 ~ 2018.12.20</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nth-3">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_examinee_2019.jpg" alt="누리숲 수험생 응원 쿠폰 이벤트">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">누리숲 수험생 응원 쿠폰 이벤트</p>
+                                        <p class="evt-list-txt">누리숲 카플친 대상 수험생 응원 쿠폰 증정!</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">2018.11.20 ~ 2018.12.06</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nth-4">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_givingDay_2018.jpg" alt="누리숲 추수제! 피부풍작 BIG DEAL!">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">누리숲 추수제! 피부풍작 BIG DEAL!</p>
+                                        <p class="evt-list-txt">가을엔 황금빛 피부풍작 기원!</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">2018.09.18 ~ 2018.10.03</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nth-5">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_large_celebrate.jpg" alt="누리촉촉 워터밸런스 스킨 대용량 출시기념 75%혜택!">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">누리촉촉 워터밸런스 스킨 대용량 출시기념 75%혜택!</p>
+                                        <p class="evt-list-txt">누리촉촉 워터밸런스 스킨 대용량 출시기념</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">2018.08.29 ~ 2018.09.20</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nth-6">
+                                <a href="#none" class="evt-box">
+                                    <figure class="img-box">
+                                        <img src="http://static.nurisoop.co.kr/img/renew/event/list/bn_best_member_2018.jpg" alt="누리숲 우수회원들을 위한 가지솔 시카 키트!">
+                                    </figure>
+                                    <div class="txt-box">
+                                        <p class="evt-list-tit">누리숲 우수회원들을 위한 가지솔 시카 키트!</p>
+                                        <p class="evt-list-txt">누리숲 우수회원들을 위한 가지솔 시카 키트 증정 이벤트</p>
+                                        <p class="evt-list-day">
+                                            <span class="day-tit">기간 : </span>
+                                            <span class="day-txt">2018.07.29 ~ 2018.10.03</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <!-- board-page -->
+                        <div class="page-area">
+                            <div id="pagenation" class="page-box">
+                                <a class="btn-m-prev" href=""><span></span></a>
+                                <a class="btn-prev" href=""><span></span></a>
+                                <!-- 해당 페이지일때 on -->
+                                <a class="txt on" href=""><span>1</span></a>
+                                <!--<a class="txt" href=""><span>2</span></a>-->
+                                <a class="btn-next" href=""><span></span></a>
+                                <a class="btn-m-next" href=""><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 출첵 이벤트 -->
+                <div id="evtChk" class="evt-area" style="display: none;">
+                    <div class="attend-box">
+                        <div id="attendance" class="attendance_back2">
+                            <div style="display:block; height:360px;">
+                                <div class="poBox" style="z-index:2">
+                                   <div class="msgBox">로그인 후 출석체크 이벤트에 참여할 수 있습니다.</div>
+                                </div>
+                                <div class="poBox" style="z-index:4">
+                                    <div class="checkedBtnBox">
+                                        <a href="javascript:attendance();"><img src="http://static.nurisoop.co.kr/images/img/checked_btn1.gif"></a>
+                                    </div>
+                                </div>
+                                <div class="poBox" style="z-index:3">
+                                    <div class="stampBox">
+                                        <img src="http://static.nurisoop.co.kr/images/img/attendance_stamp.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:block;margin:0 auto; width:700px;">
+                                <div style="height:118px;background:url(http://static.nurisoop.co.kr/images/img/caldr_2_top.gif);">
+                                    <div style="padding:40px 0 0 280px;">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="/event/attendance/?y=2019&amp;m=04"><img src="http://static.nurisoop.co.kr/images/img/2_b_btn.gif"></a></td>
+                                                    <td align="center" width="100" style="font-size:14px; color:#FFF1D6;"><b>2019.05</b></td>
+                                                    <td><a href="/event/attendance/?y=2019&amp;m=06"><img src="http://static.nurisoop.co.kr/images/img/2_n_btn.gif"></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="padding-left:33px; background:url('http://static.nurisoop.co.kr/images/img/caldr_2_center_bg.gif');">
+                                    <table class="calendar_t">
+                                    <tbody><tr><td valign="top">&nbsp;</td><td valign="top">&nbsp;</td><td valign="top">&nbsp;</td><td valign="top"><div class="cGray">1</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">2</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">3</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cRed">4</div><span class="stamp">&nbsp;</span></td></tr><tr><td valign="top"><div class="cRed">5</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">6</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">7</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">8</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">9</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">10</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cRed">11</div><span class="stamp">&nbsp;</span></td></tr><tr><td valign="top"><div class="cRed">12</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">13</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">14</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">15</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">16</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">17</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cRed">18</div><span class="stamp">&nbsp;</span></td></tr><tr><td valign="top"><div class="cRed">19</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">20</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">21</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">22</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">23</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">24</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cRed">25</div><span class="stamp">&nbsp;</span></td></tr><tr><td valign="top"><div class="cRed">26</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">27</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">28</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">29</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">30</div><span class="stamp">&nbsp;</span></td><td valign="top"><div class="cGray">31</div><span class="stamp">&nbsp;</span></td><td valign="top" colspan="2">&nbsp;</td></tr>							</tbody></table>
+                                </div>
+                                <div><img src="http://static.nurisoop.co.kr/images/img/caldr_2_bottom.gif"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 당첨자 발표 -->
+                <div id="evtWinner" class="evt-area" style="display: none;">
+                    <div class="winner-box">
+                        <div class="top-box">
+                            <p class="txt-total fl-left">
+                                <span>TOTAL : <em>19</em></span>
+                            </p>
+                            <div class="srch-box fl-right">
+                                <select name="" id="" class="form-sel">
+                                    <option value="">전체</option>
+                                    <option value="">제목</option>
+                                    <option value="">내용</option>
+                                </select>
+                                <p class="srch-ip"><input type="text" class="ip-txt" placeholder="검색어 입력"><a href="javascript:;" class="btn-srch"><span>검색</span></a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="tbl-col">
+                            <table class="tbl">
+                                <colgroup>
+                                    <col style="width: 18%;">
+                                    <col style="width: 64%;">
+                                    <col style="width: 18%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>NO.</th>
+                                        <th>제목</th>
+                                        <th>작성일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>19</td>
+                                        <!-- 예시 -->
+                                        <td><a href="./index_winner_view.html">[베스트후기이벤트] 3월 베스트 후기 당첨자분들 축하드립니다 - ex)페이지이동</a></td>
+                                        <td>2019.04.01</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td><a href="#none">[누리숲의 리얼 후기를 부탁해!] 3월 리뷰어 당첨자분들 축하드립니다^^ </a></td>
+                                        <td>2018.04.04</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td><a href="#none">리그램 이벤트 당첨자 발표</a></td>
+                                        <td>2017.11.03</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td><a href="#none">가정의 달 맞이 특집 무료숙박권 당첨 이벤트 안내</a></td>
+                                        <td>2017.05.19</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td><a href="#none">[누리숲 어워드이벤트] 당첨자 발표</a></td>
+                                        <td>2016.01.19</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td><a href="#none">[누리크리스마스]받고싶은선물 당첨자 발표</a></td>
+                                        <td>2015.12.31</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td><a href="#none">[빼빼로데이이벤트]누리숲11자로 말해요 당첨자 발표</a></td>
+                                        <td>2015.11.13</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td><a href="#none">크리스마스이벤트 당첨자 발표</a></td>
+                                        <td>2014.12.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td><a href="#none">무조건이벤트 당첨자발표</a></td>
+                                        <td>2014.12.09</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td><a href="#none">오픈이벤트 당첨자 발표</a></td>
+                                        <td>2014.11.26</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- board-page -->
+                        <div class="page-area">
+                            <div id="pagenation" class="page-box">
+                                <a class="btn-m-prev" href=""><span></span></a>
+                                <a class="btn-prev" href=""><span></span></a>
+                                <!-- 해당 페이지일때 on -->
+                                <a class="txt on" href=""><span>1</span></a>
+                                <a class="txt" href=""><span>2</span></a>
+                                <a class="btn-next" href=""><span></span></a>
+                                <a class="btn-m-next" href=""><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 	</div>
 	
 	@@include('../include/_footer.html') 

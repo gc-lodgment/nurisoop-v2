@@ -2,6 +2,7 @@ $(function(){
     //함수실행
     ftSlideFn();
     tabFn();
+    dateFn();
     
     //search 버튼 클릭 시 
     $('a[class*="btn-srch"]').on('click', function(){
@@ -67,6 +68,24 @@ function tabFn(){
     });
 }
 
+/* 달력 */
+function dateFn(){
+    $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd',
+        prevText: '이전 달',
+        nextText: '다음 달',
+        dayNames: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        dayNamesShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+    });
+	$('input.date-ui').datepicker({
+		dateFormat: 'yy.mm.dd'
+	});
+    
+    $('.ico-cal.date-ui').on('click', function(){
+        $(this).siblings('input.date-ui').focus();
+    });
+}
  
 /* footer family list */
 var fsite = {

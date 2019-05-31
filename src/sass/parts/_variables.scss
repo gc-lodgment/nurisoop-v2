@@ -20,11 +20,15 @@ $fg-gray-04: #888;
 $fg-gray-05: #878787; //btn more
 $fg-gray-06: #666; 
 $fg-gray-07: #bababa; //input placeholder
+$fg-gray-09: #777;
 
 $fg-green-01: #4caca2;
 
 $fg-red-01: #d20000; //ft red
 $fg-red-02: #dc0000; //상품 가격 세일 
+$fg-red-03: #e8657e; // 배송안내 강조 텍스트
+
+$fg-black: #333;
 
 // 배경
 $bg-black-01: #333;
@@ -39,6 +43,7 @@ $bg-gray-06: #888; // btn gray hover
 $bg-green-01: #75b8b1; //btn green
 $bg-green-02: #4caca2; //주요성분, btn green hover
 
+$bg-red-01: #e8657e; // 공지사항 공지 배경
 
 
 //보더
@@ -56,4 +61,6 @@ $bor-gray-10: #ededed; //prd detail
 $bor-black-01: #333;
 
 $bor-green-01: #75b8b1;
+
+$bor-red-01: #e8657e;
 
