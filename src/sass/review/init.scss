@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+@import "../parts/common";
+
+
+/* 콘텐츠 영역 */
+.contents {
+    padding-bottom: 150px;
+    
+    /* sub top */
+    @include sub-top(54px 0 40px);
+    
+    .bn-sect {
+        padding-bottom: 70px;
+        .container {
+            .img {
+                @include bx;
+            }
+        }
+    }
+    
+    .review-sect {
+        .container {
+            @include tab($num:3, $a-pd:10px 0 12px);
+            
+            .review-area {
+                .review-list-box {
+                    @include review-list;
+                }
+                
+                .bot-area {
+                    @include bx;
+                    margin-top: 80px;
+                    padding-top: 20px;
+                    border-top: 1px solid $bor-gray-03;
+                    /* page num */
+                    .page-area {
+                        @include pagenation;
+                        padding-top: 0;
+                        line-height: 30px;
+                    }
+                    
+                    .btn-box {
+                        @include position(absolute, 20px, $right:0);
+                        .btn-write {
+                            @include btn-green-bg(100px, 30px, 14px);
+                        }
+                    }
+                }
+            
+                /* 일반 리뷰 */
+                .normal-area {
+                    padding-top: 50px;
+                    .rv-top-box {
+                        @include rv-top-box(103px, $mg: 0 0 0 8px);
+                    }
+                    
+                    .normal-list-box {
+                        @include bx;
+                        margin-top: 30px;
+                        .review-list {
+                            @include bx;
+                            border-top: 1px solid $bor-gray-03;
+                            li { 
+                                @include bx;
+                                @include clearfix;
+                                display: table;
+                                width: 100%;
+                                padding: 30px 0;
+                                border-bottom: 1px solid $bor-gray-03;
+                                .list-img {
+                                    @include bx;
+                                    display: table-cell;
+                                    width: 130px;
+                                    vertical-align: top;
+                                }
+                                .list-box {
+                                    @include bx;
+                                    display: table-cell;
+                                    padding-left: 30px;
+                                    vertical-align: top;
+                                    .view-box {
+                                        @include bx;
+                                        .view-prd-name {
+                                            margin-bottom: 5px;
+                                            font-size: 15px;
+                                            line-height: 1;
+                                        }
+                                        .view-top {
+                                            .ico-star {
+                                                @include ico-star(15px, 14px);
+                                            }
+                                            .user-name {
+                                                cursor: pointer;
+                                                @include bx;
+                                                display: inline-block;
+                                                width: 70px;
+                                                margin-left: 13px;
+                                                padding-left: 16px;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                vertical-align: middle;
+                                                font-weight: 500;
+                                                @include line($ht:12px, $bg:$bor-gray-03);
+                                                @include trasBase(1);
+
+                                                &:hover {
+                                                    @include trasBase;
+                                                }
+                                            }
+                                            .etc-box {
+                                                @include bx;
+                                                display: inline-block;
+                                                span {
+                                                    padding-left: 20px;
+                                                    font-size: 12px;
+                                                    line-height: 20px;
+                                                    vertical-align: middle;
+                                                    color: $fg-gray-03;
+                                                    &:first-child {
+                                                        padding-left: 6px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .view-mid {
+                                            padding: 20px 0 23px;
+                                            p {
+                                                @include bx;
+                                                font-size: 14px;
+                                                line-height: 1.4;
+                                                color: $fg-black;
+                                                &.view-tit {
+                                                    cursor: pointer;
+                                                    @include trasBase(1);
+                                                    &:hover {
+                                                        @include trasBase;
+                                                    }
+                                                }
+                                                &.view-txt {
+                                                    display: none;
+                                                    margin-top: 16px;
+                                                    min-height: 65px;   
+                                                }
+                                            }
+                                        }
+                                        .view-bot {
+                                            @include bx;
+                                            .desc {
+                                                cursor: pointer;
+                                                display: inline-block;
+                                                margin-right: 50px;
+                                                font-size: 14px;
+                                                font-weight: 300;
+                                                line-height: 30px;
+                                                color: $fg-gray-03;
+                                                vertical-align: middle;
+                                                em {
+                                                    padding-left: 3px;   
+                                                    font-weight: 500;
+                                                    color: $fg-black;
+                                                }
+                                                @include trasBase(1);
+                                                &:hover {
+                                                    @include trasBase;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                    .answer-box {
+                                        @include bx;
+                                        display: none;
+                                        margin-top: 17px;
+                                        padding: 26px 30px 0 0;
+                                        border-top: 1px solid $bor-gray-03;
+                                        .answer-top {
+                                            @include bx;
+                                            .mmg-name {
+                                                display: inline-block;
+                                                font-size: 14px;
+                                                font-weight: 600;
+                                                color: $fg-gray-01;
+
+                                            }
+                                            .date {
+                                                @include bx;
+                                                display: inline-block;
+                                                margin-left: 15px;
+                                                padding-left: 16px;
+                                                font-size: 12px;
+                                                font-weight: 300;
+                                                color: $fg-gray-03;
+                                                @include line($ht:12px, $bg:$bor-gray-03);
+                                            }
+                                        }
+                                        .answer-mid {
+                                            padding-top: 15px;
+                                            .txt {
+                                                font-size: 14px;
+                                                font-weight: 300;
+                                                line-height: 1.4;
+                                                letter-spacing: 0;
+                                                word-break: keep-all;
+                                                color: $fg-gray-01;
+                                            }
+                                        }
+                                    }
+                                    
+                                    &.on {
+                                        .view-box {
+                                            .view-mid {
+                                                .view-tit {
+                                                    cursor: auto;
+                                                    &:hover {
+                                                        @include trasBase(1);
+                                                    }
+                                                }
+                                                .view-txt {
+                                                    display: block;
+                                                }
+                                            }
+
+                                            .view-bot {
+                                                .desc {
+                                                    cursor: auto;
+                                                    &:hover {
+                                                        @include trasBase(1);
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .answer-box {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .rv-btn-box {
+                        @include bx;
+                        @include clearfix;
+                        padding-top: 20px;
+                        div {
+                            @include bx;
+                            a {
+                                float: left;
+                                $wd:100px;
+                                $ht:30px;
+                                $fs:14px;
+                                &.btn-more {
+                                    @include btn-gray-bor;
+                                }
+                                &.btn-write {
+                                    @include btn-green-bg($wd, $ht, $fs);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

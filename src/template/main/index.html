@@ -1036,13 +1036,14 @@
                 <div class="review-area">
                     <ul class="review-list">
                         <li class="nth-1">
-                            <a href="javascrpt:;" class="review-box">
+                            <!-- 리뷰 팝업 예시 -->
+                            <a href="javascript:rvPopOpen('#reviewRead01');" class="review-box">
                                 <figure class="img-review">
                                     <img src="http://static.nurisoop.co.kr/img/renew/review/img_review_01.jpg" alt="이미지">
                                 </figure>
 
                                 <div class="txt-box">
-                                    <p class="rv-tit">좋아좋아요♥</p>
+                                    <p class="rv-tit">좋아좋아요♥ - 예시</p>
                                     <dl class="rv-txt-box">
                                         <dt class="rv-prd">
                                             <span class="img-rv-prd"><img src="http://static.nurisoop.co.kr/img/renew/product/item/formcleanser.png" alt="포레스트 녹삼초 폼클렌저"></span>
@@ -1063,7 +1064,7 @@
                             </a>
                         </li>
                         <li class="nth-2">
-                            <a href="javascrpt:;" class="review-box">
+                            <a href="javascript:;" class="review-box">
                                 <figure class="img-review">
                                     <img src="http://static.nurisoop.co.kr/img/renew/review/img_review_02.jpg" alt="이미지">
                                 </figure>
@@ -1090,7 +1091,7 @@
                             </a>
                         </li>
                         <li class="nth-3">
-                            <a href="javascrpt:;" class="review-box">
+                            <a href="javascript:;" class="review-box">
                                 <figure class="img-review">
                                     <img src="http://static.nurisoop.co.kr/img/renew/review/img_review_03.jpg" alt="이미지">
                                 </figure>
@@ -1117,7 +1118,7 @@
                             </a>
                         </li>
                         <li class="nth-4">
-                            <a href="javascrpt:;" class="review-box">
+                            <a href="javascript:;" class="review-box">
                                 <figure class="img-review">
                                     <img src="http://static.nurisoop.co.kr/img/renew/review/img_review_04.jpg" alt="이미지">
                                 </figure>
@@ -1161,7 +1162,8 @@
                                 <!-- 찜(하트)을 클릭하면 상단에 위치하게 되는 태그 / 찜 재클릭하면 사라짐 -->
                                 <span class="ico-heart-sel"></span>
                                 
-                                <a href="#none" class="prd-link">
+                                <!-- 링크 -->
+                                <a href="../product/index_detail.html" class="prd-link">
                                     <span class="sale-txt">45%</span>
                                     
                                     <figure class="img-prd">
@@ -1177,7 +1179,7 @@
                                 
                                 <div class="txt-box">
                                     <dl class="prd-txt-box">
-                                        <dt class="prd-tit">[45% 공홈단독딜] 톤업 워너 비비크림<br>(exp:2019.12.17)</dt>
+                                        <dt class="prd-tit">[45% 공홈단독딜] 클릭하면 상세페이지로<br>(exp:2019.12.17)</dt>
                                         <dd class="prd-txt">
                                             <span class="b-ingred">주요성분</span>
                                             <span class="t-ingred">알부틴, 티타늄디옥사이드, 징크옥사이드</span>
@@ -1548,6 +1550,8 @@
             </div>
         </div>
 	</div>
+    <!-- 리뷰 팝업 -->
+	@@include('../include/pop/pop_review.html') 
 	
 	@@include('../include/_footer.html') 
 </div>

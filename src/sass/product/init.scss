@@ -861,7 +861,7 @@
                                 line-height: 1;
                             }
                             
-                            @include tbl-row-com;
+                            @include tbl-row;
                             
                             .using-box {
                                 @include bx;
@@ -895,7 +895,7 @@
                     //배송/샘플 안내 
                     .ssinfo-area {
                         padding: 50px 0 70px;
-                        @include tbl-row-com(0){
+                        @include tbl-row(0){
                             .tbl {
                                 border: 1px solid $bor-gray-03;
                                 border-bottom: 0;

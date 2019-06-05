@@ -81,7 +81,11 @@
             .tab-list {
                 width: $tab-wd;
                 li {
-                    width: ($tab-wd/$num);
+                    @if( $num  == 3 ){
+                        width: 33.3333333%;
+                    }@else {
+                        width: ($tab-wd/$num);
+                    }
                 }
             }
             
@@ -198,13 +202,14 @@
     height: $ht;
     font-size: $fs;
     line-height: $ht;
+    vertical-align: middle;
     color: $fg;
     //padding: $pd;
     text-align: center;
 }
 
 //btn border 기본 border에 호버하면 회색배경
-@mixin btn-bor-com($wd:null, $ht:22px, $fs:13px, $fg:$fg-gray-01, $bor-g:$bor-gray-05){
+@mixin btn-bor-com($wd:null, $ht:22px, $fs:13px, $fg:$fg-gray-01, $bor-g:$bor-gray-09){
     @include btn-base($wd, $ht, $fs, $fg);
     border: 1px solid $bor-g;
     @include trasBase(1, $bg:#fff); 
@@ -221,6 +226,19 @@
     &:hover {
         border-color: $bor-black-01;
         @include trasBase(1);
+    }
+    
+}
+
+//btn bor : hover gray bg & black bor
+@mixin btn-gray-bor-02($wd:100px, $ht:28px, $fs:13px, $fg:$fg-gray-01, $bor-g:$bor-gray-09){
+    @include btn-base($wd, $ht, $fs, $fg);
+    border: 1px solid $bor-g;
+    @include trasBase(1, $bg:#fff);  
+    &:hover {
+        color: $fg-black;
+        border-color: $bor-black-01;
+        @include trasBase(1, $bg:$bg-gray-07);
     }
     
 }
@@ -242,7 +260,6 @@
         @include trasBase(1, $bg:$bg-gray-06);
     }
 }
-
 
 //slide btn control 
 @mixin btn-controls($top:50%, $left:50%, $mt:-22px, $wd:100%, $a-wd:23px, $a-ht:41px, $bx:0){
@@ -600,6 +617,10 @@
         .form-sel {
             float: left;
             @include sel-com($wd:$wd, $ht:$ht, $mg:$mg);
+            
+            &.w-1 {
+                width: 112px;
+            }
         }
     }
 }
@@ -774,124 +795,123 @@
 
 //리뷰 
 @mixin review-list($wd:25%, $ht:540px, $pt:50px){
-    .review-area {
+    @include bx;
+    @include clearfix;
+    .review-list {
         @include bx;
-        @include clearfix;
-        .review-list {
+        margin: 0 -10px 0 -10px;
+        li {
             @include bx;
-            margin: 0 -10px 0 -10px;
-            li {
+            float: left;
+            width: $wd;
+            padding: $pt 10px 0;
+            .review-box {
                 @include bx;
-                float: left;
-                width: $wd;
-                padding: $pt 10px 0;
-                .review-box {
-                    @include bx;
-                    display: block;
-                    height: $ht;
-                    padding: 9px;
-                    border: 1px solid transparent;
-                    @include trasBase(1);
+                display: block;
+                height: $ht;
+                padding: 9px;
+                border: 1px solid transparent;
+                @include trasBase(1);
 
-                    .img-review {
-                        img {
+                .img-review {
+                    img {
 
-                        }
-                    }
-
-                    .txt-box {
-                        .rv-tit {
-                            padding: 16px 0 8px;
-                            font-size: 16px;
-                        }
-
-                        .rv-txt-box {
-                            border-top: 1px solid $bor-gray-01;
-                            border-bottom: 1px solid $bor-gray-01;
-                            .rv-prd {
-                                @include bx;
-                                padding: 9px 0 6px;
-                                border-bottom: 1px solid $bor-gray-01;
-                                .img-rv-prd {
-                                    display: inline-block;
-                                    width: 40px;
-                                    height: 40px;
-                                    background: url(http://static.nurisoop.co.kr/img/renew/review/bg_prd.png)no-repeat;
-                                    background-size: cover;
-                                    img {
-
-                                    }   
-                                }
-                                .rv-prd-txt {
-                                    padding-left: 5px;
-                                    font-size: 14px;
-                                    font-weight: 300;
-                                    line-height: 40px;
-                                    color: $fg-gray-04;
-                                }
-                            }
-                        }
-
-                        //리뷰내용
-                        .rv-txt {
-                            @include bx;
-                            overflow: hidden;
-                            display: block;
-                            height: 63px;
-                            margin: 16px 0 17px 0;
-                            font-size: 15px;
-                            line-height: 1.4;
-                            font-weight: 300;
-                            word-break: keep-all;
-                            color: $fg-gray-06;
-                            
-                            .ie8 & {
-                                letter-spacing: -0.7px;
-                            }
-                        }
-
-                        //하단
-                        .rv-bot {
-                            @include bx;
-                            @include clearfix;
-                            padding-top: 13px;
-                            p {
-                                span {
-                                    display: inline-block;
-                                    font-size: 14px;
-                                    line-height: 1;
-                                    em {
-                                        padding-left: 2px;
-                                        color: $fg-black;
-                                        font-weight: 500;
-                                    }
-                                    &.rv-user {
-                                        font-weight: 500;
-                                    }
-
-                                    &.rv-gd {
-                                        font-weight: 400;
-                                        color: $fg-gray-04;
-                                    }
-
-                                    &.rv-desc {
-                                        margin-left: 13px;
-                                        font-weight: 300;
-                                        color: $fg-gray-06;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    &:hover {
-                        border-color: $bor-black-01;
-                        @include trasBase(1);
                     }
                 }
 
+                .txt-box {
+                    .rv-tit {
+                        padding: 16px 0 8px;
+                        font-size: 16px;
+                    }
+
+                    .rv-txt-box {
+                        border-top: 1px solid $bor-gray-01;
+                        border-bottom: 1px solid $bor-gray-01;
+                        .rv-prd {
+                            @include bx;
+                            padding: 9px 0 6px;
+                            border-bottom: 1px solid $bor-gray-01;
+                            .img-rv-prd {
+                                display: inline-block;
+                                width: 40px;
+                                height: 40px;
+                                background: url(http://static.nurisoop.co.kr/img/renew/review/bg_prd.png)no-repeat;
+                                background-size: cover;
+                                img {
+
+                                }   
+                            }
+                            .rv-prd-txt {
+                                padding-left: 5px;
+                                font-size: 14px;
+                                font-weight: 300;
+                                line-height: 40px;
+                                color: $fg-gray-04;
+                            }
+                        }
+                    }
+
+                    //리뷰내용
+                    .rv-txt {
+                        @include bx;
+                        overflow: hidden;
+                        display: block;
+                        height: 63px;
+                        margin: 16px 0 17px 0;
+                        font-size: 15px;
+                        line-height: 1.4;
+                        font-weight: 300;
+                        word-break: keep-all;
+                        color: $fg-gray-06;
+
+                        .ie8 & {
+                            letter-spacing: -0.7px;
+                        }
+                    }
+
+                    //하단
+                    .rv-bot {
+                        @include bx;
+                        @include clearfix;
+                        padding-top: 13px;
+                        p {
+                            span {
+                                display: inline-block;
+                                font-size: 14px;
+                                line-height: 1;
+                                em {
+                                    padding-left: 2px;
+                                    color: $fg-black;
+                                    font-weight: 500;
+                                }
+                                &.rv-user {
+                                    font-weight: 500;
+                                }
+
+                                &.rv-gd {
+                                    font-weight: 400;
+                                    color: $fg-gray-04;
+                                }
+
+                                &.rv-desc {
+                                    margin-left: 13px;
+                                    font-weight: 300;
+                                    color: $fg-gray-06;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    border-color: $bor-black-01;
+                    @include trasBase(1);
+                }
             }
+
         }
     }
+    
 }
             
 //weekly 상품 리스트 
@@ -1133,7 +1153,7 @@
 }
 
 //table row
-@mixin tbl-row-com($bor-t-w:2px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:19px 15px 17px 29px, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:10px 15px 10px 29px, $td-fg:$fg-gray-09, $td-bg:#fff){
+@mixin tbl-row($bor-t-w:2px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:19px 15px 17px 29px, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:10px 15px 10px 29px, $td-fg:$fg-gray-09, $td-bg:#fff, $i-ht:28px, $i-fg:$fg-gray-01){
     .tbl-row {
         @include bx;
         width: 100%;
@@ -1154,6 +1174,123 @@
                 padding: $td-pd;
                 color: $td-fg;
                 background: $td-bg;
+                
+                .row {
+                    @include bx;
+                    .form-sel, .ip-txt, .ta-txt {
+                        @include bx;
+                        color: $i-fg;
+                        vertical-align: middle;
+                        border: 1px solid $bor-b-bg;
+                    }
+                    .form-sel, .ip-txt {
+                        height: $i-ht;
+                        padding: 0 10px;
+                        line-height: $i-ht;
+                    }
+                    
+                    .form-sel, .ip-txt {
+                        width: 197px;
+                    }
+                    .ip-txt {
+                        width: 247px;
+                        &.all {
+                            width: 100%;
+                        }
+                        &.w-1 {
+                            width: 66px;
+                        }
+                    }
+                    .ta-txt {
+                        width: 100%;
+                        height: 256px;
+                        padding: 10px;
+                    }
+                    
+                    //텍스트
+                    .p-point, .chk-txt {
+                        @include bx;
+                        display: inline-block;
+                        font-size: 13px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        line-height: $i-ht;
+                        &.fg-red {
+                            color: $fg-red-03;
+                        }
+                    }
+                    .p-point {
+                        padding-left: 9px;
+                        &:before {
+                            @include position(absolute, 3px, 0);
+                            content: '*';
+                            display: inline-block;
+                        }
+                    }
+                    
+                    .p-line {
+                        @include bx;
+                        padding-left: 10px;
+                        font-size: 14px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        line-height: 1.5;
+                        color: $fg-gray-04;
+                        &:before {
+                            content: '';
+                            @include position(absolute, 11px, 0);
+                            width: 4px;
+                            height: 1px;
+                            background: $fg-gray-04;
+                        }
+                    }
+                    
+                    .chk-txt {
+                        padding-left: 17px;
+                        @include chkbox;
+                    }
+                    
+                    .s-1{
+                        padding: 0 6px;  
+                        font-size: 20px;
+                        vertical-align: middle;
+                        letter-spacing: 0;
+                        color: $i-fg;
+                    }
+                    
+                    a, button {
+                        &.btn-file-del {
+                            margin-left: 25px;
+                            font-size: 14px;
+                        }
+                        
+                        /*@include trasBase(1);
+                        &:hover {
+                            @include trasBase(0.6);
+                        }*/
+                    }
+                    
+                    //간격 
+                    input + .btn-com, input + label {
+                        margin-left: 8px;
+                    }
+                    
+                    .row-file {
+                        margin-bottom: 13px;
+                    }
+                    
+                   /* .row-file + .row-file {
+                        margin-top: 3px;
+                    }*/
+                    
+                    & + .row {
+                        margin-top: 13px;
+                    }
+                    
+                    & + .row.file-box {
+                        margin-top: 0;
+                    }
+                }
             }
         }
         @content

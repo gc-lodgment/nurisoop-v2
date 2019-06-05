@@ -49,6 +49,24 @@ input::placeholder {
     letter-spacing: -0.5px;
 	font-family: $font-stack; 
 }
+textarea {
+    resize: none;
+}
+textarea::-webkit-input-placeholder {
+    color: $fg-gray-07;
+    letter-spacing: -0.5px;
+	font-family: $font-stack; 
+}
+textarea:-ms-input-placeholder {
+    color: $fg-gray-07;
+    letter-spacing: -0.5px;
+	font-family: $font-stack; 
+}
+textarea::placeholder {
+    color: $fg-gray-07;
+    letter-spacing: -0.5px;
+	font-family: $font-stack; 
+}
 
 /* common */     
 //상품리스트 bg
@@ -165,7 +183,7 @@ input::placeholder {
         background-position: -1px -173px;
     }
 }
-//cls 
+//srch cls 
 .ico-srch-cls {
     $wt:11px;
     @include position(absolute, 50%, $right:0);
@@ -176,6 +194,70 @@ input::placeholder {
     margin-top: -($wt/2);
     background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
     background-position: -89px -83px;
+}
+//file cls 
+.ico-file-cls {
+    @include bx;
+    padding-left: 17px;
+    color: $fg-black;
+    span {
+        $wt:11px;
+        @include position(absolute, 50%, 0);
+        display: inline-block;
+        box-sizing: border-box;
+        width: 12px;
+        height: $wt;
+        margin-top: -($wt/2);
+        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: -65px -84px;
+    }
+}
+//pic 
+.ico-file-pic {
+    @include bx;
+    display: inline-block;
+    padding-left: 35px;
+    vertical-align: middle;
+    span {
+        $wt:23px;
+        @include position(absolute, 50%, 0);
+        display: inline-block;
+        box-sizing: border-box;
+        width: 30px;
+        height: $wt;
+        margin-top: -($wt/2);
+        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: -98px -139px;
+    }
+}
+
+//btn-more
+.ico-more {
+    box-sizing: border-box;
+    padding-left: 10px;
+    span {
+        $wt:10px;
+        $ht:2px;
+        @include position(absolute, 50%, 12px);
+        box-sizing: border-box;
+        display: inline-block;
+        width: $wt;
+        height: $ht;
+        //margin-top: -($ht/2);
+        background: $bg-green-01;
+        &:before {
+            content: '';
+            @include position(absolute, -4px, 50%);
+            box-sizing: border-box;
+            display: inline-block;
+            width: $ht;
+            height: $wt;
+            margin-left: -($ht/2);
+            background: $bg-green-01;
+            
+        }
+    }
+    
 }
 
 .sale-txt {
@@ -208,34 +290,6 @@ input::placeholder {
     &.on {
         background-position: -224px 0;
     }
-}
-//btn-more
-.ico-more {
-    box-sizing: border-box;
-    padding-left: 10px;
-    span {
-        $wt:10px;
-        $ht:2px;
-        @include position(absolute, 50%, 12px);
-        box-sizing: border-box;
-        display: inline-block;
-        width: $wt;
-        height: $ht;
-        //margin-top: -($ht/2);
-        background: $bg-green-01;
-        &:before {
-            content: '';
-            @include position(absolute, -4px, 50%);
-            box-sizing: border-box;
-            display: inline-block;
-            width: $ht;
-            height: $wt;
-            margin-left: -($ht/2);
-            background: $bg-green-01;
-            
-        }
-    }
-    
 }
 
 /* input */
@@ -276,6 +330,103 @@ input::placeholder {
             background-position: -92px -224px;
         }
     }
+}
+
+.file-box {
+    @include bx;
+    .ip-file-none {
+        z-index: 1;
+        overflow: hidden;
+        @include position(absolute, 1px, 1px);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        appearance: none;
+    }
+    .ip-file {
+        z-index: 2;
+        background: #fff;
+    }
+    
+    .btn-pic {
+        z-index: 3;
+        @include bx;
+        display: block;
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        line-height: 50px;
+        text-align: center;
+        color: $fg-gray-01;
+        vertical-align: middle;
+        border: 1px solid $bor-gray-03;
+        background: $bg-gray-02;
+        > span {
+            height: 50px;
+            line-height: 50px;
+        }
+    }
+    
+    //img
+    .img-file-box {
+        @include bx;
+        @include clearfix;
+        margin: 0 -10px;
+        .btn-pop-file-cls {
+            @include bx;
+            float: left;
+            margin: 20px 10px 0;
+            width: 98px;
+            height: 98px;
+            border: 1px solid $bor-gray-03;
+            
+            &:before {
+                z-index: 5;
+                @include position(absolute, 3px, $right:3px);
+                content: '';
+                display: block;
+                width: 15px;
+                height: 16px;
+                background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                background-position: -38px -83px;
+            }
+            
+            .img-row {
+                z-index: 4;
+                @include bx;
+                overflow: hidden;
+                padding-top: 100%;
+                span {
+                    @include position(absolute, 0, 0, 0, 0);
+                    display: block;
+                    text-align: center;
+                    -webkit-transform: translate(50%, 50%); 
+                    -ms-transform: translate(50%, 50%); 
+                    -o-transform: translate(50%, 50%); 
+                    transform: translate(50%, 50%);
+                    img {
+                        @include position(absolute, 0, 0);
+                        display: block;
+                        max-width: inherit;
+                        height: 100%;
+                        -webkit-transform: translate(-50%, -50%); 
+                        -ms-transform: translate(-50%, -50%); 
+                        -o-transform: translate(-50%, -50%); 
+                        transform: translate(-50%, -50%); 
+                        .ie8 & {
+                            position: relative;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
 }
 
 /* custom */
@@ -1509,7 +1660,7 @@ $hd-ht: ($gnb-ht+31);
         }
         tbody {
             td {
-                a {
+                a, span {
                     @include bx;
                     display: inline-block;
                     width: 27px;
@@ -1528,11 +1679,12 @@ $hd-ht: ($gnb-ht+31);
                         color: #fff;
                         background: #01787c;
                     }
-                    //기간 
-                    &.ui-state-ing {
+                } 
+                //기간 *
+                &.ing {
+                    a, span {
                         background: #dcdcdc;
                     }
-                    
                 }
             }
         }

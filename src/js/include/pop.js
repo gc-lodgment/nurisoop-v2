@@ -1,34 +1,32 @@
-var slider, pager; 
+var num;
 
 $(function () {
-    //console.log('pop js');
-    //dtPopSlide();
-    
+    $('ul[class*="pop-dt-rv-"] a').on('click', function(){
+        num = $(this).attr('data-slide-index');
+        //console.log(num);
+        return num;
+    })
 });
 
-function rvPopOpen(id){
+function rvSdPopOpen(id){
     //dtPopSlide(id);
     
-    pager = String('.')+(id.substr(1, (id.length)))+String('-pager');
-    
-    //dtPopSlide(id, pager);
     $(id).stop().fadeIn(function(){
         //console.log('열림');
-        dtPopSlide(id, pager);
-        
+        dtPopSlide(id, num);
+        //slider.reloadSlider();
     });
     
-    $('html').css({'overflow': 'hidden', 'height': '100%'});
-    $(id).on('scroll touchmove mousewheel', function(event) { 
-        event.preventDefault();     
-        event.stopPropagation();     
-        return false; 
-    });
+    popOpen();
 }
 
 /* detail pop slide */
-function dtPopSlide(id, pager){
+function dtPopSlide(id, num){
     //console.log(pager)
+    var slider, pager;
+    
+    pager = String('.')+(id.substr(1, (id.length)))+String('-pager');
+    
     if( $(id).find('ul[id*="pop-dt-slide-"] li').length == 1 ){
         //이미지가 1개일 경우
     }else {
@@ -46,10 +44,9 @@ function dtPopSlide(id, pager){
             duration: 6000,
             prevText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_left_04.png" alt="이전">',
             nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_04.png" alt="다음">'
-        }); 
+        });
+        slider.goToSlide(num); 
+        //slider.reloadSlider();
         
-        /*
-            slider.destroySlider();
-            $(id).slider.reloadSlider()*/
     }
 }

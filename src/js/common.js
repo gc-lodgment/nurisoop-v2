@@ -76,8 +76,23 @@ function dateFn(){
         nextText: '다음 달',
         dayNames: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         dayNamesShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-        dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+        dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        onClose : function(selectedDate){
+            var eleId = $(this).attr("id");
+            var optionName = "";
+
+            if(eleId.indexOf("StartDate") > 0) {
+                eleId = eleId.replace("StartDate", "EndDate");
+                optionName = "minDate";
+            } else {
+                eleId = eleId.replace("EndDate", "StartDate");
+                optionName = "maxDate";
+            }
+
+            $("#"+eleId).datepicker("option", optionName, selectedDate);		
+        }
     });
+    
 	$('input.date-ui').datepicker({
 		dateFormat: 'yy.mm.dd'
 	});
@@ -119,5 +134,33 @@ function ftSlideFn(){
         pager: true,
         speed: 1000,
         duration: 6000
+    });
+}
+
+/* 팝업 */
+function rvPopOpen(id){
+    $(id).stop().fadeIn();
+    
+    popOpenRv();
+}
+
+//pop open
+function popOpen(){
+        
+    $('html').css({'overflow': 'hidden', 'height': '100%'});
+    $('.pop-wrap').on('scroll touchmove mousewheel', function(event) { 
+        event.preventDefault();     
+        event.stopPropagation();     
+        return false; 
+    });
+}
+
+//pop review open - yes scroll
+function popOpenRv(){
+    $('html').css({'overflow': 'hidden', 'height': '100%'});
+    $('.pop-wrap').on('scroll touchmove', function(event) { 
+        event.preventDefault();     
+        event.stopPropagation();     
+        return false; 
     });
 }

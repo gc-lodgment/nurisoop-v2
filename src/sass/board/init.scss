@@ -440,6 +440,34 @@
                 }
             }
         }
+        
+        /* 글쓰기 */
+        &.write {
+            .board-sect {
+                .container {
+                    .board-area {
+                        padding-top: 45px;
+                        .contact-area {
+                            .txt-box {
+                                margin-bottom: 25px;
+                            } 
+                            @include tbl-row($th-pd:14px 15px 13px 29px, $th-fg:$fg-gray-04, $td-pd:10px 29px, $td-fg:$fg-black) {
+                                .btn-com {
+                                    @include btn-gray-bor-02;
+                                }
+                            };
+                            .btn-box {
+                                margin-top: 49px;
+                                text-align: center;
+                                .btn-new { 
+                                    @include btn-green-bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     //view & read 
