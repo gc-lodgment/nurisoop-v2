@@ -38,7 +38,11 @@ $(function () {
         //img file
         imgfileFn();
     });
-    
+
+    $(document).on('click', '.fileImgDel', function(){
+        //console.log('click');
+        $(this).remove();
+    });
     
 });
 
@@ -63,15 +67,9 @@ function imgfileFn(){
 
             var reader = new FileReader();
             reader.onload = function(e){
-                $('#imgFile').append('<a href="javascript:;" onclick="btnRvClose(this);" class="btn-pop-file-cls"><p class="img-row"><span><img src="'+e.target.result+'" alt="'+fileTxt+'"></span></p></a>');
+                $('#imgFile').append('<a href="javascript:;" class="btn-pop-file-cls fileImgDel"><p class="img-row"><span><img src="'+e.target.result+'" alt="'+fileTxt+'"></span></p></a>');
             }
-            reader.readAsDataURL(f);
+            reader.readAsDataURL(f); 
         });
     });
-}
-
-//파일 제거
-function btnRvClose(ths){
-    console.log('click');
-    $(ths).remove();
 }

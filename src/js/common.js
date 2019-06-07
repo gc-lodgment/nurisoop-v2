@@ -90,7 +90,9 @@ function dateFn(){
             }
 
             $("#"+eleId).datepicker("option", optionName, selectedDate);		
-        }
+        },
+        //beforeShow: customDateIng,
+        //onSelect: customDateIng
     });
     
 	$('input.date-ui').datepicker({
@@ -101,6 +103,25 @@ function dateFn(){
         $(this).siblings('input.date-ui').focus();
     });
 }
+
+//달력 ing
+/*function customDateIng(input){
+    var cal = $('#ui-datepicker-div');
+    $(document).on('mousemove', 'input, #ui-datepicker-div', function(){
+        cal.find('td').removeClass('ing');
+        if(input.id == 'searchStartDate'){
+            //console.log('fir'); 
+            //console.log($('td .ui-state-active').text());
+            cal.find('td.ui-datepicker-current-day').nextUntil('td.ui-state-disabled', 'td').addClass('ing');
+            cal.find('td.ui-state-disabled').prev('td.ing').find('a').addClass('ui-state-active');
+        }else{
+            //console.log('lst');
+            //console.log($('td .ui-state-active').text());
+            cal.find('td.ui-datepicker-current-day').prevUntil('td.ui-state-disabled', 'td').addClass('ing');
+            cal.find('td.ui-state-disabled').next('td.ing').find('a').addClass('ui-state-active');
+        }
+    });
+}*/
  
 /* footer family list */
 var fsite = {

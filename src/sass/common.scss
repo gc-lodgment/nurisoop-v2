@@ -1680,10 +1680,13 @@ $hd-ht: ($gnb-ht+31);
                         background: #01787c;
                     }
                 } 
-                //기간 *
+                //기간
                 &.ing {
                     a, span {
                         background: #dcdcdc;
+                        &.ui-state-active {
+                            background: #01787c;
+                        }
                     }
                 }
             }

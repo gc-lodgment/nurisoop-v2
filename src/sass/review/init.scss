@@ -73,6 +73,12 @@
                                     display: table-cell;
                                     width: 130px;
                                     vertical-align: top;
+                                    .img-prd {
+                                        width: 130px;
+                                        img {
+                                            position: relative;
+                                        }
+                                    }
                                 }
                                 .list-box {
                                     @include bx;

@@ -1192,6 +1192,13 @@
                     .form-sel, .ip-txt {
                         width: 197px;
                     }
+                    
+                    .form-sel {
+                        
+                        .ie9 &, .ie8 & {
+                            padding-right: 0;
+                        }
+                    }
                     .ip-txt {
                         width: 247px;
                         &.all {

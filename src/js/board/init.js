@@ -15,6 +15,11 @@ $(function () {
         $(this).parents('.contact-area').siblings('.pw-area').fadeIn();*/
     });
 
+    $(document).on('click', '.fileTxtDel', function(){
+        //console.log('click');
+        $(this).parent('.row-file').remove();
+    });
+
 });
 
 /* 텍스트 파일 */
@@ -40,17 +45,11 @@ function fileFn(){
             var reader = new FileReader();
             
             reader.onload = function(e){
-                $('#txtFile').append('<p class="row-file"><span class="num-txt ico-file-02"><span></span><em>'+fileTxt+'</em></span><a href="javascript:;" onclick="btnClose(this);" class="btn-file-del ico-file-cls"><span></span>삭제</a></p>');
+                $('#txtFile').append('<p class="row-file"><span class="num-txt ico-file-02"><span></span><em>'+fileTxt+'</em></span><a href="javascript:;" class="btn-file-del ico-file-cls fileTxtDel"><span></span>삭제</a></p>');
                 //e.target.result
             }
             
             reader.readAsDataURL(f);
         });
     });
-}
-
-//파일 제거
-function btnClose(ths){
-    //console.log('click');
-    $(ths).parent('.row-file').remove();
 }

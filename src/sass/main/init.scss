@@ -62,7 +62,7 @@
         } 
         
         //btn
-        @include btn-controls($bx:-($wd/2));
+        @include btn-controls($wd:$wd);
         
         //custom pager 
         .pager-box {
