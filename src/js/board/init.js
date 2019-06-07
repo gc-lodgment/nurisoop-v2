@@ -29,6 +29,11 @@ function fileFn(){
     
     fileName.on('change', function(e){
         var files = e.target.files;
+/*        var filesArrs;
+        var filesArr = [];
+        for (var = i = 0; i < files.length; i++) {
+            filesArr.push(files[i]);
+        }*/
         var filesArr = Array.prototype.slice.call(files);
             
         fileTxt = $(this)[0].files[0].name;
