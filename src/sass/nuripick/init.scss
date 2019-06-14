@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+@import "../parts/common";
+//detail
+@import "../include/detail";
+
+
+/* 콘텐츠 영역 */
+.contents {
+    /* 상품 리스트 영역 */
+    &.prd-list {
+        padding: 0 0 100px;
+        
+        .tab-sect {
+            padding-top: 12px;
+            @include tab($num:4, $a-pd:10px 0 12px);
+        }
+        .nuripick-sect {
+            @include bx;
+            padding-top: 40px;
+            /* 서브 제품 검색 창 */
+            .prd-srch-sect {
+                .container {
+                    .srch-area { 
+                        @include bx;
+                        border: 1px solid $bor-gray-03;
+                        .srch-box {
+                            @include bx;
+                            display: table;
+                            width: 100%;
+                            .srch-txt {
+                                $wt:12px;
+                                @include bx;
+                                display: inline-block;
+                                font-size: 13px;
+                                line-height: 1;
+
+                                @include chkbox;
+
+                            }
+                            .srch-tit {
+                                display: table-cell;
+                                box-sizing: border-box;
+                                width: 146px;
+                                padding: 10px 19px 13px;
+                                vertical-align: middle;
+                                border-right: 1px solid $bor-gray-03;
+                                border-top: 1px solid $bor-gray-03;
+                                background: $bg-gray-02;
+                                .srch-txt {
+                                    padding-right: 23px;
+                                    input[type=checkbox], .btn-chk {
+                                        left: auto;
+                                        right: 0;
+                                    }
+                                }
+                            }
+                            .srch-list {
+                                display: table-cell;
+                                box-sizing: border-box;
+                                vertical-align: middle;
+                                padding: 10px 0 13px;
+                                border-top: 1px solid $bor-gray-08;
+                                li {
+                                    @include clearfix;
+                                    float: left;
+                                    padding: 0 13px 0 17px;
+                                    .srch-txt {
+                                        padding-left: 18px;
+                                        input {
+                                            left: 0;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:first-child {
+                                .srch-tit, .srch-list {
+                                    border-top: 0;
+                                }
+                            }
+
+                            &.lst {
+                                padding: 8px 88px 8px 99px;
+                                border-top: 1px solid $bor-gray-03;
+
+                                .btn-all-del {
+                                    $d-ht:15px;
+                                    @include position(absolute, 50%, 18px);
+                                    display: inline-block;
+                                    box-sizing: border-box;
+                                    margin-top: -($d-ht/2);
+                                    padding-left: 20px;
+                                    font-size: 14px;
+                                    line-height: $d-ht;
+                                    font-weight: 300;
+                                }
+                                .srch-btn-box {
+                                    @include bx;
+                                    margin-left: 10px;
+                                    padding-left: 11px;
+                                    @include line($bg:$bor-gray-09);
+                                    .btn-srch-cls {
+                                        position: relative;
+                                        @include btn-base($ht:28px, $fg:$fg-green-01);
+                                        margin-left: 9px;
+                                        padding: 0 40px 0 7px;
+                                        border: 1px solid $bor-gray-03;
+                                        .ico-srch-cls {
+                                            right: 6px;
+                                        }
+                                    }
+                                }
+                                .btn-srch {
+                                    $b-ht:28px;
+                                    @include position(absolute, 50%, $right:7px);
+                                    @include btn-bor-com(70px, $b-ht, $bor-g:$bor-gray-09);
+                                    margin-top: -($b-ht/2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .prd-list-area {
+                /* 상품 리스트 */
+                .prd-sect {
+                    margin-top: 64px;
+                    .container {
+                        .top-area { 
+                            @include bx;
+                            @include clearfix;
+                            border-bottom: 1px solid $bor-gray-03;
+                            .txt-total {
+                                float: left;
+                                line-height: 38px;
+                            }
+
+                            @include tab(1px, $bor-gray-07, $bor-g:$bor-gray-03, $a-pd:11px 0 11px, $fs:12px);
+                            .tab-box {
+                                float: right;
+                                border-bottom: 0;
+                                .tab-list {
+                                    margin-bottom: -1px;
+                                    li {    
+                                        margin-left: -1px;
+                                        padding-left: 1px;
+                                        a {
+                                            width: 68px;
+                                        }
+                                        &.on {
+                                            padding-left: 0;
+                                            & + li {
+                                                border-left: 0;
+                                            }
+                                            &:before {
+                                                height: 2px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        @include prd-list{
+                            .prd-list {
+                                top: -25px;
+                            }
+                        };
+
+                        .page-area {
+                            @include pagenation(14px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/*
+ * safari 
+ */
+
+/* 콘텐츠 영역 */
+.safari .contents {
+    /* 상품 리스트 영역 */
+    &.list {
+        /* 검색 */
+        .srch-sect {
+            .container {
+                
+                .srch-area { 
+                    .srch-box {
+                        .srch-txt {
+                            input {
+                                margin-top: -4px;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

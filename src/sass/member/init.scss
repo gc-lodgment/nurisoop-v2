@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+@import "../parts/common";
+
+
+/* 콘텐츠 영역 */
+.contents { 
+    /* sub top */
+    @include sub-top($pd:56px 0 65px);
+    
+    /* 멤버십 */
+    &.membership {
+        padding-bottom: 150px;
+        
+        .sub-tit-box {
+            text-align: center;
+            margin-top: 62px;
+            padding: 66px 0 0;
+            border-top: 1px solid $bor-gray-03;
+            p {
+                font-weight: 300;
+                &.sub-txt {
+                    display: inline-block;
+                    padding-bottom: 6px;
+                    font-size: 17px;
+                    letter-spacing: 0.3px;
+                    word-spacing: 6px;
+                    border-bottom: 1px solid $bor-gray-03;
+                }
+                &.sub-tit {
+                    margin-top: 14px;
+                    font-size: 32px;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: 0;
+                    word-spacing: 2px;
+                    color: #4f4f4f;
+                    
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    
+                    .img {
+                        & + span {
+                            padding-left: 15px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .sect-tit-box {
+            text-align: center;
+            p {
+                font-weight: 300;
+                &.sub-txt {
+                    display: inline-block;
+                    padding-bottom: 2px;
+                    font-size: 20px;
+                    letter-spacing: 0.3px;
+                    word-spacing: 3px;
+                    color: $fg-green-02;
+                    border-bottom: 1px solid $bor-green-01;
+                }
+                &.sub-tit {
+                    margin-top: 17px;
+                    font-size: 32px;
+                    font-weight: 500;
+                    line-height: 1;
+                    color: $fg-black;
+                }
+            }
+        }
+        
+        .newmb-sect {
+            .container {
+                padding: 55px 0 71px;
+                background: url(http://static.nurisoop.co.kr/img/renew/member/bg_newMember.jpg) no-repeat center;
+                
+                .new-list {
+                    @include bx;
+                    @include clearfix;
+                    padding: 11px 0 0 0;
+                    li { 
+                        @include bx;
+                        float: left;
+                        //width: 33.33333%;
+                        padding: 28px 75px 0 90px;
+                        text-align: center;
+                        
+                        .txt-box {
+                            @include bx;
+                            width: 310px;
+                            height: 234px;
+                            padding: 114px 0 0 0;
+                            p {
+                                line-height: 1.4;
+                                &.new-tit {
+                                    font-size: 25px;
+                                    font-weight: 400;
+                                    letter-spacing: 0;
+                                    color: $fg-green-02;
+                                }
+                                &.new-txt {
+                                    font-size: 17px;
+                                    font-weight: 300;
+                                    letter-spacing: 0;
+                                    color: $fg-gray-01;
+
+                                    &:first-child {
+                                        padding-top: 7px;
+                                    }
+                                }
+                                &.new-tit + .new-txt {
+                                    padding-top: 3px;
+                                }
+                            }
+                        }
+                        
+                        &.nth-1 {
+                            .txt-box {
+                                background: url(http://static.nurisoop.co.kr/img/renew/member/bg_newMember_01.png) no-repeat center;
+                            }
+                        }
+                        
+                        &.nth-2 {
+                            padding-left: 0;
+                            padding-right: 0;
+                            .txt-box {
+                                background: url(http://static.nurisoop.co.kr/img/renew/member/bg_newMember_02.png) no-repeat center;
+                            }
+                        }
+                        
+                        &.nth-3 {
+                            .txt-box {
+                                background: url(http://static.nurisoop.co.kr/img/renew/member/bg_newMember_03.png) no-repeat center;
+                            }
+                        }
+                        
+                        &.nth-4 {
+                            .txt-box {
+                                background: url(http://static.nurisoop.co.kr/img/renew/member/bg_newMember_04.png) no-repeat center;
+                            }
+                        }
+                        
+                        &.nth-5 {
+                            padding-left: 0;
+                            padding-right: 0;
+                            .txt-box {
+                                background: url(http://static.nurisoop.co.kr/img/renew/member/bg_newMember_05.png) no-repeat center;
+                            }
+                        }
+                        
+                        &.nth-6 {
+                            .txt-box {
+                                background: url(http://static.nurisoop.co.kr/img/renew/member/bg_newMember_06.png) no-repeat center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .mbship-sect {
+            .container {
+                padding-top: 64px;
+                
+                .tbl-ship {
+                    @include bx;
+                    margin-top: 38px;
+                    .tbl {
+
+                        .ie8 & {
+                            border-collapse: collapse;
+                        }
+                        th, td {
+                            @include bx;
+                            border: 1px solid $bor-gray-03;
+                        }
+                        thead {
+                            tr {
+                                th {
+                                    height: 140px;
+                                    padding-top: 3px;
+                                    .ship-txt {
+                                        padding-top: 73px;
+                                        font-size: 16px;
+                                        font-weight: 400;    
+                                        line-height: 1;
+                                        letter-spacing: 0;
+                                        word-break: break-all;
+                                        letter-spacing: 0;
+                                    }
+                                    
+                                    &.bnk {
+                                        overflow: hidden;
+                                        padding-top: 0;
+                                        .line {
+                                            @include bx;
+                                            display: block;
+                                            width: 100%;
+                                            height: 100%;
+                                            text-align: left;
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/backslash.png);
+                                            background-size: 100% 100%;
+                                        }
+                                    }
+                                    
+                                    &.grd-01 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_01.png) no-repeat center top;
+                                        }
+                                    }
+                                    
+                                    &.grd-02 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_02.png) no-repeat center top;
+                                        }
+                                    }
+                                    
+                                    &.grd-03 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_03.png) no-repeat center top;
+                                        }
+                                    }
+                                    
+                                    &.grd-04 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_04.png) no-repeat center top;
+                                        }
+                                    }
+                                    
+                                    &.grd-05 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_05.png) no-repeat center top;
+                                        }
+                                    }
+                                    
+                                    &.grd-06 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_06.png) no-repeat center top;
+                                        }
+                                    }
+                                    
+                                    &.grd-07 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_07.png) no-repeat center top;
+                                        }
+                                    }
+                                    
+                                    &.grd-08 {
+                                        .ship-txt {
+                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_08.png) no-repeat center top;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                th, td {
+                                    height: 98px;
+                                    .fg-grn {
+                                        color: $fg-green-02;
+                                    }
+                                }
+                                th {
+                                    em {
+                                        display: block;
+                                        font-size: 400;
+                                        font-size: 17px;
+                                    }
+                                    span {
+                                        display: inline-block;
+                                        font-size: 14px;
+                                        font-size: 400;
+                                        color: $fg-gray-03;
+                                        
+                                        .ie8 & {
+                                            letter-spacing: -1.4px;
+                                        }
+                                    }
+                                    em + span {
+                                        padding-top: 5px;
+                                    }
+                                }
+                                td {
+                                    padding: 20px 0;
+                                    font-size: 15px;
+                                    font-weight: 400;
+                                    line-height: 1.3;
+                                    color: $fg-gray-01;
+                                    em {
+                                        
+                                    }
+                                    
+                                    .tbl-list {
+                                        @include bx;
+                                        display: inline-block;
+                                        padding: 4px 0;
+                                        text-align: left;
+                                        li {
+                                            @include bx;
+                                            padding-left: 11px;
+                                            line-height: 1.7;
+                                            letter-spacing: 0;
+                                            &:before {
+                                                content: '';
+                                                @include position(absolute, 12px, 0);
+                                                width: 4px;
+                                                height: 1px;
+                                                background: $fg-gray-01;
+                                            }
+                                            &.f-bd {
+                                                font-weight: 500;
+                                                color: $fg-black;
+                                                &:before {
+                                                    background: $bg-black-01;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                &.tr-new-member {
+                                    td {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .ship-info-box {
+                    @include bx;
+                    @include clearfix;
+                    display: table;
+                    width: 100%;
+                    margin-top: 60px;
+                    background: $bg-gray-02;
+                    .info-row {
+                        @include bx;
+                        display: table-cell;
+                        padding: 46px 0 47px;
+                        vertical-align: middle;
+                        @mixin info-font {
+                            font-size: 15px;
+                            font-weight: 300;
+                            line-height: 1.7;
+                            color: $fg-gray-01;
+                        }
+                        .info-tit {
+                            font-size: 25px;
+                            font-weight: 400;
+                            line-height: 1;
+                            text-align: center;
+                            color: $fg-green-02;
+                        }
+                        .info-list {
+                            li {
+                                @include info-font; 
+                                padding-top: 1px;
+                                letter-spacing: 0;
+                            }
+                        }
+                        .info-ast {
+                            margin-top: 27px;
+                            @include info-font;
+                            @include txtAst;
+                        }
+                        
+                        &.w-1 {
+                            width: 377px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

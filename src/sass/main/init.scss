@@ -189,47 +189,51 @@
                             @include bx;
                             display: block;
                             cursor: pointer;
-
-                            .sale-txt {
-                                @include trasBase(0);
-                            }
                             
-                            .hover-box {
-                                z-index: 4;
-                                @include position(absolute, 0, 0);
-                                display: table;
-                                width: 100%;
-                                height: 236px;
-                                background: rgba(0, 0, 0, 0.5);
-                                @include trasBase(0);
-                                
-                                .txt-box {
-                                    display: table-cell;
+                            .img-box {
+                                @include bx;
+                                display: block;
+                                .sale-txt {
+                                    @include trasBase(0);
+                                }
+
+                                .hover-box {
+                                    z-index: 4;
+                                    @include position(absolute, 0, 0);
+                                    display: table;
                                     width: 100%;
-                                    vertical-align: middle;
-                                    text-align: center;
-                                    p {
-                                        @include bx;
-                                        font-size: 16px;
-                                        color: #fff;
-                                        &.prd-tit {
-                                            margin-top: -2px;
-                                        }
-                                        &.prd-price {
-                                            display: inline-block;
-                                            padding: 15px 0 9px;
-                                            line-height: 1;
-                                            @include line-row($mt:6px);
-                                        }
-                                        &.prd-sale {
-                                            
+                                    height: 236px;
+                                    background: rgba(0, 0, 0, 0.5);
+                                    @include trasBase(0);
+
+                                    .txt-box {
+                                        display: table-cell;
+                                        width: 100%;
+                                        vertical-align: middle;
+                                        text-align: center;
+                                        p {
+                                            @include bx;
+                                            font-size: 16px;
+                                            color: #fff;
+                                            &.prd-tit {
+                                                margin-top: -2px;
+                                            }
+                                            &.prd-price {
+                                                display: inline-block;
+                                                padding: 15px 0 9px;
+                                                line-height: 1;
+                                                @include line-row($mt:6px);
+                                            }
+                                            &.prd-sale {
+
+                                            }
                                         }
                                     }
                                 }
-                                @include icon-box{
-                                    @include trasBase(0);
-                                };
                             }
+                            @include icon-box{
+                                @include trasBase(0);
+                            };
                             
                             &:hover {
                                 .sale-txt {
@@ -243,6 +247,9 @@
                                     [class*='box'] {
                                         @include trasBase(1, $time:0.5s, $ds:0.2s);
                                     }
+                                }
+                                .ico-box {
+                                    @include trasBase(1, $time:0.5s, $ds:0.2s);
                                 }
                             }
                         }

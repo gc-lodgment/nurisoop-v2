@@ -259,6 +259,7 @@ textarea::placeholder {
     
 }
 
+//text
 .sale-txt {
     z-index: 5;
     @include position(absolute, 0, $right: 0);
@@ -272,6 +273,51 @@ textarea::placeholder {
     //background: $bg-black-01;
     background: $bg-gray-03;
     @include trasBase(1);
+}  
+//누리숲pick 숫자
+.best-num {
+    $wt:49px;
+    z-index: 6;
+    @include bx;
+    @include position(absolute, $left: 0, $bottom: 0);
+    width: $wt;
+    height: $wt;
+    padding: 5px 0 0 0; 
+    text-align: center;
+    border: 1px solid $bor-gray-03;
+    background: #fff;
+    
+    span {
+        display: block;
+        letter-spacing: 0;
+        line-height: 1;
+        &.best-txt {
+            font-size: 11px;
+            color: $fg-gray-04;
+        }
+        &.num-txt {
+            padding-top: 2px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+    
+    &.red {
+        background: $bg-red-01;
+        span {
+            &.best-txt, &.num-txt {
+                color: #fff;
+            }
+        }
+    }
+    &.green {
+        background: $bg-green-01;
+        span {
+            &.best-txt, &.num-txt {
+                color: #fff;
+            }
+        }
+    }
 }
 
 /* btn */
@@ -545,33 +591,11 @@ $hd-ht: ($gnb-ht+31);
                 padding: 40px 0 39px;
                 text-align: center;
                 .btn-menu {
-                    @include position(absolute, 50%, 0);
-                    display: inline-block;
-                    width: 25px;
-                    margin-top: -11.5px;
-                    span {
-                        display: block;
-                        width: 100%;
-                        height: 2px;
-                        margin-top: 8px;
-                        background: #999;
-                        &.nth-1 {
-                            margin-top: 0;
+                    @include btn-menu {
+                        &.on {
+                            margin-top: -12px;
                         }
-                        &.nth-2 {
-                            background: #75b8b1;
-                        }
-                    }
-                    //on 햇을경우 X
-                    &.on {
-                        height: 25px;
-                        margin-top: -12px;
-                        span {
-                            display: none;
-                        }
-                        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
-                        background-position: 0 -83px;
-                    }
+                    };
                 }
                 .logo {
                     display: inline-block;
@@ -883,6 +907,312 @@ $hd-ht: ($gnb-ht+31);
     }
 }
 
+/* quick 영역 - 퀵메뉴 */
+.quick {
+    z-index: 998;
+    @include position(fixed, $hd-ht, $right:0);
+    @include clearfix;
+    //overflow: hidden;
+    height: 100%;
+    right: -170px;
+    
+    .quick-left {
+        @include bx;
+        float: left;
+        margin-right: 5px;
+        .quick-list {
+            @include bx;
+            li {
+                $wt:40px;
+                @include bx;
+                cursor: pointer;
+                width: $wt;
+                height: $wt;
+                margin-top: 2px;
+                background: $bg-black-01;
+                &:first-child {
+                    margin-top: 0;
+                }
+                .quick-txt {
+                    @include bx;
+                    display: block;
+                    span {
+                        display: block;
+                        overflow: hidden;
+                        width: $wt;
+                        height: $wt;
+                        text-indent: -999px;
+                        font-size: 0;
+                        color: #fff;
+                        background: url(http://static.nurisoop.co.kr/img/renew/common/ico_btn_quick.png) no-repeat;
+                        background-position: -37px -5px;
+                    }
+                    em {
+                        @include position(absolute, 11px, 2px);
+                        display: inline-block;
+                        width: 15px;
+                        font-size: 10px;
+                        text-align: center;
+                        line-height: 1;
+                        color: #fff;
+                    }
+                }
+                &.menu {
+                    .btn-menu {
+                        @include btn-menu(20px, 18px, 50%, -7px, 1px, 6px, #fff, -146px -82px);
+                        span {
+                        }
+                    }
+                }
+                &.hotdeal {
+                   .quick-txt {
+                        span {
+                            
+                        }
+                    }
+                }
+                &.order {
+                    .quick-txt {
+                        span {
+                            background-position: -37px -67px;
+                        }
+                    }
+                }
+                &.cart {
+                    .quick-txt {
+                        span {
+                            background-position: -37px -130px;
+                        }
+                    }
+                }
+                &.notice {
+                    .quick-txt {
+                        span {
+                            background-position: -37px -192px;
+                        }
+                    }
+                }
+                &.kakao {
+                    .quick-txt {
+                        span {
+                            background-position: -37px -254px;
+                        }
+                    }
+                }
+                &.today {
+                    cursor: auto;
+                    .quick-txt {
+                        span {
+                            background-position: -37px -315px;
+                        }
+                    }
+                }
+                &.top {
+                    .quick-txt {
+                        span {
+                            position: relative;
+                            height: auto;
+                            padding-top: 18px;
+                            text-indent: 0;
+                            font-size: 12px;
+                            text-align: center;
+                            line-height: 1;
+                            letter-spacing: -0.7px;
+                            background-position: -37px -363px;
+                            &:before {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .quick-right {
+        @include bx;
+        //display: none;
+        float: right;
+        width: 170px;
+        height: 100%;
+        border-left: 1px solid $bor-gray-03;
+        border-right: 1px solid $bor-gray-03;
+        background: #fff;
+        
+        .quick-list {
+            @include bx;
+            > li {
+                @include bx;
+                border-bottom: 1px solid $bor-gray-02;
+                .quick-txt { 
+                    $ht:50px;
+                    @include bx;
+                    display: block;
+                    height: $ht;
+                    padding: 0 30px 0 56px;
+                    @include trasBase(1);
+                    span {
+                        font-size: 14px;
+                        line-height: $ht;
+                        &.bg {
+                            @include position(absolute, 0, 30px);
+                            display: block;
+                            width: 20px;
+                            height: $ht;
+                            background: url(http://static.nurisoop.co.kr/img/renew/common/ico_btn_quick.png) no-repeat;
+                            background-position: 0 0;
+                        }
+                    }
+                    
+                }
+                
+                .slide-box {
+                    @include bx;
+                    padding: 0 24px 20px;
+                    .quick-slide-list {
+                        @include bx;
+                        .slide {
+                            a {
+                                @include bx;
+                                display: block;
+                                width: 120px;
+                                height: 120px;
+                                background: $bg-gray-02;
+                                img {
+                                    @include bx;
+                                }
+                            }
+                        }
+                    }
+                    .bx-controls {
+                        $wt:18px;
+                        @include bx;
+                        margin-top: 7px;
+                        text-align: center;
+                        .bx-controls-direction {
+                            @include bx;
+                            a {
+                                @include position(absolute, 3px);
+                                box-sizing: border-box;
+                                width: $wt;
+                                height: $wt;
+                                border: 1px solid $bor-gray-03;
+                                background: $bg-gray-02;
+                                img {
+                                    @include position(absolute, 50%, 50%);
+                                    margin: -5px 0 0 -3.5px;
+                                }
+                                &.bx-prev {
+                                    left: 19px;
+                                }
+                                &.bx-next {
+                                    right: 19px;
+                                }
+                            }
+                        }
+                        .bx-pager.bx-default-pager {
+                            display: inline-block;
+                            font-size: 13px;
+                            line-height: $wt;
+                            color: $fg-gray-06;
+                        }
+                    }
+                }
+                
+                > a {
+                    &:hover {
+                        @include trasBase(1, $fg-green-01);
+                    }
+                }
+                
+                &.hotdeal {
+                    .quick-txt { 
+                        span {
+                            &.bg {
+
+                            }
+                        }
+                    }
+                }
+                &.order {
+                    .quick-txt { 
+                        span {
+                            &.bg {
+                                background-position: 0 -62px;
+                            }
+                        }
+                    }
+                }
+                &.cart {
+                    .quick-txt { 
+                        span {
+                            &.bg {
+                                background-position: 0 -124px;
+                            }
+                        }
+                    }
+                }
+                &.notice {
+                    .quick-txt { 
+                        span {
+                            &.bg {
+                                background-position: 0 -186px;
+                            }
+                        }
+                    }
+                }
+                &.kakao {
+                    .quick-txt { 
+                        span {
+                            &.bg {
+                                background-position: 0 -248px;
+                            }
+                        }
+                    }
+                }
+                &.question {
+                    .quick-txt { 
+                        span {
+                            &.bg {
+                                background-position: 0 -310px;
+                            }
+                        }
+                    }
+                }
+                &.today {
+                    .quick-txt { 
+                        span {
+                            &.bg {
+                                background-position: 0 -371px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contact-box {
+            padding: 28px 10px 0 18px;
+            p {
+                line-height: 1;
+                color: $fg-gray-01;
+                &.ct-tit {
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: $fg-black;
+                }
+                &.ct-call {
+                    padding: 17px 0 7px;
+                    font-size: 17px;
+                }
+                &.ct-txt {
+                    font-size: 13px;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+}
 
 /* content 영역 */
 .contents {
@@ -911,6 +1241,23 @@ $hd-ht: ($gnb-ht+31);
                     }
                 }
             }
+        }
+    }
+    
+    &.prd-list {
+        
+        /* 서브 탑 배너 */
+        .sub-top-sect {
+            padding: 20px 0;
+        }
+        
+        /* 타이틀 */
+        .sub-tit {
+            padding: 19px 0 31px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1;
+            text-align: center;
         }
     }
 }

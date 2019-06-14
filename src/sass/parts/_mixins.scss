@@ -300,6 +300,44 @@
     @content
 }
 
+//btn menu 
+@mixin btn-menu($wd:25px, $ht:25px, $left:0, $mt:0, $s-ht:2px, $s-mt:8px, $s-bg:#999, $on-bg-ps:0 -83px){
+    @include position(absolute, 50%, $left);
+    display: inline-block;
+    width: $wd;
+    margin-top: $mt;
+    @if( $left  == 0 ) {
+        margin-left: 0;
+    }@else {
+        margin-left: -($wd/2);
+    }
+    span {
+        display: block;
+        width: 100%;
+        height: $s-ht;
+        margin-top: $s-mt;
+        background: $s-bg;
+        &.nth-1 {
+            margin-top: 0;
+        }
+        &.nth-2 {
+            background: #75b8b1;
+        }
+    }
+    //on 햇을경우 X
+    &.on {
+        height: $ht;
+        margin-top: -($ht/2);
+        span {
+            display: none;
+        }
+        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: $on-bg-ps;
+    }
+    
+    @content
+}
+
 //text detail - 1+1, GIFT, SALE 
 @mixin txtDt($wd:100px, $ht:60px, $fs:28px, $top:-1px, $left:null, $right:-1px){
     .txt-dt {
@@ -322,6 +360,16 @@
         &.sale {
             background: #528da8;
         }
+    }
+}
+
+//text * 
+@mixin txtAst($p-l:8px, $top:3px, $left:0){
+    position: relative;
+    padding-left: $p-l;
+    &:before {
+        content: '*';
+        @include position(absolute, $top, $left);
     }
 }
 
@@ -391,7 +439,7 @@
             }
             &.ico-heart {
                 span {
-                    background-position: 0 -42px;
+                    background-position: -1px -42px;
                 }
             }
             &.ico-cart {
@@ -406,7 +454,7 @@
                 @include trasBase(1, $bg:$bg-on);
                 &.ico-heart {
                     span {
-                        background-position: -42px -42px;
+                        background-position: -43px -42px;
                     }
                 }
                 &.ico-cart {
@@ -685,17 +733,21 @@
                 .prd-box {
                     @include bx;
                     .prd-link {
+                        cursor: pointer;
                         @include bx;
                         display: block;
                         width: 100%;
                         height: $ht;
-                        .img-prd {
-                            img {
-                                @include position(absolute, 0, 0);
-                                &.off {
-                                }
-                                &.on {
-                                    @include trasBase(0);
+                        
+                        .img-box {
+                            .img-prd {
+                                img {
+                                    @include position(absolute, 0, 0);
+                                    &.off {
+                                    }
+                                    &.on {
+                                        @include trasBase(0);
+                                    }
                                 }
                             }
                         }
@@ -915,7 +967,7 @@
 }
             
 //weekly 상품 리스트 
-@mixin wk-list($wd:50%, $ht:250px, $wd-r:368px, $pt:20px, $t-pd:45px 39px 30px 40px, $t-sub-pd:18px 0 28px, $wk-tit-fs:16px, $wk-txt-fs:15px, $price-pd-t:14px, $price-fs:15px){
+@mixin wk-list($wd:50%, $ht:250px, $wd-r:368px, $pt:20px, $t-pd:45px 39px 30px 40px, $wk-tit-fs:16px, $wk-txt-fs:15px, $price-pd-t:14px, $price-fs:15px){
     .weekly-area {
         @include bx;
         @include clearfix;
@@ -948,6 +1000,7 @@
                         width: ($ht)-(1);
                         height: ($ht)-(2);
                         overflow: hidden;
+                        cursor: pointer;
                         &:before {
                             @include position(absolute, 0, $right:0);
                             content: '';
@@ -970,6 +1023,19 @@
                         .ico-box {
                             @include trasBase(0);
                         }
+                        &:hover {
+                            .img-prd {
+                                img {
+                                    &.on {
+                                        @include trasBase(1, $time:0.8s, $ds:0.6);
+                                    }
+                                }
+                            }
+                            
+                            .ico-box {
+                                @include trasBase(1, $time:0.7s, $ds:0.3s);
+                            }
+                        }
                     }
 
                     .txt-box {
@@ -985,10 +1051,20 @@
                             @include bx;
                             word-break: keep-all;
                             .wk-tit {
-                                font-size: $wk-tit-fs;
+                                padding-bottom: 18px;
+                                a {
+                                    display: block;
+                                    font-size: $wk-tit-fs;
+                                    
+                                    &:hover {
+                                        @include trasBase;
+                                    }
+                                }
                             }
                             .wk-txt {
-                                padding: $t-sub-pd;
+                                @include bx;
+                                min-height: 85px;
+                                padding-bottom: 18px;
                                 font-size: $wk-txt-fs;
                                 font-weight: 300;
                                 color: $fg-gray-04;
@@ -1024,16 +1100,6 @@
                         @include trasBase(1);
                         .sale-txt {
                             @include trasBase(1, $bg:$bg-black-01);
-                        }
-                        .img-prd {
-                            img {
-                                &.on {
-                                    @include trasBase(1, $time:0.8s, $ds:0.6);
-                                }
-                            }
-                        }
-                        .ico-box {
-                            @include trasBase(1, $time:0.7s, $ds:0.3s);
                         }
                     }
                 }
@@ -1400,6 +1466,8 @@
                 color: $txt-fg;
             }
         }
+        
+        @content
     }
 }
 

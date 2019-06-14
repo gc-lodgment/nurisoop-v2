@@ -3,6 +3,8 @@ $(function(){
     ftSlideFn();
     tabFn();
     dateFn();
+    quickFn();
+    fileFn();
     
     //search 버튼 클릭 시 
     $('a[class*="btn-srch"]').on('click', function(){
@@ -10,7 +12,7 @@ $(function(){
     });
     
     //메뉴
-    $('.btn-menu').on('click', function(){
+    $('.header .btn-menu').on('click', function(){
         var menuArea = $('.menu-area');
         $(this).toggleClass('on');
         if( $('html').hasClass('ie8') ){
@@ -25,45 +27,122 @@ $(function(){
     });
     
     //btn pop close
-    $('.btn-pop-close').on('click', function(){
+    $('.popClose').on('click', function(){
         //console.log('닫기');
         $(this).parents('div[class*="pop-wrap"]').stop().fadeOut();
         
         $('html').css({'overflow': 'auto', 'height': '100%'});
         $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
     });
+
+    //txt, img file del
+    $(document).on('click', '.fileTxtDel', function(){
+        //console.log('click');
+        $(this).parent('.row-file').remove();
+    });
+    $(document).on('click', '.fileImgDel', function(){
+        //console.log('click');
+        $(this).remove();
+    });
+    
+    //상품 detail
+    if( $('.contents').hasClass('prd-detail') ){
+        detailSlideFn();
+        selFn();
+        
+        //리뷰 자세히보기
+        $('.rv-list-box .view-box .view-mid .txt, .rv-list-box .view-box .view-bot .desc').on('click', function(){
+            $('.rv-box').parent('li').removeClass('on');
+            $(this).parents('.rv-box').parent('li').addClass('on');
+            
+            var ht = $('header').height();
+            var offsetTop = $(this).parents('.rv-box').parent('li').offset().top;
+
+            $('html, body').stop().animate({
+                scrollTop : (offsetTop-(ht+10)) // 10 - 예쁜여유분공간
+            }, 500);
+        })
+    }else {
+       
+    }
+    
+    //글쓰기 팝업
+    $('.writePop').on('click', function(){
+        $('.pop-wrap.pop-review.write').stop().fadeIn();
+        popOpenRv();
+    
+        //리뷰 별
+        $('.pop-wrap.pop-review .rv-star-box .ico-star span').on('click', function(){
+            var idx = $(this).index();
+            //console.log(idx);
+            $('.rv-star-box .ico-star span').removeClass('on');
+            for( var i = 0 ; i <= idx ; i++ ){
+                $('.rv-star-box .ico-star span:eq('+i+')').addClass('on');
+            }
+        });
+        
+        //텍스트 글자 카운트
+        $('.pop-wrap.pop-review .rv-view-box .txtCount').keyup(function (e){
+            var count = $(this).val();
+            $(this).siblings('.countNum em').html(count.len); 
+        });
+        
+        //img file
+        imgfileFn();
+    });
 });
 
 /* tab */
 function tabFn(){
     $(".tab-list > li").on("click", function() {
+        var atr = $(this).find('a').attr('href');
+        var ht = $('header').height();
+        var mg = ht+15;
+        var offsetTop;
         
-		$(this).addClass('on').siblings().removeClass('on');
+        //console.log(atr);
         
+        /* a 태그 변화 */
+        if( $(this).hasClass('bnk') ){
+            //공백일 경우 클래스 작동 안하게
+        }else {
+		  $(this).addClass('on').siblings().removeClass('on');
+        }
+        
+        /* 탭 function */
         if( $(this).parents('.tab-box').hasClass('prdList') ){
             //상품리스트 - sub
-        }else {
-            var atr = $(this).find('a').attr('href');
-            var ht = $('header').height();
-            var offsetTop = $(this).parents('.tab-box').offset().top;
-            
-           /* if( $(this).parents('.tab-box').hasClass('detail') ) {
-                //상품 디테일
-                console.log('dt');
-                $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().hide();
-                $(atr).stop().show();
-            }else {
-                //ex) 메인 탭 상품 리스트
-                $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().delay().fadeOut(500);
-                $(atr).stop().delay().fadeIn(1000);
-            }*/
-            
-            $(this).parents('.tab-box').siblings('div[class*="-area"]').stop().delay().fadeOut(500);
-            $(atr).stop().delay().fadeIn(1000);
+        }else if( $(this).parents('.tab-box').hasClass('pageMove') ){
+            //이용약관 등 페이지 내 이동
+            offsetTop = $(atr).offset().top;
             
             $('html, body').stop().animate({
-                scrollTop : (offsetTop-(ht+15)) // 15 - 예쁜여유분공간
-            }, 500);
+                scrollTop : (offsetTop-mg) 
+            }, 1000);
+        }else {
+            //fade in, out
+            offsetTop = $(this).parents('.tab-box').offset().top;
+            
+            //$(this).parents('.tab-box').siblings('div[class*="-area"]').stop().delay().fadeOut(500);
+            $(this).parents('.contents').find('.tabListArea').stop().delay().fadeOut(500);
+            $(atr).stop().delay().fadeIn(1000);
+            
+            if( $(this).parents('.tab-list').hasClass('nuripick') ){
+                //누리숲 PICK의 경우
+                var atrLen = atr.length;
+                var nuripickBn = atr.substring(1, atrLen);
+                
+                //console.log(atrLen, nuripickBn)
+                $('.sub-top-sect .top-bn img').attr('src', 'http://static.nurisoop.co.kr/img/renew/nuripick/bn_top_'+nuripickBn+'.jpg')
+                
+                $('html, body').stop().animate({
+                    scrollTop : 0
+                }, 500);
+            }else {
+                $('html, body').stop().animate({
+                    scrollTop : (offsetTop-mg) 
+                }, 500);
+            }
         }
     });
 }
@@ -122,6 +201,53 @@ function dateFn(){
         }
     });
 }*/
+
+
+/* detail img slider */
+function detailSlideFn(){
+    var slider = $('#prdDtailSlide').bxSlider({
+        mode: 'fade',
+        auto: false,
+        autoHover: true,
+        autoControls: false,
+        controls: true,
+        pager: true,
+        pagerCustom: '#slidePager',
+        speed: 1000,
+        duration: 6000,
+        prevText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_left_03.png" alt="이전">',
+        nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_03.png" alt="다음">'
+    });
+    
+    $("#slidePager li").hover(function(){
+        var newSlideNo = $($(this).find("a")[0]).attr('data-slide-index');
+        
+        if(newSlideNo != slider.getCurrentSlide()){
+            slider.goToSlide(newSlideNo);
+        }
+    });
+}
+
+/* drop down */
+function selFn(){
+    $('.sel-txt').on('click', function(){
+        if( $(this).siblings().hasClass('on') ){
+            $('.sel-txt').siblings().removeClass('on');
+        }else {
+            $('.sel-txt').siblings().removeClass('on');
+            $(this).siblings().addClass('on');
+        }
+    });
+    
+    $('.sel-list li').on('click', function(){
+        var selBox = $(this).parents('.sel-box');
+        var txt = $(this).find('a').text();
+        //console.log(txt);
+        
+        selBox.find('.sel-list').removeClass('on');
+        selBox.find('.sel-txt').text(txt);
+    });
+}
  
 /* footer family list */
 var fsite = {
@@ -158,8 +284,42 @@ function ftSlideFn(){
     });
 }
 
+/* quick function */
+function quickFn(){
+    var time = 500;
+    var slider = $('#quickSlide').bxSlider({
+        mode: 'fade',
+        auto: true,
+        autoHover: true,
+        autoControls: false,
+        controls: true,
+        pager: true,
+        pagerType: 'short',
+        speed: 1000,
+        duration: 6000,
+        prevText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_left_05.png" alt="이전">',
+        nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_05.png" alt="다음">'
+    });
+    
+    $('.quick .quick-list .btn-menu').on('click', function(){
+        $(this).toggleClass('on');
+        if( $(this).hasClass('on') ){
+            $(this).parents('.quick').stop().animate({right: 0}, time);
+            slider.reloadSlider();
+        }else {
+            $(this).parents('.quick').stop().animate({right: '-170px'}, time);
+        }
+    });
+    
+    $('.quick .quick-list .top').on('click', function(){
+        $('html, body').stop().animate({
+            scrollTop : 0
+        }, 1000);
+    });
+}
+
 /* 팝업 */
-function rvPopOpen(id){
+function comPopOpen(id){
     $(id).stop().fadeIn();
     
     popOpenRv();
@@ -167,7 +327,6 @@ function rvPopOpen(id){
 
 //pop open
 function popOpen(){
-        
     $('html').css({'overflow': 'hidden', 'height': '100%'});
     $('.pop-wrap').on('scroll touchmove mousewheel', function(event) { 
         event.preventDefault();     
@@ -183,5 +342,72 @@ function popOpenRv(){
         event.preventDefault();     
         event.stopPropagation();     
         return false; 
+    });
+}
+
+/* 텍스트 파일 */
+function fileFn(){
+    var fileName = $('#ipFiles');
+    var fileTxt, selFile, reader, ths;
+    
+    fileName.on('change', function(e){
+        
+        if(window.FileReader){ 
+            reader = new FileReader();
+            ths = $(this).get(0).files[0];
+            fileTxt = ths.name;
+            
+            reader.onload = function (e) {
+                $('#txtFile').append('<p class="row-file"><span class="num-txt ico-file-02"><span></span><em>'+fileTxt+'</em></span><a href="javascript:;" class="btn-file-del ico-file-cls fileTxtDel"><span></span>삭제</a></p>');
+            }
+            
+            reader.readAsDataURL(ths);
+        } 
+        else {// old IE
+            fileTxt = $(this).val().split('/').pop().split('\\').pop(); 
+            
+            $('#txtFile').append('<p class="row-file"><span class="num-txt ico-file-02"><span></span><em>'+fileTxt+'</em></span><a href="javascript:;" class="btn-file-del ico-file-cls fileTxtDel"><span></span>삭제</a></p>');
+        }
+    });
+}
+
+/* 이미지 파일 */
+function imgfileFn(){
+    var fileName = $('#ipImgFiles');
+    var fileTxt, fileImg, selFile, reader, ths;
+    var i = 0;
+    
+    fileName.on('change', function(e){
+        if(window.FileReader){ 
+            reader = new FileReader();
+            ths = $(this).get(0).files[0];
+            fileTxt = ths.name;
+            reader.onload = function (e) {
+                $('#imgFile').append('<a href="javascript:;" class="btn-pop-file-cls fileImgDel"><p class="img-row"><span><img src="'+e.target.result+'" alt="'+fileTxt+'"></span></p></a>');
+            }
+
+            reader.readAsDataURL(ths);
+        } 
+        else {// old IE 
+            i = i+1;
+            var imgNum = 'img'+i;
+            //fileImg = String($(this).val());
+            //fileTxt = $(this).val().split('/').pop().split('\\').pop(); 
+            fileImg = $(this).val();
+
+            //this.select(); document.getElementById('filetext').value=;document.selection.createRange().text.toString()
+
+            $('#imgFile').append('<a href="javascript:;" class="btn-pop-file-cls fileImgDel"><p class="img-row"><span><img id="'+imgNum+'"></span></p></a>');//alt="'+fileTxt+'"
+
+            $('#imgFile').find('.fileImgDel').find('#'+imgNum).css({
+                'max-width' : '100%',
+                'background' : '#fff',
+                '-ms-filter' : "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+"fi"+"le://"+fileImg+"', sizingMethod='scale')",
+                'filter' : "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+"fi"+"le://"+fileImg+"', sizingMethod='scale')"
+            });
+
+            return i;
+        }
+        
     });
 }

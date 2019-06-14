@@ -1,0 +1,88 @@
+<!-- 광고 제휴문의 팝업 -->
+<div id="popInquiry" class="pop-wrap pop-inquiry" style="display: none;">
+    <div class="pop-container">
+        <div class="inquiry-area">
+            <p class="iqy-tit">광고/제휴문의 작성하기</p>
+            
+            <div class="tbl-row">
+                <table class="tbl">
+                    <colgroup>
+                        <col style="width: 150px;">
+                        <col style="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><label for="writerName">작성자</label></th>
+                            <td>
+                                <div class="row"><input type="text" id="writerName" class="ip-txt" placeholder="" value=""></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="email">이메일</label></th>
+                            <td>
+                                <div class="row">
+                                    <input type="text" id="email" class="ip-txt" placeholder="" value="">
+                                    <label class="chk-txt"><input type="checkbox" for="email"><span class="btn-chk"></span>이메일로 답변을 받겠습니다.</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>분야</th>
+                            <td>
+                               <div class="row">
+                                    <select name="" id="" class="form-sel">
+                                        <option value="">광고분야</option>
+                                        <option value="">제휴분야</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="tit">제목</label></th>
+                            <td>
+                                <div class="row"><input type="text" id="tit" class="ip-txt" placeholder="" value=""></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="txt">내용</label></th>
+                            <td>
+                                <div class="row">
+                                    <textarea name="" id="txt" cols="30" rows="10" class="ta-txt"></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>첨부파일</th>
+                            <td>
+                                <!-- 처음엔 안뜨고 파일 수정할 경우나 파일을 다시 올릴경우 누적해서 이미지 올릴 수 있음 -->
+                                <div id="txtFile" class="row">
+                                </div>
+                                <!--<div id="txtFile" class="row">
+                                    <p class="row-file">
+                                        <span class="num-txt ico-file-02"><span></span><em>누리숲 스킨로션02.jpg</em></span> 
+                                        <a href="javascript:;" class="btn-file-del ico-file-cls fileTxtDel"><span></span>삭제</a>
+                                    </p>
+                                </div>-->
+
+                                <div class="row file-box">
+                                    <input type="text" id="" class="ip-txt ip-file" placeholder="" disabled="disabled">
+                                    <input type="file" id="ipFiles" class="ip-file-none" accept="image/gif, image/jpg, image/jpeg, image/png"> 
+                                    <label for="ipFiles" class="btn-com btn-file">파일선택</label>
+                                </div>
+                                <div class="row">
+                                    <p class="p-line">첨부파일을 합친 용량이 20M 이하만 업로드 가능합니다.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="btn-box">
+                <a href="javascript:;" class="btn-gray popClose">작성취소</a>
+                <button type="submit" class="btn-green">보내기</button>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn-pop-close popClose"><span>닫기</span></a>
+    </div>
+</div>
