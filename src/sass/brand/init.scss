@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+@import "../parts/common";
+
+
+/* 콘텐츠 영역 */
+.contents {
+    
+    &.board {
+        padding-bottom: 175px;
+        
+        /* sub top */
+        @include sub-top;
+        
+        /* 검색영역 */
+        .top-box {
+            @include bx;
+            @include clearfix;
+            padding-bottom: 12px;
+            
+            //select
+            .form-sel {
+                float: left;
+                @include sel-com(73px, 28px, 0 8px 0 0);
+            }
+
+            //input search
+            .srch-ip {
+                float: left;
+                @include ip-srch;
+            }
+        }
+        
+        /* table */
+        @include tbl-col-gray;
+
+        /* page num */
+        .page-area {
+            @include pagenation;
+            margin-top: 10px;
+        }
+        
+        &.list {
+            .board-sect {
+                .container {
+                    .board-area {
+                        @include bx;
+                    }
+                }
+            }
+
+        }
+    }
+}

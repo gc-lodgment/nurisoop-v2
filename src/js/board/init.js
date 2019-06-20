@@ -9,8 +9,7 @@ $(function () {
     /* 비밀번호 창 나타남 */
     $('.popPw').on('click', function(){
         //console.log('password');
-        /*$(this).parents('.contact-area').fadeOut();
-        $(this).parents('.contact-area').siblings('.pw-area').fadeIn();*/
+        comPopOpen('#popPW');
     });
 
 });

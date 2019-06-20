@@ -309,20 +309,62 @@
                                     }
                                 }
                             }
+                            
+                            .ie8 & {
+                                @include trasBase(1);
+                            }
+                            
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                @include trasBase(1);
+                            }
+
+                            .ie8 & {
+                                &:before {
+                                    content: none;
+                                }
+                            }
                         }
                         
                         &.slide-1 {
-                            background: url(http://static.nurisoop.co.kr/img/renew/main/bn_mid_01.jpg) no-repeat center center;
-                            background-size: cover;
+                            .slide-box {
+                                &:before, .ie8 & {
+                                    background: url(http://static.nurisoop.co.kr/img/renew/main/bn_mid_01.jpg) no-repeat center center;
+                                    background-size: cover;
+                                }
+                            }
                         }
                         
                         &.slide-2 {
-                            background: url(http://static.nurisoop.co.kr/img/renew/main/bn_mid_01.jpg) no-repeat center center;
-                            background-size: cover;
+                            .slide-box {
+                                &:before, .ie8 & {
+                                    background: url(http://static.nurisoop.co.kr/img/renew/main/bn_mid_01.jpg) no-repeat center center;
+                                    background-size: cover;
+                                }
+                            }
                         }
                     }
                 } 
                 @include btn-controls($left:0, $wd:100%, $bx:11px);
+                    
+                &:hover {
+                    .mid-slide-list { 
+                        li {
+                            .slide-box {
+                                &:before {
+                                    @include trasBase(0.6);
+                                }
+                                .ie8 & {
+                                    @include trasBase(0.6);
+                                }
+                            }
+                        }
+                    }
+                }
             }
             
             .mid-img-box {
@@ -339,7 +381,7 @@
                     bottom: 0;
                 }
                 a:hover {
-                    @include trasBase;
+                    @include trasBase(0.6);
                 }
             }
         }
@@ -363,8 +405,110 @@
         }
     }
     
+    /* 핫딜존 */
+    .hotdeal-sect {
+        margin-top: 102px;
+        .container {
+            .hotdeal-area {
+                @include bx;
+                margin-top: 53px;
+                .bx-wrapper {
+                    max-width: 100% !important;
+                }
+                .hotdeal-list {
+                    @include hot-list($mt:0);
+                }
+                .bx-controls {
+                    .bx-controls-direction {
+                        @include position(absolute, 50%, 0);
+                        z-index: 51;
+                        margin-top: -40px;
+                        width: 100%;
+                        a {
+                            @include position(absolute, 0);
+                            display: inline-block;
+                            box-sizing: border-box;
+                            width: 29px;
+                            height: 40px;
+                            padding: 8px 0;
+                            text-align: center;
+                            background: rgba(0, 0, 0, 0.2);
+                            .ie8 & {
+                                -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr=#20000000,endColorStr=#20000000)";
+                            }
+                            @include trasBase(1);
+                            img {
+                                position: relative;
+                                height: 25px;
+                            }
+                            &.bx-prev {
+                                left: 0px;
+                            }
+                            &.bx-next {
+                                right: 0px;
+                            }
+                            &:hover, &.on {
+                               background: rgba(0, 0, 0, 0.5);
+                                .ie8 & {
+                                    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr=#50000000,endColorStr=#50000000)";
+                                }
+                            }
+                            &.off {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                
+                .lst-box {
+                    @include position(absolute, 50%, $right:-103px);
+                    display: inline-block;
+                    margin-top: -40px;
+                    @include trasBase(0);
+                    
+                    .txt-next {
+                        //cursor: auto;
+                        display: inline-block;
+                        box-sizing: border-box;
+                        width: 29px;
+                        height: 40px;
+                        vertical-align: middle;
+                    }
+                    
+                    .btn-hotdeal {
+                        display: inline-block;
+                        width: 100px;
+                        height: 40px;
+                        //padding: 0 10px;
+                        font-size: 14px;
+                        text-align: center;
+                        vertical-align: middle;
+                        line-height: 40px;
+                        letter-spacing: 0;
+                        color: #fff;
+                        background: rgba(0, 0, 0, 0.5);
+                        @include trasBase(1);
+                        .ie8 & {
+                            -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr=#50000000,endColorStr=#50000000)";
+                        }
+                        &:hover {
+                           background: $bg-black-01;
+                            @include trasBase(1);
+                        }
+                    }
+                    
+                    &.on {
+                        z-index: 53;
+                        @include trasBase(1);
+                    }
+                }
+                
+            }
+        }
+    }
+    
     /* WEEKLY 1+1 */
-    .weekly-sect {
+    /*.weekly-sect {
         margin-top: 102px;
 		padding-bottom: 20px;
 		text-align: center;
@@ -373,7 +517,7 @@
             
             @include wk-list;
         }
-    }
+    }*/
     
     //bot banner
     @include bot-bn-sec;

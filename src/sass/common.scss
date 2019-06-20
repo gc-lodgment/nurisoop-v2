@@ -483,6 +483,10 @@ textarea::placeholder {
 }
 .f-bd {
     font-weight: 500;
+    
+    .ie8 & {
+        font-weight: bold;
+    }
 }
 .tl-left {
     text-align: left !important;
@@ -510,7 +514,7 @@ $hd-ht: ($gnb-ht+31);
 /* header 영역 */
 .header {
     @include position(fixed, 0, 0);
-    z-index: 995;
+    z-index: 990;
     width: 100%;
     line-height: 0;
     background: #fff;
@@ -592,6 +596,7 @@ $hd-ht: ($gnb-ht+31);
                 text-align: center;
                 .btn-menu {
                     @include btn-menu {
+                        margin-top: -11px;
                         &.on {
                             margin-top: -12px;
                         }
@@ -741,6 +746,7 @@ $hd-ht: ($gnb-ht+31);
                             display: inline-block;
                             height: 48px;
                             line-height: 48px;
+                            @include trasBase(1);
                             &.fg-grn {
                                 font-weight: 600;
                                 color: $fg-green-01;
@@ -1285,9 +1291,11 @@ $hd-ht: ($gnb-ht+31);
                         float: left;
                         a {
                             @include bx;
+                            display: block;
                             padding: 0 30px;
                             font-size: 14px;
                             color: $fg-gray-01;
+                            @include trasBase(1);
                             &.f-bd {
                                 color: $fg-black;
                             }

@@ -23,6 +23,20 @@
         width: 800px;
         margin: 0 auto 70px;
         background: #fff;
+        text-align: center;
+                
+        .btn-box {
+            @include bx;
+            @include clearfix;
+            display: inline-block;
+            margin-top: 50px;
+            [class*='btn-'] {
+                float: left;
+                & + [class*='btn-'] {
+                    margin-left: 10px;
+                }
+            }
+        }
     }
     
     /* 제품 디테일 리뷰 이미지 슬라이드 팝업 */
@@ -96,6 +110,7 @@
         .pop-container {
             min-height: 760px;
             padding: 40px 40px 33px;
+            text-align: left;
             
             .rv-area {
                 .ico-star {
@@ -356,7 +371,6 @@
         .pop-container {
             padding: 36px 40px 55px;
             .inquiry-area {
-                text-align: center;
                 .iqy-tit {
                     padding-bottom: 27px;
                     font-size: 18px;
@@ -381,19 +395,9 @@
                         @include btn-gray-bor-02;
                     }
                 };
-                
+
                 .btn-box {
                     $wd:180px;
-                    @include bx;
-                    @include clearfix;
-                    display: inline-block;
-                    margin-top: 50px;
-                    [class*='btn-'] {
-                        float: left;
-                        & + [class*='btn-'] {
-                            margin-left: 10px;
-                        }
-                    }
                     .btn-gray {
                         @include btn-gary-bg($wd);
                     }
@@ -404,12 +408,83 @@
             }
         }
     }
+    
+    /* 비밀번호 팝업 */
+    &.pop-pw {
+        padding: 235px 0 0;
+        .pop-container {
+            padding: 55px 40px 69px;
+            margin-bottom: 0;
+            .pw-area {
+                @include tbl-col-gray($fs:17px, $th-pd:15px 0 16px, $td-pd:20px 0){
+                    .tbl {
+                        td {
+                            border-bottom: 0;
+                            .txt {
+                                padding: 45px 0 66px;
+                                font-size: 15px;
+                                font-weight: 300;
+                                line-height: 1.6;
+                                color: $fg-gray-04;
+                                em {
+                                    font-weight: 400;
+                                    color: $fg-black;
+                                }
+                            }
+                            
+                            .pw-row {
+                                @include bx;
+                                .pw-txt {
+                                    @include bx;
+                                    display: inline-block;
+                                    margin-right: 17px;
+                                    padding-left: 18px;
+                                    font-size: 14px;
+                                    line-height: 300;
+                                    line-height: 28px;
+                                    color: $fg-black;
+                                    .ico-lock {
+                                        @include position(absolute, 50%, 0);
+                                        margin-top: -6px;
+                                    }
+                                }
+                                .ip-txt {
+                                    @include bx;
+                                    width: 163px;
+                                    height: 28px;
+                                    padding: 0 8px;
+                                    line-height: 28px;
+                                    border: 1px solid $bor-gray-03;
+                                }
+                            }
+                        }
+                    }
+                };
+                
+                .btn-box {
+                    $wd:85px;
+                    $ht:40px;
+                    $fs:15px;
+                    .btn-gray {
+                        @include btn-gray-bor($wd, $ht, $fs);
+                        line-height: ($ht)-(2);
+                        background: $bg-gray-02;
+                    }
+                    .btn-green {
+                        @include btn-green-bg($wd, $ht, $fs);
+                        line-height: ($ht)+(2);
+                    }
+                }
+            }
+        }
+        
+    }
 }
 
 /* 메인 공지 팝업 */
 .main-pop-wrap {
-    z-index: 999;
-    @include position(absolute, 150px, 50%);
+    z-index: 995;
+    @include position(fixed, 150px, 50%);
     box-sizing: border-box;
     //width: $wd;
     margin-left: -($wd/2);
@@ -525,9 +600,9 @@
         }
     }
     
-    &.on {
+   /* &.on {
         z-index: 990;
-    }
+    }*/
 }
 
 /*
