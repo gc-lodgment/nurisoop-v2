@@ -15,24 +15,10 @@ body {
 	color: $primary-color;
 }
 input, select, textarea {
+    @include trasBase(1);
 	font-family: $font-stack; 
 }
 
-table {
-    @include bx;
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    th, td {
-        @include bx;
-        font-weight: 300;
-        text-align: center;
-        vertical-align: middle;
-    }
-    .ie & {
-        border-collapse: inherit;
-    }
-}
 input::-webkit-input-placeholder {
     color: $fg-gray-07;
     letter-spacing: -0.5px;
@@ -48,6 +34,7 @@ input::placeholder {
     letter-spacing: -0.5px;
 	font-family: $font-stack; 
 }
+
 textarea {
     resize: none;
 }
@@ -65,6 +52,27 @@ textarea::placeholder {
     color: $fg-gray-07;
     letter-spacing: -0.5px;
 	font-family: $font-stack; 
+}
+          
+.form-sel:hover, .ip-txt:hover, .ip-cal:hover, .ta-txt:hover {
+    @include trasBase(1);
+    border-color: $bor-black-01 !important;
+}
+
+table {
+    @include bx;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    th, td {
+        @include bx;
+        font-weight: 300;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .ie & {
+        border-collapse: inherit;
+    }
 }
 
 /* common */     

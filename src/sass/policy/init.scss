@@ -66,57 +66,7 @@
                 margin-top: 50px;
                 padding-top: 10px;
                 border-top: 1px solid $bor-gray-03;
-                .pcy-box {
-                    @mixin pcy-fs{
-                        @include bx;
-                        font-size: 14px;
-                        line-height: 1.3;
-                        letter-spacing: 0;
-                        word-break: keep-all;
-                        color: $fg-gray-01;
-                    }
-                    @include bx;
-                    margin-top: 18px;
-                    .pcy-tit {
-                        @include pcy-fs;
-                    }
-                    .pcy-txt-box {
-                        * {
-                            @include pcy-fs;
-                        }
-                        .t-hyphen {
-                            position: relative;
-                            padding-left: 5px;
-                            &:before {
-                                content: '';
-                                @include position(absolute, 10px, 0);
-                                width: 4px;
-                                height: 1px;
-                                background: $fg-gray-01;
-                            }
-                        }
-                        .t-ast { 
-                            @include txtAst;
-                        }
-                        .mt-15 {
-                            margin-top: 15px;
-                        }
-                        .mt-20 {
-                            margin-top: 20px;
-                        }
-                        
-                        .pcy-txt {
-                            
-                        }
-                        .pcy-list {
-                            li {
-                                .pcy-list-box {
-                                    
-                                }
-                            }
-                        }
-                    }
-                }
+                @include poclicyStyle;
             }
         }
     }

@@ -6,11 +6,153 @@
 /* 콘텐츠 영역 */
 .contents {
     
+    /* BRAND */
+    &.brand {
+        padding-bottom: 50px;
+        
+        .sub-tit-box {
+            text-align: center;
+            .sub-tit {
+                font-size: 50px;
+                font-weight: 400;
+                letter-spacing: -0.7px;
+                color: #323232;
+            }
+            .sub-txt {
+                margin-top: 33px;
+                font-size: 26px;
+                font-weight: 300;
+                line-height: 1.5;
+                color: $fg-gray-01;
+            }
+        }
+        
+        //banner
+        .bn-sect {
+            .bn-top-area {
+                padding: 210px 0 188px;
+                background: url(http://static.nurisoop.co.kr/img/renew/brand/bg_bn_top.jpg) no-repeat center;
+                background-size: cover;
+                text-align: center;
+                * {
+                    text-shadow: 5px 0 5px #000;
+                    //-ms-filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=0, Color='#000');
+                    //filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=0, OffY=0, Color='#000');
+                }
+                .brd-tit {
+                    padding-bottom: 56px;
+                    font-size: 50px;
+                    font-weight: 500;
+                    line-height: 1;
+                    letter-spacing: -1.2px;
+                    color: #fff;
+                }
+                .brd-txt {
+                    margin-top: 30px;
+                    font-size: 23px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: -0.5px;
+                    color: #fff;
+                }
+            }
+            
+            .bn-mid-area {
+                padding: 47px 0 100px;
+                background: url(http://static.nurisoop.co.kr/img/renew/brand/bg_bn_mid.jpg) no-repeat center;
+                background-size: cover;
+                text-align: center;
+                .brd-txt {
+                    margin-top: 55px;
+                    font-size: 42px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: -0.7px;
+                    color: $fg-black;
+                    span {
+                        display: block;
+                        font-size: 28px;
+                        letter-spacing: -0.2px;
+                        line-height: 1.4;
+                        color: $fg-gray-01;
+                    }
+                }
+            }
+        }
+        
+        //list
+        .info-sect {
+            padding: 91px 0 101px;
+            .container {
+                .brd-area {
+                    .brd-list {
+                        @include bx;
+                        @include clearfix;
+                        margin: 18px -15px 0;
+                        li {
+                            @include bx;
+                            float: left;
+                            width: 33.3%;
+                            margin-top: 58px;
+                            padding: 0 15px;
+                            text-align: center;
+                            .img-box {
+                                @include bx;
+                                img {
+                                    
+                                }
+                            }
+                            .txt-box {
+                                @include bx;
+                                padding: 0 25px;
+                                .ie8 & {
+                                    padding: 0 15px;
+                                }
+                                dt {
+                                    padding: 16px 0 9px;
+                                    font-size: 28px;
+                                    font-weight: 500;
+                                    letter-spacing: -0.7px;
+                                    color: $fg-green-01;
+                                }
+                                dd {
+                                    font-size: 18px;
+                                    font-weight: 300;
+                                    line-height: 1.7;
+                                    letter-spacing: -0.25px;
+                                    word-break: keep-all;
+                                    color: $fg-gray-01;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //brand identity
+        .idy-sect {
+            padding: 110px 0 100px;
+            text-align: center;
+            .container {
+                .brd-area {
+                    .brd-img {
+                        padding-top: 53px;
+                        & + .brd-img {
+                            padding-top: 61px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* 누리숲 뉴스 */
     &.board {
-        padding-bottom: 175px;
+        padding-bottom: 180px;
         
         /* sub top */
-        @include sub-top;
+        @include sub-top(55px 0 59px);
         
         /* 검색영역 */
         .top-box {
@@ -32,12 +174,11 @@
         }
         
         /* table */
-        @include tbl-col-gray;
+        @include tbl-col-gray($a-pd:0 55px);
 
         /* page num */
         .page-area {
             @include pagenation;
-            margin-top: 10px;
         }
         
         &.list {
@@ -49,6 +190,71 @@
                 }
             }
 
+        }
+    
+        &.view {
+            .view-sect {
+                .container {
+                    .view-area {
+                        @include bx;
+                        @include clearfix;
+
+                        .top-box {
+                            @include view-top;
+                        }
+
+                        .view-box {
+                            @include bx;
+                            padding: 29px 90px 37px;
+                            text-align: center;
+                            @mixin txtStyle{
+                                font-size: 14px;
+                                font-weight: 300;
+                                letter-spacing: 0;
+                                line-height: 1.6;
+                                color: $fg-gray-01;
+                            }
+                            .txt {
+                                padding-top: 15px;
+                                text-align: left;
+                                @include txtStyle;
+                            }
+                            a {
+                                @include txtStyle;
+                                @include trasBase(1);
+                                
+                                &:hover {
+                                    @include trasBase(0.6);
+                                }
+                            }
+                            .img {
+                                padding: 19px 0 0;
+                                
+                                figcaption {
+                                    padding-top: 3px;
+                                    @include txtStyle;
+                                }
+                            }
+                            .img + .txt {
+                                padding-top: 10px;
+                            }
+                        }
+
+                        .page-box {
+                            @include view-page;
+                        }
+
+                        .btn-box {
+                            @include bx;
+                            margin-top: 20px;
+                            float: right;
+                            .btn-list {
+                                @include btn-gray-bor(100px);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

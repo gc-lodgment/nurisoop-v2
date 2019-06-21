@@ -378,4 +378,522 @@
             }
         }
     }
+    
+    /* 로그인 */
+    &.login {
+        padding-bottom: 150px;
+        .top-sect {
+            padding-bottom: 89px;
+            .container {
+                padding-bottom: 54px;
+                border-bottom: 1px solid $bor-gray-03;
+            }
+        }
+        
+        .login-sect {
+            .container {
+                .row {
+                    @include bx;
+                    float: left;
+                    width: 50%;
+                    padding: 0 125px;
+                    
+                    .login-tit {
+                        padding-bottom: 22px;
+                        font-size: 18px;
+                        letter-spacing: -0.2px;
+                        line-height: 1;
+                        color: $fg-gray-01;
+                    }
+                    
+                    .sns-link {
+                        li {
+                            @include bx;
+                            margin-top: 10px;
+                            .btn-link {
+                                @include bx;
+                                display: block;
+                                width: 380px;
+                                height: 56px;
+                                padding-left: 112px;
+                                font-size: 18px;
+                                font-weight: 400;
+                                line-height: 56px;
+                                letter-spacing: 0px;
+                                color: #fff;
+                                @include trasBase(1);
+                                span {
+                                    @include position(absolute, 0, 66px);
+                                    display: inline-block;
+                                    width: 32px;
+                                    height: 100%;
+                                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_login_sns.png) no-repeat;
+                                    background-position: 0 0;
+                                }
+                                &:hover {
+                                    @include trasBase(0.7);
+                                }
+                            }
+                        
+                            &.naver {
+                                .btn-link {
+                                    background: #00c73c;
+                                    span {
+                                    }
+                                }
+                            }
+                        
+                            &.kakao {
+                                .btn-link {
+                                    color: #392020;
+                                    background: #ffeb00;
+                                    span {
+                                        background-position: 0 -62px;
+
+                                    }
+                                }
+                            }
+                        
+                            &.facebook {
+                                .btn-link {
+                                    background: #455e99;
+                                    span {
+                                        background-position: 0 -124px;
+
+                                    }
+                                }
+                            }
+                        
+                            &.google {
+                                .btn-link {
+                                    background: #e84537;
+                                    span {
+                                        background-position: 0 -186px;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .login-info-list {
+                        @include bx;
+                        margin-top: 25px;
+                        li {
+                            font-size: 15px;
+                            font-weight: 300;
+                            line-height: 1.6;
+                            color: $fg-gray-01;
+                            &.t-ast {
+                                @include txtAst(12px, 4px);  
+                            }
+                            
+                            &.fc-red {
+                                color: $fg-red-03;
+                            }
+                        }
+                    }
+                    
+                    /* 회원 로그인 */
+                    .login-area {
+                        @include bx;
+                        border-bottom: 1px solid $bor-gray-03;
+                        .login-tab {
+                            padding-top: 20px;
+                            li {
+                                @include bx;
+                                display: inline-block;
+                                .srch-txt {
+                                    font-size: 15px;
+                                    font-weight: 300;
+                                    color: $fg-gray-01;
+                                    input[type="radio"] {
+                                        cursor: pointer;
+                                        margin-right: 5px;
+                                    }
+                                }
+                                & + li {
+                                    margin-left: 55px;
+                                }
+                            }
+                        }
+
+                        .login-box {
+                            width: 380px;
+                            padding-top: 25px;
+                            .p-row {
+                                margin-top: 10px;
+                                $ht:56px;
+                                .ip-txt {
+                                    @include bx;
+                                    width: 100%;
+                                    padding: 0 18px;
+                                    height: $ht;
+                                    font-size: 16px;
+                                    line-height: $ht;
+                                    border: 1px solid $bor-gray-03;
+                                }
+
+                                .btn-login {
+                                    @include bx;
+                                    display: block;
+                                    height: $ht;
+                                    font-size: 18px;
+                                    line-height: $ht;
+                                    text-align: center;
+                                    color: #fff;
+                                    background: $bg-black-01;
+                                    @include trasBase(1);
+                                    &:hover {
+                                        @include trasBase;
+                                    }
+                                }
+                            }
+                        }
+
+                        .login-txt-box {
+                            @include bx;
+                            margin: 25px 0;
+                            .chk-txt {
+                                @include bx;
+                                @include chkbox;
+                                display: inline-block;
+                                padding-left: 23px;
+                                font-size: 13px;
+                                font-weight: 300;
+                                line-height: 1;
+                                color: $fg-gray-01;
+                            }
+                            .txt-lock {
+                                @include position(absolute, 4px, $right:0);
+                                display: inline-block;
+                                padding-left: 22px;
+                                font-size: 13px;
+                                font-weight: 300;
+                                line-height: 12px;
+                                vertical-align: middle;
+                                color: $fg-gray-01;
+                                span {
+                                    @include bx;
+                                    display: inline-block;
+                                    width: 10px;
+                                    height: 12px;
+                                    margin: -2px 5px 0 0;
+                                    vertical-align: middle;
+                                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                                    background-position: -90px -247px;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .login-btn-box {
+                        margin-top: 29px;
+                        text-align: center;
+                        .login-link-list {
+                            @include bx;
+                            @include clearfix;
+                            display: inline-block;
+                            li {
+                                @include bx;
+                                float: left;
+                                display: block;
+                                padding: 0 17px;
+                                line-height: 0;
+                                a {
+                                    @include bx;
+                                    display: block;
+                                    font-size: 14px;
+                                    line-height: 1;
+                                    letter-spacing: -0.2px;
+                                    font-weight: 300;
+                                    color: $fg-gray-01;
+                                    @include trasBase(1);
+                                    &:hover {
+                                        @include trasBase;
+                                    }
+                                }
+                                & + li {
+                                    border-left: 1px solid $bor-gray-03;
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    &:first-child {
+                        border-right: 1px solid $bor-gray-03;
+                    }
+                    &.sns-login {
+                        padding-right: 60px;
+                    }
+                }
+            }
+        }
+    }
+    
+    /* 회원가입 */
+    &.join {
+        padding-bottom: 149px;
+        .top-sect {
+            padding-bottom: 54px;
+        }
+        
+        .join-sect {
+            .container {
+                .join-area {
+                    .top-box {
+                        @include bx;
+                        @include clearfix;
+                        padding-bottom: 28px;
+                        .txt-top {
+                            font-size: 14px;
+                            font-weight: 300;
+                            letter-spacing: 0;
+                            color: $fg-gray-01;
+                        }
+                    }
+                    
+                    @include tbl-row($th-pd:12px 15px 12px 28px, $td-pd:10px 31px){
+                        .tbl {
+                            th, td {
+                                .t-ast {
+                                    @include bx;
+                                    @include txtAst(13px, 5px){
+                                        &:before {
+                                            color: $fg-red-03;
+                                        }
+                                    };
+                                }
+                                
+                                .fc-green {
+                                    font-size: 13px;
+                                    color: $fg-green-01;
+                                    &.t-ast {
+                                        &:before {
+                                            color: $fg-green-01;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            td {
+                                .row {
+                                    line-height: 0;
+                                    
+                                    .ip-cal, .ico-cal {
+                                        cursor: pointer;
+                                    }
+                                    
+                                    .txt-hyphen {
+                                        display: inline-block;
+                                        padding: 0 6px;
+                                        font-size: 20px;
+                                        font-weight: 100;
+                                        color: $fg-gray-01;
+                                    }
+
+                                    .t-point {
+                                        display: inline-block;
+                                        margin-left: 25px;
+                                        font-size: 13px;
+                                        color: $fg-red-03;
+                                        
+                                        &:before {
+                                            top: 3px;
+                                        }
+                                    }
+
+                                    .chk-txt {
+                                        @include bx;
+                                        @include chkbox;
+                                        padding: 0 0 0 18px;
+                                        font-size: 13px;
+                                        font-weight: 300;
+                                        color: $fg-gray-01;
+                                        input {
+                                            left: 0;
+                                        }
+                                    }
+
+                                    .chk-txt + .chk-txt {
+                                        margin-left: 15px;
+                                    }
+                                    
+                                    .skin-type-box {
+                                        padding: 4px 0;
+
+                                        .chk-txt + .chk-txt {
+                                            margin-left: 26px;
+                                        }
+                                    }
+
+                                    .btn-phone, .btn-adr {
+                                        @include btn-gray-bor-02;
+                                        margin-left: 15px;
+                                    }
+
+                                    .ip-txt + .ip-txt {
+                                        margin-left: 7px;
+                                    }
+                                    
+                                    & + .row {
+                                        margin-top: 10px;
+                                    }
+                                }
+                                
+                            }
+                        }
+                    };
+                    
+                    .btn-box {
+                        margin: 30px auto 0;
+                        text-align: center;
+                        .btn-join {
+                            @include btn-green-bg;
+                        }
+                    }
+                }
+                
+                .agree-area {
+                    @include bx;
+                    padding-top: 75px;
+                    text-align: center;
+                    .chk-agr-all {
+                        @include bx;
+                        display: inline-block;
+                        line-height: 0;
+                        .chk-txt {
+                            @include bx;
+                            @include chkbox;
+                            padding-left: 20px; 
+                            font-size: 14px;
+                            font-weight: 300;
+                            line-height: 1;
+                            color: $fg-black;
+                            text-align: left;
+                        }
+                    }
+                    
+                    .agree-box {
+                        @include bx;
+                        @include clearfix;
+                        margin-top: 47px; 
+                        text-align: left;
+                        &.fir {
+                            margin-top: 38px; 
+                        }
+                        .agr-tit {
+                            @include bx;
+                            padding-bottom: 16px;
+                            font-size: 14px;
+                            line-height: 1;
+                            color: $fg-gray-01;
+                        }
+                        .agr-txt-box {
+                            @include bx;
+                            overflow: hidden;
+                            overflow-y: auto;
+                            height: 222px;
+                            padding: 0 14px 14px;
+                            text-align: left;
+                            border: 1px solid $bor-gray-03;
+                            background: #fff;
+                            @include poclicyStyle(13px, $fg-gray-04){
+                                * {
+                                    font-weight: 300;
+                                }
+                            };
+                        }
+                        
+                        .agr-btn-box {
+                            @include bx;
+                            float: right;
+                            margin-top: 9px;
+                            .srch-txt {
+                                @include bx;
+                                font-size: 13px;
+                                font-weight: 300;
+                                color: $fg-gray-01;
+                                input[type="radio"] {
+                                    cursor: pointer;
+                                    margin-right: 3px;
+                                }
+                                
+                                & + .srch-txt {
+                                    margin-left: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+ * ie8
+ */
+.ie8 {
+    
+    /* 콘텐츠 영역 */
+    .contents { 
+
+        /* 로그인 */
+        &.login {
+            .login-sect {
+                .container {
+                    .row {
+                        .login-info-list {
+                            li {
+                                letter-spacing: -1px;
+                                &.t-ast {
+                                    &:before {
+                                        top: 2px;
+                                    } 
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        /* 회원가입 */
+        &.join {
+
+            .join-sect {
+                .container {
+                    .join-area {
+                        
+                        .tbl-row {
+                            .tbl {
+                                th, td {
+                                    .t-ast {
+                                        &:before {
+                                            top: 3px
+                                        }
+                                    }
+                                }
+
+                                td {
+                                    .row {
+                                        .t-point {
+                                            &:before {
+                                                top: 1px;
+                                            }
+                                        }
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
