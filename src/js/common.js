@@ -3,8 +3,11 @@ $(function(){
     ftSlideFn();
     tabFn();
     dateFn();
-    quickFn();
     fileFn();
+    
+    $(document).ready(function(){
+        quickFn();
+    });
     
     //search 버튼 클릭 시 
     $('a[class*="btn-srch"]').on('click', function(){
@@ -390,13 +393,13 @@ function imgfileFn(){
         }else {// old IE 
             i = i+1;
             var imgNum = 'img'+i;
-            //fileImg = String($(this).val());
-            //fileTxt = $(this).val().split('/').pop().split('\\').pop(); 
-            $(this).select();
-            fileImg = $(this).val();
-            //fileImg = document.selection.createRange().text.toString();
             
-            console.log(fileImg)
+            $(this).select();
+            //fileImg = $(this).val();
+            //fileImg = document.selection.createRange().text.toString();
+            fileImg = document.selection.createRangeCollection()[0].text.toString();
+            
+            //console.log(fileImg)
             
             $('#imgFile').append('<a href="javascript:;" class="btn-pop-file-cls fileImgDel"><p class="img-row"><span><img id="'+imgNum+'"></span></p></a>');//alt="'+fileTxt+'"
             
