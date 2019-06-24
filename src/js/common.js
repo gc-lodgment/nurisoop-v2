@@ -387,26 +387,28 @@ function imgfileFn(){
             }
 
             reader.readAsDataURL(ths);
-        } 
-        else {// old IE 
+        }else {// old IE 
             i = i+1;
             var imgNum = 'img'+i;
             //fileImg = String($(this).val());
             //fileTxt = $(this).val().split('/').pop().split('\\').pop(); 
+            $(this).select();
             fileImg = $(this).val();
-
-            //this.select(); document.getElementById('filetext').value=;document.selection.createRange().text.toString()
-
+            //fileImg = document.selection.createRange().text.toString();
+            
+            console.log(fileImg)
+            
             $('#imgFile').append('<a href="javascript:;" class="btn-pop-file-cls fileImgDel"><p class="img-row"><span><img id="'+imgNum+'"></span></p></a>');//alt="'+fileTxt+'"
-
+            
             $('#imgFile').find('.fileImgDel').find('#'+imgNum).css({
                 'max-width' : '100%',
                 'background' : '#fff',
-                '-ms-filter' : "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+"fi"+"le://"+fileImg+"', sizingMethod='scale')",
-                'filter' : "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+"fi"+"le://"+fileImg+"', sizingMethod='scale')"
+                '-ms-filter' : "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='file://"+fileImg+"', sizingMethod='scale')",
+                'filter' : "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='file://"+fileImg+"', sizingMethod='scale')"
             });
 
             return i;
+            
         }
         
     });
