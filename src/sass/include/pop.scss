@@ -2,21 +2,39 @@
 
 @import "../parts/common";
 
+        
+/* 닫기 */
+.btn-pop-close {
+    z-index: 9999;
+    display: block;
+    @include position(absolute, 15px, $right:15px);
+    span {
+        display: block;
+        width: 26px;
+        height: 25px;
+        font-size: 0;
+        text-indent: -999px;
+        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: 1px -83px;
+        &.white {
+            background-position: -111px -83px;
+        }
+    }
+    &.btn-dt-rv {
+        @include position(fixed, 30px, $right:30px);
+        span {
+            width: 25px;
+            height: 26px;
+            background-position: -111px -83px;
+        }
+    }
+}
+
 /* 팝업 공통 */
 .pop-wrap {
     z-index: 9990;
-    @include position(fixed, 0, 0);
+    @include position(absolute, 0, 0);
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    overflow: hidden;
-    overflow-y: auto;
-    padding: 70px 0 0;
-    
-    .ie8 & {
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
-    }
     
     .pop-container {
         @include bx;
@@ -24,12 +42,27 @@
         margin: 0 auto 70px;
         background: #fff;
         text-align: center;
+        
+        .pop-tit-box {
+            .pop-tit {
+                @include bx;
+                color: #fff;
+                background: $bg-green-01;
+            }
+            
+            &.bg-gray {
+                .pop-tit {
+                    background: $bg-gray-09;
+                }
+            }
+        }
                 
         .btn-box {
             @include bx;
             @include clearfix;
             display: inline-block;
             margin-top: 50px;
+            text-align: center;
             [class*='btn-'] {
                 float: left;
                 & + [class*='btn-'] {
@@ -77,30 +110,6 @@
                         @include trasBase(1);
                     }
                 }
-            }
-        }
-    }
-        
-    /* 닫기 */
-    .btn-pop-close {
-        z-index: 9999;
-        display: block;
-        @include position(absolute, 15px, $right:15px);
-        span {
-            display: block;
-            width: 26px;
-            height: 25px;
-            font-size: 0;
-            text-indent: -999px;
-            background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
-            background-position: 1px -83px;
-        }
-        &.btn-dt-rv {
-            @include position(fixed, 30px, $right:30px);
-            span {
-                width: 25px;
-                height: 26px;
-                background-position: -111px -83px;
             }
         }
     }
@@ -478,6 +487,165 @@
             }
         }
         
+    }
+    
+    /* 인증 팝업 : 이메일주소/휴대폰번호 */
+    &.pop-cert {
+        .pop-container {
+            width: 500px;
+            top: 50%;
+            margin-top: -175px;
+        
+            .pop-tit-box {
+                .pop-tit {
+                    padding: 16px 55px 18px;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+
+            }
+
+            .pop-area {
+                padding: 33px 30px 27px;
+                .cert-txt {
+                    font-size: 16px;
+                    line-height: 1.6;
+
+                    &.type-2 {
+                        padding: 41px 0 70px;
+                    }
+                }
+
+                .cert-box {
+                    @include bx;
+                    .cert-row {
+                        @include bx;
+                        @include clearfix;
+                        display: inline-block;
+                        padding: 29px 0 27px;
+                        * {
+                            float: left;
+                            font-size: 14px;
+                            line-height: 28px;
+                            vertical-align: middle;
+                        }
+                        .cert-num-txt {
+                            font-size: 15px;
+                            color: $fg-red-03;
+                        }
+                        .ip-txt {
+                            box-sizing: border-box;
+                            width: 160px;
+                            height: 28px;
+                            margin: 0 10px;
+                            padding: 0 13px;
+                            border: 1px solid $bor-gray-09;
+                        }
+                        .btn-recert {
+                            @include btn-gray-bor-02(70px, 28px);
+                        }
+                        .count {
+                            padding-left: 10px;
+                            color: $fg-red-01;
+                        }
+                    }
+                }
+
+                .btn-box {
+                    margin-top: 0;
+                    .btn-green { 
+                        @include btn-green-bg(85px, 40px, 15px);
+                    }
+                }
+            }
+        }
+    }
+    
+    /* 내역보기 팝업 */
+    &.pop-history {
+        z-index: 898;
+        left: auto;
+        right: -366px;
+        .pop-container {
+            width: 350px;
+            border: 1px solid $bor-gray-07;
+            
+            .pop-tit-box {
+                text-align: left;
+                .pop-tit {
+                    padding: 9px 20px 10px;
+                    font-size: 16px;
+                    letter-spacing: -0.2px;
+                }
+            }
+            .pop-area {
+                @include bx;
+                padding: 5px 20px 14px;
+                text-align: left;
+                .total-price {
+                    @include bx;
+                    padding: 14px 0 18px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 1;
+                    text-align: right;
+                }
+                .price-box { 
+                    @include bx;
+                    padding-top: 12px;
+                    border-top: 1px solid $bor-gray-03;
+                    .price-row {
+                        @include bx;
+                        display: table;
+                        table-layout: fixed;
+                        width: 100%;
+                        padding: 6px 0 7px;
+                        span {
+                            @include bx;
+                            display: table-cell;
+                            width: 50%;
+                            font-size: 13px;
+                            font-weight: 300;
+                            line-height: 1;
+                            letter-spacing: 0;
+                            color: $fg-gray-01;
+                            &.name {
+                                @include line-row-2(9px, 2px, 2px, 6px);
+                            }
+                            &.price {
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .btn-pop-close {
+                z-index: 899;
+                top: 10px;
+                right: 10px;
+                span {
+                    width: 19px;
+                    height: 19px;
+                    background-position: -146px -82px;
+                }
+            }
+        }
+    }
+}
+
+/* 팝업 배경 */
+.pop-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 70px 0 0;
+    
+    .ie8 & {
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
     }
 }
 

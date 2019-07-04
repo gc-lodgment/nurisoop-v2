@@ -301,17 +301,9 @@
                                         padding: 4px 0;
                                         text-align: left;
                                         li {
-                                            @include bx;
-                                            padding-left: 11px;
                                             line-height: 1.7;
                                             letter-spacing: 0;
-                                            &:before {
-                                                content: '';
-                                                @include position(absolute, 12px, 0);
-                                                width: 4px;
-                                                height: 1px;
-                                                background: $fg-gray-01;
-                                            }
+                                            @include line-row-2(11px, 4px, $t:12px);
                                             &.f-bd {
                                                 font-weight: 500;
                                                 color: $fg-black;
@@ -532,21 +524,27 @@
                                     font-size: 16px;
                                     line-height: $ht;
                                     border: 1px solid $bor-gray-03;
+                                    
+                                    &.wd-1 {
+                                        width: 230px;
+                                    }
+                                    &.wd-2 {
+                                        width: 120px;
+                                    }
+                                }
+                                
+                                .bar {
+                                    @include bx;
+                                    display: inline-block;
+                                    padding: 0 9px;
+                                    font-size: 16px;
+                                    line-height: $ht;
+                                    vertical-align: middle;
+                                    color: $fg-gray-03;
                                 }
 
                                 .btn-login {
-                                    @include bx;
-                                    display: block;
-                                    height: $ht;
-                                    font-size: 18px;
-                                    line-height: $ht;
-                                    text-align: center;
-                                    color: #fff;
-                                    background: $bg-black-01;
-                                    @include trasBase(1);
-                                    &:hover {
-                                        @include trasBase;
-                                    }
+                                    @include btn-black-bg(100%, $ht);
                                 }
                             }
                         }
@@ -584,6 +582,12 @@
                                     background-position: -90px -247px;
                                 }
                             }
+                            
+                            .info-txt {
+                                font-size: 14px;
+                                font-weight: 300;
+                                color: $fg-gray-03;
+                            }
                         }
                     }
                     
@@ -618,6 +622,11 @@
                                 }
                             }
                         }
+                        
+                        .btn-non-login {
+                            $ht:56px;
+                            @include btn-gary-bg(100%, $ht);
+                        }
                     }
                     
                     
@@ -626,6 +635,90 @@
                     }
                     &.sns-login {
                         padding-right: 60px;
+                    }
+                    
+                    &.non-member-login {
+                        .login-area {
+                            .login-txt-box {
+                                margin: 26px auto 29px;
+                            }
+                        }
+                        .login-btn-box {
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+            
+            /* 로그아웃 상태에서 바로구매 */
+            &.login-buy {
+                .container {
+                    .login-area {
+                        .login-box {
+                            padding-top: 0;
+                        }
+                        
+                        .login-txt-box {
+                            margin-bottom: 24px;
+                            .btn-box {
+                                @include bx;
+                                margin-top: 21px;
+                                .btn-buy {
+                                    @include btn-gary-bg(100%, 46px, 16px);
+                                    font-weight: 300;
+                                }
+                                
+                                .non-info-txt {
+                                    z-index: 2;
+                                    @include position(absolute, 56px, 0);
+                                    display: none;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    padding: 11px 0 9px;
+                                    font-size: 15px;
+                                    font-weight: 300;
+                                    text-align: center;
+                                    letter-spacing: 0;
+                                    line-height: 1.5;
+                                    color: #fff;
+                                    background: $bg-black-01;
+                                    
+                                    &:before {
+                                        content: '';
+                                        @include position(absolute, -19px, 50%);
+                                        margin-left: -10px;
+                                        border: 10px solid $bg-black-01;
+                                        border-top-color: transparent;
+                                        border-left-color: transparent;
+                                        border-right-color: transparent;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            /* 로그아웃 상태 주문조회 */
+            &.login-inquiry {
+                .container {
+                    
+                    .login-area {
+                        .login-box {
+                            padding-top: 0;
+                        }
+                    }
+                    
+                    .sns-login {
+                        .login-info-list + .login-tit {
+                            padding-top: 90px;
+                        }
+                        .login-area {
+                            width: 380px;
+                        }
+                        .login-btn-box {
+                            width: 380px;
+                        }
                     }
                 }
             }
@@ -830,16 +923,347 @@
             }
         }
     }
+    
+    /* ID/PW 찾기 */
+    &.find {
+        padding-bottom: 150px;
+        .fg-red {
+            color: $fg-red-03;
+        }
+        .top-sect {
+            padding-bottom: 89px;
+            .container {
+                padding-bottom: 53px;
+                border-bottom: 1px solid $bor-gray-03;
+            }
+        }
+        
+        //인증되지 않는다면?
+        .find-info-area {
+            @include bx;
+            margin-top: 90px;
+            padding: 26px 25px 28px;
+            text-align: center;
+            line-height: 0;
+            background: $bg-gray-02;
+            .find-info-tit {
+                @include bx;
+                font-size: 18px;
+                line-height: 1.3;
+                letter-spacing: 0;
+                vertical-align: middle;
+                color: $fg-gray-01;
+            }
+            .find-info-txt {
+                padding-top: 14px;
+                font-size: 15px;
+                line-height: 1.3;
+                letter-spacing: 0;
+                color: $fg-gray-04;
+            }
+            .btn-find-info {
+                @include btn-pink-bg;
+            }
+            
+            .find-info-row {
+                @include bx;
+                @include clearfix;
+                display: inline-block;
+                margin: -1px auto -2px;
+                line-height: 0;
+                .find-info-tit {
+                    display: inline-block;
+                    float: left;
+                    margin-right: 21px;
+                    line-height: 28px;
+                }
+                .btn-find-info {
+                    float: left;
+                }
+            }
+                
+        }
+        
+        /* 찾기 */
+        .find-sect {
+            .container {
+                .find-area {
+                    @include bx;
+                    text-align: center;
+                    .find-tit {
+                        font-size: 18px;
+                        line-height: 1;
+                        color: $fg-gray-01;
+                    }
+                    .find-txt {
+                        margin: -2px auto;
+                        font-size: 18px;
+                        font-weight: 300;
+                        letter-spacing: 0;
+                        color: $fg-gray-01;
+                    }
+                    .find-box {
+                        @include bx;
+                        width: 380px;
+                        margin: 0 auto;
+                        padding-top: 19px;
+                        .p-row {
+                            margin-top: 10px;
+                            $ht:56px;
+                            .ip-txt {
+                                @include bx;
+                                width: 100%;
+                                padding: 0 18px;
+                                height: $ht;
+                                font-size: 16px;
+                                line-height: $ht;
+                                border: 1px solid $bor-gray-03;
+                            }
+
+                            .btn-find {
+                                @include btn-black-bg(100%, $ht);
+                            }
+                        }
+                        
+                        //본인인증으로 찾기
+                        .cert-box {
+                            @include bx;
+                            display: table;
+                            width: 100%;
+                            margin-top: 9px;
+                            padding: 20px 19px;
+                            border: 1px solid $bor-gray-03;
+                            .cert-txt {
+                                @include bx;
+                                display: table-cell;
+                                text-align: right;
+                                span {
+                                    display: block;
+                                    font-size: 16px;
+                                    text-align: left;
+                                    vertical-align: middle;
+                                    color: $fg-gray-01;
+                                    
+                                    @include line-row-2(10px, 2px, 2px, 50%);
+                                }
+                                .btn-cert {
+                                    @include btn-gray-bor-02(180px);
+                                    vertical-align: middle;
+                                }
+                            }
+                            
+                            & + .cert-box {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                    
+                    & + .find-area {
+                        padding-top: 89px;   
+                    }
+                }
+            }
+        }
+        
+        /* 인증하기 */
+        .cert-sect {
+            .container {
+                .cert-area {
+                    text-align: center;
+                    .cert-tit {
+                        margin-top: -4px;
+                        font-size: 18px;
+                        font-weight: 300;
+                        color: $fg-gray-01;
+                    }
+                
+                    .cert-inner {
+                        @include bx;
+                        @include clearfix;
+                        margin: 0 -20px;
+                        .cert-row {
+                            @include bx;
+                            float: left;
+                            width: 50%;
+                            padding: 31px 20px 0;
+                            text-align: center;
+                            .cert-box {
+                                @include bx;
+                                padding: 59px 110px 64px;
+                                border: 1px solid $bor-gray-03;
+                                background: $bg-gray-08;
+                                .cert-sub-tit {
+                                    padding-bottom: 22px;
+                                    font-size: 20px;
+                                    color: $fg-green-01;
+                                    span {
+                                        display: block;
+                                        margin: 0 auto 17px;
+                                        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                                        &.ico-mail {
+                                            width: 45px;
+                                            height: 50px;
+                                            background-position: -202px -121px;
+                                        }
+                                        &.ico-phone {
+                                            width: 28px;
+                                            height: 50px;
+                                            background-position: -259px -121px;
+                                        }
+                                    }
+                                }  
+                                .cert-txt {
+                                    font-size: 16px;
+                                    font-weight: 300;
+                                    line-height: 1.5;
+                                    letter-spacing: 0;
+                                    color: $fg-gray-09;
+                                }
+                                .user-data {
+                                    padding: 24px 0 34px;
+                                    font-size: 16px;
+                                    line-height: 1;
+                                    letter-spacing: 0;
+                                    font-weight: 300;
+                                    span {
+                                        line-height: 0;
+                                        vertical-align: middle;
+                                    }
+                                }
+                                .btn-cert {
+                                    @include btn-gray-bor($ht:28px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        /* 결과 안내 */
+        .result-sect {
+            .container {
+                .result-area {
+                    text-align: center;
+                    
+                    .result-tit {
+                        @include bx;
+                        margin-top: 2px;
+                        font-size: 28px;
+                        line-height: 1;
+                        letter-spacing: -0.2px;
+                        color: $fg-green-01;
+                        span {
+                            display: block;
+                            margin: 0 auto 20px;
+                            background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                            &.ico-id {
+                                width: 48px;
+                                height: 50px;
+                                background-position: -299px -121px;
+                            }
+                            &.ico-pw {
+                                width: 46px;
+                                height: 50px;
+                                background-position: -359px -121px;
+                            }
+                        }
+                    }
+                    
+                    .result-txt {
+                        padding: 24px 0 26px;
+                        font-size: 16px;
+                        line-height: 1.6;
+                        letter-spacing: 0;
+                        color: $fg-black;
+                    }
+                    
+                    .result-box {
+                        @include bx;
+                        @include clearfix;
+                        display: inline-block;
+                        margin-top: 17px;
+                        .rst-row {
+                            @include bx;
+                            float: left;
+                            
+                            .rst-txt {
+                                $ht:44px;
+                                
+                                @include bx;
+                                display: table;
+                                line-height: 0;
+                                vertical-align: middle;
+                                span {
+                                    display: table-cell;
+                                    width: 135px;
+                                    font-size: 16px;
+                                    line-height: $ht;
+                                    text-align: left;
+                                    vertical-align: middle;
+                                }
+                                .ip-txt {
+                                    @include bx;
+                                    display: table-cell;
+                                    //width: 100%;
+                                    width: 300px;
+                                    height: $ht;
+                                    padding: 0 18px;
+                                    font-size: 16px;
+                                    line-height: $ht;
+                                    vertical-align: middle;
+                                    border: 1px solid $bor-gray-03;
+                                }
+                                
+                                & + .rst-txt {
+                                    margin-top: 10px;
+                                }
+                            }
+                            
+                            .rst-ip-txt {
+                                margin-top: 16px;
+                                padding-left: 135px;
+                                font-size: 14px;
+                                font-weight: 300;
+                                text-align: left;
+                                color: $fg-gray-04;
+                            }
+                            
+                            
+                            &.btn-row {
+                                margin: 0 0 0 10px;
+                                width: 110px;
+                                .btn-green {
+                                    @include btn-green-bg(100%, 98px, 16px);
+                                }
+                            }
+                        }
+                    }
+                    
+                    .btn-box {
+                        @include bx;
+                        @include clearfix;
+                        display: inline-block;
+                        .btn-white {
+                            float: left; 
+                            @include btn-bor-com(180px, 50px, 18px);
+                            & + [class*='btn-']{
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*
  * ie8
  */
 .ie8 {
-    
     /* 콘텐츠 영역 */
     .contents { 
-
         /* 로그인 */
         &.login {
             .login-sect {
@@ -856,6 +1280,18 @@
 
                             }
                         }
+                    
+                        /* 회원 로그인 */
+                        .login-area {
+
+                            .login-box {
+                                .p-row {
+                                    .bar {
+                                        padding: 0 6px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -863,7 +1299,6 @@
         
         /* 회원가입 */
         &.join {
-
             .join-sect {
                 .container {
                     .join-area {
@@ -892,6 +1327,41 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+/*
+ * safari
+ */
+.safari {
+    /* 콘텐츠 영역 */
+    .contents { 
+        /* 로그인 */
+        &.login {
+            .login-sect {
+                .container {
+                    .row {
+                        /* 회원 로그인 */
+                        .login-area {
+                            .login-box {
+                                .p-row {
+                                    .bar {
+                                        padding: 0 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.login, &.find {
+            .p-row { 
+                .ip-txt {
+                    line-height: 1 !important;
                 }
             }
         }

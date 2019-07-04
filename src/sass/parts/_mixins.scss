@@ -155,6 +155,8 @@
                 }
             }
         }
+        
+        @content
     }
 }
 
@@ -182,6 +184,19 @@
     }
 }
 
+
+//line - / ·
+@mixin line-row-2($pl:7px, $wd:3px, $ht:1px, $t:10px, $bg:$fg-gray-01){
+    @include bx;
+    padding-left: 7px;
+    &:before {
+        content: '';
+        @include position(absolute, $t, 0);
+        width: $wd;
+        height: $ht;
+        background: $bg;
+    }
+}
 //button
 /*@mixin btn-com($dis:inline-block, $wd:null, $ht:22px, $pd:0, $fs:13px, $t-line:center, $fg:$fg-gray-01, $bor-w:1px, $bor-g:$bor-gray-05, $bg:#fff){
     box-sizing: border-box;
@@ -203,7 +218,7 @@
     width: $wd;
     height: $ht;
     font-size: $fs;
-    line-height: $ht;
+    line-height: ($ht)-(2);
     vertical-align: middle;
     color: $fg;
     //padding: $pd;
@@ -260,6 +275,24 @@
     @include trasBase(1, $bg:$bg-gray-05);
     &:hover {
         @include trasBase(1, $bg:$bg-gray-06);
+    }
+}
+
+//btn bg black
+@mixin btn-black-bg($wd:180px, $ht:50px, $fs:18px, $fg:#fff){
+    @include btn-base($wd, $ht, $fs, $fg);
+    @include trasBase(1, $bg:$bg-black-01);
+    &:hover {
+        @include trasBase;
+    }
+}
+
+//btn bg pink
+@mixin btn-pink-bg($wd:160px, $ht:28px, $fs:14px, $fg:#fff){
+    @include btn-base($wd, $ht, $fs, $fg);
+    @include trasBase(1, $bg:$bg-red-01);
+    &:hover {
+        @include trasBase(1, $bg:$bg-red-02);
     }
 }
 
@@ -377,10 +410,10 @@
 }
 
 //checkbox
-@mixin chkbox($wt:12px, $bor-bg:$bor-black-01){
+@mixin chkbox($wt:12px, $bor-bg:$bor-black-01, $left:0){
     %chk {
         cursor: pointer;
-        @include position(absolute, 50%, 0);
+        @include position(absolute, 50%, $left);
         display: block;
         box-sizing: border-box;
         width: $wt;
@@ -1392,6 +1425,7 @@
                 background: $th-bg;
             }
             td {
+                position: relative;
                 padding: $td-pd;
                 color: $td-fg;
                 background: $td-bg;
@@ -1442,6 +1476,10 @@
                         
                         &.h-1 {
                             height: 158px;
+                        }
+                        &.type-2 {
+                            width: 740px;
+                            height: 126px;
                         }
                     }
                     
@@ -1529,6 +1567,15 @@
                     & + .row.file-box {
                         margin-top: 0;
                     }
+                    
+                    &.row-pop {
+                        display: inline-block;
+                        .btn-com {
+                            @include btn-gray-bor-02(80px, 27px);
+                            margin-left: 19px;
+                            font-weight: 300;
+                        }
+                    }
                 }
             }
         }
@@ -1536,7 +1583,7 @@
     }    
 }
 
-//tbl col th gray
+//tbl col th gray - th line
 @mixin tbl-col-gray($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:17px 0, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:15px 0, $td-fg:$fg-gray-04, $a-pd:0 70px){
     .tbl-col {
         @include bx;
@@ -1567,15 +1614,86 @@
                     td {
                         padding: $td-pd;
                         color: $td-fg;
-                        a {
+                        .link-txt {
                             display: block;
                             padding: $a-pd;
                             text-align: left;
                             color: inherit;
                             @include trasBase(1);
-                            &:hover {
+                            &a:hover {
                                 @include trasBase(0.6);
                             }
+                        }
+                    }
+                }
+            }
+        }
+        @content
+    }
+}
+
+//tbl col th gray 02 - th/td border 
+@mixin tbl-col-gray-02($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:14px, $bor-bg:$bor-gray-03, $th-pd:7px 0, $th-fg:$fg-gray-01, $th-bg:$bg-gray-02, $td-pd:10px 0 9px, $td-fg:$fg-black, $a-pd:0 11px, $a-name-fs:15px, $a-name-pd:0 22px){
+    .tbl-col {
+        @include bx;
+        border-top: $bor-t-w solid $bor-t-bg;
+        .tbl {
+            th, td {
+                font-size: $fs;
+                font-weight: 300;
+                line-height: 1.4;
+                border-left: 1px solid $bor-bg;
+                border-bottom: 1px solid $bor-bg;
+            }
+            thead {
+                tr {
+                    th {
+                        padding: $th-pd;
+                        color: $th-fg;
+                        background: $th-bg;
+                        &:first-child {
+                            border-left: 0
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        padding: $td-pd;
+                        color: $td-fg;
+                        border-left: 1px solid $bor-bg;
+                        &:first-child {
+                            border-left: 0
+                        }
+                        .link-txt {
+                            @include bx;
+                            display: block;
+                            padding: $a-pd;
+                            text-align: left;
+                            color: inherit;
+                            @include trasBase(1);
+                            &.prd-name {
+                                padding: $a-name-pd;
+                                font-size: $a-name-fs;
+                                font-weight: 500;
+                                letter-spacing: 0;
+                                .img-prd {
+                                    margin-right: 18px;
+                                }
+                            }
+                            &.ip-chk {
+                                @include chkbox($left:22px);
+                                .btn-chk + .img-prd {
+                                    margin-left: 30px;
+                                }
+                            }
+                        }
+                        a.link-txt:hover {
+                            @include trasBase(0.6);
+                        }
+                        .txt {
+                            color: $fg-gray-01;
                         }
                     }
                 }

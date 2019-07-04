@@ -34,6 +34,9 @@ input::placeholder {
     letter-spacing: -0.5px;
 	font-family: $font-stack; 
 }
+input:disabled {
+    background: $bg-gray-02;
+}
 
 textarea {
     resize: none;
@@ -57,6 +60,9 @@ textarea::placeholder {
 .form-sel:hover, .ip-txt:hover, .ip-cal:hover, .ta-txt:hover {
     @include trasBase(1);
     border-color: $bor-black-01 !important;
+}
+input:disabled:hover {
+    border-color: $bor-gray-03 !important;
 }
 
 table {
@@ -527,6 +533,47 @@ $hd-ht: ($gnb-ht+31);
     line-height: 0;
     background: #fff;
     
+    //sub menu
+    .sub-menu {
+        @include position(absolute, $left:0);
+        z-index: 995;
+        display: none;
+        box-sizing: border-box;
+        width: 170px;
+        padding: 10px;
+        border: 1px solid $bor-gray-03;
+        background: #fff;
+        li {
+            clear: both;
+            float: none;
+            display: block;
+            border-top: 1px solid $bor-gray-06;
+            
+            &:first-child {
+                border-top: 0;
+            }
+            
+            a {
+                @include bx;
+                display: block;
+                height: 35px;
+                padding: 0 10px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 35px;
+                letter-spacing: -0.2px;
+                text-align: left;
+                color: $fg-gray-01;
+                @include trasBase(1);
+                
+                &:hover {
+                    @include trasBase(1, $fg:#323232, $bg:$bg-gray-02);
+                    
+                }
+            }
+        }
+    }
+    
     //until
     .until-area {
         @include bx;
@@ -541,11 +588,11 @@ $hd-ht: ($gnb-ht+31);
                 @include bx;
                 @include clearfix;
                 display: inline-block;
-                li {
+                > li {
                     @include bx;
                     float: left;
                     text-align: center;
-                    a {
+                    > a {
                         @include bx;
                         display: block;
                         padding: 0 21px;
@@ -580,7 +627,7 @@ $hd-ht: ($gnb-ht+31);
                     }
 
                     &.lst {
-                        a {
+                        > a {
                             padding-right: 0;
                         }
                     }
@@ -743,13 +790,13 @@ $hd-ht: ($gnb-ht+31);
                     @include bx;
                     @include clearfix;
                     //width: 470px;
-                    li {
+                    > li {
                         @include bx;
                         float: left;
                         //width: 25%;
                         //padding: 0 40px;
                         text-align: center;
-                        a {
+                        > a {
                             @include bx;
                             display: inline-block;
                             height: 48px;
@@ -776,13 +823,13 @@ $hd-ht: ($gnb-ht+31);
                     }
                     
                     &.fl-left {
-                        li {
+                        > li {
                             padding: 0 39.5px;
                         }
                     }
                     
                     &.fl-right {
-                        li {
+                        > li {
                             padding: 0 38px 0 37px;
                         }
                     }
@@ -923,7 +970,7 @@ $hd-ht: ($gnb-ht+31);
 
 /* quick 영역 - 퀵메뉴 */
 .quick {
-    z-index: 998;
+    z-index: 985;
     @include position(fixed, $hd-ht, $right:0);
     @include clearfix;
     //overflow: hidden;
@@ -1391,6 +1438,7 @@ $hd-ht: ($gnb-ht+31);
                 height: $f-ht;
                 
                 .ft-tit {
+                    display: block;
                     padding-bottom: 9px;
                     font-size: 18px;
                     font-weight: 500;
@@ -2057,11 +2105,72 @@ $hd-ht: ($gnb-ht+31);
 }
 
 
+@media (max-width: 1450px) {
+    /* header 영역 */
+    //sub menu 위치 조정
+    .header {
+        //until
+        .until-area {
+            .until-box {
+                .until-list {
+                    > li {
+                        &.lst {
+                            .sub-menu {
+                                left: auto;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //gnb
+        .gnb {
+            //메뉴
+            .gnb-area {
+                .gnb-box {
+                    .gnb-list {
+                        &.fl-right {
+                            .lst {
+                                .sub-menu {
+                                    left: auto;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 /*
- * IE8
+ * IE
  */
+.ie {
+   
+    /* footer 영역 */
+    .footer {
+        .top-area {
+            .top-box {
+                .menu-box {
+                    .menu-list {
+                        li {
+                            a {
+                                &.f-bd {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
 
 
 

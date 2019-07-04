@@ -11,6 +11,18 @@ $(function () {
             }
         });
     });
+    
+    
+    /* 비회원으로 구매 over/out */
+    if( $('.login-sect').hasClass('login-buy') ){
+        $('.login-sect .btn-box .btn-buy').on('mouseover', function(){
+            $(this).siblings('.non-info-txt').fadeIn();
+        });
+        $('.login-sect .btn-box').on('mouseleave', function(){
+            $(this).find('.non-info-txt').fadeOut();
+        });
+        
+    }
 });
 
 

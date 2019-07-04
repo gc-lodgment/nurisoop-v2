@@ -751,13 +751,7 @@
                                         padding-left: 10px;
                                         word-break: keep-all;
                                         line-height: 1.7;
-                                        &:before {
-                                            content: '';
-                                            @include position(absolute, 12px, 0);
-                                            width: 5px;
-                                            height: 1px;
-                                            background: #777;
-                                        }
+                                        @include line-row-2(5px, $t:12px, $bg:#777);
                                     }
                                 }
                             }

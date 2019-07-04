@@ -1,0 +1,51 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents find">
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">비밀번호 찾기</h2>
+                <p class="evt-txt">비밀번호를 잊으셨다면, 아이디를 입력해주세요. 고객님의 비밀번호를 알려드립니다.</p>
+            </div>
+        </div>
+	
+	    <div class="result-sect">
+	        <div class="container">
+                <div class="result-area">
+                    <p class="result-tit">
+                        <span class="ico-pw"></span>
+                        새로운 비밀번호 입력
+                    </p>
+                    <p class="result-txt">새로운 비밀번호를 입력해 주시기 바랍니다.</p>
+                    <div class="result-box">
+                        <div class="rst-row">
+                            <label class="rst-txt">
+                                <span>새 비밀번호 입력</span>
+                                <input type="password" class="ip-txt" placeholder="**********">
+                            </label>
+                            <label class="rst-txt">
+                                <span>새 비밀번호 입력</span>
+                                <input type="password" class="ip-txt" placeholder="**********">
+                            </label>
+                            <p class="rst-ip-txt">※ 영문과 숫자를 혼합하여 6자~15자까지 입력 가능</p>
+                        </div>
+                        <div class="rst-row btn-row">
+                            <a href="#none" class="btn-green">확인</a>
+                        </div>
+                    </div>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

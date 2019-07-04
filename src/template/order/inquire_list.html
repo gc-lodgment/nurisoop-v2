@@ -1,0 +1,263 @@
+@@include('../include/_head.html', {
+	"page": "order"
+})
+
+<body class="page-order">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents inquire">
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">주문조회</h2>
+            </div>
+        </div>
+
+	    <div class="inquire-sect">
+	        <div class="container">
+                <div class="tab-box">
+                    <ul class="tab-list">
+                        <li class="nth-1 on"><a href="#inquireList">주문내역조회 (<span>2</span>)</a></li>
+                        <li class="nth-2"><a href="#inquireCancle">취소/반품/교환 내역 (<span>2</span>)</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 주문내역조회 -->
+                <div id="inquireList" class="inquire-area tabListArea" style="display: block;">
+                    <div class="top-box">
+                        <div class="srch-box">
+                            <select name="" id="" class="form-sel">
+                                <option value="">전체 주문처리상태</option>
+                                <option value="">입금전</option>
+                                <option value="">배송준비중</option>
+                                <option value="">배송중</option>
+                                <option value="">배송완료</option>
+                                <option value="">취소</option>
+                                <option value="">교환</option>
+                                <option value="">반품</option>
+                            </select>
+                        </div>
+                        <div class="day-box">
+                            <a href="#none" class="btn-day on">오늘</a>
+                            <a href="#none" class="btn-day">1주일</a>
+                            <a href="#none" class="btn-day">1개월</a>
+                            <a href="#none" class="btn-day">3개월</a>
+                            <a href="#none" class="btn-day">6개월</a>
+                        </div>
+                        <div class="cal-box">
+                            <p class="row">
+                                <input id="searchStartDate" type="text" class="ip-cal date-ui" value="">
+                                <span class="ico-cal date-ui"></span>
+                            </p>
+                            <span class="cal-txt">~</span>
+                            <p class="row">
+                                <input id="searchEndDate" type="text" class="ip-cal date-ui" value="">
+                                <span class="ico-cal date-ui"></span>
+                            </p>
+                        </div>
+                        <button class="btn-srch">조회</button>
+                    </div>
+
+                    <div class="txt-box">
+                        <ul class="txt-list">
+                            <li>기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 지난 주문내역을 조회하실 수 있습니다.</li>
+                            <li>주문번호를 클릭하시면 해당 주문에 대한 상세내역을 확인하실 수 있습니다.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 주문상품정보 -->
+                    <div class="tbl-area">
+                        <h3 class="tbl-tit">주문 상품 정보</h3>
+                        <div class="tbl-col">
+                            <table class="tbl">
+                                <colgroup>
+                                    <col style="width: 12.2%;">
+                                    <col style="width: 9.4%;">
+                                    <col style="width: *">
+                                    <col style="width: 5.3%;">
+                                    <col style="width: 8.9%;">
+                                    <col style="width: 8.9%;">
+                                    <col style="width: 8.9%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>주문일자<br>[주문번호]</th>
+                                        <th>이미지</th>
+                                        <th>상품정보</th>
+                                        <th>수량</th>
+                                        <th>상품구매금액</th>
+                                        <th>주문처리상태</th>
+                                        <th>취소/교환/반품</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                       <!-- 링크 예시 -->
+                                        <td>
+                                            <a href="./inquire_view.html" class="link-txt tl-center">2019-06-30<br>[20190531-0000972]</a>
+                                            <!-- 주문 취소는 입금전만 되게 -->
+                                            <button class="btn-com" onclick="removeCheck();">주문취소</button><br>
+                                            <a href="./inquire_exchange.html" class="btn-com">교환신청</a>
+                                        </td>
+                                        <td><a href="../skincare/index_detail.html" class="link-txt"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure></a></td>
+                                        <td><a href="../skincare/index_detail.html" class="link-txt prd-name">누리촉촉 딥 수딩크림</a></td>
+                                        <td>1개</td>
+                                        <td><em class="f-bd">17,500원</em></td>
+                                        <td>
+                                            <p class="txt">입금전</p>
+                                        </td>
+                                        <td><p cass="txt">-</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#none" class="link-txt tl-center">2019-05-31<br>[20190531-0000972]</a>
+                                            <a href="#none" class="btn-com">교환신청</a>
+                                        </td>
+                                        <td><a href="#none" class="link-txt"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure></a></td>
+                                        <td><a href="#none" class="link-txt prd-name">누리촉촉 딥 수딩크림</a></td>
+                                        <td>1개</td>
+                                        <td><em class="f-bd">17,500원</em></td>
+                                        <td>
+                                            <p class="txt">배송완료</p>
+                                            <a href="javascript:;" class="btn-green writePop">리뷰작성</a>
+                                        </td>
+                                        <td><p cass="txt">-</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- board-page -->
+                    <div class="bot-area">
+                        <div class="page-area">
+                            <div id="pagenation" class="page-box">
+                                <a class="btn-m-prev" href=""><span></span></a>
+                                <a class="btn-prev" href=""><span></span></a>
+                                <!-- 해당 페이지일때 on -->
+                                <a class="txt on" href=""><span>1</span></a>
+                                <a class="btn-next" href=""><span></span></a>
+                                <a class="btn-m-next" href=""><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 취소/반품/교환 내역 -->
+                <div id="inquireCancle" class="inquire-area tabListArea" style="display: none;">
+                    <div class="top-box">
+                        <div class="day-box">
+                            <a href="#none" class="btn-day on">오늘</a>
+                            <a href="#none" class="btn-day">1주일</a>
+                            <a href="#none" class="btn-day">1개월</a>
+                            <a href="#none" class="btn-day">3개월</a>
+                            <a href="#none" class="btn-day">6개월</a>
+                        </div>
+                        <div class="cal-box">
+                            <p class="row">
+                                <input id="searchStartDate" type="text" class="ip-cal date-ui" value="">
+                                <span class="ico-cal date-ui"></span>
+                            </p>
+                            <span class="cal-txt">~</span>
+                            <p class="row">
+                                <input id="searchEndDate" type="text" class="ip-cal date-ui" value="">
+                                <span class="ico-cal date-ui"></span>
+                            </p>
+                        </div>
+                        <button class="btn-srch">조회</button>
+                    </div>
+
+                    <div class="txt-box">
+                        <ul class="txt-list">
+                            <li>기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 지난 주문내역을 조회하실 수 있습니다.</li>
+                            <li>주문번호를 클릭하시면 해당 주문에 대한 상세내역을 확인하실 수 있습니다.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 취소 반품 교환 -->
+                    <div class="tbl-area">
+                        <h3 class="tbl-tit">취소/반품/교환</h3>
+                        <div class="tbl-col">
+                            <table class="tbl">
+                                <colgroup>
+                                    <col style="width: 12.2%;">
+                                    <col style="width: 9.4%;">
+                                    <col style="width: *">
+                                    <col style="width: 5.3%;">
+                                    <col style="width: 8.9%;">
+                                    <col style="width: 8.9%;">
+                                    <col style="width: 8.9%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>주문일자<br>[주문번호]</th>
+                                        <th>이미지</th>
+                                        <th>상품정보</th>
+                                        <th>수량</th>
+                                        <th>상품구매금액</th>
+                                        <th>주문처리상태</th>
+                                        <th>취소/교환/반품</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                       <!-- 링크 예시 -->
+                                        <td>
+                                            <a href="./inquire_view_cancle.html" class="link-txt tl-center">2019-06-30<br>[20190531-0000972]</a>
+                                        </td>
+                                        <td><a href="../skincare/index_detail.html" class="link-txt"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure></a></td>
+                                        <td><a href="../skincare/index_detail.html" class="link-txt prd-name">누리촉촉 딥 수딩크림</a></td>
+                                        <td>1개</td>
+                                        <td><em class="f-bd">17,500원</em></td>
+                                        <td>
+                                            <p class="txt">입금전취소</p>
+                                        </td>
+                                        <td><p cass="txt">-</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#none" class="link-txt tl-center">2019-05-31<br>[20190531-0000972]</a>
+                                        </td>
+                                        <td><a href="#none" class="link-txt"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure></a></td>
+                                        <td><a href="#none" class="link-txt prd-name">누리촉촉 딥 수딩크림</a></td>
+                                        <td>1개</td>
+                                        <td><em class="f-bd">17,500원</em></td>
+                                        <td>
+                                            <p class="txt">입금전취소</p>
+                                            <a href="javascript:;" class="btn-green writePop">리뷰작성</a>
+                                        </td>
+                                        <td><p cass="txt">-</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- board-page -->
+                    <div class="bot-area">
+                        <div class="page-area">
+                            <div id="pagenation" class="page-box">
+                                <a class="btn-m-prev" href=""><span></span></a>
+                                <a class="btn-prev" href=""><span></span></a>
+                                <!-- 해당 페이지일때 on -->
+                                <a class="txt on" href=""><span>1</span></a>
+                                <a class="btn-next" href=""><span></span></a>
+                                <a class="btn-m-next" href=""><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	        
+	    </div>
+	    
+	</div> 
+   
+    <!-- 리뷰 팝업 -->
+	@@include('../include/pop/pop_review.html') 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

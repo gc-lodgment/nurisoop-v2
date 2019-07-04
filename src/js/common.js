@@ -1,5 +1,6 @@
 $(function(){
     //함수실행
+    menuFn();
     ftSlideFn();
     tabFn();
     dateFn();
@@ -14,21 +15,6 @@ $(function(){
         $(this).parents('.srch-box').toggleClass('on');
     });
     
-    //메뉴
-    $('.header .btn-menu').on('click', function(){
-        var menuArea = $('.menu-area');
-        $(this).toggleClass('on');
-        if( $('html').hasClass('ie8') ){
-            if( $('.btn-menu').hasClass('on') ){
-                menuArea.stop().show();
-            }else{
-                menuArea.stop().hide();
-            }
-        }else {
-            menuArea.stop().fadeToggle();
-        }
-    });
-    
     //btn pop close
     $('.popClose').on('click', function(){
         //console.log('닫기');
@@ -36,6 +22,11 @@ $(function(){
         
         $('html').css({'overflow': 'auto', 'height': '100%'});
         $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
+    });
+    
+    //pop 내역보기
+    $('.btnOrderHistory').on('click', function(){
+        $('#popOrderHistory').stop().fadeIn();
     });
 
     //txt, img file del
@@ -94,6 +85,35 @@ $(function(){
         imgfileFn();
     });
 });
+
+/* menu */
+function menuFn(){
+    $('.header .btn-menu').on('click', function(){
+        var menuArea = $('.menu-area');
+        $(this).toggleClass('on');
+        if( $('html').hasClass('ie8') ){
+            if( $('.btn-menu').hasClass('on') ){
+                menuArea.stop().show();
+            }else{
+                menuArea.stop().hide();
+            }
+        }else {
+            menuArea.stop().fadeToggle();
+        }
+    });
+    
+    //sub menu over
+    $('.header').find('.until-list > li > a, .gnb-list > li > a').on('mouseover', function(){
+        $('.header').find('.sub-menu').stop().fadeOut();
+        $(this).siblings('.sub-menu').stop().fadeIn();
+    });
+
+
+    //sub menu leave
+    $('.header .until-list, .header .gnb-list, .header .sub-menu').on('mouseleave', function(){
+        $(this).find('.sub-menu').stop().fadeOut();
+    });
+}
 
 /* tab */
 function tabFn(){

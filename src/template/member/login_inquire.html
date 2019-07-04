@@ -15,7 +15,7 @@
             </div>
         </div>
 	
-	    <div class="login-sect">
+	    <div class="login-sect login-inquiry">
 	        <div class="container">
 	            <div class="row sns-login">
 	                <h3 class="login-tit">간편 로그인</h3>
@@ -39,26 +39,13 @@
 	                    <li class="t-ast fc-red">회원등급별 적립 다양한 사은품 및 회원쿠폰 발급</li>
 	                    <li class="t-ast">로그인/회원 가입 시 이용약관, 개인정보취급방침에 동의하게 됩니다.</li>
 	                </ul>
-	            </div>
-	            <div class="row member-login">
+	                
 	                <h3 class="login-tit">누리숲 기존 회원 로그인</h3>
 	                <div class="login-area">
-                        <ul class="login-tab">
-                            <li class="member"><label class="srch-txt"><input type="radio" name="login" checked>기존회원 로그인</label></li>
-                            <li class="non-member"><label class="srch-txt"><input type="radio" name="login">비회원 주문조회</label></li>
-                        </ul>
-
                         <!-- 회원 로그인 -->
                         <div class="login-box member" style="display: block;">
                             <p class="p-row"><input type="text" id="id" class="ip-txt" placeholder="아이디" value=""></p>
                             <p class="p-row"><input type="password" id="pw" class="ip-txt" placeholder="비밀번호" value=""></p>
-                            <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
-                        </div>
-
-                        <!-- 비회원 주문조회 -->
-                        <div class="login-box non-member" style="display: none;">
-                            <p class="p-row"><input type="text" id="id" class="ip-txt" placeholder="주문자명" value=""></p>
-                            <p class="p-row"><input type="text" id="pw" class="ip-txt" placeholder="주문번호" value=""></p>
                             <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
                         </div>
 
@@ -73,6 +60,28 @@
 	                        <li><a href="./find_pw_00.html">비밀번호찾기</a></li>
 	                    </ul>
 	                </div>
+	            </div>
+	            <!-- 비회원 로그인 -->
+	            <div class="row non-member-login">
+	                <h3 class="login-tit">비회원 로그인</h3>
+	                <div class="login-area">
+                        <div class="login-box non-member">
+                            <p class="p-row"><input type="text" id="oderName" class="ip-txt" placeholder="주문자명" value=""></p>
+                            <p class="p-row">
+                                <input type="tel" id="oderNum01" class="ip-txt wd-1" placeholder="주문번호" value="">
+                                <span class="bar">-</span>
+                                <input type="tel" id="oderNum01" class="ip-txt wd-2" placeholder="" value="">
+                            </p>
+                            <p class="p-row"><input type="password" id="oderPw" class="ip-txt" placeholder="비회원주문 비밀번호" value=""></p>
+                        </div>
+
+                        <div class="login-txt-box">
+                            <p class="info-txt">비회원의 경우, 주문시의 주문번호로 주문조회가 가능합니다.</p>
+                        </div>
+	                </div>
+                    <div class="login-btn-box">
+                       <a href="../order/inquire_list.html" class="btn-non-login">주문조회</a>
+                    </div>
 	            </div>
 	        </div>
 	    </div>

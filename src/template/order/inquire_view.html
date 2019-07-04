@@ -1,0 +1,226 @@
+@@include('../include/_head.html', {
+	"page": "order"
+})
+
+<body class="page-order">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents inquire">
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">주문상세조회</h2>
+            </div>
+        </div>
+
+	    <div class="inquire-sect view">
+	        <div class="container">
+                
+                <!-- 주문 정보 -->
+                <div class="tbl-area">
+                    <h3 class="tbl-tit">주문정보</h3>
+                    
+                    <div class="tbl-row">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 11.2%">
+                                <col style="width: *">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>주문번호</th>
+                                    <td><div class="row">20190531-0000953</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주문일자</th>
+                                    <td><div class="row">2019-05-31&ensp;17:16:24</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주문자</th>
+                                    <td><div class="row">김철수</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주문처리상태</th>
+                                    <td><div class="row"><span class="txt">입금전</span><button class="btn-com" onclick="removeCheck();">주문취소</button></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 결제 정보 -->
+                <div class="tbl-area">
+                    <h3 class="tbl-tit">결제 정보</h3>
+                    
+                    <div class="tbl-row type-2">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 11.2%">
+                                <col style="width: *">
+                            </colgroup>
+                            <tbody>
+                                <tr class="bor-black">
+                                    <th><em class="f-bd">총 주문금액</em></th>
+                                    <td>
+                                        <div class="row row-pop">
+                                            <span class="txt f-bd">54,000원</span>
+                                            <a href="javascript:;" class="btn-com btnOrderHistory">내역보기</a>
+                                            <!-- 팝업 -->
+                                            @@include('../include/pop/pop_order_history.html') 
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><em class="f-bd">총 결제금액</em></th>
+                                    <td><div class="row"><span class="txt fs-18 f-bd">54,000원</span></div></td>
+                                </tr>
+                                <tr>
+                                    <th>결제수단</th>
+                                    <td>
+                                        <div class="row pay-row">
+                                            <p class="pay-tit">무통장 입금</p>
+                                            <div class="pay-box">
+                                                <p class="pay-txt">입금자 : OOO, 계좌번호 : 국민은행 129437-04-002600 (예금주 : 이비즈네트웍스) <a href="#none" class="btn-green btn-bank">인터넷뱅킹바로가기</a></p>
+                                                <p class="pay-txt">현금영수증 발행 : <span class="f-bd">신청</span> (개인) 00000000000</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 주문상품정보 -->
+                <div class="tbl-area">
+                    <h3 class="tbl-tit">주문 상품 정보</h3>
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: *">
+                                <col style="width: 10.4%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 10.4%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>상품정보</th>
+                                    <th>수량</th>
+                                    <th>판매가</th>
+                                    <th>배송구분</th>
+                                    <th>주문처리상태</th>
+                                    <th>취소/교환/반품</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <!-- 링크 예시 -->
+                                    <td>
+                                        <a href="../skincare/index_detail.html" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure>누리촉촉 딥 수딩크림</a>
+                                    </td>
+                                    <td>1개</td>
+                                    <td><em class="f-bd">17,500원</em></td>
+                                    <td rowspan="2">일반택배<br>(조건부 무료)</td>
+                                    <td rowspan="2"><p class="txt">입금전</p></td>
+                                    <td rowspan="2"><p cass="txt">-</p></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#none" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="포레스트 리페어 EGF 크림"></figure>포레스트 리페어 EGF 크림</a>
+                                    </td>
+                                    <td>1개</td>
+                                    <td><em class="f-bd">17,500원</em></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <div class="bot-box">
+                                            <p class="txt">[기본배송]</p>
+                                            <p class="buy-txt">
+                                                상품구매금액 <span>54,000</span>원 + 배송비 <span>0</span>원 = 합계 <em class="t-point">54,000원</em>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 배송지 정보 -->
+                <div class="tbl-area">
+                    <h3 class="tbl-tit">배송지 정보</h3>
+                    
+                    <div class="tbl-row">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 11.2%">
+                                <col style="width: *">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>받으시는분</th>
+                                    <td><div class="row">김철수</div></td>
+                                </tr>
+                                <tr>
+                                    <th>우편번호</th>
+                                    <td><div class="row">05692</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주소</th>
+                                    <td><div class="row">서울특별시 강남구 테헤란로 82길 15, 14층 (대치동, 디아이타워)</div></td>
+                                </tr>
+                                <tr>
+                                    <th>일반전화</th>
+                                    <td><div class="row">000-0000-0000</div></td>
+                                </tr>
+                                <tr>
+                                    <th>휴대전화</th>
+                                    <td><div class="row">000-0000-0000</div></td>
+                                </tr>
+                                <tr>
+                                    <th>배송메시지</th>
+                                    <td><div class="row">부재시 문앞에 놓아주세요</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="btn-box">
+                    <a href="./inquire_list.html" class="btn-list fl-right">주문목록보기</a>
+                </div>
+                
+                <!-- 안내 -->
+                <div class="info-area">
+                    <div class="info-tit-box">
+                        <p class="info-tit">Notice</p>
+                    </div>
+                    <div class="info-list-box">
+                        <ul class="info-list">
+                            <li>자세한 구매내역 확인 및 문자발송, 배송지 변경, 배송확인 등의 서비스는 사이트 우측 상단의 <span class="txt-pt">마이페이지 > 주문내역/배송조회</span>에서 이용 가능합니다.</li>
+                            <li>상품배송은 15시 이전에 주문시 당일배송, 15시 이후 주문시 익일배송을 원칙으로 합니다. (주말 및 공휴일 휴무)</li>
+                            <li>
+                                상품배송은 무통장 입금시 입금하신 날로부터, 신용카드로 구매시 구매하신 날로부터 2~3일 이내(최장 7일 이내) 배송지로 도착됩니다.<br> 
+                                단 제주도, 도서/산간 지역의 경우 4~5일 정도 더 소요될 수 있습니다.
+                            </li>
+                            <li>
+                                5시 이전에 입금확인 되어 당일 배송 출고된 배송준비중 주문건은 운송장번호가 당일 저녁에 입력되며, 배송조회에서 확인 가능합니다.<br>
+                                단, 군부대 및 도서/산간지역은 우체국 택배로 발송되며 익일부터 송장번호 확인 가능합니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+	        </div>
+	        
+	    </div>
+	    
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

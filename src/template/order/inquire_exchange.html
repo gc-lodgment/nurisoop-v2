@@ -1,0 +1,150 @@
+@@include('../include/_head.html', {
+	"page": "order"
+})
+
+<body class="page-order">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents change">
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">교환신청</h2>
+            </div>
+        </div>
+
+	    <div class="change-sect">
+	        <div class="container">
+                <!-- 주문상품정보 -->
+                <div class="tbl-area">
+                    <h3 class="tbl-tit">주문 상품 정보</h3>
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 12.2%;">
+                                <col style="width: *">
+                                <col style="width: 5.3%;">
+                                <col style="width: 8.9%;">
+                                <col style="width: 8.9%;">
+                                <col style="width: 8.9%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>주문일자<br>[주문번호]</th>
+                                    <th>상품정보</th>
+                                    <th>수량</th>
+                                    <th>신청수량</th>
+                                    <th>상품구매금액</th>
+                                    <th>주문처리상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <!-- 링크 예시 -->
+                                    <td>
+                                        <a href="./inquire_view.html" class="link-txt tl-center">2019-06-30<br>[20190531-0000972]</a>
+                                    </td>
+                                    <td>
+                                        <label class="link-txt prd-name ip-chk">
+                                            <input type="checkbox" for="prd">
+                                            <span class="btn-chk"></span>
+                                            <figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure>
+                                            <span>누리촉촉 딥 수딩크림</span>
+                                        </label>
+                                    </td>
+                                    <td>1개</td>
+                                    <td>
+                                        <div class="num-box">
+                                            <input type="number" class="ip-txt" value="1">
+                                            <span class="up"></span>
+                                            <span class="down"></span>
+                                        </div>  
+                                        <button class="btn-com btn-change">변경</button>     
+                                    </td>
+                                    <td><em class="f-bd">17,500원</em></td>
+                                    <td><p class="txt">입금전</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 교환 사유 -->
+                <div class="tbl-area">
+                    <h3 class="tbl-tit">교환사유</h3>
+                    
+                    <div class="tbl-row">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 11.2%">
+                                <col style="width: *">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>사유선택</th>
+                                    <td>
+                                       <p class="row">
+                                            <select name="" id="" class="form-sel">
+                                                <option value="">- 선택하세요 -</option>
+                                                <option value="">고객변심</option>
+                                                <option value="">배송지연</option>
+                                                <option value="">배송오류</option>
+                                                <option value="">배송불가지역</option>
+                                                <option value="">상품 불만족</option>
+                                                <option value="">상품정보상이</option>
+                                                <option value="">상품불량</option>
+                                                <option value="">서비스불만족</option>
+                                                <option value="">품절</option>
+                                                <option value="">기타</option>
+                                            </select>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상세사유</th>
+                                    <td>
+                                        <p class="row"><textarea name="" id="txt" cols="30" rows="10" class="ta-txt type-2"></textarea></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="btn-box">
+                        <a href="#none" class="btn-green">교환신청</a>
+                        <a href="./inquire_list.html" class="btn-list">이전페이지</a>
+                    </div>
+                </div>
+                
+                <!-- 안내 -->
+                <div class="info-area">
+                    <div class="info-tit-box">
+                        <p class="info-tit">Notice</p>
+                    </div>
+                    <div class="info-list-box">
+                        <ul class="info-list">
+                            <li>자세한 구매내역 확인 및 문자발송, 배송지 변경, 배송확인 등의 서비스는 사이트 우측 상단의 <span class="txt-pt">마이페이지 > 주문내역/배송조회</span>에서 이용 가능합니다.</li>
+                            <li>상품배송은 15시 이전에 주문시 당일배송, 15시 이후 주문시 익일배송을 원칙으로 합니다. (주말 및 공휴일 휴무)</li>
+                            <li>
+                                상품배송은 무통장 입금시 입금하신 날로부터, 신용카드로 구매시 구매하신 날로부터 2~3일 이내(최장 7일 이내) 배송지로 도착됩니다.<br> 
+                                단 제주도, 도서/산간 지역의 경우 4~5일 정도 더 소요될 수 있습니다.
+                            </li>
+                            <li>
+                                5시 이전에 입금확인 되어 당일 배송 출고된 배송준비중 주문건은 운송장번호가 당일 저녁에 입력되며, 배송조회에서 확인 가능합니다.<br>
+                                단, 군부대 및 도서/산간지역은 우체국 택배로 발송되며 익일부터 송장번호 확인 가능합니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+	        </div>
+	        
+	    </div>
+	    
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

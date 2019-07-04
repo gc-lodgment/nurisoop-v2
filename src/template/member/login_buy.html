@@ -15,7 +15,7 @@
             </div>
         </div>
 	
-	    <div class="login-sect">
+	    <div class="login-sect login-buy">
 	        <div class="container">
 	            <div class="row sns-login">
 	                <h3 class="login-tit">간편 로그인</h3>
@@ -43,11 +43,6 @@
 	            <div class="row member-login">
 	                <h3 class="login-tit">누리숲 기존 회원 로그인</h3>
 	                <div class="login-area">
-                        <ul class="login-tab">
-                            <li class="member"><label class="srch-txt"><input type="radio" name="login" checked>기존회원 로그인</label></li>
-                            <li class="non-member"><label class="srch-txt"><input type="radio" name="login">비회원 주문조회</label></li>
-                        </ul>
-
                         <!-- 회원 로그인 -->
                         <div class="login-box member" style="display: block;">
                             <p class="p-row"><input type="text" id="id" class="ip-txt" placeholder="아이디" value=""></p>
@@ -55,16 +50,17 @@
                             <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
                         </div>
 
-                        <!-- 비회원 주문조회 -->
-                        <div class="login-box non-member" style="display: none;">
-                            <p class="p-row"><input type="text" id="id" class="ip-txt" placeholder="주문자명" value=""></p>
-                            <p class="p-row"><input type="text" id="pw" class="ip-txt" placeholder="주문번호" value=""></p>
-                            <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
-                        </div>
-
                         <div class="login-txt-box">
                             <label class="chk-txt"><input type="checkbox" for="email"><span class="btn-chk"></span>로그인 상태 유지</label>
                             <p class="txt-lock"><span></span>보안접속</p>
+                            <!-- 비회원으로 구매 -->
+                            <div class="btn-box">
+                                <a href="#none" class="btn-buy">비회원으로 구매</a>
+                                <p class="non-info-txt">
+                                    비회원 구매 시, 적립 및 쿠폰적용 등<br>
+                                    다양한 혜택을 받으실 수 없습니다.
+                                </p>
+                            </div>
                         </div>
 	                </div>
 	                <div class="login-btn-box">

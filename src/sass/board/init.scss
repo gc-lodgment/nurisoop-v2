@@ -193,20 +193,11 @@
                             .txt-list {
                                 @include bx;
                                 li {
-                                    @include bx;
-                                    padding-left: 7px;
                                     font-size: 13px;
                                     font-weight: 300;
                                     line-height: 1.5;
                                     color: $fg-gray-01;
-                                    
-                                    &:before {
-                                        content: '';
-                                        @include position(absolute, 10px, 0);
-                                        width: 3px;
-                                        height: 1px;
-                                        background: $fg-gray-01;
-                                    }
+                                    @include line-row-2;
                                 }
                             }
                         }

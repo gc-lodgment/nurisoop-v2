@@ -1,0 +1,56 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents find">
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">비밀번호 찾기</h2>
+                <p class="evt-txt">비밀번호를 잊으셨다면, 아이디를 입력해주세요. 고객님의 비밀번호를 알려드립니다.</p>
+            </div>
+        </div>
+	
+	    <div class="find-sect">
+	        <div class="container">
+                <div class="find-area">
+	                <h3 class="find-tit">등록된 회원정보로 찾기</h3>
+	                <div class="find-box">
+                        <p class="p-row"><input type="text" id="id" class="ip-txt" placeholder="" value="admin" disabled></p>
+                        <p class="p-row"><input type="text" id="name" class="ip-txt" placeholder="이름" value=""></p>
+                        <p class="p-row"><input type="text" id="mail" class="ip-txt" placeholder="가입 메일 주소" value=""></p>
+                        <p class="p-row"><a href="./find_pw_02.html" class="btn-find">비밀번호 찾기</a></p>
+	                </div>
+                </div>
+                <div class="find-area">
+	                <h3 class="find-tit">본인인증으로 찾기</h3>
+	                <div class="find-box">
+                        <div class="cert-box">
+                            <p class="cert-txt"><span>아이핀(I-pin) 인증</span></p>
+                            <p class="cert-txt"><a href="#none" class="btn-cert">인증기관을 통해 인증 후 확인</a></p>
+                        </div>
+                        <div class="cert-box">
+                            <p class="cert-txt"><span>휴대폰 인증</span></p>
+                            <p class="cert-txt"><a href="#none" class="btn-cert">인증기관을 통해 인증 후 확인</a></p>
+                        </div>
+	                </div>
+                </div>
+                
+                <!-- 찾기 공통 -->
+                <div class="find-info-area">
+                    <p class="find-info-tit">인증이 되지 않는다면?</p>
+                    <p class="find-info-txt">누리숲 고객센터(1688-6093)에 문의해주세요. 불편을 끼쳐드려 죄송합니다.</p>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>
