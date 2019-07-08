@@ -348,6 +348,10 @@ function comPopOpen(id){
     popOpenRv();
 }
 
+function comPopOpen2(id){
+    $(id).stop().fadeIn();
+}
+
 //pop open
 function popOpen(){
     $('html').css({'overflow': 'hidden', 'height': '100%'});

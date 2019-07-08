@@ -245,7 +245,7 @@
                                 float: left;
                                 padding: 0 4px 0;
                                 a {
-                                    @include btn-gary-bg;
+                                    @include btn-gray-bg;
                                     &.btn-buy {
                                         @include btn-green-bg;
                                     }

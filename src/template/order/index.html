@@ -1,0 +1,199 @@
+@@include('../include/_head.html', {
+	"page": "order"
+})
+
+<body class="page-order">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents order">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">장바구니</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">장바구니</h2>
+            </div>
+        </div>
+
+	    <div class="order-sect cart">
+	        <div class="container">
+	           <div class="step-area">
+	               <ul class="step-list">
+	                   <li class="on"><span class="num">STEP 01.</span><span class="name">장바구니</span></li>
+	                   <li class=""><span class="num">STEP 02.</span><span class="name">주문서작성</span></li>
+	                   <li class=""><span class="num">STEP 03.</span><span class="name">결제완료</span></li>
+	                   <li class="lst"><span class="num">STEP 04.</span><span class="name">주문완료</span></li>
+	               </ul>
+	           </div>
+	        
+                <!-- 주문상품정보 -->
+                <div class="tbl-area prd-tbl-area">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 6.5%;">
+                                <col style="width: *">
+                                <col style="width: 12%;">
+                                <col style="width: 12%;">
+                                <col style="width: 12%;">
+                                <col style="width: 12%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>상품정보</th>
+                                    <th>적립금</th>
+                                    <th>판매금액</th>
+                                    <th>수량</th>
+                                    <th>배송비</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="link-txt ip-chk">
+                                            <input type="checkbox" for="prd">
+                                            <span class="btn-chk"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="prd-box">
+                                            <div class="prd-row">
+                                                <a href="../skincare/index_detail.html" class="link-txt"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure></a>
+                                            </div>
+                                            <div class="prd-row prd-txt">
+                                                <a href="../skincare/index_detail.html" class="link-txt prd-name">누리촉촉 딥 수딩크림</a>
+                                                <div class="btn-box">
+                                                    <button class="btn-com btn-del">삭제하기</button>
+                                                    <button class="btn-com btn-wish">위시리스트</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>0원</td>
+                                    <td><span class="f-bd">17,500원</span></td>
+                                    <td>
+                                        <div class="num-box">
+                                            <input type="number" class="ip-txt" value="1">
+                                            <span class="up"></span>
+                                            <span class="down"></span>
+                                        </div>  
+                                    </td>
+                                    <td rowspan="2">
+                                        일반택배<br>(조건부 무료)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="link-txt ip-chk">
+                                            <input type="checkbox" for="prd">
+                                            <span class="btn-chk"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="prd-box">
+                                            <div class="prd-row">
+                                                <a href="../skincare/index_detail.html" class="link-txt"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="포레스트 리페어 EGF 크림"></figure></a>
+                                            </div>
+                                            <div class="prd-row prd-txt">
+                                                <a href="../skincare/index_detail.html" class="link-txt prd-name">포레스트 리페어 EGF 크림</a>
+                                                <div class="btn-box">
+                                                    <button class="btn-com btn-del">삭제하기</button>
+                                                    <button class="btn-com btn-wish">위시리스트</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>0원</td>
+                                    <td><span class="f-bd">36,500원</span></td>
+                                    <td>
+                                        <div class="num-box">
+                                            <input type="number" class="ip-txt" value="1">
+                                            <span class="up"></span>
+                                            <span class="down"></span>
+                                        </div>  
+                                    </td>
+                                </tr>
+                                <!-- 장바구니가 비어있을경우 -->
+                                <tr>
+                                    <td colspan="6" class="nope">
+                                        장바구니가 비어 있습니다.
+                                    </td>
+                                </tr>
+                                <!-- 상품 총 금액 -->
+                                <tr>
+                                    <td colspan="6">
+                                        <div class="bot-box">
+                                            <p class="buy-txt">
+                                                상품구매금액 <span>54,000</span>원 + 배송비 <span>0</span>원 = 합계 <span class="t-point"><em>54,000</em>원</span>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 금액정보 -->
+                <div class="tbl-area-2">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 19.2%;">
+                                <col style="width: 19.2%;">
+                                <col style="width: *">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>총 상품금액</th>
+                                    <th>총 배송비</th>
+                                    <th>결제예정금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>54,000원</td>
+                                    <td>+ 0원</td>
+                                    <td>= 54,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="btn-area">
+                    <div class="ps-ab left">
+                        <a href="#none" class="btn-naver"><img src="http://static.nurisoop.co.kr/img/renew/order/btn_pay.jpg" alt="네이버페이구매"></a>
+                        <p class="t-ast">네이버 페이로 결제 시 누리숲 회원 혜택 및 적립/쿠폰 적용이 불가합니다. </p>
+                    </div>
+                    <div class="btn-box">
+                        <a href="./index_02.html" class="btn-green">전체상품주문</a>
+                        <a href="#none" class="btn-gray">선택상품주문</a>
+                    </div>
+                    <div class="ps-ab right">
+                        <a href="../main/index.html" class="btn-com">쇼핑계속하기</a>
+                    </div>
+                </div>
+                
+                
+            </div>
+	    </div>
+	    
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

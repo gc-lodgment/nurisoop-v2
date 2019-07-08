@@ -9,18 +9,91 @@
     
     /* sub top */
     @include sub-top($pd:56px 0 59px);
+    
+    //*가운데 정렬
+    .t-ast {
+        @include txtAst;
+    }
+    
+    // - 리스트
+    .txt-list {
+        @include bx;
+        li {
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: $fg-gray-01;
+            @include line-row-2;
+        }
+    }
                         
     //테이블
-    .tbl-area {
-        padding-top: 38px;
+    //top
+    .tbl-top-box {
+        @include bx;
+        @include clearfix;
+        padding: 38px 0 12px;
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 0;
+        vertical-align: middle;
+        color: $fg-gray-01;
         .tbl-tit {
-            margin: 0 0 12px 0;
             font-size: 14px;
             font-weight: 400;
             text-align: left;
             line-height: 1;
             color: $fg-black;
         }
+        .t-ast {
+            display: inline-block;
+            font-size: 14px;
+            margin-right: 8px;
+            &.t-ness {
+                color: $fg-black;
+                &:before {
+                    color: $fg-red-03;
+                }   
+            }
+        }
+        
+        //사은품 !
+        .info-box {
+            @include bx;
+            clear: both;
+            padding-top: 10px;
+            .info-exmark {
+                padding: 12px 20px 11px 40px;
+                border-top: 1px solid $bor-gray-03;
+                border-bottom: 1px solid $bor-gray-03;
+                background: #fff8f5;
+                @include txtExMak($fg:$fg-red-03, $top:12px, $left:20px);
+            }
+            .info-txt {
+                margin-top: 10px;
+                padding-left: 6px;
+                font-size: 13px;
+            }
+        }
+
+        .top-row {
+            @include bx;
+            .tbl-tit {
+                display: inline-block;
+            }
+            .chk-txt {
+                @include bx;
+                @include chkbox;
+                margin-left: 13px;
+                padding-left: 17px;
+                font-size: 13px;
+                font-weight: 300;
+            }
+        }
+
+    }
+    
+    .tbl-area {
         //table btn
         .btn-com {
             @include btn-gray-bor-02(80px, 27px);
@@ -83,12 +156,61 @@
                             }
                         }
                     }
+                       
+                    //금액
+                    .bot-box {
+                        $ft:22px;
+                        @include bx;
+                        @include clearfix;
+                        padding: 12px 12px 12px 10px;
+                        text-align: left;
+                        line-height: 0;
+
+                        .txt {
+                            @include bx;
+                            float: left;
+                            display: inline-block;
+                            vertical-align: middle;
+                            line-height: $ft;
+                        }
+                        .buy-txt {
+                            @include bx;
+                            float: right;
+                            display: inline-block;
+                            letter-spacing: 0;
+                            vertical-align: middle;
+                            line-height: $ft;
+                            span, em {
+                                display: inline-block;
+                                font-weight: bold;
+                                line-height: $ft;
+                                .ie & {
+                                    font-weight: bold;
+                                }
+                            }
+                            .t-point {
+                                letter-spacing: -0.5px;
+                                color: $fg-red-04;
+                                em {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }; 
         
         .tbl-row {
             .tbl {
+                .t-ast {
+                    display: inline-block;
+                    padding-left: 17px;
+                    &:before {
+                        font-weight: 500;
+                        color: $fg-red-03;
+                    }   
+                }
                 td {
                     .btn-com {
                         margin-left: 13px;
@@ -99,6 +221,77 @@
                 }
             }
         }
+    }
+    .tbl-area-2 {
+        .btn-com {
+            @include btn-gray-bor-02(80px, 27px);
+            font-weight: 300;
+        }
+        @include tbl-col-white{
+            .tbl {
+                th {
+                    span {
+                        vertical-align: middle;
+                        
+                        & + .btn-com {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        };
+        
+        @include tbl-row(0, $fs:13px, $th-pd:15px 15px 15px 20px, $th-fg:$fg-black-02, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black-02){
+            .tbl {
+                th {
+                    font-size: 14px;
+                    border-right: 1px solid $bor-gray-03;
+                    .price-all {
+                        font-weight: 400;
+
+                    }
+                }
+                td {
+                    .row {
+                        
+                        .price-all {
+                            font-size: 17px;
+                        }
+                        
+                        .txt-list {
+                            margin: 6px 0;
+                        }
+                        
+                        &.money-row {
+                            .ip-txt {
+                                width: 118px;
+                                text-align: right;
+                            }
+                            span {
+                                display: inline-block;
+                                .fg-red {
+                                    color: $fg-red-05;
+                                }
+                            }
+                            
+                            .ml {
+                                margin-left: 15px;
+                            }
+
+                            .btn-green {
+                                @include btn-green-bg(80px, 28px, 13px);
+                            }
+                            .btn-gray {
+                                @include btn-gray-bg(80px, 28px, 13px);
+                            }
+
+                        }
+                        
+                        
+                    }
+                }
+            }
+        };
     }
        
     //Notice
@@ -246,16 +439,6 @@
 
                     .txt-box {
                         padding: 17px 0;
-                        .txt-list {
-                            @include bx;
-                            li {
-                                font-size: 13px;
-                                font-weight: 300;
-                                line-height: 1.5;
-                                color: $fg-gray-01;
-                                @include line-row-2;
-                            }
-                        }
                     }
 
                     /* page num */
@@ -343,44 +526,6 @@
                                 
                                 td {
                                     padding: 5px 0 4px;
-                                    
-                                    .bot-box {
-                                        $ft:22px;
-                                        @include bx;
-                                        @include clearfix;
-                                        padding: 12px 12px 12px 10px;
-                                        text-align: left;
-                                        line-height: 0;
-                                        
-                                        .txt {
-                                            @include bx;
-                                            float: left;
-                                            display: inline-block;
-                                            vertical-align: middle;
-                                            line-height: $ft;
-                                        }
-                                        .buy-txt {
-                                            @include bx;
-                                            float: right;
-                                            display: inline-block;
-                                            letter-spacing: 0;
-                                            vertical-align: middle;
-                                            line-height: $ft;
-                                            span, em {
-                                                display: inline-block;
-                                                font-weight: bold;
-                                                line-height: $ft;
-                                                .ie & {
-                                                    font-weight: bold;
-                                                }
-                                            }
-                                            .t-point {
-                                                font-size: 20px;
-                                                letter-spacing: -0.5px;
-                                                color: $fg-red-04;
-                                            }
-                                        }
-                                    }
                                 }
                             }
                         }
@@ -428,7 +573,7 @@
                             td {
                                 .row {
                                     .form-sel {
-                                        @include sel-com(137px, $ht, 0 20px 0 0);
+                                        margin-right: 20px;
                                     }
                                 }
                             }
@@ -462,6 +607,663 @@
             }
         }
                     
+    }
+    
+    /* 장바구니, 결제 */
+    &.order {
+        padding-bottom: 150px;
+        .order-sect {
+            .container {
+                //STEP
+                .step-area {
+                    @include bx;
+                    padding: 0 0 50px;
+                    .step-list {
+                        @include bx;
+                        @include clearfix;
+                        border: 1px solid $bor-gray-03;
+                        li {
+                            $ht:48px;
+                            @include bx;
+                            float: left;
+                            //width: 25%;
+                            width: 315px;
+                            height: $ht;
+                            text-align: center;
+                            background: #fff;
+                            &:before {
+                                content: '';
+                                z-index: 3;
+                                @include position(absolute, 0, $right:-21px);
+                                display: block;
+                                width: 21px;
+                                height: $ht;
+                                background: url(http://static.nurisoop.co.kr/img/renew/order/img_order_step.png) no-repeat;
+                                background-position: -33px 0;
+                            }
+                            span {
+                                display: inline-block;
+                                font-size: 16px;
+                                letter-spacing: 0;
+                                line-height: $ht;
+                                &.num {
+                                    color: $fg-gray-04;
+                                }
+                                &.name {
+                                    margin-left: 5px;
+                                    font-weight: 500;
+                                    color: $fg-gray-01;
+                                    
+                                    .ie & {
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                            
+                            &.on {
+                                background: $bg-green-01;
+                                &:before {
+                                    background-position: 0 0;
+                                }
+                                span {
+                                    &.num {
+                                        color: $fg-gray-10;
+                                    }
+                                    &.name {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                            
+                            &:first-child {
+                                width: 305px;
+                            }
+                            
+                            &.lst {
+                                width: 323px;
+                                &:before {
+                                    content: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                //banner
+                .bn-area {
+                    padding-bottom: 30px;
+                    a {
+                        display: block;
+                    }
+                }
+                
+                .tbl-top-box {
+                    padding: 57px 0 12px;
+                }
+                
+                .tbl-area {
+                    .tbl-col {
+                        .tbl {
+                            .ip-chk {
+                                display: inline-block;
+                                .btn-chk {
+                                    left: 50%;
+                                    margin-left: -6px;
+                                }
+                            }
+                            .link-txt {
+                                &.prd-name {
+                                    .img-prd {
+                                        margin: 0 18px 0 0;
+                                    }
+                                }
+                            }
+                            
+                            //상품정보
+                            .prd-box {
+                                @include bx;
+                                @include clearfix;
+                                
+                                .prd-row {
+                                    @include bx;
+                                    float: left;
+                                    .link-txt {
+                                        display: inline-block;
+                                        padding: 0;
+                                        .img-prd {
+                                            margin: 0 20px;
+                                        }
+                                        &.prd-name {
+                                            padding-top: 4px;
+                                            line-height: 1;
+                                        }
+                                    }
+                                    .btn-box {
+                                        @include bx;
+                                        margin-top: 15px;
+                                        padding-top: 16px;
+                                        border-top: 1px solid $bor-gray-03;
+                                        .btn-com {
+                                            margin-top: 0;
+                                            &.btn-wish {
+                                                
+                                            }
+                                            &.btn-del {
+                                                width: 70px;
+                                            }
+                                            
+                                            & + .btn-com {
+                                                margin-left: 2px;
+                                            }
+                                        }
+                                    }
+                                    
+                                    &.prd-txt {
+                                        width: -webkit-calc( 100% - 120px );
+                                        width: -moz-calc( 100% - 120px );
+                                        width: calc( 100% - 120px );
+                                        text-align: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    @include tbl-row(1px){
+                        .tbl {
+                            td {
+                                .row {
+                                    .form-sel, .ip-txt {
+                                        font-size: 13px;
+                                    }
+                                    .srch-txt {
+                                        @include bx;
+                                        font-size: 13px;
+                                        font-weight: 300;
+                                        color: $fg-gray-01;
+                                        input[type="radio"] {
+                                            cursor: pointer;
+                                            margin-right: 3px;
+                                        }
+                                        
+                                        & + .srch-txt {
+                                            margin-left: 20px;
+                                        }
+                                    }
+                                    .txt-list {
+                                        margin-top: 5px;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    };
+                    
+                    &.prd-tbl-area {
+                        .tbl-col {
+                            .tbl {
+                                th {
+                                    padding: 17px 0;
+                                    
+                                }
+                                td {
+                                    padding: 16px 0 14px;
+                                    .bot-box {
+                                        padding: 1px 12px 4px 10px;
+                                    }
+                                    .price-line {
+                                        @include bx;
+                                        @include line-row($bg:$bg-gray-09);
+                                    }
+                                    &.nope {
+                                        padding: 101px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .agree-area {
+                        @include bx;
+                        margin-top: 20px;
+                        text-align: left;
+                        border: 1px solid $bor-gray-03;
+                        .chk-agr-all {
+                            @include bx;
+                            display: block;
+                            padding: 7px 7px 9px;
+                            line-height: 1;
+                            border-bottom: 1px solid $bor-gray-03;
+                            .chk-txt {
+                                @include bx;
+                                @include chkbox;
+                                padding-left: 20px; 
+                                font-size: 13px;
+                                font-weight: 300;
+                                line-height: 1;
+                                color: $fg-gray-01;
+                                text-align: left;
+                            }
+                        }
+                        
+                        .agree-main-box {
+                            @include bx;
+                            @include clearfix;
+                            text-align: left;
+                            padding: 20px 20px 0;
+                            .agree-box {
+                                @include bx;
+                                @include clearfix;
+                                padding-bottom: 14px;
+                                .agr-row {
+                                    @include bx;
+                                    float: left;
+                                    .agr-tit {
+                                        @include bx;
+                                        width: 125px;
+                                        margin-top: -2px;
+                                        font-size: 13px;
+                                        line-height: 1.4;
+                                        color: $fg-black;
+                                    }
+                                    
+                                    .agr-txt-box {
+                                        @include bx;
+                                        overflow: hidden;
+                                        overflow-y: auto;
+                                        width: 1080px;
+                                        height: 80px;
+                                        padding: 0 10px 10px;
+                                        text-align: left;
+                                        border: 1px solid $bor-gray-03;
+                                        background: #fff;
+                                        @include poclicyStyle(13px, $fg-gray-04){
+                                            * {
+                                                font-weight: 300;
+                                            }
+                                        };
+                                    }
+                                    
+                                    .agr-btn-box {
+                                        @include bx;
+                                        margin-top: 9px;
+                                        .chk-txt {
+                                            @include bx;
+                                            @include chkbox;
+                                            padding-left: 17px; 
+                                            font-size: 13px;
+                                            font-weight: 300;
+                                            color: $fg-black;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+
+                .tbl-area-2 {
+                    margin-top: 10px;
+                }
+                .btn-area {
+                    $btn-wd:140px;
+                    $btn-ht:40px;
+                    $btn-fs:15px; 
+                    
+                    @include bx;
+                    margin-top: 20px;
+                    text-align: center;
+                    .ps-ab {
+                        position: absolute;
+                        top: 0;
+                        text-align: left;
+                        .btn-naver {
+                        }
+                        .btn-com {
+                            @include btn-gray-bor($btn-wd, $btn-ht, $btn-fs);
+                        }
+                        .t-ast {
+                            margin-top: 7px;
+                            font-size: 13px;
+                            font-weight: 300;
+                            letter-spacing: 0;
+                            color: $fg-red-01;
+                        }
+                        &.left {
+                            left: 0;
+                        }
+                        &.right {
+                            right: 0;
+                        }
+                    }
+                    
+                    .btn-box {
+                        @include bx;
+                        @include clearfix;
+                        display: inline-block;
+                        
+                        a, button {
+                            @include bx;
+                            float: left;
+                            
+                            &.btn-green { 
+                                @include btn-green-bg($btn-wd, $btn-ht, $btn-fs);
+                            }
+                            
+                            &.btn-gray {
+                                @include btn-gray-bg($btn-wd, $btn-ht, $btn-fs);
+                            }
+                            
+                            & + a, & + button {
+                                margin-left: 4px;
+                            }
+                        }
+                    }
+                }
+                
+                //결제수단
+                .pay-area {
+                    .pay-box {
+                        @include bx;
+                        @include clearfix;
+                        display: table;
+                        width: 100%;
+                        border: 1px solid $bor-black-01;
+                        
+                        .pay-left {
+                            @include bx;
+                            //float: left;
+                            display: table-cell;
+                            width: -webkit-calc( 100% - 241px );
+                            width: -moz-calc( 100% - 241px );
+                            width: calc(100% - 241px);
+                            vertical-align: top;
+
+                            //tab
+                            ul[class*='-tab'] {
+                                @include bx;
+                                @include clearfix;
+                                li {
+                                    @include bx;
+                                    float: left;
+
+                                    //radio
+                                    .srch-txt {
+                                        @include bx;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        vertical-align: middle;
+                                        color: $fg-black;
+                                        input {
+                                            cursor: pointer;
+                                            margin-right: 7px;
+                                        }
+                                    }
+                                }
+                                
+                                &.pay-tab {
+                                    margin-bottom: 1px;
+                                    padding: 13px 20px 21px;
+                                    border-bottom: 1px solid $bor-gray-03;
+                                    li {
+                                        margin-left: 34px;
+                                        &:first-child {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                                
+                                &.rec-tab {
+                                    padding-bottom: 4px;
+                                    li {
+                                        margin-left: 21px;
+                                        &:first-child {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            //content
+                            .pay-cont {
+                                $wd:130px;
+                                @include bx;
+                                padding: 0 18px;
+                                border-top: 1px solid $bor-gray-03;
+                                
+                                > div {
+                                    padding: 15px 0 18px;
+                                    border-top: 1px solid $bor-gray-03;
+                                    div[class*='cell-'] {
+                                        @include bx;
+                                        display: table-cell;
+                                        &.cell-th {
+                                            width: $wd;
+                                            font-size: 14px;
+                                            font-weight: 300;
+                                            letter-spacing: 0;
+                                            vertical-align: middle;
+                                            color: $fg-gray-01;
+                                            .pay-txt {
+                                                
+                                            }
+                                        }
+                                        &.cell-td {
+                                            .agr-txt-box {
+                                                @include bx;
+                                            }
+                                            
+                                            .rec-row {
+                                                @include tbl-row(0, $fs:14px, $th-pd:5px 10px 5px, $th-fg:$fg-gray-01, $th-bg:#fff, $td-pd:5px 10px 5px) {
+                                                    margin-top: 8px;
+                                                    .tbl {
+                                                        border-top: 1px solid $bor-gray-03;
+                                                        th {
+                                                            border-right: 1px solid $bor-gray-03;
+                                                        }
+                                                        td {
+                                                            .row {
+                                                                
+                                                                .type-tab {
+                                                                    li {
+                                                                        margin-left: 15px;
+                                                                        &:first-child {
+                                                                            margin-left: 0;
+                                                                        }
+                                                                        .srch-txt {
+                                                                            font-weight: 300;
+                                                                            color: $fg-gray-06;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                
+                                                                .ip-txt {
+                                                                    width: 245px;
+                                                                    &.w-1 {
+                                                                        width: 68px;
+                                                                    }
+                                                                }
+                                                                
+                                                                .txt-hyphen {
+                                                                    display: inline-block;
+                                                                    padding: 0 6px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                };
+                                                    
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                .pay-info {
+                                    @include bx;
+                                    padding: 11px 0 13px $wd;
+                                    border-top: 0;
+                                    //text-align: center;
+                                    .info-txt {
+                                        @include bx;
+                                        display: inline-block;
+                                        .info-exmark {
+                                            padding-left: 23px;
+                                            @include txtExMak;
+                                        }
+                                    }
+                                }
+
+                                .pay-row {
+                                    @include bx;
+                                }
+                                
+                                .pay-agree {
+                                    @include bx;
+                                    display: table;
+                                    width: 100%;
+                                    padding: 21px 0 20px;
+                                    div[class*='cell-'] {
+                                        &.cell-td {
+                                            .agr-txt-box {
+                                                //float: left;
+                                                overflow: hidden;
+                                                overflow-y: auto;
+                                                width: -webkit-calc( 100% - 90px );
+                                                width: -moz-calc( 100% - 90px );
+                                                width: calc(100% - 90px);
+                                                height: 80px;
+                                                padding: 0 10px 10px;
+                                                text-align: left;
+                                                border: 1px solid $bor-gray-03;
+                                                background: #fff;
+                                                @include poclicyStyle(13px, $fg-gray-04){
+                                                    * {
+                                                        font-weight: 300;
+                                                    }
+                                                };
+                                            }
+
+                                            .btn-all {
+                                                //float: right;
+                                                @include position(absolute, 0, $right:0);
+                                                @include btn-gray-bor(80px, 80px, 13px, $fg-black);
+                                            }
+
+                                            .agr-btn-box {
+                                                @include bx;
+                                                margin-top: 6px;
+                                                
+                                                .chk-txt {
+                                                    clear: both;
+                                                    @include bx;
+                                                    @include chkbox;
+                                                    padding-left: 17px; 
+                                                    font-size: 14px;
+                                                    font-weight: 400;
+                                                    color: $fg-black;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        
+                        .pay-right {
+                            @include bx;
+                            display: table-cell;
+                            width: 240px;
+                            height: 100%;
+                            vertical-align: top;
+                            border-left: 1px solid $bor-black-01;
+                            .total-box {
+                                @include bx;
+                                padding: 20px 12px 10px;
+                                text-align: right;
+                                .total-txt {
+                                    font-size: 13px;
+                                    font-weight: 300;
+                                    color: $fg-gray-01;
+                                    em {
+                                        font-weight: 400;
+                                        color: $fg-black;
+                                    }
+                                }
+                                .money {
+                                    padding: 23px 0 13px;
+                                    font-size: 28px;
+                                    font-weight: bold;
+                                    color: $fg-green-01;
+                                    span {
+                                        font-size: 17px;
+                                        font-weight: 500;
+                                        
+                                        .ie & {
+                                            font-weight: bold;
+                                        }
+                                    }
+                                }
+                                .btn-pay {
+                                    @include btn-black-bg(100%);
+                                }
+                            }
+                            .saving-box {
+                                @include bx;
+                                padding: 0 12px 0 20px;
+                                border-top: 1px solid $bor-gray-03;
+                                .row {
+                                    @include bx;
+                                    @include clearfix;
+                                    padding: 12px 0;
+                                    font-size: 14px;
+                                    letter-spacing: 0;
+                                    .txt {
+                                        float: left;
+                                        color: $fg-black;
+                                    }
+                                    .price {
+                                        float: right;
+                                        color: #d20028;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &.cart {
+                padding-bottom: 16px;
+                .container {
+                    .tbl-area {
+                        .tbl {
+                            th {
+                                padding: 10px 15px 9px 29px;
+                            }
+                            td {
+                                padding: 10px 15px 11px 31px;
+                            }
+                        }
+                        
+                        &.gift-area {
+                            .tbl {
+                                th {
+                                    padding: 10px 0 11px 0;
+                                }
+                                td {
+                                    padding: 10px 0 9px 0;
+                                }
+                            }
+                        }
+                        &.tbl-area-2 {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

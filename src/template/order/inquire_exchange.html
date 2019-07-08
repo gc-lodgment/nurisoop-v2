@@ -8,6 +8,20 @@
 	@@include('../include/_header.html')
 
 	<div class="contents change">
+	
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="#none" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./inquire_exchange.html" class="btn-link">교환신청</a>
+                </div>
+            </div>
+        </div>
+        
         <div class="top-sect">
             <div class="container">
                 <h2 class="evt-tit">교환신청</h2>
@@ -18,7 +32,9 @@
 	        <div class="container">
                 <!-- 주문상품정보 -->
                 <div class="tbl-area">
-                    <h3 class="tbl-tit">주문 상품 정보</h3>
+                    <div class="tbl-top-box">
+                        <h3 class="tbl-tit">주문 상품 정보</h3>
+                    </div>
                     <div class="tbl-col">
                         <table class="tbl">
                             <colgroup>
@@ -72,7 +88,9 @@
                 
                 <!-- 교환 사유 -->
                 <div class="tbl-area">
-                    <h3 class="tbl-tit">교환사유</h3>
+                    <div class="tbl-top-box">
+                        <h3 class="tbl-tit">교환사유</h3>
+                    </div>
                     
                     <div class="tbl-row">
                         <table class="tbl">
@@ -84,8 +102,8 @@
                                 <tr>
                                     <th>사유선택</th>
                                     <td>
-                                       <p class="row">
-                                            <select name="" id="" class="form-sel">
+                                       <div class="row">
+                                            <select name="" id="" class="form-sel w-2">
                                                 <option value="">- 선택하세요 -</option>
                                                 <option value="">고객변심</option>
                                                 <option value="">배송지연</option>
@@ -98,13 +116,13 @@
                                                 <option value="">품절</option>
                                                 <option value="">기타</option>
                                             </select>
-                                        </p>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>상세사유</th>
                                     <td>
-                                        <p class="row"><textarea name="" id="txt" cols="30" rows="10" class="ta-txt type-2"></textarea></p>
+                                        <div class="row"><textarea name="" id="txt" cols="30" rows="10" class="ta-txt type-2"></textarea></div>
                                     </td>
                                 </tr>
                             </tbody>

@@ -625,7 +625,7 @@
                         
                         .btn-non-login {
                             $ht:56px;
-                            @include btn-gary-bg(100%, $ht);
+                            @include btn-gray-bg(100%, $ht);
                         }
                     }
                     
@@ -664,7 +664,7 @@
                                 @include bx;
                                 margin-top: 21px;
                                 .btn-buy {
-                                    @include btn-gary-bg(100%, 46px, 16px);
+                                    @include btn-gray-bg(100%, 46px, 16px);
                                     font-weight: 300;
                                 }
                                 
@@ -819,11 +819,6 @@
                                         .chk-txt + .chk-txt {
                                             margin-left: 26px;
                                         }
-                                    }
-
-                                    .btn-phone, .btn-adr {
-                                        @include btn-gray-bor-02;
-                                        margin-left: 15px;
                                     }
 
                                     .ip-txt + .ip-txt {

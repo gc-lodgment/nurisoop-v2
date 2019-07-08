@@ -270,7 +270,7 @@
 }
 
 //btn bg gray
-@mixin btn-gary-bg($wd:180px, $ht:50px, $fs:18px, $fg:#fff){
+@mixin btn-gray-bg($wd:180px, $ht:50px, $fs:18px, $fg:#fff){
     @include btn-base($wd, $ht, $fs, $fg);
     @include trasBase(1, $bg:$bg-gray-05);
     &:hover {
@@ -399,14 +399,36 @@
 }
 
 //text * 
-@mixin txtAst($p-l:8px, $top:3px, $left:0){
+@mixin txtAst($p-l:8px, $top:3px, $left:0, $fg:inherit){
     position: relative;
     padding-left: $p-l;
     &:before {
         content: '*';
         @include position(absolute, $top, $left);
+        color: $fg;
     }
     @content
+}
+
+//text !
+@mixin txtExMak($fs:13px, $fg:$fg-gray-01, $wh:13px, $top:1px, $left:0px, $fg-mark:$fg-red-03){
+    @include bx;
+    //display: inline-block;
+    font-size: $fs;
+    letter-spacing: 0;
+    color: $fg;
+    &:before {
+        content: '!';
+        @include position(absolute, $top, $left);
+        width: $wh;
+        height: $wh;
+        font-weight: bold;
+        line-height: $wh;
+        text-align: center;
+        color: $fg-mark;
+        border: 1px solid $bor-gray-03;
+        background: #fff;
+    }
 }
 
 //checkbox
@@ -1444,11 +1466,18 @@
                         line-height: $i-ht;
                     }
                     
-                    .form-sel, .ip-txt {
+                    /*.form-sel, .ip-txt {
                         width: 197px;
-                    }
+                    }*/
                     
                     .form-sel {
+                        @include sel-com(197px, $i-ht, 0);
+                        &.w-1 {
+                            width: 66px;
+                        }
+                        &.w-2 {
+                            width: 137px;
+                        }
                         
                         .ie9 &, .ie8 & {
                             padding-right: 0;
@@ -1464,6 +1493,9 @@
                         }
                         &.w-2 {
                             width: 276px;
+                        }
+                        &.w-3 {
+                            width: 515px;
                         }
                     }
                     .ip-cal {
@@ -1503,6 +1535,11 @@
                             content: '*';
                             display: inline-block;
                         }
+                    }
+                    
+                    .txt-adr {
+                        padding-left: 8px;
+                        vertical-align: middle;
                     }
                     
                     .p-line {
@@ -1545,6 +1582,11 @@
                         &:hover {
                             @include trasBase(0.6);
                         }*/
+                    }
+
+                    .btn-phone, .btn-adr, .btn-adrbk {
+                        @include btn-gray-bor-02;
+                        margin-left: 15px;
                     }
                     
                     //간격 
@@ -1620,14 +1662,64 @@
                             text-align: left;
                             color: inherit;
                             @include trasBase(1);
-                            &a:hover {
-                                @include trasBase(0.6);
-                            }
+                        }
+                        a.link-txt:hover {
+                            @include trasBase(0.6);
                         }
                     }
                 }
             }
         }
+        @content
+    }
+}
+
+//tbl col th white
+@mixin tbl-col-white($bor-t-w:1px, $bor-t-bg:$bor-black-01, $bor-b-bg:$bor-gray-03, $th-pd:18px 0 18px, $th-fs:14px, $th-fg:$fg-gray-04, $td-pd:26px 0 31px, $td-fs:22px, $td-fg:$fg-black){
+    .tbl-col {
+        @include bx;
+
+        .tbl {
+            border-collapse: initial;
+            border-top: $bor-t-w solid $bor-t-bg;
+            border-bottom: $bor-t-w solid $bor-t-bg;
+            th, td {
+                border-left: 1px solid $bor-b-bg;
+                &:first-child {
+                    border-left: 0;
+                }
+                .row-pop {
+                    @include bx;
+                    display: inline-block
+                }
+            }
+            thead {
+                tr {
+                    th {
+                        padding: $th-pd;
+                        font-size: $th-fs;
+                        font-weight: 400;
+                        color: $th-fg;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        padding: $td-pd;
+                        font-size: $td-fs;
+                        font-weight: 500;
+                        color: $td-fg;
+                        border-top: 1px solid $bor-b-bg;
+                        
+                        .ie & {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        
         @content
     }
 }
@@ -1666,6 +1758,11 @@
                         &:first-child {
                             border-left: 0
                         }
+                        .img-prd {
+                            &.img-gift {
+                                margin: 2px auto 3px;
+                            }
+                        }
                         .link-txt {
                             @include bx;
                             display: block;
@@ -1687,6 +1784,10 @@
                                 .btn-chk + .img-prd {
                                     margin-left: 30px;
                                 }
+                            }
+                            
+                            &.fw-400 {
+                                font-weight: 400;
                             }
                         }
                         a.link-txt:hover {

@@ -511,6 +511,10 @@ table {
 .tl-right {
     text-align: right !important;
 }
+    
+.pt-0 {
+    padding-top: 0 !important;
+}
 
 /* com wid */
 @mixin com-wd{

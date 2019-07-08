@@ -49,12 +49,6 @@
                 color: #fff;
                 background: $bg-green-01;
             }
-            
-            &.bg-gray {
-                .pop-tit {
-                    background: $bg-gray-09;
-                }
-            }
         }
                 
         .btn-box {
@@ -408,7 +402,7 @@
                 .btn-box {
                     $wd:180px;
                     .btn-gray {
-                        @include btn-gary-bg($wd);
+                        @include btn-gray-bg($wd);
                     }
                     .btn-green { 
                         @include btn-green-bg($wd);
@@ -560,28 +554,74 @@
             }
         }
     }
+}
+
+/* 회색팝업 */
+.pop-wrap-2 {
+    z-index: 898;
+    @include position(absolute, 0, 0);
+    box-sizing: border-box;
+            
+    .btn-pop-close {
+        z-index: 899;
+        top: 10px;
+        right: 10px;
+        span {
+            width: 19px;
+            height: 19px;
+            background-position: -146px -82px;
+        }
+    }
+    
+    .pop-container {
+        @include bx;
+        width: 800px;
+        margin: 0 auto 70px;
+        background: #fff;
+        text-align: center;
+        border: 1px solid $bor-gray-07;
+        
+        .pop-tit-box {
+            text-align: left;
+            .pop-tit {
+                @include bx;
+                padding: 9px 20px 10px;
+                font-size: 16px;
+                letter-spacing: -0.2px;
+                color: #fff;
+                background: $bg-gray-09;
+            }
+        }
+        
+        .pop-area {
+            @include bx;
+            text-align: left;
+        }
+                
+        .btn-box {
+            @include bx;
+            @include clearfix;
+            display: inline-block;
+            margin-top: 50px;
+            text-align: center;
+            [class*='btn-'] {
+                float: left;
+                & + [class*='btn-'] {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
     
     /* 내역보기 팝업 */
     &.pop-history {
-        z-index: 898;
         left: auto;
         right: -366px;
         .pop-container {
             width: 350px;
-            border: 1px solid $bor-gray-07;
-            
-            .pop-tit-box {
-                text-align: left;
-                .pop-tit {
-                    padding: 9px 20px 10px;
-                    font-size: 16px;
-                    letter-spacing: -0.2px;
-                }
-            }
+            margin-bottom: 0;
             .pop-area {
-                @include bx;
                 padding: 5px 20px 14px;
-                text-align: left;
                 .total-price {
                     @include bx;
                     padding: 14px 0 18px;
@@ -589,6 +629,7 @@
                     font-weight: 500;
                     line-height: 1;
                     text-align: right;
+                    color: $fg-black;
                 }
                 .price-box { 
                     @include bx;
@@ -619,15 +660,48 @@
                     }
                 }
             }
-            
-            .btn-pop-close {
-                z-index: 899;
-                top: 10px;
-                right: 10px;
-                span {
-                    width: 19px;
-                    height: 19px;
-                    background-position: -146px -82px;
+        }
+    }
+    
+    /* 청약철회방침 전체보기 */
+    &.pop-pay-policy {
+        top: auto;
+        right: 105px;
+        bottom: -21px;
+        left: auto;
+        .pop-container {
+            width: 530px;
+            margin-bottom: 0;
+            .pop-area {
+                padding: 20px 20px 0;
+                .agr-box {
+                    overflow: hidden;
+                    overflow-y: auto;
+                    height: 290px;
+                    padding: 0 10px 10px;
+                    text-align: left;
+                    border: 1px solid $bor-gray-03;
+                    background: #fff;
+                    @include poclicyStyle(14px, $fg-gray-01){
+                        * {
+                            font-weight: 300;
+                        }
+                    };
+                }
+                
+                .btn-box {
+                    @include bx;
+                    display: block;
+                    margin: 21px -20px 0;
+                    padding: 6px 3px 9px;
+                    text-align: center;
+                    border-top: 1px solid $bor-gray-03;
+                    background: $bg-gray-02;
+                    
+                    .btn-com {
+                        float: none;
+                        @include btn-gray-bor(70px, 27px, 13px);
+                    }
                 }
             }
         }
@@ -760,6 +834,9 @@
                         float: right;
                         .btn-pop-close {
                             display: inline-block;
+                            position: relative;
+                            top: auto;
+                            right: auto;
                         }
                     }
                 }
