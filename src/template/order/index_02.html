@@ -118,7 +118,7 @@
                         <div class="top-row fl-left">
                             <h3 class="tbl-tit">주문 정보</h3>
                             <label class="chk-txt">
-                                <input type="checkbox" for="prd">
+                                <input type="checkbox" name="prd">
                                 <span class="btn-chk"></span>
                                 입력한 내용으로 내 정보 수정
                             </label>
@@ -302,7 +302,7 @@
                     
                     <!-- 비회원만 : 개인정보 수집 동의 및 약관 -->
                     <div class="agree-area">
-                        <p class="chk-agr-all"><label class="chk-txt"><input type="checkbox" name="check" for="agreeAll"><span class="btn-chk"></span>쇼핑몰 이용약관, 비회원 구매시 개인정보수집이용 동의에 모두 동의합니다.</label></p>
+                        <p class="chk-agr-all"><label class="chk-txt"><input type="checkbox" name="agreeAll"><span class="btn-chk"></span>쇼핑몰 이용약관, 비회원 구매시 개인정보수집이용 동의에 모두 동의합니다.</label></p>
                         <div class="agree-main-box">
                             <div class="agree-box">
                                 <div class="agr-row">
@@ -688,7 +688,7 @@
                                     </div>
                                     <div class="agr-btn-box">
                                         <label class="chk-txt">
-                                            <input type="checkbox" for="agree1">
+                                            <input type="checkbox" name="agree1">
                                             <span class="btn-chk"></span>
                                             동의
                                         </label>
@@ -1050,7 +1050,7 @@
                                     
                                     <div class="agr-btn-box">
                                         <label class="chk-txt">
-                                            <input type="checkbox" for="agree2">
+                                            <input type="checkbox" name="agree2">
                                             <span class="btn-chk"></span>
                                             동의
                                         </label>
@@ -1080,7 +1080,7 @@
                                     <th>
                                         <div class="row-pop">
                                             <span>총 상품금액</span>
-                                            <a href="javascript:;" class="btn-com btnOrderHistory">내역보기</a>
+                                            <a href="javascript:comPopOpen2('#popOrderHistory');" class="btn-com">내역보기</a>
                                             <!-- 팝업 -->
                                             @@include('../include/pop/pop_order_history.html')
                                         </div> 
@@ -1124,11 +1124,14 @@
                                 <tr>
                                     <th><label for="coupon">할인 쿠폰</label></th>
                                     <td>
-                                        <div class="row money-row">
+                                        <div class="row money-row coupon-row">
                                             <input type="tel" id="coupon" class="ip-txt" value="5,000" >
                                             <span>원</span>
-                                            <a href="javascript:;" class="btn-green ml">쿠폰조회</a>
+                                            <a href="javascript:comPopOpen2('#popOrderCoupon');" class="btn-green ml">쿠폰조회</a>
                                             <a href="#none" class="btn-gray">적용취소</a>
+                                            <!--<a href="javascript:comPopOpen2('#popPayPolicy');" class="btn-all">전체보기</a> -->
+                                            <!-- 팝업 -->
+                                            @@include('../include/pop/pop_order_coupon.html')
                                         </div>
                                     </td>
                                 </tr>
@@ -1224,7 +1227,7 @@
                             <h3 class="tbl-tit">결제수단</h3>
                             
                             <label class="chk-txt">
-                                <input type="checkbox" for="prd">
+                                <input type="checkbox" name="prd">
                                 <span class="btn-chk"></span>
                                 결제수단과 입력정보를 다음에도 사용
                             </label>
@@ -1359,7 +1362,7 @@
 
                                         <div class="agr-btn-box">
                                             <label class="chk-txt">
-                                                <input type="checkbox" for="agree2">
+                                                <input type="checkbox" name="agree2">
                                                 <span class="btn-chk"></span>
                                                 동의함
                                             </label>

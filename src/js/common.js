@@ -23,11 +23,6 @@ $(function(){
         $('html').css({'overflow': 'auto', 'height': '100%'});
         $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
     });
-    
-    //pop 내역보기
-    $('.btnOrderHistory').on('click', function(){
-        $('#popOrderHistory').stop().fadeIn();
-    });
 
     //txt, img file del
     $(document).on('click', '.fileTxtDel', function(){
