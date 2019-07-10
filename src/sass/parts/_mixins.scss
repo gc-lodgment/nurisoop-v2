@@ -67,7 +67,7 @@
 }
 
 //tab
-@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:18px 0 17px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:$fg-black){
+@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:18px 0 17px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:$fg-black, $bg:#fff, $bg-on:#fff){
     // num = li가 여러개일 경우, li가 한개일경우 $tab-li-wd 값 설정
     @if( $num  == null ){
         .tab-box {
@@ -113,6 +113,7 @@
                 border: $bor-w solid $bor-g;
                 border-bottom: 0;
                 border-left: 0;
+                background: $bg;
                 a {
                     @include bx;
                     display: block;
@@ -136,6 +137,7 @@
                     border-left: $bor-w-on solid;
                     border-width: $bor-w-on;
                     border-color: $bor-g-on;
+                    background: $bg-on;
                     + li {
                         border-left: $bor-w solid $bor-g;
                     }
@@ -1572,6 +1574,11 @@
                         color: $i-fg;
                     }
                     
+                    .txt-hyphen {
+                        display: inline-block;
+                        padding: 0 7px;
+                    }
+                    
                     a, button {
                         &.btn-file-del {
                             margin-left: 25px;
@@ -1598,12 +1605,12 @@
                         margin-bottom: 13px;
                     }
                     
-                   /* .row-file + .row-file {
-                        margin-top: 3px;
-                    }*/
-                    
                     & + .row {
                         margin-top: 13px;
+                    
+                        &.type-2 {
+                            margin-top: 9px;
+                        }
                     }
                     
                     & + .row.file-box {
@@ -1625,7 +1632,7 @@
     }    
 }
 
-//tbl col th gray - th line
+//tbl col th gray - th line (짧은 라인)
 @mixin tbl-col-gray($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:17px 0, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:15px 0, $td-fg:$fg-gray-04, $a-pd:0 70px){
     .tbl-col {
         @include bx;
@@ -1802,6 +1809,67 @@
         }
         @content
     }
+}
+
+//tbl col scroll
+@mixin tbl-scr($ht:103px, $bor-w:1px, $bor-bg:$bor-gray-03, $fs:13px, $fg:$fg-black, $bg:#fff, $th-pd:10px 0 11px, $td-pd:28px 18px){
+    border-bottom: $bor-w solid $bor-bg;
+    .tbl-scr {
+        @include bx;
+        border-top: $bor-w solid $bor-bg;
+        .tbl {
+            th, td {
+                font-size: $fs;
+                font-weight: 300;
+                text-align: center;
+                color: $fg;
+                background: $bg;
+                line-height: 1.4;
+            }
+            thead {
+                tr {
+                    th {
+                        padding: $th-pd;
+                        border-left: $bor-w solid $bor-bg;
+                        
+                        &:first-child {
+                            border-left: 0;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        padding: $td-pd;
+                        border-top: $bor-w solid $bor-bg;
+                        
+                        .lst {
+                            padding-left: 23px;
+                        }
+                        
+                        &:first-child {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
+                    
+                    &:first-child {
+                        td {
+                            border-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.tbody {
+            overflow: hidden;
+            overflow-y: scroll;
+            height: $ht;
+        }
+    }
+    @content
 }
 
 //table - prd detail

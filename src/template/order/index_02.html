@@ -161,7 +161,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th><span>일반전화</span></th>
+                                    <th><span class="fake-ast">일반전화</span></th>
                                     <td>
                                         <div class="row">
                                             <select name="" id="" class="form-sel w-1">
@@ -232,12 +232,12 @@
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th><span>배송지 선택</span></th>
+                                    <th><span class="fake-ast">배송지 선택</span></th>
                                     <td>
                                         <div class="row">
                                             <label class="srch-txt"><input type="radio" name="login" checked>주문자 정보와 동일</label>
                                             <label class="srch-txt"><input type="radio" name="login">새로운 배송지</label>
-                                             <a href="#none" class="btn-adrbk">주소록 보기</a>
+                                             <a href="javascript:comPopOpen('#popDelAdr');" class="btn-adrbk">주소록 보기</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -250,7 +250,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th><span lass="t-ast">주소</span></th>
+                                    <th><span class="t-ast">주소</span></th>
                                     <td>
                                         <div class="row">
                                             <input type="text" id="d-adr1" class="ip-txt w-1" placeholder="" value="" readonly>
@@ -267,7 +267,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th><span>일반전화</span></th>
+                                    <th><span class="fake-ast">일반전화</span></th>
                                     <td>
                                         <div class="row">
                                             <select name="" id="" class="form-sel w-1">
@@ -1411,6 +1411,8 @@
 	    </div>
 	    
 	</div> 
+    <!-- order 팝업 -->
+	@@include('../include/pop/pop_order.html') 
 	
 	@@include('../include/_footer.html') 
 </div>

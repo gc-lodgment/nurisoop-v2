@@ -23,6 +23,12 @@ $(function(){
         $('html').css({'overflow': 'auto', 'height': '100%'});
         $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
     });
+    
+    //btn pop close 2
+    $('.popClose2').on('click', function(){
+        //console.log('닫기');
+        $(this).parents('div[class*="pop-wrap"]').stop().fadeOut();
+    });
 
     //txt, img file del
     $(document).on('click', '.fileTxtDel', function(){
@@ -130,6 +136,12 @@ function tabFn(){
         /* 탭 function */
         if( $(this).parents('.tab-box').hasClass('prdList') ){
             //상품리스트 - sub
+        }else if( $(this).parents('.tab-box').hasClass('poptab') ){
+                //popup tab일 경우 scrolltop 상호작용 없음
+                var pop = $(this).parents('.pop-container');
+                var popHt = pop.height();
+                
+                pop.css({'margin-top' : -(popHt/2)+'px'});
         }else if( $(this).parents('.tab-box').hasClass('pageMove') ){
             //이용약관 등 페이지 내 이동
             offsetTop = $(atr).offset().top;

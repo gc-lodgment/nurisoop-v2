@@ -9,7 +9,7 @@
     display: block;
     @include position(absolute, 15px, $right:15px);
     span {
-        display: block;
+        display: block !important;
         width: 26px;
         height: 25px;
         font-size: 0;
@@ -499,7 +499,7 @@
 
             }
 
-            .pop-area {
+            .pop-cont {
                 padding: 33px 30px 27px;
                 .cert-txt {
                     font-size: 16px;
@@ -558,7 +558,7 @@
 
 /* 회색팝업 */
 .pop-wrap-2 {
-    z-index: 898;
+    z-index: 9990;
     @include position(absolute, 0, 0);
     box-sizing: border-box;
             
@@ -593,21 +593,76 @@
             }
         }
         
-        .pop-area {
+        .pop-cont {
             @include bx;
+            padding: 20px 20px 0;
             text-align: left;
-        }
-                
-        .btn-box {
-            @include bx;
-            @include clearfix;
-            display: inline-block;
-            margin-top: 50px;
-            text-align: center;
+
+            .btn-com {
+                @include btn-gray-bor(70px, 27px, 13px);
+            }
+            .btn-com-2 {
+                @include btn-gray-bor-02(70px, 27px, 13px, $fg:$fg-black, $bor-g:$bor-black-01);
+            }
+            .btn-black {
+                @include btn-black-bg(70px, 27px, 13px);
+            }
+            .btn-gray { 
+                @include btn-gray-bg(70px, 27px, 13px);
+            }
+            .btn-green {
+                @include btn-green-bg(70px, 27px, 13px);
+            }
             [class*='btn-'] {
-                float: left;
-                & + [class*='btn-'] {
-                    margin-left: 10px;
+                &.w-1 {
+                    width: 40px;
+                }
+                &.w-2 {
+                    width: 110px;
+                }
+                &.h-1 {
+                    height: 20px;
+                    line-height: 20px;
+                }
+            }
+
+            .pop-chk {
+                @include bx;
+                @include chkbox{
+                    color: $fg-black;
+                    input[type=checkbox] + span {
+                        position: relative;
+                        display: inline-block;
+                        top: auto;
+                        left: auto;
+                        margin: 0 auto;
+                    }
+                };
+                padding-left: 0;
+            }
+                
+            .btn-area {
+                @include bx;
+                @include clearfix;
+                display: block;
+                margin: 0 -20px 0;
+                padding: 10px 3px 9px;
+                text-align: center;
+                border-top: 1px solid $bor-gray-03;
+                background: $bg-gray-02;
+                .btn-box {
+                    @include bx;
+                    display: inline-block;
+
+                    &.type-2 {
+                        [class*='btn-'] {
+                            float: left;
+
+                            & + [class*='btn-'] {
+                                margin-left: 11px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -620,8 +675,9 @@
         .pop-container {
             width: 350px;
             margin-bottom: 0;
-            .pop-area {
-                padding: 5px 20px 14px;
+            .pop-cont {
+                padding-top: 5px;
+                padding-bottom: 14px;
                 .total-price {
                     @include bx;
                     padding: 14px 0 18px;
@@ -663,6 +719,51 @@
         }
     }
     
+    /* 쿠폰적용하기 */
+    &.pop-coupon {
+        z-index: 897;
+        left: auto;
+        right: -615px;
+        .pop-container {
+            width: 600px;
+            margin-bottom: 0;
+            .pop-cont {
+                @include tbl-col-gray-02($fs:13px, $td-pd:14px 10px 13px, $td-fg:$fg-gray-01){
+                    .tbl {
+                        border-bottom: 0;
+                        
+                        tr {
+
+                            th {
+                                border-right: 0;
+                                text-align: center;
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    border-top: 0;
+                                    border-left: 0;
+                                    text-align: center;
+                                }
+                                &.nope {
+                                    td {
+                                        padding: 22px 0 19px;
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                };
+                
+                .btn-area {
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+    
     /* 청약철회방침 전체보기 */
     &.pop-pay-policy {
         top: auto;
@@ -672,8 +773,7 @@
         .pop-container {
             width: 530px;
             margin-bottom: 0;
-            .pop-area {
-                padding: 20px 20px 0;
+            .pop-cont {
                 .agr-box {
                     overflow: hidden;
                     overflow-y: auto;
@@ -688,19 +788,312 @@
                         }
                     };
                 }
-                
-                .btn-box {
-                    @include bx;
-                    display: block;
-                    margin: 21px -20px 0;
-                    padding: 6px 3px 9px;
-                    text-align: center;
-                    border-top: 1px solid $bor-gray-03;
-                    background: $bg-gray-02;
+                .btn-area {
+                    margin-top: 21px;
+                }
+            }
+        }
+    }
+    
+    
+    
+    //회색배경에 팝업 가운데 고정 형
+    &.fixed {
+        z-index: 9990;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+        .btn-pop-close {
+            z-index: 9999;
+        }
+        
+        /* 배송주소록 관리 팝업 */
+        &.pop-delivery {
+            .pop-container {
+                width: 1050px;
+                top: 50%;
+                margin-top: -227px;
+                margin-bottom: 0;
+                .pop-cont {
+                    .info-area {
+                        @include bx;
+                        margin-bottom: 19px;
+                        border: 1px solid $bor-gray-03;
+                        .info-tit-box {
+                            @include bx;
+                            padding: 11px 10px 11px;
+                            border-bottom: 1px solid $bor-gray-03;
+                            .info-tit {
+                                font-size: 13px;
+                                font-weight: 500;
+                                letter-spacing: 0;
+
+                                .ie & {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        .info-list-box {
+                            @include bx;
+                            padding: 16px 20px 13px;
+                            .info-list {
+                                @include bx;
+                                li {
+                                    font-size: 13px;
+                                    font-weight: 300;
+                                    letter-spacing: 0;
+                                    line-height: 1.6;
+                                    @include line-row-2;
+                                    .txt-pt {
+                                        @include bx;
+                                        display: inline-block;
+                                        color: $fg-black;
+                                        &:before {
+                                            content: '';
+                                            @include position(absolute, $left:0, $bottom:1px);
+                                            display  : block;
+                                            width: 100%;
+                                            height: 1px;
+                                            background: $bg-black-01;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     
-                    .btn-com {
-                        float: none;
-                        @include btn-gray-bor(70px, 27px, 13px);
+                    .tbl-scr-area {
+                        @include tbl-scr{
+                            td {
+                                a + a {
+                                    margin-top: 6px;
+                                }
+                            }
+                        };
+                    }
+                    
+                    .adr-area {
+                        @include tbl-row(1px, $fs:13px, $th-pd:12px 14px, $td-pd:10px 0 10px 12px){
+                            .tbl {
+                                th, td {
+                                    .t-ast {
+                                        @include bx;
+                                        @include txtAst(13px, 5px){
+                                            &:before {
+                                                color: $fg-red-03;
+                                            }
+                                        };
+                                    }
+                                    
+                                    .fake-ast {
+                                        padding-left: 13px;
+                                    }
+                                }
+                                
+                                td {
+                                    .row {
+                                        .pop-chk {
+                                            color: $fg-black;
+                                            input[type=checkbox] + span {
+                                                padding-right: 3px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        };
+                            
+                       
+                    }  
+                    
+                    .btn-area {
+                        margin-top: 53px;
+                    }
+                }
+            }
+            
+            &.type-2 {
+                .pop-container {
+                    width: 770px;
+                    margin-top: -335px;
+                }
+            }
+        }
+        
+        /* 우편번호 검색 팝 */
+        &.pop-adr {
+            .pop-container {
+                width: 600px;
+                top: 50%;
+                margin-top: -336px;
+                margin-bottom: 0;
+                .pop-cont {
+                    .top-area {
+                        @include tab(1px, $num:2, $bor-g:$bor-gray-03, $a-pd:9px 0 11px, $fs:14px, $fg:$fg-gray-01, $fg-hover:$fg-black, $fg-on:$fg-black, $bg:$bg-gray-02){
+                            .tab-list {
+                                li {
+                                    &.on {
+                                        a {
+                                            font-weight: 500;
+                                            
+                                            .ie & {
+                                                font-weight: bold;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        };
+                        
+                        .srch-box {
+                            @include bx;
+                            display: table;
+                            width: 100%;
+                            margin-top: 20px;
+                            border: 1px solid $bor-gray-03;
+                            .srch-th {
+                                @include bx;
+                                display: table-cell;
+                                width: 110px;
+                                text-align: center;
+                                vertical-align: middle;
+                                background: $bg-gray-02;
+                                .srch-tit {
+                                    font-size: 13px;
+                                    font-weight: 300;
+                                    color: $fg-gray-01;
+                                }
+                            }
+                            .srch-td {
+                                @include bx;
+                                display: table-cell;
+                                padding: 10px 20px 13px 18px;
+                                
+                                .srch-row {
+                                    @include bx;
+                                    .ip-txt {
+                                        @include bx;
+                                        width: 330px;
+                                        height: 28px;
+                                        padding: 0 10px;
+                                        font-size: 13px;
+                                        line-height: 28px;
+                                        border: 1px solid $bor-gray-09;
+                                    }
+                                    .btn-srch {
+                                        @include btn-black-bg(69px, 28px, 13px);
+                                        @include position(absolute, 0, $right:0);
+                                    }
+                                }
+                                
+                                .srch-txt {
+                                    margin-top: 9px;
+                                    font-size: 12px;
+                                    font-weight: 300;
+                                    color: $fg-gray-01;
+                                }
+                            }
+                        }
+                        
+                        & + .cont-area {
+                            margin-top: 30px;
+                        }
+                    }
+                    
+                    .cont-area {
+                        $ht:360px;
+                        @include bx;
+                        overflow: hidden;
+                        overflow-y: scroll;
+                        height: $ht;
+                        border-top: 1px solid $bor-gray-03;
+                        border-bottom: 1px solid $bor-gray-03;
+                        
+                        .adr-list {
+                            li {
+                                @include bx;
+                                p {
+                                    font-size: 13px;
+                                    font-weight: 300;
+                                    color: $fg-black;
+                                }
+                                
+                                .adr-link-box {
+                                    @include bx;
+                                    display: table;
+                                    width: 100%;
+                                    padding: 6px 8px 10px 10px;
+                                    @include trasBase(1, $bg:#fff);
+                                    &:hover {
+                                        @include trasBase(1, $bg:#deedeb);
+                                    }
+                                    
+                                    .row {
+                                        @include bx;
+                                        display: table-cell;
+                                        line-height: 1;
+                                        vertical-align: middle;
+                                        text-align: center;
+                                        p {
+                                            vertical-align: middle;
+                                        }
+                                        .adr {
+                                            @include bx;
+                                            margin-top: 1px;
+                                            line-height: 1.3;
+                                            text-align: left;
+                                            .type {
+                                                display: inline-block;
+                                                margin-right: 6px;
+                                                width: 40px;
+                                                height: 15px;
+                                                font-size: 12px;
+                                                text-align: center;
+                                                vertical-align: middle;
+                                                line-height: 15px;
+                                                color: #fff;
+                                                &.blue {
+                                                    background: #439dd6;
+                                                }
+                                                &.gray {
+                                                    background: $bg-gray-05;
+                                                }
+                                            }
+                                        }
+                                        &.code {
+                                            width: 78px;
+                                        }
+                                        &.btn {
+                                            width: 40px;
+                                            button, a {
+                                                height: 22px;
+                                                line-height: 22px;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                //검색전
+                                &.nope {
+                                    display: table;
+                                    width: 100%;
+                                    height: ($ht) - (2px);
+                                    text-align: center;
+                                    p {
+                                        display: table-cell;
+                                        height: 100%;
+                                        vertical-align: middle;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    .btn-area {
+                        margin-top: 43px;
                     }
                 }
             }

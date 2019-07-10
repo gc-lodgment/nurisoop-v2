@@ -1,0 +1,325 @@
+<!-- 배송주소록 관리 팝업 -->
+<div id="popDelAdr" class="pop-wrap-2 fixed pop-delivery" style="display: none;">
+    <div class="pop-container">
+        <div class="pop-tit-box">
+            <p class="pop-tit">배송 주소록 관리</p>
+        </div>
+        <div class="pop-cont">
+            <!-- 안내 -->
+            <div class="info-area">
+                <div class="info-tit-box">
+                    <p class="info-tit">배송주소록 유의사항</p>
+                </div>
+                <div class="info-list-box">
+                    <ul class="info-list">
+                        <li>배송 주소록은 최대 10개까지 등록할 수 있으며, 별도로 등록하지 않을 경우 최근 배송 주소록기준으로 자동 업데이트 됩니다.</li>
+                        <li>자동 업데이트를 원하지 않을 겨우 주소록 고정 선택을 선택하시면 선택된 주소록은 업데이트 대상에서 제외됩니다.</li>
+                        <li>기본 배송지는 1개만 저장됩니다. 다른 배송지를 기본 배송지로 설정하시면 기본 배송지가 변경됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 테이블 -->
+            <div class="tbl-scr-area">
+                <div class="tbl-scr thead">
+                    <table class="tbl">
+                        <colgroup>
+                            <col style="width: 3%;">
+                            <col style="width: 8%;">
+                            <col style="width: 10%;">
+                            <col style="width: 9%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: *">
+                            <col style="width: 9%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="pop-chk">
+                                        <input type="checkbox" name="adrAll">
+                                        <span class="btn-chk"></span>
+                                    </label>
+                                </th>
+                                <th>주소록 고정</th>
+                                <th>배송지명</th>
+                                <th>수령인</th>
+                                <th>일반전화</th>
+                                <th>휴대전화</th>
+                                <th>주소</th>
+                                <th>배송지관리</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-scr tbody">
+                    <table class="tbl">
+                        <colgroup>
+                            <col style="width: 3%;">
+                            <col style="width: 8%;">
+                            <col style="width: 10%;">
+                            <col style="width: 9%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: *">
+                            <col style="width: 9%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label class="pop-chk">
+                                        <input type="checkbox" name="adr1">
+                                        <span class="btn-chk"></span>
+                                    </label>    
+                                </td>
+                                <td><a href="#none" class="btn-com-2 w-1 h-1">해제</a></td>
+                                <td>미지정</td>
+                                <td>홍길동</td>
+                                <td>297-</td>
+                                <td>010-1234-5678</td>
+                                <td>(06178)서울특별시 강남구 테헤란로82길 15 디아이타워</td>
+                                <td>
+                                    <div class="lst">
+                                        <a href="#none" class="btn-green w-1 h-1">적용</a><a href="javascript:comPopOpen('#popAdrAdd');" class="btn-com-2 w-1 h-1">수정</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="pop-chk">
+                                        <input type="checkbox" name="adr1">
+                                        <span class="btn-chk"></span>
+                                    </label>    
+                                </td>
+                                <td><a href="#none" class="btn-gray w-1 h-1">고정</a></td>
+                                <td>미지정</td>
+                                <td>홍길동</td>
+                                <td>297-</td>
+                                <td>010-1234-5678</td>
+                                <td>(06178)서울특별시 강남구 테헤란로82길 15 디아이타워</td>
+                                <td>
+                                    <div class="lst">
+                                        <a href="#none" class="btn-green w-1 h-1">적용</a><a href="javascript:comPopOpen('#popAdrAdd');" class="btn-com-2 w-1 h-1">수정</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="btn-area">
+                <div class="btn-box type-2">
+                    <button type="button" class="btn-com w-2">선택 주소록 삭제</button>
+                    <a href="javascript:comPopOpen('#popAdrAdd');" class="btn-black w-2">배송지등록</a>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn-pop-close popClose"><span class="white">닫기</span></a>
+    </div>
+</div>
+<!--// 배송주소록 관리 팝업 -->
+
+
+<!-- 배송주소록 관리 팝업 : 수정/ 입력 -->
+<div id="popDelAdrAdd" class="pop-wrap-2 fixed pop-delivery type-2" style="display: none;">
+    <div class="pop-container">
+        <div class="pop-tit-box">
+            <p class="pop-tit">배송 주소록 관리</p>
+        </div>
+        <div class="pop-cont">
+            <!-- 안내 -->
+            <div class="info-area">
+                <div class="info-tit-box">
+                    <p class="info-tit">배송주소록 유의사항</p>
+                </div>
+                <div class="info-list-box">
+                    <ul class="info-list">
+                        <li>배송 주소록은 최대 10개까지 등록할 수 있으며, 별도로 등록하지 않을 경우 최근 배송 주소록기준으로 자동 업데이트 됩니다.</li>
+                        <li>자동 업데이트를 원하지 않을 겨우 주소록 고정 선택을 선택하시면 선택된 주소록은 업데이트 대상에서 제외됩니다.</li>
+                        <li>기본 배송지는 1개만 저장됩니다. 다른 배송지를 기본 배송지로 설정하시면 기본 배송지가 변경됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 테이블 -->
+            <div class="adr-area">
+                <div class="tbl-row">
+                    <table class="tbl">
+                        <colgroup>
+                            <col style="width: 16.5%;">
+                            <col style="width: 83.5%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="adrName" class="t-ast">배송지명</label></th>
+                                <td>
+                                    <div class="row">
+                                        <input type="text" id="adrName" class="ip-txt" placeholder="" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="userName" class="t-ast">성명</label></th>
+                                <td>
+                                    <div class="row">
+                                        <input type="text" id="userName" class="ip-txt" placeholder="" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="t-ast">주소</span></th>
+                                <td>
+                                    <div class="row">
+                                        <input type="text" id="adr1" class="ip-txt w-1" placeholder="" value="" readonly>
+                                        <span class="txt-hyphen">-</span>
+                                        <input type="text" id="adr2" class="ip-txt w-1" placeholder="" value="" readonly>
+                                        <a href="javascript:;" class="btn-adr">우편번호 검색</a>
+                                    </div>
+                                    <div class="row type-2">
+                                        <input type="text" id="adr3" class="ip-txt w-3" placeholder="" value="" readonly><span class="txt-adr">기본주소</span>
+                                    </div>
+                                    <div class="row type-2">
+                                        <input type="text" id="adr4" class="ip-txt w-3" placeholder="" value=""><span class="txt-adr">나머지주소</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="fake-ast">일반전화</span></th>
+                                <td>
+                                    <div class="row">
+                                        <select name="" id="" class="form-sel w-1">
+                                            <option value="">02</option>
+                                            <option value="">031</option>
+                                        </select>
+                                        <span class="txt-hyphen">-</span>
+                                        <input type="text" id="n-phone2" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        <span class="txt-hyphen">-</span>
+                                        <input type="text" id="n-phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="t-ast">휴대전화</span></th>
+                                <td>
+                                    <div class="row">
+                                        <select name="" id="" class="form-sel w-1">
+                                            <option value="">010</option>
+                                            <option value="">011</option>
+                                        </select>
+                                        <span class="txt-hyphen">-</span>
+                                        <input type="text" id="phone2" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        <span class="txt-hyphen">-</span>
+                                        <input type="text" id="phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="tl-right">
+                                    <div class="row">
+                                        <label class="pop-chk">
+                                            <input type="checkbox" name="adr1">
+                                            <span class="btn-chk"></span>
+                                            기본 배송지로 저장
+                                        </label>   
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="btn-area">
+                <div class="btn-box type-2">
+                    <button type="button" class="btn-black w-2">등록</button>
+                    <a href="javascript:;" class="btn-com w-2 popClose2">취소</a>
+                </div>
+            </div>
+        </div>
+        <!-- n중 팝업이라 팝업 닫아도 스크롤 생기면 안되는 팝업은 popClose2 -->
+        <a href="javascript:;" class="btn-pop-close popClose2"><span class="white">닫기</span></a>
+    </div>
+</div>
+<!--// 배송주소록 관리 팝업 : 수정/ 입력 -->
+
+
+<!-- 우편번호 검색 팝업 -->
+<div id="popAdr" class="pop-wrap-2 fixed pop-adr" style="display: block;">
+    <div class="pop-container">
+        <div class="pop-tit-box">
+            <p class="pop-tit">우편번호 검색</p>
+        </div>
+        <div class="pop-cont">
+            <div class="top-area">
+                <div class="tab-box poptab">
+                    <ul class="tab-list">
+                        <li class="nth-1 on"><a href="#newAdr">새 우편번호</a></li>
+                        <li class="nth-2"><a href="#oldAdr">구) 우편번호</a></li>
+                    </ul>
+                </div>
+                
+                <div class="srch-box">
+                    <div class="srch-th">
+                        <p class="srch-tit">지번/도로명</p>
+                    </div>
+                    <div class="srch-td">
+                        <p class="srch-row">
+                            <input type="text" class="ip-txt">
+                            <button type="button" class="btn-srch">검색</button>
+                        </p>
+                        <p class="srch-txt">도로명+건물번호(예:테헤란로82길 15)&ensp;l&ensp;읍/면/동/리+지번(예:서린동154)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!--<div class="sub-tab-area">dddd</div>--> <!-- 보여주고 싶으면 클릭 누르면 쇼 되게만 해도 되고-->
+            
+            <div class="cont-area">
+                <ul class="adr-list">
+                    <!-- 검색 전 -->
+                    <!--<li class="nope">
+                        <p>찾으실 지번주소 혹은 도로명주소를 검색해 주세요</p>
+                    </li>-->
+                    <!-- 검색 후 : 새 우편번호 -->
+                    <li>
+                        <a href="#none" class="adr-link-box">
+                            <div class="row">
+                                <p class="adr"><span class="type blue">도로명</span> 서울특별시 송파구 가락로11길 15-16 석촌동주택</p>
+                                <p class="adr"><span class="type gray">지번</span> 서울특별시 송파구 석촌동 261-14 석촌동주택</p>
+                            </div>
+                            <div class="row code">
+                                <p>088854</p>
+                            </div>
+                            <div class="row btn">
+                                <button type="button" class="btn-com-2 w-1">선택</button>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 검색 후 : 구 우편번호 - 지번 -->
+                    <li>
+                        <a href="#none" class="adr-link-box">
+                            <div class="row">
+                                <p class="adr"><span class="type gray">지번</span> 서울특별시 송파구 석촌동 261-14 석촌동주택</p>
+                            </div>
+                            <div class="row code">
+                                <p>138846</p>
+                            </div>
+                            <div class="row btn">
+                                <button type="button" class="btn-com-2 w-1">선택</button>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="btn-area">
+                <div class="btn-box">
+                    <a href="javascript:;" class="btn-com popClose">닫기</a>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn-pop-close popClose"><span class="white">닫기</span></a>
+    </div>
+</div>
+<!--// 우편번호 검색 팝업 -->
