@@ -85,6 +85,17 @@ $(function(){
         //img file
         imgfileFn();
     });
+    
+    //우편번호팝업 - 탭 클릭 시 
+    $('#popAdr .top-area .tab-list > li').on('click', function(){
+        var idx = $(this).index();
+        
+        if( idx == 1 ) {
+            $(this).parents('.top-area').siblings('.sub-tab-area').addClass('on');
+        }else{
+            $(this).parents('.top-area').siblings('.sub-tab-area').removeClass('on');
+        }
+    });
 });
 
 /* menu */

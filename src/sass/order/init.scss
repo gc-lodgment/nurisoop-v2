@@ -1269,6 +1269,70 @@
                     }
                 }
             }
+            
+            //주문완료
+            &.end {
+                .sale-sect {
+                    @include bx;
+                    border: 1px solid $bor-gray-03;
+                    .bn-box {
+                        @include bx;
+                        border-bottom: 1px solid $bor-gray-03;
+                    }
+                    
+                    .sale-area {
+                        @include bx;
+                        padding: 25px 29px 40px;
+                        .sale-box {
+                            text-align: center;
+                            .sale-tit {
+                                padding: 10px 0 20px;
+                                font-size: 25px;
+                                font-weight: 400;
+                                letter-spacing: -0.5px;
+                                color: $fg-black;
+                                span {
+                                    font-weight: 500;
+                                    color: $fg-red-06;
+                                    em {
+                                        
+                                    }
+                                    
+                                    .ie & {
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                            .txt {
+                                font-size: 16x;
+                                font-weight: 400;
+                                letter-spacing: -0.5px;
+                                line-height: 1.5;
+                                color: $fg-gray-01;
+                                em {
+                                    font-weight: 500;
+                                    color: $fg-red-02;
+                                    .ie & {
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                            
+                            .txt-row {
+                                display: inline-block;
+                                .txt {
+                                    text-align: left;
+                                    display: table;
+                                    em, span {
+                                        display: table-cell;
+                                        padding-right: 3px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

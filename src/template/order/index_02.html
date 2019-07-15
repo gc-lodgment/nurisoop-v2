@@ -150,7 +150,7 @@
                                             <input type="text" id="adr1" class="ip-txt w-1" placeholder="" value="" readonly>
                                             <span class="txt-hyphen">-</span>
                                             <input type="text" id="adr2" class="ip-txt w-1" placeholder="" value="" readonly>
-                                            <a href="#none" class="btn-adr">우편번호 검색</a>
+                                            <a href="javascript:comPopOpen('#popAdr');" class="btn-adr">우편번호 검색</a>
                                         </div>
                                         <div class="row">
                                             <input type="text" id="adr3" class="ip-txt w-3" placeholder="" value="" readonly><span class="txt-adr">기본주소</span>
@@ -256,7 +256,7 @@
                                             <input type="text" id="d-adr1" class="ip-txt w-1" placeholder="" value="" readonly>
                                             <span class="txt-hyphen">-</span>
                                             <input type="text" id="d-adr2" class="ip-txt w-1" placeholder="" value="" readonly>
-                                            <a href="#none" class="btn-adr">우편번호 검색</a>
+                                            <a href="javascript:comPopOpen('#popAdr');" class="btn-adr">우편번호 검색</a>
                                         </div>
                                         <div class="row">
                                             <input type="text" id="d-adr3" class="ip-txt w-3" placeholder="" value="" readonly><span class="txt-adr">기본주소</span>
@@ -1375,7 +1375,8 @@
                             <div class="total-box">
                                 <p class="total-txt"><em>카드 결제</em> 최종결제 금액</p>
                                 <p class="money">47,950<span>원</span></p>
-                                <button type="button" class="btn-pay">결제하기</button>
+                                <!-- 퍼블단에서 주문완료 예시로 넘어가기 위해 링크 걸어둠 -->
+                                <button type="button" class="btn-pay" onclick="location.href='./index_04.html'">결제하기</button>
                             </div>
                             <div class="saving-box">
                                 <p class="row">

@@ -951,7 +951,7 @@
                             @include bx;
                             display: table;
                             width: 100%;
-                            margin-top: 20px;
+                            margin: 20px 0 30px;
                             border: 1px solid $bor-gray-03;
                             .srch-th {
                                 @include bx;
@@ -996,9 +996,33 @@
                                 }
                             }
                         }
+                    }
+                    
+                    .sub-tab-area {
+                        display: none;
+                        margin-top: -30px;
+                        padding: 20px 0;
+                        @include tab(1px, $bor-g:$bor-gray-03, $a-pd:6px 0 7px, $fs:13px, $fg:$fg-gray-01, $fg-hover:$fg-black, $fg-on:$fg-black, $bg:$bg-gray-02){
+                            @include clearfix;
+                            .tab-list {
+                                float: left;
+                                li {
+                                    width: 130px;
+                                    &.on {
+                                        a {
+                                            font-weight: 500;
+                                            
+                                            .ie & {
+                                                font-weight: bold;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        };
                         
-                        & + .cont-area {
-                            margin-top: 30px;
+                        &.on {
+                            display: block;
                         }
                     }
                     
