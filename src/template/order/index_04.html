@@ -27,7 +27,7 @@
 
 	    <div class="order-sect end">
 	        <div class="container"> 
-	           <div class="step-area">
+	           <div class="step-sect">
 	               <ul class="step-list">
 	                   <li class=""><span class="num">STEP 01.</span><span class="name">장바구니</span></li>
 	                   <li class=""><span class="num">STEP 02.</span><span class="name">주문서작성</span></li>
@@ -47,15 +47,459 @@
                             <p class="txt">본 이벤트는 최대 70%할인 적용으로만 진행되며, <em>기타 이벤트와 중복 적용 불가능</em>합니다.</p>
                             <div class="txt-row"><p class="txt"><em>※ 주의 :</em><span>본 할인상품은 금일 주문하신 상품과 합배송해 드리며, 금일 주문상품의 배송이 시작되면 할인구매가 불가능하오니<br>망설이지 말고 [장바구니] 클릭클릭! 구매를 서둘러 주세요 ~</span></p></div>
                         </div>
-                        <div class="">
+                        <div class="sale-chk-area">
+                            <div class="sale-chk-box">
+                                <!-- 클릭시 전체 상품 선택되게 -->
+                                <label class="chk-all">
+                                    <p class="chk-txt">
+                                        <input type="checkbox" name="prdAll" checked>
+                                        <span class="btn-chk"></span>
+                                        전체선택
+                                    </p>
+                                </label>
+                            </div>
                             
+                            <div class="sale-prd-box">
+                                <ul class="prd-list">
+                                    <li>
+                                        <div class="prd-box">
+                                           <div class="prd-chk-box">
+                                                <label class="chk-txt">
+                                                    <input type="checkbox" name="prd">
+                                                    <span class="btn-chk"></span>
+                                                </label>
+                                                
+                                                <div class="num-box">
+                                                    <input type="number" class="ip-txt" value="1">
+                                                    <span class="up"></span>
+                                                    <span class="down"></span>
+                                                </div>  
+                                           </div>
+                                           
+                                            <!-- 상세페이지 예시 링크 -->
+                                            <div class="prd-link">
+                                                <a href="../skincare/index_detail.html" class="img-box">
+                                                    <span class="sale-txt">45%</span>
+
+                                                    <figure class="img-prd">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/bb.png" class="off" alt="톤업 워너 비비크림">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/bb_on.png" class="on" alt="톤업 워너 비비크림">
+                                                    </figure>
+                                                </a>
+                                            </div>
+
+                                            <div class="txt-box">
+                                                <dl class="prd-txt-box">
+                                                    <dt class="prd-tit">클릭하면 상세페이지로<br>(exp:2019.12.17)</dt>
+                                                    <dd class="prd-txt">
+                                                        <span class="b-ingred">주요성분</span>
+                                                        <span class="t-ingred">알부틴, 티타늄디옥사이드, 징크옥사이드</span>
+                                                    </dd>
+                                                </dl>
+                                                <div class="price-box">
+                                                    <span class="txt-price">16,000원</span>
+                                                    <span class="txt-sale">8,800원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prd-box">
+                                           <div class="prd-chk-box">
+                                                <label class="chk-txt">
+                                                    <input type="checkbox" name="prd">
+                                                    <span class="btn-chk"></span>
+                                                </label>
+                                                
+                                                <div class="num-box">
+                                                    <input type="number" class="ip-txt" value="1">
+                                                    <span class="up"></span>
+                                                    <span class="down"></span>
+                                                </div>  
+                                           </div>
+                                           
+                                            <div class="prd-link">
+                                                <a href="#none" class="img-box">
+                                                    <span class="sale-txt">45%</span>
+
+                                                    <figure class="img-prd">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/bb.png" class="off" alt="톤업 워너 비비크림">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/bb_on.png" class="on" alt="톤업 워너 비비크림">
+                                                    </figure>
+                                                </a>
+                                            </div>
+
+                                            <div class="txt-box">
+                                                <dl class="prd-txt-box">
+                                                    <dt class="prd-tit">톤업 워너 비비크림</dt>
+                                                    <dd class="prd-txt">
+                                                        <span class="b-ingred">주요성분</span>
+                                                        <span class="t-ingred">알부틴, 티타늄디옥사이드, 징크옥사이드</span>
+                                                    </dd>
+                                                </dl>
+                                                <div class="price-box">
+                                                    <span class="txt-price">16,000원</span>
+                                                    <span class="txt-sale">8,800원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prd-box">
+                                           <div class="prd-chk-box">
+                                                <label class="chk-txt">
+                                                    <input type="checkbox" name="prd">
+                                                    <span class="btn-chk"></span>
+                                                </label>
+                                                
+                                                <div class="num-box">
+                                                    <input type="number" class="ip-txt" value="1">
+                                                    <span class="up"></span>
+                                                    <span class="down"></span>
+                                                </div>  
+                                           </div>
+                                           
+                                            <div class="prd-link">
+                                                <a href="#none" class="img-box">
+                                                    <span class="sale-txt">45%</span>
+
+                                                    <figure class="img-prd">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/bb.png" class="off" alt="톤업 워너 비비크림">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/bb_on.png" class="on" alt="톤업 워너 비비크림">
+                                                    </figure>
+                                                </a>
+                                            </div>
+
+                                            <div class="txt-box">
+                                                <dl class="prd-txt-box">
+                                                    <dt class="prd-tit">톤업 워너 비비크림</dt>
+                                                    <dd class="prd-txt">
+                                                        <span class="b-ingred">주요성분</span>
+                                                        <span class="t-ingred">알부틴, 티타늄디옥사이드, 징크옥사이드</span>
+                                                    </dd>
+                                                </dl>
+                                                <div class="price-box">
+                                                    <span class="txt-price">16,000원</span>
+                                                    <span class="txt-sale">8,800원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prd-box">
+                                           <div class="prd-chk-box">
+                                                <label class="chk-txt">
+                                                    <input type="checkbox" name="prd">
+                                                    <span class="btn-chk"></span>
+                                                </label>
+                                                
+                                                <div class="num-box">
+                                                    <input type="number" class="ip-txt" value="1">
+                                                    <span class="up"></span>
+                                                    <span class="down"></span>
+                                                </div>  
+                                           </div>
+                                           
+                                            <div class="prd-link">
+                                                <a href="#none" class="img-box">
+                                                    <span class="sale-txt">45%</span>
+
+                                                    <figure class="img-prd">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" class="off" alt="녹삼초 폼클렌저">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser_on.png" class="on" alt="녹삼초 폼클렌저">
+                                                    </figure>
+                                                </a>
+                                            </div>
+
+                                            <div class="txt-box">
+                                                <dl class="prd-txt-box">
+                                                    <dt class="prd-tit">녹삼초 폼클렌저</dt>
+                                                    <dd class="prd-txt">
+                                                        <span class="b-ingred">주요성분</span>
+                                                        <span class="t-ingred">[용량 UP!] 히알루론산 함유 오일프리 약산성 스킨!</span>
+                                                    </dd>
+                                                </dl>
+                                                <div class="price-box">
+                                                    <span class="txt-price">16,000원</span>
+                                                    <span class="txt-sale">8,800원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prd-box">
+                                           <div class="prd-chk-box">
+                                                <label class="chk-txt">
+                                                    <input type="checkbox" name="prd">
+                                                    <span class="btn-chk"></span>
+                                                </label>
+                                                
+                                                <div class="num-box">
+                                                    <input type="number" class="ip-txt" value="1">
+                                                    <span class="up"></span>
+                                                    <span class="down"></span>
+                                                </div>  
+                                           </div>
+                                           
+                                            <div class="prd-link">
+                                                <a href="#none" class="img-box">
+                                                    <span class="sale-txt">45%</span>
+
+                                                    <figure class="img-prd">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/forest_egf.png" class="off" alt="포레스트 리페어 EGF 크림">
+                                                        <img src="http://static.nurisoop.co.kr/img/renew/common/product/item/forest_egf_on.png" class="on" alt="포레스트 리페어 EGF 크림">
+                                                    </figure>
+                                                </a>
+                                            </div>
+
+                                            <div class="txt-box">
+                                                <dl class="prd-txt-box">
+                                                    <dt class="prd-tit">포레스트 리페어 EGF 크림</dt>
+                                                    <dd class="prd-txt">
+                                                        <span class="b-ingred">주요성분</span>
+                                                        <span class="t-ingred">[NEW] 진짜 루페올이 들어간 성난피부 진정크림!</span>
+                                                    </dd>
+                                                </dl>
+                                                <div class="price-box">
+                                                    <span class="txt-price">16,000원</span>
+                                                    <span class="txt-sale">8,800원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="btn-box">
+                                <a href="#none" class="btn-buy">반값 구매하기</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!--// 회원만 : 회원 단독 특가! -->
-            
-            
-            
+                
+                <!-- 주문완료 인포 -->
+                <div class="order-end-sect">
+                    <div class="end-area">
+                        <dl class="end-box">
+                            <dt class="end-tit">고객님의 주문이 완료되었습니다.</dt>
+                            <dd class="end-txt-box">
+                                <p class="end-txt">주문내역 및 배송에 관한 안내는 주문조회를 통하여 확인 가능합니다.</p>
+                                <p class="order-num">주문번호 : <em>20190531-0000953</em></p>
+                                <p class="order-num">주문일자 : 2019-05-31 17:16:24</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    
+                    <!-- 결제정보 -->
+                    <div class="pay-info-area">
+                         <div class="tbl-top-box">
+                            <h3 class="tbl-tit">결제 정보</h3>
+                        </div>
+
+                        <div class="tbl-area-2">
+                            <div class="tbl-row type-2">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col style="width: 11.2%">
+                                        <col style="width: *">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th><span class="price-all">최종결제금액</span></th>
+                                            <td><div class="row"><span class="price-all f-bd">54,000원</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="price-all">결제수단</span></th>
+                                            <td>
+                                                <div class="row pay-row">
+                                                    <p class="pay-tit">무통장 입금</p>
+                                                    <div class="pay-box">
+                                                        <p class="pay-txt">입금자 : OOO, 계좌번호 : 국민은행 129437-04-002600 (예금주 : 이비즈네트웍스) <a href="#none" class="btn-bank">인터넷뱅킹바로가기</a></p>
+                                                        <p class="pay-txt">현금영수증 발행 : <span class="f-bd">신청</span> (개인) 00000000000</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <!-- 주문 상품 정보 -->
+                    <div class="order-info-area">
+                        <div class="tbl-top-box">
+                            <h3 class="tbl-tit">주문 상품 정보</h3>
+                        </div>
+                        <div class="tbl-area">
+                            <div class="tbl-col">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col style="width: *">
+                                        <col style="width: 10.4%;">
+                                        <col style="width: 10.4%;">
+                                        <col style="width: 10.4%;">
+                                        <col style="width: 10.4%;">
+                                        <col style="width: 10.4%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>상품정보</th>
+                                            <th>판매가</th>
+                                            <th>수량</th>
+                                            <th>적립금</th>
+                                            <th>배송구분</th>
+                                            <th>합계</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="../skincare/index_detail.html" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure>누리촉촉 딥 수딩크림</a>
+                                            </td>
+                                            <td><span class="f-bd">17,500원</span></td>
+                                            <td>1개</td>
+                                            <td>-</td>
+                                            <td rowspan="2">
+                                                일반택배<br>(조건부 무료)
+                                            </td>
+                                            <td rowspan="2">
+                                                <span class="f-bd">54,000원</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="../skincare/index_detail.html" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/forest_egf.png" alt="포레스트 리페어 EGF 크림"></figure>포레스트 리페어 EGF 크림</a>
+                                            </td>
+                                            <td><span class="f-bd">36,500원</span></td>
+                                            <td>1개</td>
+                                            <td>-</td>
+                                        </tr>
+
+
+                                        <!-- 상품 총 금액 -->
+                                        <tr>
+                                            <td colspan="6">
+                                                <div class="bot-box">
+                                                    <p class="txt">[기본배송]</p>
+                                                    <p class="buy-txt">
+                                                        상품구매금액 <span>54,000</span>원 + 배송비 <span>0</span>원 = 합계 <span class="t-point"><em>54,000</em>원</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="tbl-area-2">
+                            <div class="tbl-col">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col style="width: 33.4%;">
+                                        <col style="width: 33.4%;">
+                                        <col style="width: *">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="row-pop">
+                                                    <span>총 주문 금액</span>
+                                                    <a href="javascript:comPopOpen2('#popOrderHistory');" class="btn-com">내역보기</a>
+                                                    <!-- 팝업 -->
+                                                    @@include('../include/pop/pop_order_history.html')
+                                                </div> 
+                                            </th>
+                                            <th> 총 할인금액</th>
+                                            <th> 총 결제금액</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>54,000원</td>
+                                            <td>6,050원</td>
+                                            <td>= 47,950원</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- 회원만 -->
+                            <div class="tbl-row">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col style="width: 11.2%">
+                                        <col style="width: *">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th><span class="price-all">총 적립예정금액</span></th>
+                                            <td><div class="row"><span class="price-all f-bd">99원</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>회원 적립금</th>
+                                            <td><div class="row">99원</div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--// 회원만 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 배송지 정보 -->
+                    <div class="delivery-info-area">
+                        <div class="tbl-top-box">
+                            <h3 class="tbl-tit">배송지 정보</h3>
+                        </div>
+                        
+                        <div class="tbl-area-2">
+                            <div class="tbl-row type-2">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col style="width: 11.2%">
+                                        <col style="width: *">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>받으시는분</th>
+                                            <td><div class="row">홍길동</div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>우편번호</th>
+                                            <td><div class="row">05692</div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>주소</th>
+                                            <td><div class="row">서울특별시 강남구 테헤란로 82길 15, 14층 (대치동, 디아이타워)</div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>일반전화</th>
+                                            <td><div class="row">000-0000-0000</div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>휴대전화</th>
+                                            <td><div class="row">000-0000-0000</div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>배송메세지</th>
+                                            <td><div class="row">부재시 문앞에 놓아주세요</div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-area">
+                        <div class="btn-box fl-right">
+                            <a href="../main/index.html" class="btn-com">쇼핑계속하기</a>
+                            <a href="#none" class="btn-green">주문확인하기</a>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- 안내 -->
                 <div class="info-area">

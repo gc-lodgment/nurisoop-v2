@@ -122,7 +122,7 @@
 
 
 <!-- 배송주소록 관리 팝업 : 수정/ 입력 -->
-<div id="popDelAdrAdd" class="pop-wrap-2 fixed pop-delivery type-2" style="display: none;">
+<div id="popAdrAdd" class="pop-wrap-2 fixed pop-delivery type-2" style="display: none;">
     <div class="pop-container">
         <div class="pop-tit-box">
             <p class="pop-tit">배송 주소록 관리</p>
@@ -174,7 +174,7 @@
                                         <input type="text" id="adr1" class="ip-txt w-1" placeholder="" value="" readonly>
                                         <span class="txt-hyphen">-</span>
                                         <input type="text" id="adr2" class="ip-txt w-1" placeholder="" value="" readonly>
-                                        <a href="javascript:;" class="btn-adr">우편번호 검색</a>
+                                        <a href="javascript:comPopOpen('#popAdr');" class="btn-adr">우편번호 검색</a>
                                     </div>
                                     <div class="row type-2">
                                         <input type="text" id="adr3" class="ip-txt w-3" placeholder="" value="" readonly><span class="txt-adr">기본주소</span>
@@ -233,12 +233,11 @@
             <div class="btn-area">
                 <div class="btn-box type-2">
                     <button type="button" class="btn-black w-2">등록</button>
-                    <a href="javascript:;" class="btn-com w-2 popClose2">취소</a>
+                    <a href="javascript:;" class="btn-com w-2 popClose">취소</a>
                 </div>
             </div>
         </div>
-        <!-- n중 팝업이라 팝업 닫아도 스크롤 생기면 안되는 팝업은 popClose2 -->
-        <a href="javascript:;" class="btn-pop-close popClose2"><span class="white">닫기</span></a>
+        <a href="javascript:;" class="btn-pop-close popClose"><span class="white">닫기</span></a>
     </div>
 </div>
 <!--// 배송주소록 관리 팝업 : 수정/ 입력 -->

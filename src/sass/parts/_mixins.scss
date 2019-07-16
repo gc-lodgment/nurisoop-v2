@@ -472,6 +472,57 @@
     @content
 }
 
+//checkbox02 - box out check
+@mixin chkbox02($wt:17px, $wd:20px, $p-l:27px, $bor-bg:$bor-green-02, $left:0){
+    %chk {
+        cursor: pointer;
+        @include position(absolute, 50%, $left);
+        display: block;
+        box-sizing: border-box;
+        width: $wt;
+        height: $wt;
+        margin-top: -(( ($wt) - (2) )/2);
+        vertical-align: middle;
+    }
+    
+    position: relative;
+    padding-left: $p-l;
+    vertical-align: middle;
+    
+    input[type=checkbox] {
+        display: none;
+    }
+    input[type=checkbox] + span {
+        @extend %chk;
+        border: 1px solid $bor-bg;
+        background: #fff;
+    }
+    input[type=checkbox]:checked + span{
+        background: #fff;
+    }
+    input[type=checkbox]:checked + span:before {
+        content: '';
+        @include position(absolute, 0, 0);
+        display: block;
+        width: $wd;
+        height: $wt;
+        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background-position: -76px -173px;
+    }
+    
+    .ie8 & {
+        input[type=checkbox] {
+            @extend %chk;
+        }
+        
+        input[type=checkbox] + span {
+            display: none;
+        }
+    }
+    
+    @content
+}
+
 //ico heart + cert 
 @mixin icon-box($bt:20px, $wt:30px, $bor-g:$bor-gray-03, $bor-g-on:$bor-green-01, $bg-on:$bg-green-01){
     .ico-box {
@@ -783,132 +834,130 @@
 
 //상품리스트 
 @mixin prd-list($wd:25%, $ht:300px, $pt:46px, $t-ht:190px){
-    .prd-area {
+    @include bx;
+    @include clearfix;
+
+    .prd-list {
         @include bx;
         @include clearfix;
-
-        .prd-list {
+        margin: 0 -10px 0 -10px;
+        li {
             @include bx;
-            @include clearfix;
-            margin: 0 -10px 0 -10px;
-            li {
+            float: left;
+            width: $wd;
+            padding: $pt 10px 0;
+            .prd-box {
                 @include bx;
-                float: left;
-                width: $wd;
-                padding: $pt 10px 0;
-                .prd-box {
+                .prd-link {
+                    cursor: pointer;
                     @include bx;
-                    .prd-link {
-                        cursor: pointer;
-                        @include bx;
-                        display: block;
-                        width: 100%;
-                        height: $ht;
-                        
-                        .img-box {
-                            .img-prd {
-                                img {
-                                    @include position(absolute, 0, 0);
-                                    &.off {
-                                    }
-                                    &.on {
-                                        @include trasBase(0);
-                                    }
-                                }
-                            }
-                        }
-                        @include icon-box(30px);
-                        .ico-box {
-                            @include trasBase(0);
-                        }
+                    display: block;
+                    width: 100%;
+                    height: $ht;
 
-                        &:hover {
-                            .sale-txt {
-                                @include trasBase(1, $bg:$bg-black-01);
-                            }
-                            .img-prd {
-                                img {
-                                    &.on {
-                                        @include trasBase(1, $time:0.8s, $ds:0.6);
-                                    }
+                    .img-box {
+                        .img-prd {
+                            img {
+                                @include position(absolute, 0, 0);
+                                &.off {
                                 }
-                            }
-                            .ico-box {
-                                @include trasBase(1, $time:0.7s, $ds:0.3s);
+                                &.on {
+                                    @include trasBase(0);
+                                }
                             }
                         }
                     }
+                    @include icon-box(30px);
+                    .ico-box {
+                        @include trasBase(0);
+                    }
 
-                    .txt-box {
-                        @include bx;
-                        height: $t-ht;
-                        .prd-txt-box {
-                            @include bx;
-                            padding: 15px 0 18px;
-                            border-bottom: 1px solid $bor-gray-01;
-                            .prd-tit {
-                                padding-bottom:17px;
-                                font-size: 16px;
-                                font-weight: 500;
-                                line-height: 1.5;
-                            }
-                            .prd-txt {
-                                @include bx;
-                                @include clearfix;
-                                span {
-                                    @include bx;
-                                    float: left;
-                                    display: inline-block;
-                                    font-weight: 300;
-                                    line-height: 20px;
-                                    letter-spacing: -0.2px;
-                                    &.b-ingred {
-                                        width: 20%;
-                                        height: 20px;
-                                        font-size: 14px;
-                                        text-align: center;
-                                        color: #fff;
-                                        background: $bg-green-02;
-                                    }
-                                    &.t-ingred {
-                                        width: 80%;
-                                        padding: 0 20px 0 5px;
-                                        font-size: 15px;
-                                        color: $fg-gray-04;
-                                        word-break: keep-all;
-                            
-                                        .ie8 & {
-                                            letter-spacing: -0.7px;
-                                        }
-                                    }
+                    &:hover {
+                        .sale-txt {
+                            @include trasBase(1, $bg:$bg-black-01);
+                        }
+                        .img-prd {
+                            img {
+                                &.on {
+                                    @include trasBase(1, $time:0.8s, $ds:0.6);
                                 }
                             }
                         }
-                        .price-box {
-                            padding-top: 14px;
-                            span {
-                                @include bx;
-                                display: inline-block;
-                                font-size: 15px;
-                                &.txt-price {
-                                    color: $fg-gray-04;
-                                    @include line-row($mt:0, $bg:$fg-gray-04);
-                                }
-                                &.txt-sale {
-                                    margin-left: 18px;
-                                    font-weight: 500;
-                                    color: $fg-red-02;
-                                }
-                            }
+                        .ico-box {
+                            @include trasBase(1, $time:0.7s, $ds:0.3s);
                         }
                     }
                 }
 
+                .txt-box {
+                    @include bx;
+                    height: $t-ht;
+                    .prd-txt-box {
+                        @include bx;
+                        padding: 15px 0 18px;
+                        border-bottom: 1px solid $bor-gray-01;
+                        .prd-tit {
+                            padding-bottom:17px;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 1.5;
+                        }
+                        .prd-txt {
+                            @include bx;
+                            @include clearfix;
+                            span {
+                                @include bx;
+                                float: left;
+                                display: inline-block;
+                                font-weight: 300;
+                                line-height: 20px;
+                                letter-spacing: -0.2px;
+                                &.b-ingred {
+                                    width: 20%;
+                                    height: 20px;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    color: #fff;
+                                    background: $bg-green-02;
+                                }
+                                &.t-ingred {
+                                    width: 80%;
+                                    padding: 0 20px 0 5px;
+                                    font-size: 15px;
+                                    color: $fg-gray-04;
+                                    word-break: keep-all;
+
+                                    .ie8 & {
+                                        letter-spacing: -0.7px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .price-box {
+                        padding-top: 14px;
+                        span {
+                            @include bx;
+                            display: inline-block;
+                            font-size: 15px;
+                            &.txt-price {
+                                color: $fg-gray-04;
+                                @include line-row($mt:0, $bg:$fg-gray-04);
+                            }
+                            &.txt-sale {
+                                margin-left: 18px;
+                                font-weight: 500;
+                                color: $fg-red-02;
+                            }
+                        }
+                    }
+                }
             }
+
         }
-        
-        @content
     }
+
+    @content
 }
 
 //리뷰 

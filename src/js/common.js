@@ -20,14 +20,26 @@ $(function(){
         //console.log('닫기');
         $(this).parents('div[class*="pop-wrap"]').stop().fadeOut();
         
-        $('html').css({'overflow': 'auto', 'height': '100%'});
-        $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
-    });
-    
-    //btn pop close 2
-    $('.popClose2').on('click', function(){
-        //console.log('닫기');
-        $(this).parents('div[class*="pop-wrap"]').stop().fadeOut();
+        var num = 0;
+        
+        $('div[class*="pop-wrap"].fixed').each(function(i) {
+            if( $('div[class*="pop-wrap"].fixed:eq('+i+')').is(':visible') ){
+                //block일 경우 num에 숫자 더함
+                num += 1;
+            }else {
+                
+            }
+        });
+        
+        //console.log(num);
+        
+        if( num !== 1 ) {
+            //num이 1이 아닐경우
+        }else {
+            $('html').css({'overflow': 'auto', 'height': '100%'});
+            $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
+        }
+        
     });
 
     //txt, img file del

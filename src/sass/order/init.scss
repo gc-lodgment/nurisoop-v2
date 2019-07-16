@@ -299,6 +299,42 @@
             }
         };
     }
+    
+    .tbl-row.type-2 {
+        .tbl {
+            .row {
+                &.pay-row {
+                    .pay-tit {
+                        font-weight: bold;
+                    }
+                    .pay-box {
+                        @include bx;
+                        margin-top: 4px;
+                        .pay-txt {
+                            font-size: 13px;
+                            line-height: 1.4;
+                            color: $fg-gray-01;
+                            span, em {
+                                color: $fg-black;
+                            }
+
+                            .btn-bank {
+                                @include btn-bor-com(120px);
+                                margin-left: 5px;
+                                vertical-align: inherit;
+                                &:hover {
+                                    border-color: $bor-green-01;
+                                    color: #fff;
+                                    background: $bg-green-01;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }                              
+    }
        
     //Notice
     .info-area {
@@ -480,31 +516,6 @@
                                         .fs-18 {
                                             font-size: 18px;
                                         }
-                                        
-                                        &.pay-row {
-                                            .pay-tit {
-                                                font-weight: bold;
-                                            }
-                                            .pay-box {
-                                                @include bx;
-                                                margin-top: 4px;
-                                                .pay-txt {
-                                                    font-size: 13px;
-                                                    line-height: 1.4;
-                                                    color: $fg-gray-01;
-                                                    span, em {
-                                                        color: $fg-black;
-                                                    }
-                                                    
-                                                    .btn-bank {
-                                                        width: 120px;
-                                                        height: 22px;
-                                                        line-height: 20px;
-                                                    }
-                                                    
-                                                }
-                                            }
-                                        }
                                     }
                                 }
                             }
@@ -621,7 +632,7 @@
         .order-sect {
             .container {
                 //STEP
-                .step-area {
+                .step-sect {
                     @include bx;
                     padding: 0 0 50px;
                     .step-list {
@@ -918,16 +929,35 @@
                     $btn-fs:15px; 
                     
                     @include bx;
+                    @include clearfix;
                     margin-top: 20px;
                     text-align: center;
+                        
+                    a, button {
+                        @include bx;
+                        float: left;
+
+                        &.btn-green { 
+                            @include btn-green-bg($btn-wd, $btn-ht, $btn-fs);
+                        }
+
+                        &.btn-gray {
+                            @include btn-gray-bg($btn-wd, $btn-ht, $btn-fs);
+                        }
+                        &.btn-com {
+                            @include btn-gray-bor($btn-wd, $btn-ht, $btn-fs);
+                        }
+
+                        & + a, & + button {
+                            margin-left: 4px;
+                        }
+                    }
                     .ps-ab {
                         position: absolute;
                         top: 0;
                         text-align: left;
                         .btn-naver {
-                        }
-                        .btn-com {
-                            @include btn-gray-bor($btn-wd, $btn-ht, $btn-fs);
+                            float: none;
                         }
                         .t-ast {
                             margin-top: 7px;
@@ -948,23 +978,6 @@
                         @include bx;
                         @include clearfix;
                         display: inline-block;
-                        
-                        a, button {
-                            @include bx;
-                            float: left;
-                            
-                            &.btn-green { 
-                                @include btn-green-bg($btn-wd, $btn-ht, $btn-fs);
-                            }
-                            
-                            &.btn-gray {
-                                @include btn-gray-bg($btn-wd, $btn-ht, $btn-fs);
-                            }
-                            
-                            & + a, & + button {
-                                margin-left: 4px;
-                            }
-                        }
                     }
                 }
                 
@@ -1148,6 +1161,10 @@
                                                         font-weight: 300;
                                                     }
                                                 };
+                                                
+                                                .ie8 & {
+                                                    width: 760px;
+                                                }
                                             }
 
                                             .btn-all {
@@ -1282,11 +1299,11 @@
                     
                     .sale-area {
                         @include bx;
-                        padding: 25px 29px 40px;
+                        padding: 24px 29px 39px;
                         .sale-box {
                             text-align: center;
                             .sale-tit {
-                                padding: 10px 0 20px;
+                                padding: 6px 0 21px;
                                 font-size: 25px;
                                 font-weight: 400;
                                 letter-spacing: -0.5px;
@@ -1330,7 +1347,218 @@
                                 }
                             }
                         }
+                        
+                        .sale-chk-area {
+                            @include bx;
+                            margin-top: -3px;
+                            .sale-chk-box {
+                                @include bx;
+                                @include clearfix;
+                                border-bottom: 1px solid $bor-gray-03;
+                                .chk-all {
+                                    @include bx;
+                                    float: right;
+                                    margin-bottom: -1px;
+                                    padding: 0 10px;
+                                    @include btn-gray-bor;
+                                    width: auto;
+                                    .chk-txt {
+                                        @include chkbox02;
+                                    }
+                                }
+                                
+                            }
+                            
+                            .sale-prd-box {
+                                @include prd-list(20%, 224px, 30px){
+                                    .prd-list {
+                                        li {
+                                            .prd-box {
+                                                .prd-chk-box {
+                                                    @include bx;
+                                                    @include clearfix;
+                                                    margin-bottom: 11px;
+                                                    .chk-txt {
+                                                        @include chkbox;
+                                                    }
+                                                    
+                                                    .num-box {
+                                                        float: right;
+                                                        width: 72px;
+                                                        height: 27px;
+                                                        margin: 0;
+                                                        border: 0;
+                                                        
+                                                        .ip-txt {
+                                                            width: 50px;
+                                                            height: 27px;
+                                                            padding: 0 5px;
+                                                            font-size: 14px;
+                                                            line-height: 25px;
+                                                            text-align: right;
+                                                            color: $fg-gray-01;
+                                                            border: 1px solid $bor-gray-03;
+                                                        }
+                                                        span {
+                                                            height: 14px;
+                                                            border: 1px solid $bor-gray-03;
+                                                            &.up {
+                                                                background-position: -151px -224px;
+                                                            }
+                                                            &.down {
+                                                                background-position: -176px -224px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .txt-box {
+                                                    .prd-txt-box {
+                                                        padding: 6px 0 15px;
+                                                        .prd-tit {
+                                                            font-size: 15px;
+                                                        }
+                                                        .prd-txt {
+                                                            span {
+                                                                &.b-ingred {
+                                                                    width: 24%;
+                                                                    font-size: 13px;
+                                                                }
+                                                                &.t-ingred {
+                                                                    width: 76%;
+                                                                    padding-right: 10px;
+                                                                    font-size: 14px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }; 
+                            }
+                            
+                            .btn-box {
+                                @include bx;
+                                @include clearfix;
+                                text-align: center;
+                                padding-top: 4px;
+                                .btn-buy {
+                                    @include btn-green-bg;
+                                }
+                            }
+                        }
                     }
+                }
+                
+                .order-end-sect {
+                    .end-area {
+                        @include bx;
+                        padding: 115px 0 0;
+                        text-align: center;
+                        .end-box {
+                            @include bx;
+                            display: inline-block;
+                            text-align: left;
+                            padding-left: 130px;
+                            background: url(http://static.nurisoop.co.kr/img/renew/order/img_order_end.png) no-repeat center left;
+                            .end-tit {
+                                margin-bottom: 10px;
+                                font-size: 22px;
+                                font-weight: 500;
+                                line-height: 1;
+                                color: $fg-black;
+                                
+                                .ie & {
+                                    font-weight: bold;
+                                }
+                            }
+                            .end-txt-box {
+                                font-size: 14px;
+                                font-weight: 300;
+                                color: $fg-gray-01;
+                                p {  
+                                    em {
+                                        font-weight: 500;
+                                        color: $fg-black;
+                                        
+                                        .ie & {
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    
+                                    &.end-txt {
+                                        
+                                    }
+                                    &.order-num {
+                                        em {
+                                            font-size: 15px;
+                                            color: $fg-black;
+                                        }
+                                    }
+                                    &:first-child + p {
+                                        margin-top: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .tbl-area {
+                        .tbl {
+                            thead {
+                                tr {
+                                    th {
+                                        padding: 11px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .tbl-area-2 {
+                        margin-top: 0;
+                        .tbl-row {
+                            &.type-2 {
+                                border-top: 1px solid $bor-black-01;
+                            }
+                            .tbl {
+                                tbody {
+                                    tr {
+                                        th {
+                                            color: $fg-black;
+                                        }
+                                        td {
+                                            .row {
+                                                font-size: 14px;
+                                                color: $fg-black;
+                                                &.pay-row {
+                                                    .pay-tit {
+                                                        font-size: 15px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    //주문 상품 정보
+                    .order-info-area {
+                        .tbl-area-2 {
+                            margin-top: 40px;
+                        }
+                    }
+                    
+                    //btn
+                    .btn-area {
+                        padding-bottom: 23px;
+                        .btn-box {
+                            
+                        }
+                    }
+                
                 }
             }
         }
