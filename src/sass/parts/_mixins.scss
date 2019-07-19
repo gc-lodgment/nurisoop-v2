@@ -190,13 +190,14 @@
 //line - / ·
 @mixin line-row-2($pl:7px, $wd:3px, $ht:1px, $t:10px, $bg:$fg-gray-01){
     @include bx;
-    padding-left: 7px;
+    padding-left: $pl;
     &:before {
         content: '';
         @include position(absolute, $t, 0);
         width: $wd;
         height: $ht;
         background: $bg;
+        @content
     }
 }
 //button
@@ -413,7 +414,7 @@
 }
 
 //text !
-@mixin txtExMak($fs:13px, $fg:$fg-gray-01, $wh:13px, $top:1px, $left:0px, $fg-mark:$fg-red-03){
+@mixin txtExMak($fs:13px, $fg:$fg-gray-01, $wh:13px, $top:3px, $left:0px, $fg-mark:$fg-red-03){
     @include bx;
     //display: inline-block;
     font-size: $fs;
@@ -446,25 +447,25 @@
         vertical-align: middle;
     }
     
-    input[type=checkbox] {
+    input.ip-chk {
         display: none;
     }
-    input[type=checkbox] + span {
+    input.ip-chk  + span {
         @extend %chk;
         border: 1px solid $bor-bg;
         background: #fff;
     }
-    input[type=checkbox]:checked + span {
+    input.ip-chk:checked + span {
         background: #fff url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
         background-position: -1px -225px;
     }
     
     .ie8 & {
-        input[type=checkbox] {
+        input.ip-chk {
             @extend %chk;
         }
         
-        input[type=checkbox] + span {
+        input.ip-chk + span {
             display: none;
         }
     }
@@ -489,18 +490,18 @@
     padding-left: $p-l;
     vertical-align: middle;
     
-    input[type=checkbox] {
+    input.ip-chk {
         display: none;
     }
-    input[type=checkbox] + span {
+    input.ip-chk + span {
         @extend %chk;
         border: 1px solid $bor-bg;
         background: #fff;
     }
-    input[type=checkbox]:checked + span{
+    input.ip-chk:checked + span{
         background: #fff;
     }
-    input[type=checkbox]:checked + span:before {
+    input.ip-chk:checked + span:before {
         content: '';
         @include position(absolute, 0, 0);
         display: block;
@@ -511,11 +512,11 @@
     }
     
     .ie8 & {
-        input[type=checkbox] {
+        input.ip-chk {
             @extend %chk;
         }
         
-        input[type=checkbox] + span {
+        input.ip-chk + span {
             display: none;
         }
     }
@@ -731,6 +732,87 @@
         line-height: $ht;
         color: $fg;
         border: 1px solid $bor-bg;
+    }
+}
+
+//! box
+@mixin exmarkBox($pd:12px 20px 11px 40px, $bor-w:1px, $bor-bg:$bor-gray-03, $bg:#fff8f5){
+    @include bx;
+    clear: both;
+    .info-exmark {
+        padding: $pd;
+        border-top: $bor-w solid $bor-bg;
+        border-bottom: $bor-w solid $bor-bg;
+        background: $bg;
+    }
+    
+   /* .info-exmark {
+        @include txtExMak($fg:$fg-red-03, $top:12px, $left:20px);
+    }*/
+}
+
+//order + mypage info area 
+@mixin infoArea($m-t:48px, $bor-bg:$bor-gray-03, $fs:13px, $pd:16px 20px 14px){
+    @include bx;
+    margin-top: $m-t;
+    border: 1px solid $bor-bg;
+    .info-tit-box {
+        @include bx;
+        padding: 8px 10px 9px;
+        border-bottom: 1px solid $bor-bg;
+        .info-tit {
+            font-size: $fs;
+            font-weight: 500;
+            letter-spacing: 0;
+
+            .ie & {
+                font-weight: bold;
+            }
+        }
+    }
+    .info-list-box {
+        @include bx;
+        padding: $pd;
+        .info-list {
+            @include bx;
+            li {
+                font-size: $fs;
+                font-weight: 300;
+                letter-spacing: 0;
+                line-height: 1.7;
+                @include line-row-2;
+                //밑줄
+                .txt-pt {
+                    @include bx;
+                    display: inline-block;
+                    color: $fg-black;
+                    &:before {
+                        content: '';
+                        @include position(absolute, $left:0, $bottom:1px);
+                        display  : block;
+                        width: 100%;
+                        height: 1px;
+                        background: $bg-black-01;
+                    }
+                }
+                .f-red {
+                    font-weight: 400;
+                    color: $fg-red-06;
+                }
+                
+                //no line
+                &.no-line {
+                    padding-left: 0;
+                    &:before {
+                        content: none;
+                    }
+                }
+                
+                &.mt-30 {
+                    margin-top: 30px;
+                }
+            }
+        }
     }
 }
 
@@ -1516,11 +1598,6 @@
                         padding: 0 10px;
                         line-height: $i-ht;
                     }
-                    
-                    /*.form-sel, .ip-txt {
-                        width: 197px;
-                    }*/
-                    
                     .form-sel {
                         @include sel-com(197px, $i-ht, 0);
                         &.w-1 {
@@ -1551,6 +1628,7 @@
                     }
                     .ip-cal {
                         width: 94px;
+                        margin-right: 3px;
                     }
                     .ta-txt {
                         width: 100%;
@@ -1565,7 +1643,6 @@
                             height: 126px;
                         }
                     }
-                    
                     
                     //텍스트
                     .p-point, .chk-txt {
@@ -1652,6 +1729,13 @@
                     
                     .row-file {
                         margin-bottom: 13px;
+                    }
+                    
+                    &.chk-like-radio {
+                        .form-sel {
+                            float: none;
+                            margin-right: 10px;
+                        }
                     }
                     
                     & + .row {
@@ -1853,6 +1937,12 @@
                             color: $fg-gray-01;
                         }
                     }
+                    
+                    &.pd-zero {
+                        td {
+                            padding: 0;
+                        }
+                    }
                 }
             }
         }
@@ -1861,7 +1951,7 @@
 }
 
 //tbl col scroll
-@mixin tbl-scr($ht:103px, $bor-w:1px, $bor-bg:$bor-gray-03, $fs:13px, $fg:$fg-black, $bg:#fff, $th-pd:10px 0 11px, $td-pd:28px 18px){
+@mixin tbl-scr($ht:206px, $bor-w:1px, $bor-bg:$bor-gray-03, $fs:13px, $fg:$fg-black, $bg:#fff, $th-pd:10px 0 11px, $td-pd:28px 18px){
     border-bottom: $bor-w solid $bor-bg;
     .tbl-scr {
         @include bx;

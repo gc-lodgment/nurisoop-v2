@@ -22,20 +22,26 @@ $(function(){
         
         var num = 0;
         
-        $('div[class*="pop-wrap"].fixed').each(function(i) {
-            if( $('div[class*="pop-wrap"].fixed:eq('+i+')').is(':visible') ){
-                //block일 경우 num에 숫자 더함
-                num += 1;
+        if( $(this).parents('div[class*="pop-wrap"]').hasClass('fixed') ){
+            $('div[class*="pop-wrap"].fixed').each(function(i) {
+                if( $('div[class*="pop-wrap"].fixed:eq('+i+')').is(':visible') ){
+                    //block일 경우 num에 숫자 더함
+                    num += 1;
+                }else {
+
+                }
+            });
+
+            //console.log(num);
+
+            if( num !== 1 ) {
+                //num이 1이 아닐경우
             }else {
-                
+                $('html').css({'overflow': 'auto', 'height': '100%'});
+                $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
             }
-        });
-        
-        //console.log(num);
-        
-        if( num !== 1 ) {
-            //num이 1이 아닐경우
         }else {
+            
             $('html').css({'overflow': 'auto', 'height': '100%'});
             $(this).parents('div[class*="pop-wrap"]').off('scroll touchmove mousewheel');
         }
@@ -354,9 +360,9 @@ function quickFn(){
         nextText: '<img src="http://static.nurisoop.co.kr/img/renew/common/btn_arw_right_05.png" alt="다음">'
     });
     
-    $('.quick .quick-list .btn-menu').on('click', function(){
-        $(this).toggleClass('on');
-        if( $(this).hasClass('on') ){
+    $('.quick .quick-list .menu').on('click', function(){
+        $(this).find('.btn-menu').toggleClass('on');
+        if( $(this).find('.btn-menu').hasClass('on') ){
             $(this).parents('.quick').stop().animate({right: 0}, time);
             slider.reloadSlider();
         }else {

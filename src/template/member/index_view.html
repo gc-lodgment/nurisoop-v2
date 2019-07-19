@@ -1,0 +1,236 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">주문내역/배송조회</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="evt-tit">주문내역/배송조회</h2>
+                <p class="evt-txt">고객님의 이용정보를 확인/관리하실 수 있습니다.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect inquire">
+	        <div class="container">
+                
+                <!-- 주문정보 -->
+                <div class="order-area">
+                    <div class="tbl-top-box">
+                        <div class="top-row">
+                            <h3 class="tbl-tit">주문정보</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-row">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 11.2%">
+                                <col style="width: *">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>주문번호</th>
+                                    <td><div class="row">2019-0531-0000953</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주문일자</th>
+                                    <td><div class="row">2019-05-31&ensp;17:16:243</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주문자</th>
+                                    <td><div class="row">김철수</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주문처리상태</th>
+                                    <td><div class="row">입금전<a href="#none" class="btn-com w-1">주문취소</a></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 결제정보 -->
+                <div class="pay-area">
+                    <div class="tbl-top-box">
+                        <div class="top-row">
+                            <h3 class="tbl-tit">결제 정보</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-row type-2">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 11.2%">
+                                <col style="width: *">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span class="price-all">총 주문금액</span></th>
+                                    <td>
+                                        <div class="row row-pop">
+                                           <em class="f-bd">54,000원</em>
+                                           <a href="javascript:comPopOpen2('#popOrderHistory');" class="btn-com w-1">내역보기</a>
+                                            <!-- 팝업 -->
+                                            @@include('../include/pop/pop_order_history.html')
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="br-t">
+                                    <th><span class="price-all">총 결제금액</span></th>
+                                    <td><div class="row"><span class="f-bd"><em class="price-all">54,000</em>원</span></div></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="price-all">결제수단</span></th>
+                                    <td>
+                                        <div class="row pay-row">
+                                            <p class="pay-tit">무통장 입금</p>
+                                            <div class="pay-box">
+                                                <p class="pay-txt">입금자 : OOO, 계좌번호 : 국민은행 129437-04-002600 (예금주 : 이비즈네트웍스) <a href="#none" class="btn-bank">인터넷뱅킹바로가기</a></p>
+                                                <p class="pay-txt">현금영수증 발행 : <span class="f-bd">신청</span> (개인) 00000000000</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                
+                <!-- 주문 상품 정보 -->
+                <div class="order-prd-area">
+                    <div class="tbl-top-box">
+                        <div class="top-row">
+                            <h3 class="tbl-tit">주문 상품 정보</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: *;">
+                                <col style="width: 10%;">
+                                <col style="width: 10%;">
+                                <col style="width: 10%;">
+                                <col style="width: 10%;">
+                                <col style="width: 10%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>상품정보</th>
+                                    <th>수량</th>
+                                    <th>판매가</th>
+                                    <th>배송구분</th>
+                                    <th>주문처리상태</th>
+                                    <th>취소/교환/환불</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td rowspan="2">4</td>
+                                    <td rowspan="2">5</td>
+                                    <td rowspan="2">6</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                
+                                <!-- 상품 총 금액 -->
+                                <tr class="pd-zero">
+                                    <td colspan="6">
+                                        <div class="bot-box">
+                                            <p class="buy-txt">
+                                                상품구매금액 <span>54,000</span>원 + 배송비 <span>0</span>원 = 합계 <span class="t-point"><em>54,000</em>원</span>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+                
+                <!-- 배송지 정보 -->
+                <div class="order-area">
+                    <div class="tbl-top-box">
+                        <div class="top-row">
+                            <h3 class="tbl-tit">배송지 정보</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-row">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 11.2%">
+                                <col style="width: *">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>받으시는분</th>
+                                    <td><div class="row">김철수</div></td>
+                                </tr>
+                                <tr>
+                                    <th>우편번호</th>
+                                    <td><div class="row">05692</div></td>
+                                </tr>
+                                <tr>
+                                    <th>주소</th>
+                                    <td><div class="row">서울특별시 강남구 테헤란로 82길 15, 14층 (대치동, 디아이타워)</div></td>
+                                </tr>
+                                <tr>
+                                    <th>일반전화</th>
+                                    <td><div class="row">000-0000-0000</div></td>
+                                </tr>
+                                <tr>
+                                    <th>휴대전화</th>
+                                    <td><div class="row">000-0000-0000</div></td>
+                                </tr>
+                                <tr>
+                                    <th>배송메시지</th>
+                                    <td><div class="row">부재시 문앞에 놓아주세요0</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 버튼 -->
+                <div class="btn-area">
+                    <a href="./index.html" class="btn-green">주문목록보기</a>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

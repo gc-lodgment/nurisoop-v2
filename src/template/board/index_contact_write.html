@@ -79,9 +79,15 @@
                                     <tr>
                                         <th><label for="email">이메일</label></th>
                                         <td>
-                                            <div class="row">
-                                                <input type="text" id="email" class="ip-txt" placeholder="">
-                                                <label class="chk-txt"><input type="checkbox" name="email"><span class="btn-chk"></span>이메일로 답변을 받겠습니다.</label>
+                                            <div class="row chk-like-radio">
+                                                <input type="text" id="email" class="ip-txt" placeholder="" value="">
+                                                <span class="txt-at">@</span>
+                                                <input type="text" id="email" class="ip-txt" placeholder="" value="">
+                                                <select name="" id="" class="form-sel w-2">
+                                                    <option value="">직접입력</option>
+                                                    <option value="">naver.com</option>
+                                                </select>
+                                                <label class="chk-txt"><input type="checkbox" name="email" class="ip-chk"><span class="btn-chk"></span>이메일로 답변을 받겠습니다.</label>
                                             </div>
                                         </td>
                                     </tr>
@@ -89,12 +95,15 @@
                                         <th><label for="sms">SMS</label></th>
                                         <td>
                                             <div class="row">
-                                                <input type="tel" id="sms" class="ip-txt w-1" placeholder="">
+                                                <select name="" id="" class="form-sel w-1">
+                                                    <option value="">010</option>
+                                                    <option value="">011</option>
+                                                </select>
                                                 <span class="s-1">-</span>
                                                 <input type="tel" id="sms-2" class="ip-txt w-1" placeholder="">
                                                 <span class="s-1">-</span>
                                                 <input type="tel" id="sms-3" class="ip-txt w-1" placeholder="">
-                                                <label class="chk-txt"><input type="checkbox" name="sms"><span class="btn-chk"></span>카카오 알림톡으로 답변알림을 받겠습니다.</label>
+                                                <label class="chk-txt"><input type="checkbox" name="sms" class="ip-chk"><span class="btn-chk"></span>카카오 알림톡으로 답변알림을 받겠습니다.</label>
                                             </div>
                                         </td>
                                     </tr>

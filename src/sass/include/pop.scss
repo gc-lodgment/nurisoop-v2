@@ -597,35 +597,36 @@
             @include bx;
             padding: 20px 20px 0;
             text-align: left;
-
-            .btn-com {
-                @include btn-gray-bor(70px, 27px, 13px);
-            }
-            .btn-com-2 {
-                @include btn-gray-bor-02(70px, 27px, 13px, $fg:$fg-black, $bor-g:$bor-black-01);
-            }
-            .btn-black {
-                @include btn-black-bg(70px, 27px, 13px);
-            }
-            .btn-gray { 
-                @include btn-gray-bg(70px, 27px, 13px);
-            }
-            .btn-green {
-                @include btn-green-bg(70px, 27px, 13px);
-            }
-            [class*='btn-'] {
-                &.w-1 {
-                    width: 40px;
+            a, button {
+                &.btn-com {
+                    @include btn-gray-bor(70px, 27px, 13px);
                 }
-                &.w-2 {
-                    width: 110px;
+                &.btn-com-2 {
+                    @include btn-gray-bor-02(70px, 27px, 13px, $fg:$fg-black, $bor-g:$bor-black-01);
                 }
-                &.h-1 {
-                    height: 20px;
-                    line-height: 20px;
+                &.btn-black {
+                    @include btn-black-bg(70px, 27px, 13px);
+                }
+                &.btn-gray { 
+                    @include btn-gray-bg(70px, 27px, 13px);
+                }
+                &.btn-green {
+                    @include btn-green-bg(70px, 27px, 13px);
+                }
+                &[class*='btn-'] {
+                    &.w-1 {
+                        width: 40px;
+                    }
+                    &.w-2 {
+                        width: 110px;
+                    }
+                    &.h-1 {
+                        height: 20px;
+                        line-height: 20px;
+                    }
                 }
             }
-
+            
             .pop-chk {
                 @include bx;
                 @include chkbox{
@@ -693,13 +694,16 @@
                     border-top: 1px solid $bor-gray-03;
                     .price-row {
                         @include bx;
-                        display: table;
-                        table-layout: fixed;
+                        @include clearfix;
+                        display: block;
+                        //display: table;
+                        //table-layout: fixed;
                         width: 100%;
                         padding: 6px 0 7px;
                         span {
                             @include bx;
-                            display: table-cell;
+                            //display: table-cell;
+                            display: inline-block;
                             width: 50%;
                             font-size: 13px;
                             font-weight: 300;
@@ -707,9 +711,11 @@
                             letter-spacing: 0;
                             color: $fg-gray-01;
                             &.name {
+                                float: left;
                                 @include line-row-2(9px, 2px, 2px, 6px);
                             }
                             &.price {
+                                float: right;
                                 text-align: right;
                             }
                         }
@@ -790,6 +796,11 @@
                 }
                 .btn-area {
                     margin-top: 21px;
+                    .btn-box {
+                        .btn-com {
+                            @include btn-gray-bor(70px, 27px, 13px);
+                        }
+                    }
                 }
             }
         }
@@ -927,7 +938,7 @@
             .pop-container {
                 width: 600px;
                 top: 50%;
-                margin-top: -336px;
+                margin-top: -358.5px;
                 margin-bottom: 0;
                 .pop-cont {
                     .top-area {
@@ -1023,15 +1034,38 @@
                         
                         &.on {
                             display: block;
+                            & + .cont-area {
+                                $ht:360px;
+                                height: $ht;
+                                .adr-list {
+                                    li {
+                                        //검색전
+                                        &.nope {
+                                            height: ($ht) - (2px);
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                     
                     .cont-area {
-                        $ht:360px;
+                        $ht:401px;
+                        height: $ht;
+                        .adr-list {
+                            li {
+                                //검색전
+                                &.nope {
+                                    height: ($ht) - (2px);
+                                }
+                            }
+                        }
+                    }
+                    
+                    .cont-area {
                         @include bx;
                         overflow: hidden;
                         overflow-y: scroll;
-                        height: $ht;
                         border-top: 1px solid $bor-gray-03;
                         border-bottom: 1px solid $bor-gray-03;
                         
@@ -1103,7 +1137,6 @@
                                 &.nope {
                                     display: table;
                                     width: 100%;
-                                    height: ($ht) - (2px);
                                     text-align: center;
                                     p {
                                         display: table-cell;

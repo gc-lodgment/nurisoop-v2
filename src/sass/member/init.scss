@@ -1251,6 +1251,446 @@
             }
         }
     }
+    
+    /* 마이페이지 */
+    &.mypage {
+        .top-sect {
+            padding-bottom: 44px;
+        }
+        
+        .mypage-sect {
+            padding-bottom: 150px;
+            .container {
+                @include tab($tab-li-wd:210px, $a-pd:11px 0 11px, $fs:15px){
+                    .tab-list {
+                        display: block;
+                    }
+                };
+                
+                //테이블 내 버튼
+                .tbl {
+                    .btn-com {
+                        @include btn-gray-bor-02(70px, 27px);
+
+                        &.w-1 {
+                            width: 80px;
+                        }
+                    }
+                }
+                
+                //테이블 타이틀
+                .tbl-top-box {
+                    @include bx;
+                    @include clearfix;
+                    padding: 25px 0 12px;
+                    font-size: 12px;
+                    font-weight: 300;
+                    letter-spacing: 0;
+                    vertical-align: middle;
+                    color: $fg-gray-01;
+                    .tbl-tit {
+                        font-size: 14px;
+                        font-weight: 400;
+                        text-align: left;
+                        line-height: 1;
+                        color: $fg-black;
+                    }
+
+                }
+                    
+                /* table gray line */
+                @include tbl-col-gray-02($td-pd:32px 0 30px, $a-pd:0 41px){
+                    .btn-link {
+                        @include bx;
+                        color: $fg-red-03;
+                        &:before {
+                            content: '';
+                            @include position(absolute, $left:2%, $bottom:-4px);
+                            display: block;
+                            width: 96%;
+                            height: 1px;
+                            background: $bor-red-01;
+                        }
+                    }
+                    .tbl {
+                        tbody {
+                            tr {
+                                td {
+                                    .link-txt {
+                                        line-height: 2.1;
+                                    }
+                                    //금액
+                                    .bot-box {
+                                        $ft:20px;
+                                        @include bx;
+                                        @include clearfix;
+                                        padding: 12px 12px 12px 10px;
+                                        text-align: left;
+                                        line-height: 0;
+
+                                        .txt {
+                                            @include bx;
+                                            float: left;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            line-height: $ft;
+                                        }
+                                        .buy-txt {
+                                            @include bx;
+                                            float: right;
+                                            display: inline-block;
+                                            letter-spacing: 0;
+                                            vertical-align: middle;
+                                            line-height: $ft;
+                                            span, em {
+                                                display: inline-block;
+                                                font-weight: bold;
+                                                line-height: $ft;
+                                                .ie & {
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                            .t-point {
+                                                letter-spacing: -0.5px;
+                                                color: $fg-red-04;
+                                                em {
+                                                    font-size: 18px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+
+                /* table white row */
+                @include tbl-row(0, $fs:13px, $th-pd:12px 15px 12px 20px, $th-fg:$fg-black-02, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black-02){
+                    border-top: 1px solid $bor-black-01;
+                    .tbl {
+                        th {
+                            font-size: 14px;
+                            border-right: 1px solid $bor-gray-03;
+                            .price-all {
+                                font-weight: 400;
+
+                            }
+                        }
+                        td {
+                            .btn-com {
+                                margin-left: 10px;
+                                vertical-align: initial;
+                            }
+                            .price-all {
+                                font-size: 18px;
+
+                            }
+                            .row {
+                                &.pay-row {
+                                    .pay-tit {
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                    }
+                                    .pay-box {
+                                        @include bx;
+                                        margin-top: 4px;
+                                        .pay-txt {
+                                            font-size: 13px;
+                                            line-height: 1.4;
+                                            color: $fg-gray-01;
+                                            span, em {
+                                                color: $fg-black;
+                                            }
+
+                                            .btn-bank {
+                                                @include btn-bor-com(120px);
+                                                margin-left: 5px;
+                                                vertical-align: inherit;
+                                                &:hover {
+                                                    border-color: $bor-green-01;
+                                                    color: #fff;
+                                                    background: $bg-green-01;
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.type-2 {
+                        border-top: 0;
+                        border-bottom: 1px solid $bor-black-01;
+                        .tbl {
+                            border-top: 1px solid $bor-gray-03;
+
+                            tr {
+                                th, td {
+                                    border-top: 1px solid $bor-gray-03;
+                                    border-bottom: 0;
+                                }
+
+                                &:first-child {
+                                    tr, td {
+                                        border-top: 0;
+                                    }
+                                }
+                                &.br-t {
+                                    th, td {
+                                        border-top: 1px solid $bor-black-01;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+
+                /* page num */
+                .page-area {
+                    @include pagenation(26px);
+                }
+                
+                .info-top-box {
+                    @include bx;
+                    margin-top: 37px;
+                    .info-list {
+                        @include bx;
+                        li {
+                            font-size: 13px;
+                            font-weight: 300;
+                            line-height: 1.5;
+                            color: $fg-red-03;
+                            @include line-row-2($bg:$fg-red-03);
+                            &.f-bd {
+                                font-weight: 400;
+                                color: $fg-red-06;
+                                &:before {
+                                    background: $fg-red-06;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .day-top-box {
+                    @include bx;
+                    margin: 31px auto 40px;
+                    padding: 15px 28px 16px;
+                    line-height: 1;
+                    border: 1px solid $bor-gray-03;
+                    .day-box {
+                        @include bx;
+                        @include clearfix;
+                        
+                        .day-lookup {
+                            @include bx;
+                            @include clearfix;
+                            margin-top: 15px;
+                            &:first-child {
+                                margin-top: 0;
+                            }
+                            .day-tit {
+                                @include bx;
+                                float: left;
+                                display: inline-block;
+                                width: 97px;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 28px;
+                                vertical-align: middle;
+                            }
+                            .day-list {
+                                @include bx;
+                                @include clearfix;
+                                float: left;
+                                display: inline-block;
+                                vertical-align: middle;
+                                li {
+                                    @include bx;
+                                    float: left;
+                                    .srch-txt {
+                                        margin-left: 23px;
+                                        font-size: 13px;
+                                        line-height: 28px;
+                                        vertical-align: middle;
+                                        color: $fg-gray-01;
+                                        input[type="radio"] {
+                                            cursor: pointer;
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                    &:first-child {
+                                        .srch-txt {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            
+
+                            /* 달력 */
+                            .cal-box {
+                                @include bx;
+                                @include clearfix;
+                                float: left;
+                                display: inline-block;
+                                .row {
+                                    @include cal;
+                                }
+                                .cal-txt {
+                                    display: inline-block;
+                                    padding: 0 8px;
+                                    font-size: 13px;
+                                    line-height: 28px;
+                                    color: $fg-gray-01;
+                                }
+                            }
+                            .btn-box {
+                                @include bx;
+                                @include clearfix;
+                                float: left;
+                                margin: 1px 0 0 20px;
+                                .btn-srch {
+                                    @include btn-gray-bor(70px, 28px, 13px, $bor-g:$bor-gray-09);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                //주문내역
+                .order-area, .pay-area, .order-prd-area {
+                    margin-top: 25px;
+                }
+                
+                //주문상태 안내
+                .order-info-area {
+                    @include bx;
+                    margin-top: 96px;
+                    .order-info-box {
+                        @include bx;
+                        .step-list {
+                            @include bx;
+                            @include clearfix;
+                            li {
+                                @include bx;
+                                float: left;
+                                //width: 20%;
+                                width: 251px;
+                                text-align: center;
+                                .step {
+                                    $ht:90px;
+                                    @include bx;
+                                    height: $ht;
+                                    padding: 25px 0 0 34px;
+                                    background: #fff;
+                                    border: 1px solid $bor-gray-03;
+                                    border-left-width: 0;
+                                    border-right-width: 0;
+                                    &:before {
+                                        content: '';
+                                        z-index: 3;
+                                        @include position(absolute, -1px, $right:-40px);
+                                        display: block;
+                                        width: 42px;
+                                        height: $ht;
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/img_mypage_step.png) no-repeat;
+                                        background-position: -55px 0;
+                                        background-size: auto $ht;
+                                    }
+                                    span {
+                                        display: block;
+                                        line-height: 1;
+                                        letter-spacing: 0;
+                                        &.num {
+                                            font-size: 15px;
+                                            color: $fg-gray-03;
+                                        }
+                                        &.name {
+                                            padding-top: 7px;
+                                            font-size: 18px;
+                                            font-weight: 500;
+                                            color: $fg-black-03;
+                                            
+                                            .ie & {
+                                                font-weight: bold;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                .txt {
+                                    padding: 29px 0 29px 35px;
+                                    font-size: 14px;
+                                    letter-spacing: 0;
+                                    color: $fg-gray-01;
+                                }
+                                
+                                &.on {
+                                    .step {
+                                        background: $bg-green-01;
+                                        border: 1px solid $bor-green-01;
+                                        &:before {
+                                            background-position: 0px 0;
+                                        }
+                                        span {
+                                            &.num {
+                                                color: $fg-gray-07;
+                                            }
+                                            &.name {
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                &:first-child {
+                                    width: 236px;
+                                    .step {
+                                        padding-left: 14px;
+                                        border-left-width: 1px;
+                                    }
+                                }
+                                
+                                &.lst {
+                                    width: 271px;
+                                    .step {
+                                        border-right-width: 1px;
+                                        &:before {
+                                            content: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @include exmarkBox;
+                    .info-exmark {
+                        @include txtExMak($fg:$fg-red-03, $top:12px, $left:20px);
+                    }
+                }
+                
+                //취소/반품/교환 안내
+                .info-area {
+                    @include infoArea;
+                }
+                
+                //버튼 박스
+                .btn-area {
+                    @include bx;
+                    @include clearfix;
+                    margin-top: 30px;
+                    text-align: center;
+                    .btn-green {
+                        @include btn-green-bg(140px, 40px, 15px);
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*

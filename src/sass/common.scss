@@ -1307,6 +1307,230 @@ $hd-ht: ($gnb-ht+31);
                 }
             }
         }
+        
+        
+        /* mypage lnb */
+        &.mp-lnb-sect {
+            .container {
+                .mp-lnb-area {
+                    @inclde bx;
+                    @include clearfix;
+                    border-top: 2px solid $bor-black-01;
+                    border-bottom: 1px solid $bor-gray-03;
+                    .grade-area {
+                        @include bx;
+                        @include clearfix;
+                        float: left;
+                        width: 46.3%;
+                        //width: 582px;
+                        .row {
+                            @include bx;
+                            float: left;
+                            
+                            .pt-box {
+                                @include bx;
+                                padding: 33px 26px 67px;
+                                border-left: 1px solid $bor-gray-03;
+                                border-right: 1px solid $bor-gray-03;
+                                .pt-txt {
+                                    @include bx;
+                                    display: table;
+                                    width: 100%;
+                                    margin-top: 21px;
+                                    &:first-child {
+                                        margin-top: 0;
+                                    }
+                                    span {
+                                        @include bx;
+                                        display: table-cell;
+                                        letter-spacing: -0.7px;
+                                        vertical-align: middle;
+                                        color: $fg-black;
+                                        &.s-1 {
+                                            text-align: left;
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                            
+                                            .ie & {
+                                                font-weight: bold;
+                                            }
+                                        }
+                                        &.s-2 {
+                                            min-width: 90px;
+                                            text-align: right;
+                                            font-size: 15px;
+                                            font-weight: 300;
+                                            em {
+                                                display: inline-block;
+                                                margin-right: 1px;
+                                                font-size: 22px;
+                                                font-weight: 500;
+                                                color: $fg-red-03;
+
+                                                .ie & {
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn-grade {
+                                @include position(absolute, $left:0px, $bottom:-1px);
+                                @include btn-gray-bor-02(100%, 38px, $bor-g:$bor-gray-03);
+                            }
+                            
+                            &.my-gd-row {
+                                //width: 370px;
+                                width: 63.5%;
+                                border-left: 1px solid $bor-gray-03;
+                                padding: 31px 0 27px 22px;
+                                background: $bg-gray-02;
+                                
+                                .my-gd {
+                                    @include bx;
+                                    float: left;
+                                    display: table;
+                                    width: 110px;
+                                    height: 110px;
+                                    margin-top: 2px;
+                                    text-align: center;
+                                    background: url(http://static.nurisoop.co.kr/img/renew/member/bg_myGrade.png) no-repeat center;
+                                    .img {
+                                        display: table-cell;
+                                        vertical-align: middle;
+                                        img {
+                                            width: 50%;
+                                        }
+                                    }
+                                }
+                                
+                                .gd-box {
+                                    @include bx;
+                                    float: left;
+                                    padding-left: 18px;
+                                    .gd-tit {
+                                        padding-bottom: 17px;
+                                        font-size: 22px;
+                                        font-weight: 300;
+                                        letter-spacing: -1.2px;
+                                        em {
+                                            font-weight: 500;
+                                            color: $fg-red-03;
+                                            
+                                            .ie & {
+                                                font-weight: bold;
+                                            }
+                                        }
+                                    }
+                                    .gd-txt {
+                                        .p-1 {
+                                            margin-top: 5px;
+                                            font-size: 14px;
+                                            letter-spacing: 0;
+                                            em {
+                                                display: inline-block;
+                                                padding-right: 3px;
+                                                font-weight: 400;
+                                                color: $fg-black-03;
+                                            }
+                                            span {
+                                                display: inline-block;
+                                                font-weight: 300;
+                                                color: $fg-gray-01;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .mp-menu-area {
+                        @include bx;
+                        @include clearfix;
+                        float: left;
+                        width: 53.7%;
+                        //width: 678px;
+                        border-right: 1px solid $bor-gray-03;
+                        
+                        .mp-menu-box {
+                            @include bx;
+                            float: left;
+                            padding: 31px 45px 30px 40px;
+                            line-height: 1;
+                            border-left: 1px solid $bor-gray-03;
+                            
+                            .mp-menu-tit {
+                                padding-bottom: 7px;
+                                font-size: 16px;
+                                font-weight: 500;
+                                color: $fg-black;
+                                
+                                .ie8 & {
+                                    font-weight: bold;
+                                }
+                            }
+                            
+                            .mp-menu {
+                                @include bx;
+                                > li {
+                                    @include bx;
+                                    @include line-row-2(11px, 4px, $t:7px, $bg:$fg-green-03) {
+                                        display: none;
+                                    };
+                                    margin: 17px 0 0 5px;
+                                    line-height: 0;
+                                    a {
+                                        @include bx;
+                                        display: inline-block;
+                                        font-size: 14px;
+                                        font-weight: 300;
+                                        line-height: 1;
+                                        color: $fg-gray-06;
+                                        @include trasBase(1);
+                                        &:hover {
+                                            @include trasBase;
+                                        }
+                                    }
+                                    
+                                    &.on {
+                                        &:before {
+                                            display: block;
+                                        }
+                                        a {
+                                            font-weight: 400;
+                                            color: $fg-green-03;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            
+                            &.shop-info {
+                                @include clearfix;
+                                width: 336px;
+                                border-left: 0;
+                                .mp-menu {
+                                    float: left;
+                                    li {
+                                        
+                                    }
+                                    
+                                    &.lst {
+                                        float: right;
+                                        > li {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     &.prd-list {
@@ -2155,6 +2379,59 @@ $hd-ht: ($gnb-ht+31);
  * IE
  */
 .ie {
+    /* content 영역 */
+    .contents {
+        div[class*='-sect'] {
+            /* mypage lnb */
+            &.mp-lnb-sect {
+                .container {
+                    .mp-lnb-area {
+                        
+                        .grade-area {
+                            .row {
+                                .pt-box {
+                                    padding-bottom: 66px;
+                                }
+                                &.my-gd-row {
+                                    padding-bottom: 28px;
+                                    .gd-box {
+                                        .gd-tit {
+                                            font-size: 21px;
+                                            letter-spacing: -1.8px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .mp-menu-area {
+                            .mp-menu-box {
+                                &.shop-info {
+                                    width: 319px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.prd-list {
+
+            /* 서브 탑 배너 */
+            .sub-top-sect {
+                padding: 20px 0;
+            }
+
+            /* 타이틀 */
+            .sub-tit {
+                padding: 19px 0 31px;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 1;
+                text-align: center;
+            }
+        }
+    }
    
     /* footer 영역 */
     .footer {
