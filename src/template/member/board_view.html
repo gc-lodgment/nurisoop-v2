@@ -1,26 +1,38 @@
 @@include('../include/_head.html', {
-	"page": "board"
+	"page": "member"
 })
 
-<body class="page-board">
+<body class="page-member">
 
 <div class="wrapper">
 	@@include('../include/_header.html')
-	
-	<div class="contents view">
-        <div class="top-sect">
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
             <div class="container">
-                <h2 class="sub-tit">고객센터</h2>
-                <p class="sub-txt">
-                    누리숲에서 알려드리는 공지, 주요 알림 내용을 확인하실 수 있으며,<br>
-                    누리숲 상품에 관한 궁금증을 해결해드립니다.
-                </p>
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./board.html" class="btn-link">1:1문의</a>
+                </div>
             </div>
         </div>
         
-        <!-- 문의 뷰(read) 멀티클래스 추가 -->
-        <div class="view-sect read">
+        <div class="top-sect">
             <div class="container">
+                <h2 class="sub-tit">1:1문의</h2>
+                <p class="sub-txt">고객님의 문의사항을 신속하고 정확하게 해결해 드리겠습니다.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect board view">
+	        <div class="container">
                 <div class="view-area">
                     <!-- 제목 -->
                     <div class="top-box">
@@ -37,7 +49,7 @@
                         </div>
                         <div class="view-num-box">
                             <p class="view-num">
-                                <span class="num-tit">질문유형 :</span>
+                                <span class="num-tit">분류 :</span>
                                 <span class="num-txt">상품정보문의</span>
                             </p>
                         </div>
@@ -69,16 +81,41 @@
                         </p>
                     </div>
                     
-                    <!-- 버튼 -->
+                    <!-- 답변이 있을 경우 -->
+                    <!--<div class="answer-box">
+                        <div class="answer-top">
+                            <span class="mmg-name">누리숲</span>
+                            <span class="date">2019.05.09</span>
+                        </div>
+                        <p class="txt">
+                            안녕하세요. <br>
+                            숲이들려주는 피부이야기, 누리숲입니다.<br>
+                            <br>
+                            고객님, 문의주신 내용에 대한 답변 드립니다.<br>
+                            <br>
+                            누리촉촉 워터밸런스 스킨은 화학방부를 최소화하고 천연방부로 만든 순한 화장품으로 공인기관 임상실험을 통해 여드름피부 적합성 평가를 통과한 제품인만큼<br>
+                            10대부터 전연령대 사용가능하답니다.  가벼운 사용감과 오일프리 물스킨 타입으로, 7스킨법이나 스킨팩용도로 사용하시기에도 적합한 제품이랍니다.<br>
+                            <br>
+                            예쁜 피부 가꾸시고 또 찾아주세요.<br>
+                            <br>
+                            누리숲은 고객님의 건강하고 아름다운 피부를 위해 더욱 노력하겠습니다.<br>
+                            <br>
+                            감사합니다.
+                        </p>
+                    </div>-->
+                </div>
+
+                <!-- 버튼 -->
+                <div class="btn-area">
                     <div class="btn-box">
-                        <a href="./index.html#contact" class="btn-list">목록</a>
+                        <a href="../member/board.html" class="btn-list">목록</a>
+                        <a href="#none" class="btn-del">삭제</a>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-	</div>
-	
+	        </div>
+	    </div>
+	</div> 
+   
 	@@include('../include/_footer.html') 
 </div>
 

@@ -1,0 +1,66 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./myinfo_pw.html" class="btn-link">회원정보 수정</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="sub-tit">회원정보 수정</h2>
+                <p class="sub-txt">고객님의 회원정보를 확인/수정할 수 있습니다.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect myinfo">
+	        <div class="container">
+                <div class="pw-tit-box">
+                    <p class="pw-tit">비밀번호 재확인</p>
+                    <p class="pw-sub-tit">회원님의 개인정보를 안전하게 보호하기 위해 비밀번호 확인 후 변경할 수 있습니다.</p>
+                </div>
+
+                <div class="pw-area">
+                    <div class="inner">
+                        <div class="pw-box">
+                            <div class="row">
+                                <span class="lbl">아이디</span>
+                                <p class="p-txt">master</p>
+                            </div>
+                            <div class="row">
+                                <label for="password" class="lbl">비밀번호</label>
+                                <input type="password" id="password" class="ip-txt" placeholder="**********" value="">
+                            </div>
+                        </div>
+                        <div class="pw-box">
+                            <a href="../member/myinfo.html" class="btn-com">확인</a>
+                        </div>
+                    </div>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

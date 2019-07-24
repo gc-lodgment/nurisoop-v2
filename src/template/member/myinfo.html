@@ -1,0 +1,284 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./myinfo_pw.html" class="btn-link">회원정보 수정</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="sub-tit">회원정보 수정</h2>
+                <p class="sub-txt">고객님의 회원정보를 확인/수정할 수 있습니다.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect myinfo">
+	        <div class="container">
+                <!-- 기본 정보 -->
+                <div class="mdf-area">
+                    <div class="tbl-top-box">
+                        <div class="top-row fl-left">
+                            <h3 class="tbl-tit">기본 정보</h3>
+                        </div>
+                        <div class="top-row fl-right">
+                            <p class="t-ast t-ness">필수입력사항</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-row gray">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 16.7%;">
+                                <col style="width: 83.5%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><label for="id" class="t-ast">아이디</label></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="text" id="id" class="ip-txt" placeholder="" value="1339151675@n">
+                                            <span class="s-t">(영문소문자/숫자, 4~16자)</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 비밀번호 : sns 가입자가 아닐경우 -->
+                                <tr>
+                                    <th><label for="pw" class="t-ast">비밀번호</label></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="password" id="pw" class="ip-txt" placeholder="" value="">
+                                            <span class="s-t">(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8~16자)</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="pwChk" class="t-ast">비밀번호 확인</label></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="password" id="pwChk" class="ip-txt" placeholder="" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!--//비밀번호 : sns 가입자가 아닐경우 -->
+                                <!-- 비밀번호 : sns 가입자일 경우 -->
+                                <tr>
+                                    <th><span>비밀번호</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="password" id="pw2" class="ip-txt" placeholder="" value="" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>비밀번호 확인</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="password" id="pwChk2" class="ip-txt" placeholder="" value="" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!--//비밀번호 : sns 가입자일 경우 -->
+                                <tr>
+                                    <th><span class="t-ast">이름</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <p>ttosemd</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="nick" class="t-ast">닉네임</label></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="text" id="nick" class="ip-txt" placeholder="" value="">
+                                            <a href="#none" class="btn-nick-chk">중복확인</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="t-ast">주소</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="text" id="d-adr1" class="ip-txt w-1" placeholder="" value="" readonly>
+                                            <span class="txt-hyphen">-</span>
+                                            <input type="text" id="d-adr2" class="ip-txt w-1" placeholder="" value="" readonly>
+                                            <a href="javascript:comPopOpen('#popAdr');" class="btn-adr">우편번호 검색</a>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" id="d-adr3" class="ip-txt w-3" placeholder="" value="" readonly><span class="txt-adr">기본주소</span>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" id="d-adr4" class="ip-txt w-3" placeholder="" value=""><span class="txt-adr">나머지주소</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>일반전화</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <select name="" id="" class="form-sel w-1">
+                                                <option value="">02</option>
+                                                <option value="">031</option>
+                                            </select>
+                                            <span class="txt-hyphen">-</span>
+                                            <input type="text" id="n-phone2" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                            <span class="txt-hyphen">-</span>
+                                            <input type="text" id="n-phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="t-ast">휴대전화</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <select name="" id="" class="form-sel w-1">
+                                                <option value="">010</option>
+                                                <option value="">011</option>
+                                            </select>
+                                            <span class="txt-hyphen">-</span>
+                                            <input type="text" id="phone2" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                            <span class="txt-hyphen">-</span>
+                                            <input type="text" id="phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="t-ast">SMS 수신여부</span></th>
+                                    <td>
+                                        <div class="row agree-row">
+                                            <label class="srch-txt"><input type="radio" name="agree1">수신함</label>
+                                            <label class="srch-txt"><input type="radio" name="agree1" checked>수신안함</label>
+                                            <p class="agree-txt">쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수 있습니다.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="email" class="t-ast">이메일</label></th>
+                                    <td>
+                                        <div class="row chk-like-radio">
+                                            <input type="text" id="email" class="ip-txt" placeholder="" value="">
+                                            <span class="txt-at">@</span>
+                                            <input type="text" id="email" class="ip-txt" placeholder="" value="">
+                                            <select name="" id="" class="form-sel w-2">
+                                                <option value="">직접입력</option>
+                                                <option value="">naver.com</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="t-ast">이메일 수신여부</span></th>
+                                    <td>
+                                        <div class="row agree-row">
+                                            <label class="srch-txt"><input type="radio" name="agree2">수신함</label>
+                                            <label class="srch-txt"><input type="radio" name="agree2" checked>수신안함</label>
+                                            <p class="agree-txt">쇼핑몰에서 제공하는 유익한 이벤트 소식을 이메일로 받으실 수 있습니다.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 추가 정보 -->
+                <div class="mdf-area add-info">
+                    <div class="tbl-top-box">
+                        <div class="top-row">
+                            <h3 class="tbl-tit">추가 정보</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-row gray">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 16.7%;">
+                                <col style="width: 83.5%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span>성별</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <label class="srch-txt"><input type="radio" name="gender" checked>남자</label>
+                                            <label class="srch-txt"><input type="radio" name="gender">여자</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>생년월일</span></th>
+                                    <td>
+                                        <div class="row">1992년 06월 03일</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>지역</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <select name="" id="" class="form-sel w-3">
+                                                <option value="">선택</option>
+                                                <option value="">서울</option>
+                                                <option value="">경기</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>피부타입&피부고민 선택<br><em class="fc-green t-ast">중복선택 가능</em></span></th>
+                                    <td>
+                                        <div class="row">
+                                            <div class="skin-type-box">
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk" checked><span class="btn-chk"></span>지성</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>복합성</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>건성</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>민감성</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>여드름성</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>수분부족</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>모공</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>탄력</label>
+                                                <label class="chk-txt"><input type="checkbox" name="skin-type" class="ip-chk"><span class="btn-chk"></span>미백</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 버튼 -->
+                <div class="btn-area">
+                    <div class="btn-box">
+                        <a href="#none" class="btn-green">회원정보수정</a>
+                        <a href="#none" class="btn-gray">취소</a>
+                    </div>
+                    <a href="../member/leave.html" class="btn-line p-a right">회원탈퇴</a>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

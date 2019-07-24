@@ -1,0 +1,141 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./wish.html" class="btn-link">위시리스트</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="sub-tit">위시리스트</h2>
+                <p class="sub-txt">구매가 망설여질 때에는 위시리스트에 상품을 담아 두세요.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect wish">
+	        <div class="container">
+                <!-- top lnfo list -->   
+                <div class="info-top-box">
+                    <ul class="info-list">
+                        <li>위시리스트에 있는 제품의 구매를 원하시면 해당 제품을 선택 후 ‘장바구니 담기’ 를 통해 구매 하실 수 있습니다.</li>
+                        <li>위시리스트에 담은 시점과 구매시점에서 상품가격 및 이벤트가 변경될 수 있으며 조기품절 될 수 있습니다.</li>
+                        <li>품절 또는 판매중단 제품에 대해서는 장바구니 이동이 되지 않습니다.</li>
+                    </ul>
+                </div>
+                
+                <!-- 보관내역 -->
+                <div class="tbl-area">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 6.4%;">
+                                <col style="width: *;">
+                                <col style="width: 10.3%;">
+                                <col style="width: 10.3%;">
+                                <col style="width: 10.3%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>상품정보</th>
+                                    <th>적립금</th>
+                                    <th>판매가</th>
+                                    <th>보관날짜</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="chk-txt">
+                                            <input type="checkbox" name="prd" class="ip-chk">
+                                            <span class="btn-chk"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <!-- 예시링크 -->
+                                        <a href="../skincare/index_detail.html" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure>누리촉촉 딥 수딩크림</a>
+                                    </td>
+                                    <td><span>0원</span></td>
+                                    <td><em class="f-bd">17,500원</em></td>
+                                    <td><span>2019.09.28</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="chk-txt">
+                                            <input type="checkbox" name="prd" class="ip-chk">
+                                            <span class="btn-chk"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <a href="#none" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="포레스트 리페어 EGF 크림"></figure>포레스트 리페어 EGF 크림</a>
+                                    </td>
+                                    <td><span>0원</span></td>
+                                    <td><em class="f-bd">36,500원</em></td>
+                                    <td><span>2019.09.15</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="chk-txt">
+                                            <input type="checkbox" name="prd" class="ip-chk">
+                                            <span class="btn-chk"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <a href="#none" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="누리촉촉 딥 수딩크림"></figure>누리촉촉 딥 수딩크림</a>
+                                    </td>
+                                    <td><span>0원</span></td>
+                                    <td><em class="f-bd">17,500원</em></td>
+                                    <td><span>2019.08.10</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="chk-txt">
+                                            <input type="checkbox" name="prd" class="ip-chk">
+                                            <span class="btn-chk"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <a href="#none" class="link-txt prd-name"><figure class="img-prd"><img src="http://static.nurisoop.co.kr/img/renew/common/product/item/formcleanser.png" alt="포레스트 리페어 EGF 크림"></figure>포레스트 리페어 EGF 크림</a>
+                                    </td>
+                                    <td><span>0원</span></td>
+                                    <td><em class="f-bd">36,500원</em></td>
+                                    <td><span>2019.08.03</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 버튼 -->
+                <div class="btn-area">
+                    <button type="button" class="btn-gray">선택상품 삭제</button>
+                    <button type="button" class="btn-green">장바구니에 담기</button>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

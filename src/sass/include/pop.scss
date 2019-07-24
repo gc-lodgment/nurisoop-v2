@@ -364,6 +364,23 @@
                             }
                         }
                     }
+                    
+                    //내가 쓴 리뷰일 경우 삭제하기 버튼 추가
+                    .btn-area {
+                        @include bx;
+                        margin-top: 33px;
+                        text-align: center;
+                        line-height: 1;
+                        .btn-box {
+                            @include bx;
+                            @include clearfix;
+                            display: inline-block;
+                            margin-top: 0;
+                            .btn-del {
+                                @include btn-gray-bg;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -419,50 +436,54 @@
             padding: 55px 40px 69px;
             margin-bottom: 0;
             .pw-area {
-                @include tbl-col-gray($fs:17px, $th-pd:15px 0 16px, $td-pd:20px 0){
-                    .tbl {
-                        td {
-                            border-bottom: 0;
-                            .txt {
-                                padding: 45px 0 66px;
-                                font-size: 15px;
-                                font-weight: 300;
-                                line-height: 1.6;
-                                color: $fg-gray-04;
-                                em {
-                                    font-weight: 400;
-                                    color: $fg-black;
-                                }
-                            }
-                            
-                            .pw-row {
-                                @include bx;
-                                .pw-txt {
-                                    @include bx;
-                                    display: inline-block;
-                                    margin-right: 17px;
-                                    padding-left: 18px;
-                                    font-size: 14px;
-                                    line-height: 300;
-                                    line-height: 28px;
-                                    color: $fg-black;
-                                    .ico-lock {
-                                        @include position(absolute, 50%, 0);
-                                        margin-top: -6px;
+                .tbl-col {
+                    @include bx;
+                    @include th-col-1(17px, $th-pd:15px 0 16px);
+                    @include tbl-col-gray($fs:17px, $td-pd:20px 0){
+                        .tbl {
+                            td {
+                                border-bottom: 0;
+                                .txt {
+                                    padding: 45px 0 66px;
+                                    font-size: 15px;
+                                    font-weight: 300;
+                                    line-height: 1.6;
+                                    color: $fg-gray-04;
+                                    em {
+                                        font-weight: 400;
+                                        color: $fg-black;
                                     }
                                 }
-                                .ip-txt {
+
+                                .pw-row {
                                     @include bx;
-                                    width: 163px;
-                                    height: 28px;
-                                    padding: 0 8px;
-                                    line-height: 28px;
-                                    border: 1px solid $bor-gray-03;
+                                    .pw-txt {
+                                        @include bx;
+                                        display: inline-block;
+                                        margin-right: 17px;
+                                        padding-left: 18px;
+                                        font-size: 14px;
+                                        line-height: 300;
+                                        line-height: 28px;
+                                        color: $fg-black;
+                                        .ico-lock {
+                                            @include position(absolute, 50%, 0);
+                                            margin-top: -6px;
+                                        }
+                                    }
+                                    .ip-txt {
+                                        @include bx;
+                                        width: 163px;
+                                        height: 28px;
+                                        padding: 0 8px;
+                                        line-height: 28px;
+                                        border: 1px solid $bor-gray-03;
+                                    }
                                 }
                             }
                         }
-                    }
-                };
+                    };
+                }
                 
                 .btn-box {
                     $wd:85px;
@@ -549,6 +570,38 @@
                     margin-top: 0;
                     .btn-green { 
                         @include btn-green-bg(85px, 40px, 15px);
+                    }
+                }
+            }
+        }
+    }
+    
+    /* 쿠폰등록완료 팝업 */
+    &.pop-cp-use {
+        .pop-container {
+            width: 500px;
+            top: 50%;
+            margin-top: -149px;
+            .pop-tit-box {
+                .pop-tit {
+                    padding: 16px 55px 18px;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+
+            }
+            .pop-cont {
+                padding: 30px;
+                .txt {
+                    padding: 45px 0 20px;
+                    font-size: 16px;
+                    letter-spacing: 0;
+                    color: $fg-black-03;
+                }
+                
+                .btn-box {
+                    .btn-green { 
+                        @include btn-green-bg(86px, 40px, 15px); 
                     }
                 }
             }
@@ -734,34 +787,37 @@
             width: 600px;
             margin-bottom: 0;
             .pop-cont {
-                @include tbl-col-gray-02($fs:13px, $td-pd:14px 10px 13px, $td-fg:$fg-gray-01){
-                    .tbl {
-                        border-bottom: 0;
-                        
+                .tbl-col {
+                    @include bx;
+                    @include th-col-2(13px){
                         tr {
-
                             th {
                                 border-right: 0;
                                 text-align: center;
                             }
                         }
-                        tbody {
-                            tr {
-                                td {
-                                    border-top: 0;
-                                    border-left: 0;
-                                    text-align: center;
-                                }
-                                &.nope {
+                    };
+                    @include tbl-col-gray-02($fs:13px, $td-pd:14px 10px 13px, $td-fg:$fg-gray-01){
+                        .tbl {
+                            border-bottom: 0;
+                            tbody {
+                                tr {
                                     td {
-                                        padding: 22px 0 19px;
+                                        border-top: 0;
+                                        border-left: 0;
+                                        text-align: center;
+                                    }
+                                    &.nope {
+                                        td {
+                                            padding: 22px 0 19px;
+                                        }
                                     }
                                 }
                             }
+
                         }
-                        
-                    }
-                };
+                    };
+                }
                 
                 .btn-area {
                     margin-top: 50px;
@@ -805,7 +861,6 @@
             }
         }
     }
-    
     
     
     //회색배경에 팝업 가운데 고정 형
@@ -1157,6 +1212,7 @@
         }
     }
 }
+
 
 /* 팝업 배경 */
 .pop-bg {

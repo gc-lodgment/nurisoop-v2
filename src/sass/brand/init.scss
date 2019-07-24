@@ -174,7 +174,11 @@
         }
         
         /* table */
-        @include tbl-col-gray($a-pd:0 55px);
+        .tbl-col {
+            @include bx;
+            @include th-col-1;
+            @include tbl-col-gray($a-pd:0 55px);
+        }
 
         /* page num */
         .page-area {

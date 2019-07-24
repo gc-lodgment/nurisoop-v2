@@ -1,0 +1,328 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./coupon.html" class="btn-link">할인쿠폰</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="sub-tit">할인쿠폰</h2>
+                <p class="sub-txt">고객님께서 사용가능한 할인쿠폰과 사용현황입니다.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect coupon">
+	        <div class="container">
+                <!-- top lnfo list -->   
+                <div class="info-top-box">
+                    <ul class="info-list">
+                        <li>해당 상품쿠폰의 사용기준과 기간을 반드시 확인하여 주세요.</li>
+                        <li>유효기간이 만기된 상품쿠폰은 자동 소멸됩니다.</li>
+                        <li>쿠폰은 10,000원 이상 구매시 사용 가능합니다.</li>
+                    </ul>
+                </div>
+                
+                <div class="bn-area">
+                    <img src="http://static.nurisoop.co.kr/img/renew/member/bn_my_coupon.jpg" alt="본인인증 하시면 쿠폰 2종세트를 드립니다" usemap="#bnCoupon">
+                    <map id="bnCoupon" name="bnCoupon">
+                        <!-- 본인인증 페이지로 이동 -->
+                        <area shape="rect" coords="1081, 185, 1181, 220" alt="myCert" href="#none">
+                        <!-- 친구추천이벤트 페이지로 이동 -->
+                        <area shape="rect" coords="584, 251, 732, 272" alt="friendEvt" href="#none">
+                    </map>
+                </div>
+                
+                <!-- 탭 -->
+                <div class="tab-box">
+                    <ul class="tab-list">
+                        <li class="nth-1 on"><a href="#allList">할인쿠폰 전체보기</a></li>
+                        <li class="nth-2"><a href="#ownList">할인쿠폰 보유내역</a></li>
+                        <li class="nth-3"><a href="#usedList">할인쿠폰 사용내역</a></li>
+                        <li class="nth-4"><a href="#offCoupon">오프라인 쿠폰등록</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 할인쿠폰 전체보기 -->
+                <div id="allList" class="tbl-area tabListArea" style="display: block;">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: *;">
+                                <col style="width: 13.5%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 8.8%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>쿠폰명</th>
+                                    <th>유효기간</th>
+                                    <th>사용조건</th>
+                                    <th>할인/적립</th>
+                                    <th>사용여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><p class="link-txt">30% 할인쿠폰</p></td>
+                                    <td>2019.06.05 12:15:13</td>
+                                    <td>50,000원 이상</td>
+                                    <td><em class="pt">30</em>% 할인</td>
+                                    <td>미사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">가입 기념 2,500원 할인 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>10,000원 이상</td>
+                                    <td><em class="pt">2,500</em>원 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">2019 수험생본인 30% 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>50,000원 이상</td>
+                                    <td><em class="pt">30</em>% 할인</td>
+                                    <td>미사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">누리숲 수험생 응원 10%</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>10,000원 이상</td>
+                                    <td><em class="pt">10</em>% 할인</td>
+                                    <td>미사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">누리숲 수험생 응원 10%</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>10,000원 이상</td>
+                                    <td><em class="pt">20</em>% 할인</td>
+                                    <td>미사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">1030_쿠폰테스트</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>5,000원 이상</td>
+                                    <td><em class="pt">10</em>% 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">샘플킷 무료신청 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>10,000원 이상</td>
+                                    <td><em class="pt">0</em>원 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">출석체크 완료 보상 2천원 할인 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>20,000원 이상</td>
+                                    <td><em class="pt">2,000</em>원 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">출석체크 완료 보상 2천원 할인 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>50,000원 이상</td>
+                                    <td><em class="pt">30</em>% 할인</td>
+                                    <td>미사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">출석체크 완료 보상 2천원 할인 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>50,000원 이상</td>
+                                    <td><em class="pt">30</em>% 할인</td>
+                                    <td>미사용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 할인쿠폰 보유내역 -->
+                <div id="ownList" class="tbl-area tabListArea" style="display: none;">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: *;">
+                                <col style="width: 13.5%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 8.8%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>쿠폰명</th>
+                                    <th>유효기간</th>
+                                    <th>사용조건</th>
+                                    <th>할인/적립</th>
+                                    <th>사용여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><p class="link-txt">30% 할인쿠폰</p></td>
+                                    <td>2019.06.05 12:15:13</td>
+                                    <td>50,000원 이상</td>
+                                    <td><em class="pt">30</em>% 할인</td>
+                                    <td>미사용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 할인쿠폰 사용내역 -->
+                <div id="usedList" class="tbl-area tabListArea" style="display: none;">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: *;">
+                                <col style="width: 13.5%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 10.4%;">
+                                <col style="width: 8.8%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>쿠폰명</th>
+                                    <th>유효기간</th>
+                                    <th>사용조건</th>
+                                    <th>할인/적립</th>
+                                    <th>사용여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><p class="link-txt">가입 기념 2,500원 할인 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>10,000원 이상</td>
+                                    <td><em class="pt">2,500</em>원 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">1030_쿠폰테스트</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>5,000원 이상</td>
+                                    <td><em class="pt">10</em>% 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">샘플킷 무료신청 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>10,000원 이상</td>
+                                    <td><em class="pt">0</em>원 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                                <tr>
+                                    <td><p class="link-txt">출석체크 완료 보상 2천원 할인 쿠폰</p></td>
+                                    <td><span class="end">유효기간 만료</span><br>2019.06.05 12:15:13</td>
+                                    <td>20,000원 이상</td>
+                                    <td><em class="pt">2,000</em>원 할인</td>
+                                    <td>사용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 오프라인 쿠폰등록 -->
+                <div id="offCoupon" class="tbl-area tabListArea" style="display: none;">
+                    <!-- 쿠폰번호 -->
+                    <div class="off-area">
+                        <p class="off-tit">발급받으신 쿠폰번호를 입력해주세요.</p>
+                        <div class="off-box">
+                            <div class="row">
+                                <input type="tel" id="couponNum1" class="ip-txt" placeholder="" value="" maxlength="4">
+                                <span class="bar">-</span>
+                                <input type="tel" id="couponNum2" class="ip-txt" placeholder="" value="" maxlength="4">
+                                <span class="bar">-</span>
+                                <input type="tel" id="couponNum3" class="ip-txt" placeholder="" value="" maxlength="4">
+                                <span class="bar">-</span>
+                                <input type="tel" id="couponNum4" class="ip-txt" placeholder="" value="" maxlength="4">
+                            </div>
+                            <button type="button" class="btn-com" onclick="comPopOpen('#popCpUse')">확인</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 사용방법 안내 -->
+                    <div class="use-area">
+                        <div class="use-tit">쿠폰사용방법</div>
+                        <div class="use-list-box">
+                            <ul class="use-list">
+                                <li class="step-1">
+                                    <div class="use-box">
+                                        <div class="use-txt-box">
+                                            <p class="tit">로그인 또는 회원가입을 합니다.</p>
+                                            <p class="txt">회원가입시 추천인 아이디에 추천받은 아이디를<br>꼭 입력하세요!&ensp;입력하지 않을 경우 발급 받은 쿠폰을<br>사용하지 못 할 수도 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="step-2">
+                                    <div class="use-box">
+                                        <div class="use-txt-box">
+                                            <p class="tit">쿠폰번호를 입력합니다.</p>
+                                            <p class="txt-cp">5123 - 4561 - 1234 - 2587</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="step-3">
+                                    <div class="use-box">
+                                        <div class="use-txt-box">
+                                            <p class="tit">결제시 <em class="t-pt">쿠폰조회</em>에서<br>쿠폰 선택 후 결제합니다.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <!-- 유의사항 -->
+                    <div class="info-area">
+                        <div class="info-tit-box">
+                            <p class="info-tit">쿠폰사용시 유의사항</p>
+                        </div>
+                        <div class="info-list-box">
+                            <ul class="info-list">
+                                <li>쿠폰의 사용기준과 기간을 반드시 확인하여 주세요.</li>
+                                <li>유효기간이 만료된 쿠폰은 자동 소멸되며 사용된 쿠폰은 주문취소 후 재발급 되지 않습니다.</li>
+                                <li>쿠폰별로 사용 가능한 금액 기준이 다르므로 쿠폰별 제한사항을 확인 후 사용해 주세요.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- 버튼 -->
+                <div class="btn-area">
+                    <a href="#none" class="btn-green type-big">구매하러 가기</a>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+    <!-- 팝업 -->
+	@@include('../include/pop/pop_coupon_use.html')
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./qna.html" class="btn-link">상품 QnA</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="sub-tit">상품 QnA</h2>
+                <p class="sub-txt">고객님의 문의사항을 신속하고 정확하게 해결해 드리겠습니다.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect board list">
+	        <div class="container">
+                <div class="tbl-top-box">
+                    <h3 class="tbl-tit">분류선택</h3>
+                    <select name="" id="" class="form-sel">
+                        <option value="">작성 일자별</option>
+                        <option value="">분류별</option>
+                    </select>
+                </div>
+                <div class="tbl-area-2">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 7.2%;">
+                                <col style="width: 12.3%;">
+                                <col style="width: *;">
+                                <col style="width: 10.3%;">
+                                <col style="width: 10.7%;">
+                                <col style="width: 7%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>분류</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>작성일</th>
+                                    <th>조회</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 글이 없을 경우 -->
+                                <!--<tr class="nope">
+                                    <td colspan="6">게시물이 없습니다.</td>
+                                </tr>-->
+                                <tr>
+                                    <td>6</td>
+                                    <td>상품정보문의</td>
+                                    <td>
+                                        <!-- 링크이동 예시 -->
+                                        <a href="../member/board_view.html" class="link-txt">
+                                            [포레스트 녹삼초 폼클렌저]  문의합니다. - 페이지 이동
+                                            <!--<span class="ico-lock"></span>-->
+                                            <!-- 신규게시글의 경우 -->
+                                            <span class="ico-new"></span>
+                                            <!-- 문의게시글에 파일이 있을 경우 -->
+                                            <span class="ico-file"></span>
+                                        </a>
+                                    </td>
+                                    <td>김영희</td>
+                                    <td>2019.05.10</td>
+                                    <td>111</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>샘플문의</td>
+                                    <td>
+                                        <a href="#none" class="link-txt popPw">
+                                            [론리비즈 프로폴리스 85 앰플]  문의합니다.
+                                            <span class="ico-lock"></span>
+                                            <!-- 신규게시글의 경우 -->
+                                            <span class="ico-new"></span>
+                                            <!-- 문의게시글에 파일이 있을 경우 -->
+                                            <span class="ico-file"></span>
+                                        </a>
+                                    </td>
+                                    <td>김영희</td>
+                                    <td>2019.05.11</td>
+                                    <td>222</td>
+                                </tr>
+                                <tr class="answer">
+                                    <td>4</td>
+                                    <td>샘플문의</td>
+                                    <td>
+                                        <a href="#none" class="link-txt popPw">
+                                            ㄴ[론리비즈 프로폴리스 85 앰플]  문의합니다.
+                                            <span class="ico-lock"></span>
+                                            <!-- 신규게시글의 경우 -->
+                                            <span class="ico-new"></span>
+                                            <!-- 문의게시글에 파일이 있을 경우 -->
+                                            <span class="ico-file"></span>
+                                        </a>
+                                    </td>
+                                    <td>누리숲</td>
+                                    <td>2019.02.14</td>
+                                    <td>333</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>샘플문의</td>
+                                    <td>
+                                        <a href="#none" class="link-txt">
+                                            [누리촉촉 워터밸런스 스킨]  문의합니다.
+                                        </a>
+                                    </td>
+                                    <td>김영희</td>
+                                    <td>2019.05.11</td>
+                                    <td>222</td>
+                                </tr>
+                                <tr class="answer">
+                                    <td>2</td>
+                                    <td>샘플문의</td>
+                                    <td>
+                                        <a href="#none" class="link-txt">
+                                            ㄴ[누리촉촉 워터밸런스 스킨]  문의합니다.
+                                        </a>
+                                    </td>
+                                    <td>누리숲</td>
+                                    <td>2019.02.14</td>
+                                    <td>333</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>샘플문의</td>
+                                    <td>
+                                        <a href="#none" class="link-txt">
+                                            [포레스트 녹삼초 폼클렌저]  문의합니다
+                                        </a>
+                                    </td>
+                                    <td>김영희</td>
+                                    <td>2019.05.11</td>
+                                    <td>222</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bot-area">
+                       <div class="srch-box">
+                            <select name="" id="" class="form-sel">
+                                <option value="">제목</option>
+                                <option value="">내용</option>
+                            </select>
+                            <input type="text" class="ip-txt" placeholder="검색어 입력">
+                            <button type="button" class="btn-srch">찾기</button>
+                       </div>
+                    </div>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+   
+    <!-- 비밀번호 팝업 -->
+	@@include('../include/pop/pop_pw.html') 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

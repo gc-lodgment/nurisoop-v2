@@ -6,10 +6,5 @@ $(function () {
         $(this).parents('.q-box').next('.a-box').stop().fadeToggle();
     });
     
-    /* 비밀번호 창 나타남 */
-    $('.popPw').on('click', function(){
-        //console.log('password');
-        comPopOpen('#popPW');
-    });
 
 });

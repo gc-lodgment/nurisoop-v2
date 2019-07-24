@@ -11,7 +11,11 @@
     @include sub-top;
                         
     /* table */
-    @include tbl-col-gray;
+    .tbl-col {
+        @include bx;
+        @include th-col-1;
+        @include tbl-col-gray;
+    }
 
     /* page num */
     .page-area {
@@ -359,75 +363,6 @@
                             }
                         }
                     }
-                    
-                    /* 비밀번호 */
-                    /*.pw-area {
-                        .tbl-col {
-                            .tbl {
-                                td {
-                                    .pw-box {
-                                        @include bx;
-                                        padding: 65px 0 71px;
-                                        .txt {
-                                            font-size: 15px;
-                                            font-weight: 300;
-                                            line-height: 1.6;
-                                            color: $fg-gray-04;
-                                            em {
-                                                color: $fg-black;
-                                            }
-                                        }
-                                        .pw-row {
-                                            @include bx;
-                                            padding: 60px 0 71px;
-                                            .pw-txt {
-                                                @include bx;
-                                                display: inline-block;
-                                                margin-right: 17px;
-                                                padding-left: 18px;
-                                                font-size: 14px;
-                                                line-height: 28px;
-                                                color: $fg-black;
-                                                .ico-lock {
-                                                    @include position(absolute, 50%, 0);
-                                                    margin-top: -6px;
-                                                }
-                                            }
-                                            .ip-txt {
-                                                @include bx;
-                                                width: 163px;
-                                                height: 28px;
-                                                padding: 0 8px;
-                                                line-height: 28px;
-                                                border: 1px solid $bor-gray-03;
-                                            }
-                                        }
-                                        .btn-box {
-                                            $wd:85px;
-                                            $ht:40px;
-                                            @include bx;
-                                            @include clearfix;
-                                            display: inline-block;
-                                            a {
-                                                padding: 0;
-                                                vertical-align: middle;
-                                                &.btn-list {
-                                                    @include btn-gray-bor($wd, $ht, 15px);
-                                                    background: $bg-gray-02;
-                                                }
-                                                &.btn-com {
-                                                    @include btn-green-bg($wd, $ht, 15px);
-                                                }
-                                                & + a {
-                                                    margin-left: 10px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }*/
                 }
             }
         }

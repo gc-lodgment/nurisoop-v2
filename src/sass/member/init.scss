@@ -935,31 +935,10 @@
         
         //인증되지 않는다면?
         .find-info-area {
-            @include bx;
-            margin-top: 90px;
-            padding: 26px 25px 28px;
-            text-align: center;
-            line-height: 0;
-            background: $bg-gray-02;
-            .find-info-tit {
-                @include bx;
-                font-size: 18px;
-                line-height: 1.3;
-                letter-spacing: 0;
-                vertical-align: middle;
-                color: $fg-gray-01;
-            }
-            .find-info-txt {
-                padding-top: 14px;
-                font-size: 15px;
-                line-height: 1.3;
-                letter-spacing: 0;
-                color: $fg-gray-04;
-            }
+            @include certInfoBox;
             .btn-find-info {
                 @include btn-pink-bg;
             }
-            
             .find-info-row {
                 @include bx;
                 @include clearfix;
@@ -998,13 +977,14 @@
                         color: $fg-gray-01;
                     }
                     .find-box {
+                        $wd:380px;
+                        $ht:56px;
                         @include bx;
-                        width: 380px;
+                        width: $wd;
                         margin: 0 auto;
                         padding-top: 19px;
                         .p-row {
                             margin-top: 10px;
-                            $ht:56px;
                             .ip-txt {
                                 @include bx;
                                 width: 100%;
@@ -1020,33 +1000,9 @@
                             }
                         }
                         
-                        //본인인증으로 찾기
                         .cert-box {
-                            @include bx;
-                            display: table;
-                            width: 100%;
-                            margin-top: 9px;
-                            padding: 20px 19px;
-                            border: 1px solid $bor-gray-03;
-                            .cert-txt {
-                                @include bx;
-                                display: table-cell;
-                                text-align: right;
-                                span {
-                                    display: block;
-                                    font-size: 16px;
-                                    text-align: left;
-                                    vertical-align: middle;
-                                    color: $fg-gray-01;
-                                    
-                                    @include line-row-2(10px, 2px, 2px, 50%);
-                                }
-                                .btn-cert {
-                                    @include btn-gray-bor-02(180px);
-                                    vertical-align: middle;
-                                }
-                            }
-                            
+                            @include certBox;
+
                             & + .cert-box {
                                 margin-top: 10px;
                             }
@@ -1276,6 +1232,15 @@
                             width: 80px;
                         }
                     }
+                    .btn-green {
+                        @include btn-green-bg(70px, 27px, 13px);
+                    }
+                    
+                    a, button {
+                        &.mt-5 {
+                            margin-top: 5px;
+                        }
+                    }
                 }
                 
                 //테이블 타이틀
@@ -1289,168 +1254,30 @@
                     vertical-align: middle;
                     color: $fg-gray-01;
                     .tbl-tit {
+                        display: inline-block;
                         font-size: 14px;
                         font-weight: 400;
                         text-align: left;
                         line-height: 1;
+                        vertical-align: middle;
                         color: $fg-black;
                     }
-
-                }
-                    
-                /* table gray line */
-                @include tbl-col-gray-02($td-pd:32px 0 30px, $a-pd:0 41px){
-                    .btn-link {
-                        @include bx;
-                        color: $fg-red-03;
-                        &:before {
-                            content: '';
-                            @include position(absolute, $left:2%, $bottom:-4px);
-                            display: block;
-                            width: 96%;
-                            height: 1px;
-                            background: $bor-red-01;
-                        }
+                    .form-sel {
+                        @include sel-com(117px);
+                        margin-left: 8px;
                     }
-                    .tbl {
-                        tbody {
-                            tr {
-                                td {
-                                    .link-txt {
-                                        line-height: 2.1;
-                                    }
-                                    //금액
-                                    .bot-box {
-                                        $ft:20px;
-                                        @include bx;
-                                        @include clearfix;
-                                        padding: 12px 12px 12px 10px;
-                                        text-align: left;
-                                        line-height: 0;
-
-                                        .txt {
-                                            @include bx;
-                                            float: left;
-                                            display: inline-block;
-                                            vertical-align: middle;
-                                            line-height: $ft;
-                                        }
-                                        .buy-txt {
-                                            @include bx;
-                                            float: right;
-                                            display: inline-block;
-                                            letter-spacing: 0;
-                                            vertical-align: middle;
-                                            line-height: $ft;
-                                            span, em {
-                                                display: inline-block;
-                                                font-weight: bold;
-                                                line-height: $ft;
-                                                .ie & {
-                                                    font-weight: bold;
-                                                }
-                                            }
-                                            .t-point {
-                                                letter-spacing: -0.5px;
-                                                color: $fg-red-04;
-                                                em {
-                                                    font-size: 18px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                };
-
-                /* table white row */
-                @include tbl-row(0, $fs:13px, $th-pd:12px 15px 12px 20px, $th-fg:$fg-black-02, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black-02){
-                    border-top: 1px solid $bor-black-01;
-                    .tbl {
-                        th {
-                            font-size: 14px;
-                            border-right: 1px solid $bor-gray-03;
-                            .price-all {
-                                font-weight: 400;
-
-                            }
-                        }
-                        td {
-                            .btn-com {
-                                margin-left: 10px;
-                                vertical-align: initial;
-                            }
-                            .price-all {
-                                font-size: 18px;
-
-                            }
-                            .row {
-                                &.pay-row {
-                                    .pay-tit {
-                                        font-size: 14px;
-                                        font-weight: bold;
-                                    }
-                                    .pay-box {
-                                        @include bx;
-                                        margin-top: 4px;
-                                        .pay-txt {
-                                            font-size: 13px;
-                                            line-height: 1.4;
-                                            color: $fg-gray-01;
-                                            span, em {
-                                                color: $fg-black;
-                                            }
-
-                                            .btn-bank {
-                                                @include btn-bor-com(120px);
-                                                margin-left: 5px;
-                                                vertical-align: inherit;
-                                                &:hover {
-                                                    border-color: $bor-green-01;
-                                                    color: #fff;
-                                                    background: $bg-green-01;
-                                                }
-                                            }
-
-                                        }
-                                    }
-                                }
-                            }
+                    .t-ast {
+                        display: inline-block;
+                        font-size: 14px;
+                        margin-right: 8px;
+                        &.t-ness {
+                            color: $fg-black;
+                            &:before {
+                                color: $fg-red-03;
+                            }   
                         }
                     }
 
-                    &.type-2 {
-                        border-top: 0;
-                        border-bottom: 1px solid $bor-black-01;
-                        .tbl {
-                            border-top: 1px solid $bor-gray-03;
-
-                            tr {
-                                th, td {
-                                    border-top: 1px solid $bor-gray-03;
-                                    border-bottom: 0;
-                                }
-
-                                &:first-child {
-                                    tr, td {
-                                        border-top: 0;
-                                    }
-                                }
-                                &.br-t {
-                                    th, td {
-                                        border-top: 1px solid $bor-black-01;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                };
-
-                /* page num */
-                .page-area {
-                    @include pagenation(26px);
                 }
                 
                 .info-top-box {
@@ -1559,11 +1386,316 @@
                             }
                         }
                     }
+                    
+                    //바깥쪽 검색 버튼 -green
+                    .btn-srch {
+                        &.p-a {
+                            @include position(absolute, -1px, $right:-1px);
+                            @include btn-green-bg(105px, 102%, 20px);
+                        }
+                    }
                 }
                 
-                //주문내역
-                .order-area, .pay-area, .order-prd-area {
+                /* table gray line */
+                .tbl-area {
                     margin-top: 25px;
+                    .tbl-col {
+                        @include bx;
+                        @include th-col-2(15px, $th-pd:17px 0, $th-fg:$fg-black);
+                        @include tbl-col-gray-02($fs:15px, $td-pd:13px 0 16px, $a-pd:0 41px){
+                            .btn-link {
+                                @include bx;
+                                color: $fg-red-03;
+                                &:before {
+                                    content: '';
+                                    @include position(absolute, $left:2%, $bottom:-4px);
+                                    display: block;
+                                    width: 96%;
+                                    height: 1px;
+                                    background: $bor-red-01;
+                                }
+                            }
+                            .tbl {
+                                thead {
+                                    tr {
+                                        th {
+                                            font-weight: 400;
+                                        }
+                                    }
+                                }
+                                tbody {
+                                    tr {
+                                        td {
+                                            .link-txt {
+                                                line-height: 2.1;
+                                                //color: $fg-black;
+
+                                                &.prd-name {
+                                                    .img-prd {
+                                                        display: inline-block;
+                                                        width: 80px;
+                                                        height: 80px;
+
+                                                        & + span {
+                                                            display: inline-block;
+                                                            padding-left: 15px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            //chk
+                                            .chk-txt {
+                                                @include bx;
+                                                @include chkbox;
+                                                padding-left: 12px; 
+                                                line-height: 1;
+                                            }
+
+                                            //금액
+                                            .bot-box {
+                                                $ft:20px;
+                                                @include bx;
+                                                @include clearfix;
+                                                padding: 12px 12px 12px 10px;
+                                                text-align: left;
+                                                line-height: 0;
+
+                                                .txt {
+                                                    @include bx;
+                                                    float: left;
+                                                    display: inline-block;
+                                                    vertical-align: middle;
+                                                    line-height: $ft;
+                                                }
+                                                .buy-txt {
+                                                    @include bx;
+                                                    float: right;
+                                                    display: inline-block;
+                                                    letter-spacing: 0;
+                                                    vertical-align: middle;
+                                                    line-height: $ft;
+                                                    span, em {
+                                                        display: inline-block;
+                                                        font-weight: bold;
+                                                        line-height: $ft;
+                                                        .ie & {
+                                                            font-weight: bold;
+                                                        }
+                                                    }
+                                                    .t-point {
+                                                        letter-spacing: -0.5px;
+                                                        color: $fg-red-04;
+                                                        em {
+                                                            font-size: 18px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            > span {
+                                                color: $fg-gray-05;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.type-2 {
+                                    thead {
+                                        tr {
+                                            th {
+                                                padding: 7px 0;
+                                            }
+                                        }
+                                    }
+                                    tbody {
+                                        tr {
+                                            td {
+                                                padding: 32px 0 30px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        };
+                    }
+                }
+                
+                /* table th line */
+                .tbl-area-2 {
+                    .tbl-col {
+                        @include bx;
+                        @include th-col-1;
+                        @include tbl-col-gray($a-pd:0 41px){
+                            .tbl {
+                                tbody {
+                                    tr {
+                                        td {
+                                            .link-txt {
+                                                
+                                                span {
+                                                    margin-left: 4px;
+                                                    &:first-child {
+                                                        margin-left: 11px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        //답변
+                                        &.answer {
+                                            td {
+                                                .link-txt {
+                                                    padding: 0 40px 0 51px;
+                                                }
+                                            }
+                                        }
+                                        //게시글이 없는 경우
+                                        &.nope {
+                                            td {
+                                                height: 300px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        };
+                    }
+                    
+                    /* 하단 검색 */
+                    .bot-area {
+                        @include bx;
+                        margin-top: 30px;
+                        text-align: center;
+                        .srch-box {
+                            @include bx;
+                            @include clearfix;
+                            display: inline-block;
+                            .form-sel {
+                                float: left;
+                                @include sel-com(72px);
+                            }
+                            .ip-txt {
+                                @include bx;
+                                float: left;
+                                width: 163px;
+                                margin: 0 10px 0 8px;
+                                padding: 0 18px;
+                                height: 28px;
+                                padding: 0 10px;
+                                font-size: 13px;
+                                line-height: 28px;
+                                //color: $fg-gray-01;
+                                border: 1px solid $bor-gray-03;
+
+                                .safari & {
+                                    padding-top: 6px;
+                                    padding-bottom: 6px;
+                                    line-height: 1;
+                                }
+                            }
+                            .btn-srch {
+                                float: left; 
+                                @include btn-gray-bor-02(70px);
+                            }
+                        }
+                    }
+                }
+
+                /* table row : basic white */
+                @include tbl-row(0, $fs:13px, $th-pd:12px 15px 12px 20px, $th-fg:$fg-black-02, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black-02){
+                    border-top: 1px solid $bor-black-01;
+                    .tbl {
+                        th {
+                            font-size: 14px;
+                            border-right: 1px solid $bor-gray-03;
+                            .price-all {
+                                font-weight: 400;
+
+                            }
+                        }
+                        td {
+                            .btn-com {
+                                margin-left: 10px;
+                                vertical-align: initial;
+                            }
+                            .price-all {
+                                font-size: 18px;
+
+                            }
+                            .row {
+                                &.pay-row {
+                                    .pay-tit {
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                    }
+                                    .pay-box {
+                                        @include bx;
+                                        margin-top: 4px;
+                                        .pay-txt {
+                                            font-size: 13px;
+                                            line-height: 1.4;
+                                            color: $fg-gray-01;
+                                            span, em {
+                                                color: $fg-black;
+                                            }
+
+                                            .btn-bank {
+                                                @include btn-bor-com(120px);
+                                                margin-left: 5px;
+                                                vertical-align: inherit;
+                                                &:hover {
+                                                    border-color: $bor-green-01;
+                                                    color: #fff;
+                                                    background: $bg-green-01;
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                
+                    //type2
+                    &.type-2 {
+                        border-top: 0;
+                        border-bottom: 1px solid $bor-black-01;
+                        .tbl {
+                            border-top: 1px solid $bor-gray-03;
+
+                            tr {
+                                th, td {
+                                    border-top: 1px solid $bor-gray-03;
+                                    border-bottom: 0;
+                                }
+
+                                &:first-child {
+                                    th, td {
+                                        border-top: 0;
+                                    }
+                                }
+                                &.br-t {
+                                    th, td {
+                                        border-top: 1px solid $bor-black-01;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    //th bg gray
+                    &.gray {
+                        .tbl {
+                            th {
+                                border-right: 0;
+                                background: $bg-gray-02;
+                            }
+                        }
+                    }
+                };
+
+                /* page num */
+                .page-area {
+                    @include pagenation(26px);
                 }
                 
                 //주문상태 안내
@@ -1680,12 +1812,762 @@
                 
                 //버튼 박스
                 .btn-area {
+                    $wd:140px;
+                    $ht:40px;
+                    $fs:15px;
                     @include bx;
                     @include clearfix;
                     margin-top: 30px;
                     text-align: center;
-                    .btn-green {
-                        @include btn-green-bg(140px, 40px, 15px);
+                    a, button {
+                        &.btn-green {
+                            @include btn-green-bg($wd, $ht, $fs);
+                        }
+                        &.btn-gray {
+                            @include btn-gray-bg($wd, $ht, $fs);
+                        }
+                        &.btn-line {
+                            @include btn-gray-bor($wd, $ht, $fs);
+                        }
+                        &.type-big {
+                            width: 254px;
+                            height: 50px;
+                            line-height: 50px;
+                            font-size: 18px;
+                        }
+                    }
+                    //position
+                    .p-a {
+                        @include position(absolute, 0, 0);
+                        
+                        &.right {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                    .btn-box {
+                        a, button {
+                            margin-left: 5px;
+                            &:first-child {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            /* 위시리스트 */
+            &.wish {
+                .btn-area {
+                    margin-top: 20px;
+                }
+            }
+            
+            /* 적립금내역 */
+            &.history {
+                //내 적립금
+                .history-area {
+                    @include bx;
+                    @include clearfix;
+                    margin-top: 50px;
+                    padding: 26px 0 25px;
+                    border: 1px solid $bor-gray-03;
+                    [class*='-area'] {
+                        @include bx;
+                        @include clearfix;
+                        text-align: center;
+                        .hs-box {
+                            @include bx;
+                            @include clearfix;
+                            display: inline-block;
+                            .hs-tit {
+                                @include bx;
+                                float: left;
+                                display: inline-block;
+                                padding-right: 20px;
+                                font-size: 16px;
+                                font-weight: 300;
+                                line-height: 45px;
+                                letter-spacing: -0.7px;
+                                color: $fg-black;
+                                em {
+
+                                }
+                            }
+                            .hs-txt {
+                                float: right;
+                                min-width: 200px;
+                                font-size: 15px;
+                                font-weight: 300;
+                                text-align: right;
+                                letter-spacing: -0.7px;
+                                color: $fg-gray-01;
+                                .t-pt {
+                                    font-size: 25px;
+                                    font-weight: bold;
+                                    vertical-align: middle;
+                                    color: $fg-black;
+                                    em {
+                                        color: $fg-red-03;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .now-area {
+                        float: left;
+                        width: 669px;
+                        //padding: 0 93px 0 95px;
+                        .hs-box {
+                            .hs-tit {
+                                padding-left: 99px;
+                                font-size: 20px;
+                                background: url(http://static.nurisoop.co.kr/img/renew/member/img_coin.png) no-repeat center left;
+                                em {
+                                    font-size: 25px;
+                                }
+                            }
+                            .hs-txt {
+                                .t-pt {
+                                    em {
+                                        font-size: 35px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .ex-area {
+                        float: right;
+                        width: 589px;
+                        //padding: 0 107px 0 98px;
+                        @include line($ht:40px, $bg:$bor-gray-03);
+                        .hs-box {
+                            
+                            .hs-txt {
+                                min-width: 280px;
+                                .t-pt {
+                                    margin-right: 25px;
+                                    em {
+                                        font-size: 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                //조회
+                .day-top-box {
+                    margin-bottom: 30px;
+                }
+                
+                //적립금 내역
+                .tbl-area {
+                    .tbl-col {
+                        .tbl {
+                            tbody {
+                                tr {
+                                    td {
+                                        color: $fg-gray-04;
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+            /* 할인쿠폰 */
+            &.coupon {
+                .bn-area {
+                    @include bx;
+                    margin: 27px auto 50px;
+                    border: 1px solid $bor-gray-03;
+                }
+                
+                .tab-box {
+                    .tab-list {
+                        li {
+                            width: 210px;
+                        }
+                    }
+                }
+                
+                //테이블
+                .tbl-area {
+                    .tbl-col {
+                        .tbl {
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 5px 0 3px;
+                                        color: $fg-gray-04;
+                                        .link-txt {
+                                            padding: 5px 15px 5px;
+                                        }
+                                        //유효기간 만료
+                                        .end {
+                                            color: #d10000;
+                                        }
+                                        //할인,적립
+                                        .pt {
+                                            font-weight: 400;
+                                            color: $fg-black;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                
+                //쿠폰
+                .off-area {
+                    @include bx;
+                    padding: 36px 0;
+                    text-align: center;
+                    border: 1px solid $bor-gray-03;
+                    .off-tit {
+                        font-size: 18px;
+                    }
+                    .off-box {
+                        @include bx;
+                        @include clearfix;
+                        display: inline-block;
+                        margin-top: 27px;
+                        text-align: center;
+                        .row {
+                            @include bx;
+                            display: inline-block;
+                            float: left;
+                            .ip-txt {
+                                @include bx;
+                                width: 102px;
+                                height: 28px;
+                                margin: 0 5px;
+                                padding: 0 10px;
+                                font-size: 15px;
+                                line-height: 28px;
+                                //color: $fg-gray-01;
+                                border: 1px solid $bor-gray-03;
+
+                                .safari & {
+                                    padding-top: 6px;
+                                    padding-bottom: 6px;
+                                    line-height: 1;
+                                }
+                            }
+                            
+                            .bar {
+                                
+                            }
+                        }
+                        
+                        .btn-com {
+                            float: left;
+                            margin-left: 6px;
+                            @include btn-gray-bor-02(70px, $fs:15px);
+                        }
+                    }
+                }
+                
+                //사용방법
+                .use-area {
+                    @include bx;
+                    margin-top: 47px;
+                    .use-tit {
+                        padding-left: 23px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                        background-position: -190px -198px;
+                        
+                        .ie & {
+                            font-weight: bold;
+                        }
+                    }
+                    .use-list-box {
+                        @include bx;
+                        margin-top: 18px;
+                        text-align: center;
+                        .use-list {
+                            @include bx;
+                            @include clearfix;
+                            display: inline-block;
+                            margin: 0 -40px;
+                            li {
+                                @include bx;
+                                //width: 33.3%;
+                                width: 447px;
+                                float: left;
+                                padding: 0 40px;
+                                &:before {
+                                    content: '';
+                                    @include position(absolute, 50%, -7px);
+                                    display: block;
+                                    width: 19px;
+                                    height: 22px;
+                                    margin-top: -2px;
+                                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                                    background-position: -160px -198px;
+                                    
+                                }
+                                .use-box {
+                                    @include bx;
+                                    overflow: hidden;
+                                    padding-top: 99px;
+                                    border: 1px solid $bor-gray-03;
+                                    background: #fff;
+                                    &:before {
+                                        content: '';
+                                        @include position(absolute, 3px, 0);
+                                        display: block;
+                                        width: 100%;
+                                        height: 99px;
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/list_cp_use_01.png) no-repeat center center;
+                                    }
+                                    .use-txt-box {
+                                        @include bx;
+                                        height: 120px;
+                                        padding: 19px 35px 0;
+                                        text-align: center;
+                                        background: $bg-gray-02;
+                                        .tit {
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                            color: $fg-green-01;
+                                            .t-pt {
+                                                color: $fg-red-03;
+                                            }
+                        
+                                            .ie & {
+                                                font-weight: bold;
+                                            }
+                                        }
+                                        .txt {
+                                            margin-top: 10px;
+                                            font-size: 14px;
+                                            font-weight: 300;
+                                            letter-spacing: -0.7px;
+                                            color: #676767;
+                                        }
+                                        .txt-cp {
+                                            @include bx;
+                                            display: inline-block;
+                                            min-width: 240px;
+                                            margin-top: 20px;
+                                            padding: 8px 30px 10px 31px;
+                                            font-size: 16px;
+                                            letter-spacing: -0.7px;
+                                            text-align: center;
+                                            color: #676767;
+                                            border: 1px solid $bor-gray-03;
+                                            background: #fff;
+                                        }
+                                    }
+                                }
+                                
+                                &.step-1 {
+                                    width: 446px;
+                                    &:before {
+                                        content: none;
+                                    }
+                                    .use-box {
+                                    }
+                                }
+                                &.step-2 {
+                                    .use-box {
+                                        &:before {
+                                            padding-left: 19px;
+                                            background: #fff url(http://static.nurisoop.co.kr/img/renew/member/list_cp_use_02.png) no-repeat center center;
+                                        }
+                                    }
+                                }
+                                &.step-3 {
+                                    .use-box {
+                                        &:before {
+                                            background: #fff url(http://static.nurisoop.co.kr/img/renew/member/list_cp_use_03.png) no-repeat center center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            /* board */
+            &.board {
+                /* 목록 */
+                &.list {
+                    .tbl-top-box {
+                        margin-top: 26px;
+                    }
+                    .tbl-area-2 {
+                        margin-top: 11px;
+                    }
+                }
+                
+                /* 뷰 */
+                &.view {
+                    .view-area {
+                        @include bx;
+                        margin-top: 50px;
+                        //tit
+                        .top-box {
+                            @include view-top;
+                            .view-num-box {
+                                .view-num {
+                                    span {
+                                        font-weight: 300;
+                                        letter-spacing: 0;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        //cont
+                        .view-box {
+                            @include bx
+                            min-height: 176px;
+                            padding: 10px 0;
+                            text-align: left;
+                            border-bottom: 1px solid $bor-gray-03;
+                            .txt {
+                                font-size: 15px;
+                                font-weight: 300;
+                                line-height: 1.6;
+                                letter-spacing: 0;
+                                color: $fg-gray-04;
+                            }
+                        }
+                        
+                        //answer
+                        .answer-box {
+                            @include bx;
+                            padding: 18px 0 28px;
+                            border-bottom: 1px solid $bor-gray-03;
+                            .answer-top {
+                                @include bx;
+                                margin-bottom: 15px;
+                                .mmg-name {
+                                    display: inline-block;
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    color: $fg-gray-01;
+
+                                }
+                                .date {
+                                    @include bx;
+                                    display: inline-block;
+                                    margin-left: 16px;
+                                    padding-left: 17px;
+                                    font-size: 12px;
+                                    font-weight: 300;
+                                    color: $fg-gray-03;
+                                    @include line($ht:12px, $bg:$bor-gray-03);
+                                }
+                            }
+                            .txt {
+                                font-size: 14px;
+                                font-weight: 300;
+                                line-height: 1.6;
+                                color: $fg-gray-01;
+                            }
+                        }
+                    }
+                    //button
+                    .btn-area {
+                        @include bx;
+                        margin-top: 20px;
+                        text-align: center;
+                        .btn-box {
+                            $wd:100px;
+                            $ht:30px;
+                            $fs:14px;
+                            @include bx;
+                            @include clearfix;
+                            display: inline-block;
+                            .btn-list {
+                                @include btn-gray-bor($wd, $ht, $fs, $bor-g:$bor-gray-09);
+                            }
+                            .btn-del {
+                                @include btn-gray-bg($wd, $ht, $fs);
+                            }
+                            a, button {
+                                float: left;
+                                margin-left: 10px;
+                                &:first-child {
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            /* 회원정보 수정 */
+            &.myinfo {
+                //password
+                .pw-tit-box {
+                    @include bx;
+                    padding: 67px 0 30px;
+                    text-align: center;
+                    .pw-tit {
+                        font-size: 16px;
+                        font-weight: 500;
+                        
+                        .ie & {
+                            font-weight: bold;
+                        }
+                    }
+                    .pw-sub-tit {
+                        padding-top: 5px;
+                        font-size: 14px;
+                        font-weight: 300;
+                        color: $fg-gray-01;
+                    }
+                }
+                
+                .pw-area {
+                    @include bx;
+                    text-align: center;
+                    border-top: 1px solid $bor-black-01;
+                    background: $bg-gray-02;
+                    .inner {
+                        @include bx;
+                        @include clearfix;
+                        display: inline-block;
+                        padding: 67px 0 68px;
+                        .pw-box {
+                            @include bx;
+                            float: left;
+                            $fs:16px;
+                            .row {
+                                $ip-w:300px;
+                                $ht:44px;
+                                @include bx;
+                                @include clearfix;
+                                .lbl {
+                                    @include bx;
+                                    display: inline-block;
+                                    float: left;
+                                    width: 80px;
+                                    font-size: $fs;
+                                    line-height: $ht;
+                                    text-align: left;
+                                }
+                                .p-txt {
+                                    display: inline-block;
+                                    float: left;
+                                    width: $ip-w;
+                                    font-size: $fs;
+                                    text-align: left;
+                                    line-height: $ht;
+                                }
+                                .ip-txt {
+                                    @include bx;
+                                    float: left;
+                                    width: $ip-w;
+                                    padding: 10px 10px;
+                                    height: $ht;
+                                    font-size: $fs;
+                                    border: 1px solid $bor-gray-03;
+                                }
+                                
+                                & + .row {
+                                    margin-top: 13px;
+                                }
+                            }
+                            
+                            .btn-com {
+                                float: right;
+                                margin: 2px 0 0 11px;
+                                @include btn-green-bg(110px, 98px, $fs);
+                            }
+                        }
+                    }
+                }
+                
+                //필수입력사항
+                .t-ast {
+                    @include txtAst(13px){
+                        &:before {
+                            font-size: 18px;
+                        }
+                    };
+                }
+                
+                //정보수정
+                .mdf-area {
+                    @include bx;
+                    margin-top: 25px;
+                    .tbl-top-box {
+                        padding-bottom: 9px;
+                    }
+                    .tbl-row {
+                        border-top-width: 2px;
+                        .tbl {
+                            th {
+                                padding: 14px 10px 15px 29px;
+                                font-size: 15px;
+                                span, label {
+                                    position: relative;
+                                    display: inline-block;
+                                    padding-left: 17px;
+                                }
+                                .t-ast {
+                                    &:before {
+                                        color: $fg-red-03;
+                                    }   
+                                }
+                            }
+                            td {
+                                color: $fg-gray-01;
+                                padding: 10px 10px 10px 29px;
+                                .row {
+                                    > p {
+                                        font-size: 14px;
+                                    }
+                                    //input 우측 텍스트
+                                    .s-t {
+                                        display: inline-block;
+                                        padding-left: 7px;
+                                    }
+                                    //하단으로 떨어지는 텍스트
+                                    .agree-txt{
+                                        margin-top: 7px;
+                                        font-size: 13px;
+                                    }
+                                    .form-sel {
+                                        font-size: 13px;
+                                    }
+                                    //radio
+                                    .srch-txt {
+                                        @include bx;
+                                        font-size: 13px;
+                                        font-weight: 300;
+                                        color: $fg-gray-01;
+                                        input[type="radio"] {
+                                            cursor: pointer;
+                                            margin-right: 3px;
+                                        }
+                                        
+                                        & + .srch-txt {
+                                            margin-left: 25px;
+                                        }
+                                    }
+                                    //checkbox
+                                    .chk-txt {
+                                        & + .chk-txt {
+                                            margin-left: 25px;
+                                        }
+                                    }
+                                    
+                                    &.agree-row {
+                                        padding: 4px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    &.add-info {
+                        .tbl-row {
+                            .tbl {
+                                th {
+                                    padding-left: 15px;
+                                    .fc-green {
+                                        font-size: 13px;
+                                        color: $fg-green-01;
+                                        &.t-ast {
+                                            &:before {
+                                                color: $fg-green-01;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+            /* 본인 인증 */
+            &.certif {
+                //banner
+                .bn-area {
+                    padding: 50px 0 69px;
+                    a {
+                        display: block;
+                    }
+                }
+                
+                //인증
+                .find-area {
+                    @include bx;
+                    text-align: center;
+                        
+                    .find-tit {
+                        font-size: 18px;
+                        line-height: 1;
+                        color: $fg-gray-01;
+                    }
+                    
+                    .find-box {
+                        $wd:380px;
+                        @include bx;
+                        width: $wd;
+                        margin: 0 auto;
+                        padding-top: 19px;
+                        
+                        .cert-box {
+                            @include certBox;
+
+                            & + .cert-box {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+                
+                //인증되지 않는다면?
+                .find-info-area {
+                    @include certInfoBox(70px);
+                }
+            }
+        }
+    }
+}
+
+
+/*
+ * ie
+ */
+.ie {
+    /* 콘텐츠 영역 */
+    .contents { 
+
+        /* 마이페이지 */
+        &.mypage {
+            .mypage-sect {
+                &.history {
+                    //내 적립금
+                    .history-area {
+                        [class*='-box'] {
+                            .hs-txt {
+                                .t-pt {
+                                    vertical-align: sub;
+                                }
+                            }
+                        }
+                        .ex-box {
+                            padding: 0 100px 0 95px;
+
+                        }
                     }
                 }
             }
@@ -1765,6 +2647,34 @@
                 }
             }
         }
+    
+        /* 마이페이지 */
+        &.mypage {
+            .mypage-sect {
+                /* 할인쿠폰 */
+                &.coupon {
+                    //사용방법
+                    .use-area {
+                        .use-list-box {
+                            .use-list {
+                                li {
+                                    .use-box {
+                                        .use-txt-box {
+                                            .txt {
+                                                letter-spacing: -1.4px;
+                                            }
+                                            .txt-cp {
+                                                letter-spacing: -1.2px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1797,6 +2707,35 @@
             .p-row { 
                 .ip-txt {
                     line-height: 1 !important;
+                }
+            }
+        }
+        /* 마이페이지 */
+        &.mypage {
+            .mypage-sect {
+                
+                /* 할인쿠폰 */
+                &.coupon {
+
+                    //사용방법
+                    .use-area {
+                        .use-list-box {
+                            .use-list {
+                                li {
+                                    .use-box {
+                                        .use-txt-box {
+                                            .txt {
+                                                letter-spacing: -1px;
+                                            }
+                                            .txt-cp {
+                                                letter-spacing: -1px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

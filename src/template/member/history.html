@@ -1,0 +1,230 @@
+@@include('../include/_head.html', {
+	"page": "member"
+})
+
+<body class="page-member">
+
+<div class="wrapper">
+	@@include('../include/_header.html')
+
+	<div class="contents mypage">
+        <!-- navi -->
+        <div class="lnb-sect">
+            <div class="container">
+                <div class="lnb-box">
+                    <a href="../main/index.html" class="btn-link">홈</a>
+                    <span class="txt">></span>
+                    <a href="./index.html" class="btn-link">마이페이지</a>
+                    <span class="txt">></span>
+                    <a href="./history.html" class="btn-link">적립금내역</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-sect">
+            <div class="container">
+                <h2 class="sub-tit">적립금내역</h2>
+                <p class="sub-txt">고객님께서 사용가능한 적립금내역과 사용현황입니다.</p>
+            </div>
+        </div>
+        
+        <!-- 마이페이지 서브메뉴 -->
+	    @@include('../include/mypage/_lnb.html')
+	
+	    <div class="mypage-sect history">
+	        <div class="container">
+               
+                <!-- 내 적립금 -->
+                <div class="history-area">
+                    <!-- 사용가능한 적립금 -->
+                    <div class="now-area">
+                        <dl class="hs-box">
+                            <dt class="hs-tit">
+                                사용가능한 <em class="f-bd">적립금</em>
+                            </dt>
+                            <dd class="hs-txt"><span class="t-pt"><em>999,999</em>p</span></dd>
+                        </dl>
+                    </div>
+                    <!-- 소멸예정 금액 -->
+                    <div class="ex-area">
+                        <dl class="hs-box">
+                            <dt class="hs-tit">당월 소멸 예정</dt>
+                            <dd class="hs-txt"><span class="t-pt"><em>999,999</em>p</span>( 예정일 : 2019.08.31 )</dd>
+                        </dl>
+                    </div>
+                </div>
+                
+                <!-- 조회 -->
+                <div class="day-top-box">
+                    <div class="day-box">
+                        <div class="day-lookup">
+                            <p class="day-tit">기간별 조회</p>
+                            <ul class="day-list">
+                                <li><label class="srch-txt"><input type="radio" name="day" checked="">15일</label></li>
+                                <li><label class="srch-txt"><input type="radio" name="day">1개월</label></li>
+                                <li><label class="srch-txt"><input type="radio" name="day">2개월</label></li>
+                                <li><label class="srch-txt"><input type="radio" name="day">3개월</label></li>
+                                <li><label class="srch-txt"><input type="radio" name="day">6개월</label></li>
+                                <li><label class="srch-txt"><input type="radio" name="day">12개월</label></li>
+                            </ul>
+                        </div>
+                        <div class="day-lookup">
+                            <p class="day-tit">일자별 조회</p>
+                            <div class="cal-box">
+                                <p class="row">
+                                    <input id="searchStartDate" type="text" class="ip-cal date-ui" value="">
+                                    <span class="ico-cal date-ui"></span>
+                                </p>
+                                <span class="cal-txt">~</span>
+                                <p class="row">
+                                    <input id="searchEndDate" type="text" class="ip-cal date-ui" value="">
+                                    <span class="ico-cal date-ui"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-srch p-a">검색</button>
+                </div>
+                
+                <!-- 보관내역 -->
+                <div class="tbl-area">
+                    <div class="tbl-col">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 10.4%;">
+                                <col style="width: *;">
+                                <col style="width: 10.5%;">
+                                <col style="width: 10.5%;">
+                                <col style="width: 10.5%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>내역</th>
+                                    <th>받은포인트</th>
+                                    <th>만료일자</th>
+                                    <th>사용포인트</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2019.05.10</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>2020.04.19</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2019.05.11</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2019.05.11</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2019.02.14</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2019.01.31</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2018.09.03</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2018.07.27</td>
+                                    <td><p class="link-txt">테스트</p></td>
+                                    <td>6,100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2018.07.24</td>
+                                    <td><p class="link-txt">구매완료로 인해 구매적립금 적립 (주문번호 : 1547085556703)</p></td>
+                                    <td>2,520원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2018.07.04</td>
+                                    <td><p class="link-txt">테스트</td>
+                                    <td>1,000원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2017.05.26</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2017.04.29</td>
+                                    <td><p class="link-txt">상품후기 작성 포인트 적립</p></td>
+                                    <td>100원</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- board-page -->
+                    <div class="page-area">
+                        <div id="pagenation" class="page-box">
+                            <a class="btn-m-prev" href=""><span></span></a>
+                            <a class="btn-prev" href=""><span></span></a>
+                            <!-- 해당 페이지일때 on -->
+                            <a class="txt on" href=""><span>1</span></a>
+                            <a class="txt" href=""><span>2</span></a>
+                            <a class="btn-next" href=""><span></span></a>
+                            <a class="btn-m-next" href=""><span></span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 적립금 안내 -->
+                <div class="info-area">
+                    <div class="info-tit-box">
+                        <p class="info-tit">적립금 안내</p>
+                    </div>
+                    <div class="info-list-box">
+                        <ul class="info-list number">
+                            <li>1. 구매 반품/취소 시에는 지급받으신 적립금 회수 처리 됩니다.</li>
+                            <li>2. 지급되는 포인트에 따라 유효 기간이 다를 수 있습니다.</li>
+                            <li>
+                                3. 적립금은 가입 또는 물품 구매에 따라 부여되며 유효기간이 만료하거나 이용계약이 종료되면 소멸합니다. <br>
+                                적립된 적립금의 이용조건, 이용기간, 소멸조건 등은 관련 법령의 개정 및 폐지 등 합리적이고 상당한 이유가 있는 경우 회사에 의해 변경될 수 있으며, 적립금 적립방법이나 적립기준은 회사의<br>마케팅 정책의 변경에 따라 변경될 수 있습니다.<br>
+                                이 경우 회사는 14일 이상의 사전유예기간을 두고 당해 내용을 공지합니다. 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+	        </div>
+	    </div>
+	</div> 
+	
+	@@include('../include/_footer.html') 
+</div>
+
+</body>
+</html>

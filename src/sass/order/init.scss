@@ -101,100 +101,104 @@
             @include btn-green-bg(70px, 27px, 13px);
         }
         
-        @include tbl-col-gray-02{
-            .tbl {
-                td {
-                    .btn-com {
-                        margin-top: 5px;
-                        &.btn-change {
-                            margin-top: 10px;
-                        }
-                    }
-                    .btn-green {
-                        margin-top: 7px;
-                    }
-                    
-                    .img-prd {
-                        display: inline-block;
-                        width: 80px;
-                        height: 80px;
-                        margin: 11px auto;
-                        
-                        & + span {
-                            display: inline-block;
-                            padding-left: 15px;
-                        }
-                    }
-
-                    .num-box {
-                        width: 70px;
-                        height: 27px;
-                        border: 0;
-                        .ip-txt {
-                            width: 48px;
-                            height: 27px;
-                            padding: 0 5px;
-                            font-size: 14px;
-                            line-height: 25px;
-                            text-align: right;
-                            color: $fg-gray-01;
-                            border: 1px solid $bor-gray-03;
-                        }
-                        span {
-                            height: 14px;
-                            border: 1px solid $bor-gray-03;
-                            &.up {
-                                background-position: -151px -224px;
-                            }
-                            &.down {
-                                background-position: -176px -224px;
+        .tbl-col {
+            @include bx;
+            @include th-col-2;
+            @include tbl-col-gray-02{
+                .tbl {
+                    td {
+                        .btn-com {
+                            margin-top: 5px;
+                            &.btn-change {
+                                margin-top: 10px;
                             }
                         }
-                    }
-                       
-                    //금액
-                    .bot-box {
-                        $ft:22px;
-                        @include bx;
-                        @include clearfix;
-                        padding: 12px 12px 12px 10px;
-                        text-align: left;
-                        line-height: 0;
-
-                        .txt {
-                            @include bx;
-                            float: left;
-                            display: inline-block;
-                            vertical-align: middle;
-                            line-height: $ft;
+                        .btn-green {
+                            margin-top: 7px;
                         }
-                        .buy-txt {
-                            @include bx;
-                            float: right;
+
+                        .img-prd {
                             display: inline-block;
-                            letter-spacing: 0;
-                            vertical-align: middle;
-                            line-height: $ft;
-                            span, em {
+                            width: 80px;
+                            height: 80px;
+                            margin: 11px auto;
+
+                            & + span {
                                 display: inline-block;
-                                font-weight: bold;
-                                line-height: $ft;
-                                .ie & {
-                                    font-weight: bold;
+                                padding-left: 15px;
+                            }
+                        }
+
+                        .num-box {
+                            width: 70px;
+                            height: 27px;
+                            border: 0;
+                            .ip-txt {
+                                width: 48px;
+                                height: 27px;
+                                padding: 0 5px;
+                                font-size: 14px;
+                                line-height: 25px;
+                                text-align: right;
+                                color: $fg-gray-01;
+                                border: 1px solid $bor-gray-03;
+                            }
+                            span {
+                                height: 14px;
+                                border: 1px solid $bor-gray-03;
+                                &.up {
+                                    background-position: -151px -224px;
+                                }
+                                &.down {
+                                    background-position: -176px -224px;
                                 }
                             }
-                            .t-point {
-                                letter-spacing: -0.5px;
-                                color: $fg-red-04;
-                                em {
-                                    font-size: 20px;
+                        }
+
+                        //금액
+                        .bot-box {
+                            $ft:22px;
+                            @include bx;
+                            @include clearfix;
+                            padding: 12px 12px 12px 10px;
+                            text-align: left;
+                            line-height: 0;
+
+                            .txt {
+                                @include bx;
+                                float: left;
+                                display: inline-block;
+                                vertical-align: middle;
+                                line-height: $ft;
+                            }
+                            .buy-txt {
+                                @include bx;
+                                float: right;
+                                display: inline-block;
+                                letter-spacing: 0;
+                                vertical-align: middle;
+                                line-height: $ft;
+                                span, em {
+                                    display: inline-block;
+                                    font-weight: bold;
+                                    line-height: $ft;
+                                    .ie & {
+                                        font-weight: bold;
+                                    }
+                                }
+                                .t-point {
+                                    letter-spacing: -0.5px;
+                                    color: $fg-red-04;
+                                    em {
+                                        font-size: 20px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-        }; 
+            }; 
+        }
         
         .tbl-row {
             .tbl {
@@ -225,19 +229,12 @@
             @include btn-gray-bor-02(80px, 27px);
             font-weight: 300;
         }
-        @include tbl-col-white{
-            .tbl {
-                th {
-                    span {
-                        vertical-align: middle;
-                        
-                        & + .btn-com {
-                            margin-left: 10px;
-                        }
-                    }
-                }
-            }
-        };
+        .tbl-col {
+            @include bx;
+            @include th-col-white
+            @include tbl-col-pay
+        }
+        
         
         @include tbl-row(0, $fs:13px, $th-pd:15px 15px 15px 20px, $th-fg:$fg-black-02, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black-02){
             .tbl {

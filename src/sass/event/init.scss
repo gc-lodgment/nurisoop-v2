@@ -229,7 +229,11 @@
                             }
                         }
                         
-                        @include tbl-col-gray;
+                        .tbl-col {
+                            @include bx;
+                            @include th-col-1;
+                            @include tbl-col-gray;
+                        }
                         
                         .page-area {
                             margin-top: 5px;

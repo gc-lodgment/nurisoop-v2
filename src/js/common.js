@@ -104,6 +104,12 @@ $(function(){
         imgfileFn();
     });
     
+    /* 비밀번호 창 나타남 */
+    $('.popPw').on('click', function(){
+        //console.log('password');
+        comPopOpen('#popPW');
+    });
+    
     //우편번호팝업 - 탭 클릭 시 
     $('#popAdr .top-area .tab-list > li').on('click', function(){
         var idx = $(this).index();

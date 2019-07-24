@@ -707,7 +707,7 @@
     padding: $pd;
     font-size: $fs;
     font-weight: 300;
-    line-height: $ht;
+    line-height: ($ht)-(2);
     color: $fg;
     border: 1px solid $bor-bg;
     background: url(http://static.nurisoop.co.kr/img/renew/common/bg_sel.png) no-repeat right center;
@@ -801,7 +801,7 @@
                 }
                 
                 //no line
-                &.no-line {
+                &.nope {
                     padding-left: 0;
                     &:before {
                         content: none;
@@ -812,7 +812,70 @@
                     margin-top: 30px;
                 }
             }
+            
+            &.number {
+                li {
+                    padding-left: 13px;
+                    text-indent: -12px;
+                    &:before {
+                        content: none;
+                    }
+                }
+            }
         }
+    }
+}
+
+//인증 박스
+@mixin certBox($pd:20px 19px, $fg:$fg-gray-01, $btn-wd:180px){
+    @include bx;
+    display: table;
+    width: 100%;
+    margin-top: 9px;
+    padding: $pd;
+    border: 1px solid $bor-gray-03;
+    .cert-txt {
+        @include bx;
+        display: table-cell;
+        text-align: right;
+        span {
+            display: block;
+            font-size: 16px;
+            text-align: left;
+            vertical-align: middle;
+            color: $fg;
+
+            @include line-row-2(10px, 2px, 2px, 50%);
+        }
+        .btn-cert {
+            @include btn-gray-bor-02($btn-wd);
+            vertical-align: middle;
+        }
+    }
+}
+
+//인증이 되지 않는다면 (찾기 공통 & 마이페이지 인증)
+@mixin certInfoBox($mt:90px, $pd:26px 25px 28px, $pd-t:14px){
+    @include bx;
+    margin-top: $mt;
+    padding: $pd;
+    text-align: center;
+    line-height: 0;
+    background: $bg-gray-02;
+    .find-info-tit {
+        @include bx;
+        font-size: 18px;
+        line-height: 1.3;
+        letter-spacing: 0;
+        vertical-align: middle;
+        color: $fg-gray-01;
+    }
+    .find-info-txt {
+        padding-top: $pd-t;
+        font-size: 15px;
+        line-height: 1.3;
+        letter-spacing: 0;
+        color: $fg-gray-04;
     }
 }
 
@@ -1606,6 +1669,9 @@
                         &.w-2 {
                             width: 137px;
                         }
+                        &.w-3 {
+                            width: 247px;
+                        }
                         
                         .ie9 &, .ie8 & {
                             padding-right: 0;
@@ -1717,7 +1783,7 @@
                         }*/
                     }
 
-                    .btn-phone, .btn-adr, .btn-adrbk {
+                    .btn-phone, .btn-adr, .btn-adrbk, .btn-nick-chk {
                         @include btn-gray-bor-02;
                         margin-left: 15px;
                     }
@@ -1766,47 +1832,42 @@
 }
 
 //tbl col th gray - th line (짧은 라인)
-@mixin tbl-col-gray($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:17px 0, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:15px 0, $td-fg:$fg-gray-04, $a-pd:0 70px){
-    .tbl-col {
-        @include bx;
-        .tbl {
-            border-top: $bor-t-w solid $bor-t-bg;
-            th, td {
+@mixin th-col-1($fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:17px 0, $th-fg:$fg-black, $th-bg:$bg-gray-02){
+    thead {
+        tr {
+            th {
+                padding: $th-pd;
                 font-size: $fs;
+                font-weight: 400;
+                color: $th-fg;
                 border-bottom: 1px solid $bor-b-bg;
-            }
-            thead {
-                tr {
-                    th {
-                        padding: $th-pd;
-                        font-weight: 400;
-                        color: $th-fg;
-                        background: $th-bg;
-                        @include line($ht:12px, $bg:$bor-gray-09);
-                        &:first-child {
-                            &:before {
-                                content: none;
-                            }
-                        }
+                background: $th-bg;
+                @include line($ht:12px, $bg:$bor-gray-09);
+                &:first-child {
+                    &:before {
+                        content: none;
                     }
                 }
             }
-            tbody {
-                tr {
-                    td {
-                        padding: $td-pd;
-                        color: $td-fg;
-                        .link-txt {
-                            display: block;
-                            padding: $a-pd;
-                            text-align: left;
-                            color: inherit;
-                            @include trasBase(1);
-                        }
-                        a.link-txt:hover {
-                            @include trasBase(0.6);
-                        }
-                    }
+        }
+    }
+}
+
+//tbl col th gray - th line 
+@mixin th-col-2($fs:14px, $bor-bg:$bor-gray-03, $th-pd:7px 0, $th-fg:$fg-gray-01, $th-bg:$bg-gray-02){
+    thead {
+        tr {
+            th {
+                padding: $th-pd;
+                font-size: $fs;
+                font-weight: 300;
+                line-height: 1.4;
+                color: $th-fg;
+                border-left: 1px solid $bor-bg;
+                border-bottom: 1px solid $bor-bg;
+                    background: $th-bg;
+                &:first-child {
+                    border-left: 0;
                 }
             }
         }
@@ -1815,139 +1876,158 @@
 }
 
 //tbl col th white
-@mixin tbl-col-white($bor-t-w:1px, $bor-t-bg:$bor-black-01, $bor-b-bg:$bor-gray-03, $th-pd:18px 0 18px, $th-fs:14px, $th-fg:$fg-gray-04, $td-pd:26px 0 31px, $td-fs:22px, $td-fg:$fg-black){
-    .tbl-col {
-        @include bx;
+@mixin th-col-white($th-pd:18px 0 18px, $th-fs:14px, $th-fg:$fg-gray-04){
+    
+    thead {
+        tr {
+            th {
+                padding: $th-pd;
+                font-size: $th-fs;
+                font-weight: 400;
+                color: $th-fg;
+                span {
+                    vertical-align: middle;
 
-        .tbl {
-            border-collapse: initial;
-            border-top: $bor-t-w solid $bor-t-bg;
-            border-bottom: $bor-t-w solid $bor-t-bg;
-            th, td {
-                border-left: 1px solid $bor-b-bg;
-                &:first-child {
-                    border-left: 0;
-                }
-                .row-pop {
-                    @include bx;
-                    display: inline-block
-                }
-            }
-            thead {
-                tr {
-                    th {
-                        padding: $th-pd;
-                        font-size: $th-fs;
-                        font-weight: 400;
-                        color: $th-fg;
-                    }
-                }
-            }
-            tbody {
-                tr {
-                    td {
-                        padding: $td-pd;
-                        font-size: $td-fs;
-                        font-weight: 500;
-                        color: $td-fg;
-                        border-top: 1px solid $bor-b-bg;
-                        
-                        .ie & {
-                            font-weight: bold;
-                        }
+                    & + .btn-com {
+                        margin-left: 10px;
                     }
                 }
             }
         }
-        
-        @content
     }
 }
 
-//tbl col th gray 02 - th/td border 
-@mixin tbl-col-gray-02($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:14px, $bor-bg:$bor-gray-03, $th-pd:7px 0, $th-fg:$fg-gray-01, $th-bg:$bg-gray-02, $td-pd:10px 0 9px, $td-fg:$fg-black, $a-pd:0 11px, $a-name-fs:15px, $a-name-pd:0 22px){
-    .tbl-col {
-        @include bx;
+//tbl col - no line
+@mixin tbl-col-gray($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $td-pd:15px 0, $td-fg:$fg-gray-04, $a-pd:0 70px){
+    .tbl {
         border-top: $bor-t-w solid $bor-t-bg;
-        .tbl {
-            th, td {
-                font-size: $fs;
-                font-weight: 300;
-                line-height: 1.4;
-                border-left: 1px solid $bor-bg;
-                border-bottom: 1px solid $bor-bg;
-            }
-            thead {
-                tr {
-                    th {
-                        padding: $th-pd;
-                        color: $th-fg;
-                        background: $th-bg;
-                        &:first-child {
-                            border-left: 0
-                        }
+        th, td {
+            font-size: $fs;
+            border-bottom: 1px solid $bor-b-bg;
+        }
+        tbody {
+            tr {
+                td {
+                    padding: $td-pd;
+                    color: $td-fg;
+                    .link-txt {
+                        display: block;
+                        padding: $a-pd;
+                        text-align: left;
+                        color: inherit;
+                        @include trasBase(1);
                     }
-                }
-            }
-            tbody {
-                tr {
-                    td {
-                        padding: $td-pd;
-                        color: $td-fg;
-                        border-left: 1px solid $bor-bg;
-                        &:first-child {
-                            border-left: 0
-                        }
-                        .img-prd {
-                            &.img-gift {
-                                margin: 2px auto 3px;
-                            }
-                        }
-                        .link-txt {
-                            @include bx;
-                            display: block;
-                            padding: $a-pd;
-                            text-align: left;
-                            color: inherit;
-                            @include trasBase(1);
-                            &.prd-name {
-                                padding: $a-name-pd;
-                                font-size: $a-name-fs;
-                                font-weight: 500;
-                                letter-spacing: 0;
-                                .img-prd {
-                                    margin-right: 18px;
-                                }
-                            }
-                            &.ip-chk {
-                                @include chkbox($left:22px);
-                                .btn-chk + .img-prd {
-                                    margin-left: 30px;
-                                }
-                            }
-                            
-                            &.fw-400 {
-                                font-weight: 400;
-                            }
-                        }
-                        a.link-txt:hover {
-                            @include trasBase(0.6);
-                        }
-                        .txt {
-                            color: $fg-gray-01;
-                        }
-                    }
-                    
-                    &.pd-zero {
-                        td {
-                            padding: 0;
-                        }
+                    a.link-txt:hover {
+                        @include trasBase(0.6);
                     }
                 }
             }
         }
-        @content
     }
+    @content
+}
+
+//tbl col 02 - td border 
+@mixin tbl-col-gray-02($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:14px, $bor-bg:$bor-gray-03, $td-pd:10px 0 9px, $td-fg:$fg-black, $a-pd:0 11px, $a-name-fs:15px, $a-name-pd:0 22px){
+    border-top: $bor-t-w solid $bor-t-bg;
+    .tbl {
+        tbody {
+            tr {
+                td {
+                    padding: $td-pd;
+                    font-size: $fs;
+                    font-weight: 300;
+                    line-height: 1.4;
+                    color: $td-fg;
+                    border-left: 1px solid $bor-bg;
+                    border-bottom: 1px solid $bor-bg;
+                    &:first-child {
+                        border-left: 0
+                    }
+                    .img-prd {
+                        &.img-gift {
+                            margin: 2px auto 3px;
+                        }
+                    }
+                    .link-txt {
+                        @include bx;
+                        display: block;
+                        padding: $a-pd;
+                        text-align: left;
+                        color: inherit;
+                        @include trasBase(1);
+                        &.prd-name {
+                            padding: $a-name-pd;
+                            font-size: $a-name-fs;
+                            font-weight: 500;
+                            letter-spacing: 0;
+                            .img-prd {
+                                margin-right: 18px;
+                            }
+                        }
+                        &.ip-chk {
+                            @include chkbox($left:22px);
+                            .btn-chk + .img-prd {
+                                margin-left: 30px;
+                            }
+                        }
+
+                        &.fw-400 {
+                            font-weight: 400;
+                        }
+                    }
+                    a.link-txt:hover {
+                        @include trasBase(0.6);
+                    }
+                    .txt {
+                        color: $fg-gray-01;
+                    }
+                }
+
+                &.pd-zero {
+                    td {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    @content
+}
+
+//tbl col - pay line 
+@mixin tbl-col-pay($bor-t-w:1px, $bor-t-bg:$bor-black-01, $bor-b-bg:$bor-gray-03, $td-pd:26px 0 31px, $td-fs:22px, $td-fg:$fg-black){
+    .tbl {
+        border-collapse: initial;
+        border-top: $bor-t-w solid $bor-t-bg;
+        border-bottom: $bor-t-w solid $bor-t-bg;
+        th, td {
+            border-left: 1px solid $bor-b-bg;
+            &:first-child {
+                border-left: 0;
+            }
+            .row-pop {
+                @include bx;
+                display: inline-block
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    padding: $td-pd;
+                    font-size: $td-fs;
+                    font-weight: 500;
+                    color: $td-fg;
+                    border-top: 1px solid $bor-b-bg;
+
+                    .ie & {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    @content
 }
 
 //tbl col scroll
@@ -2048,10 +2128,10 @@
         padding: $pd;
         .container {
             text-align: center;
-            .evt-tit {
+            .sub-tit {
                 font-size: $fs;
             }
-            .evt-txt {
+            .sub-txt {
                 padding-top: $pd-t;
                 font-size: $txt-fs;
                 line-height: 1.5;
