@@ -574,34 +574,22 @@
                 }
             }
         }
-    }
-    
-    /* 쿠폰등록완료 팝업 */
-    &.pop-cp-use {
-        .pop-container {
-            width: 500px;
-            top: 50%;
-            margin-top: -149px;
-            .pop-tit-box {
-                .pop-tit {
-                    padding: 16px 55px 18px;
-                    font-size: 20px;
-                    font-weight: 500;
-                }
+        
+        /* 쿠폰등록완료&회원탈퇴 팝업 */
+        &.type-2 {
+            .pop-container {
+                margin-top: -149px;
+                .pop-cont {
+                    padding: 30px;
+                    .txt {
+                        padding: 45px 0 20px;
+                        font-size: 16px;
+                        letter-spacing: 0;
+                        color: $fg-black-03;
+                    }
 
-            }
-            .pop-cont {
-                padding: 30px;
-                .txt {
-                    padding: 45px 0 20px;
-                    font-size: 16px;
-                    letter-spacing: 0;
-                    color: $fg-black-03;
-                }
-                
-                .btn-box {
-                    .btn-green { 
-                        @include btn-green-bg(86px, 40px, 15px); 
+                    .btn-box {
+                        margin-top: 50px;
                     }
                 }
             }

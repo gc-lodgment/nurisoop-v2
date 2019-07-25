@@ -31,12 +31,86 @@
         <!-- 마이페이지 서브메뉴 -->
 	    @@include('../include/mypage/_lnb.html')
 	
-	    <div class="mypage-sect ddddddddddd">
+	    <div class="mypage-sect leave">
 	        <div class="container">
-	        ddddd수정할것
+	            <div class="lv-txt-box">
+	                <p class="txt">
+	                    고객님께서 회원 탈퇴를 원하신다니 저희 쇼핑몰의 서비스가 많이 부족하고 미흡했나 봅니다.<br>
+	                    불편하셨던 점이나 불만사항을 알려주시면 적극 반영해서 고객님의 불편함을 해결해 드리도록 노력하겠습니다.
+	                </p>
+	                <p class="ul-txt m-t">아울러 회원 탈퇴시의 아래 사항을 숙지하시기 바랍니다.</p>
+	                <ul class="lv-list">
+	                    <li>회원 탈퇴 시 고객님의 정보는 상품 반품 및 A/S를 위해 전자상거래 등에서의 소비자 보호에 관한 법률에 의거한 고객정보 보호정책에 따라 관리 됩니다.</li>
+	                    <li>탈퇴 시 고객님께서 보유하셨던 적립금은 삭제 됩니다.</li>
+	                    <li>탈퇴 후 90일이 지나야 재가입 하실 수 있습니다.</li>
+	                </ul>
+	            </div>
+                
+                <!-- 회원탈퇴하기 -->
+                <div class="lv-area">
+                    <div class="tbl-top-box">
+                        <div class="top-row">
+                            <h3 class="tbl-tit">누리숲 회원탈퇴하기</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="tbl-row gray">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width: 16.7%;">
+                                <col style="width: 83.5%;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span>아이디</span></th>
+                                    <td>
+                                        <div class="row">
+                                            <p>master</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="pw">비밀번호</label></th>
+                                    <td>
+                                        <div class="row">
+                                            <input type="password" id="pw" class="ip-txt" placeholder="" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>탈퇴사유</span></th>
+                                    <td>
+                                        <div class="row srch-row">
+                                            <label class="srch-txt"><input type="radio" name="reason" checked>고객서비스(상담, 포장 등) 불만</label>
+                                            <label class="srch-txt"><input type="radio" name="reason">배송 불만</label>
+                                            <label class="srch-txt"><input type="radio" name="reason">교환/환불/반품 불만</label>
+                                            <label class="srch-txt"><input type="radio" name="reason">방문 빈도가 낮음</label>
+                                        </div>
+                                        <div class="row srch-row">
+                                            <label class="srch-txt"><input type="radio" name="reason">상품가격 불만</label>
+                                            <label class="srch-txt"><input type="radio" name="reason">개인 정보유출 우려</label>
+                                            <label class="srch-txt"><input type="radio" name="reason">쇼핑몰의 신뢰도 불만</label>
+                                            <label class="srch-txt"><input type="radio" name="reason">쇼핑 기능 불만</label>
+                                        </div>
+                                        <div class="row srch-row">
+                                            <textarea name="" id="txt" cols="30" rows="10" class="ta-txt h-1" placeholder="기타 불편사항을 입력하세요. (100자 이내)"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 버튼 -->
+                <div class="btn-area">
+                    <a href="javascript:comPopOpen('#popLeave');" class="btn-line">회원탈퇴</a>
+                </div>
 	        </div>
 	    </div>
 	</div> 
+    <!-- 팝업 -->
+	@@include('../include/pop/pop_leave.html') 
 	
 	@@include('../include/_footer.html') 
 </div>

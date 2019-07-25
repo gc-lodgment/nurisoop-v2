@@ -2496,7 +2496,7 @@
                 
             }
             
-            /* 본인 인증 */
+            /* 본인인증 */
             &.certif {
                 //banner
                 .bn-area {
@@ -2537,6 +2537,80 @@
                 //인증되지 않는다면?
                 .find-info-area {
                     @include certInfoBox(70px);
+                }
+            }
+            
+            /* 회원탈퇴 */
+            &.leave {
+                .lv-txt-box {
+                    @include bx;
+                    margin: 50px auto 22px;
+                    padding: 25px 30px 20px;
+                    font-size: 13px;
+                    font-weight: 300;
+                    line-height: 1.7;
+                    letter-spacing: 0;
+                    color: $fg-gray-09;
+                    border: 1px solid $bor-gray-03;
+                    .ul-txt {
+                        font-weight: 400;
+                        color: $fg-red-06;
+                        @include txtAst;
+                    }
+                    .lv-list {
+                        @inlcude bx;
+                        padding-left: 12px;
+                        li {
+                            @include line-row-2($t:12px, $bg:$fg-gray-09);
+                        }
+                    }
+                    .m-t {
+                        margin-top: 22px;
+                    }
+                }
+                
+                //정보수정
+                .lv-area {
+                    @include bx;
+                    .tbl-row {
+                        border-top-width: 2px;
+                        .tbl {
+                            th {
+                                padding: 14px 10px 15px 30px;
+                                font-size: 15px;
+                            }
+                            td {
+                                color: $fg-gray-01;
+                                padding: 10px 10px 10px 30px;
+                                .row {
+                                    > p {
+                                        font-size: 14px;
+                                    }
+                                    //radio
+                                    .srch-txt {
+                                        @include bx;
+                                        display: inline-block;
+                                        width: 228px;
+                                        font-size: 13px;
+                                        font-weight: 300;
+                                        color: $fg-gray-01;
+                                        input[type="radio"] {
+                                            cursor: pointer;
+                                            margin-right: 6px;
+                                        }
+                                    }
+                                    
+                                    &.srch-row {
+                                        padding-top: 18px;
+                                        
+                                        & + .srch-row {
+                                            padding-top: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
