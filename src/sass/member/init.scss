@@ -578,7 +578,7 @@
                                     height: 12px;
                                     margin: -2px 5px 0 0;
                                     vertical-align: middle;
-                                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                                    background: $lnk-sprite;
                                     background-position: -90px -247px;
                                 }
                             }
@@ -752,11 +752,10 @@
                             th, td {
                                 .t-ast {
                                     @include bx;
-                                    @include txtAst(13px, 5px){
-                                        &:before {
-                                            color: $fg-red-03;
-                                        }
-                                    };
+                                    @include txtAst(13px, 5px);
+                                    &:before {
+                                        color: $fg-red-03;
+                                    }
                                 }
                                 
                                 .fc-green {
@@ -1050,7 +1049,7 @@
                                     span {
                                         display: block;
                                         margin: 0 auto 17px;
-                                        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                                        background: $lnk-sprite;
                                         &.ico-mail {
                                             width: 45px;
                                             height: 50px;
@@ -1107,7 +1106,7 @@
                         span {
                             display: block;
                             margin: 0 auto 20px;
-                            background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                            background: $lnk-sprite;
                             &.ico-id {
                                 width: 48px;
                                 height: 50px;
@@ -2081,7 +2080,7 @@
                         padding-left: 23px;
                         font-size: 16px;
                         font-weight: 500;
-                        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                        background: $lnk-sprite;
                         background-position: -190px -198px;
                         
                         .ie & {
@@ -2110,7 +2109,7 @@
                                     width: 19px;
                                     height: 22px;
                                     margin-top: -2px;
-                                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                                    background: $lnk-sprite;
                                     background-position: -160px -198px;
                                     
                                 }
@@ -2393,11 +2392,10 @@
                 
                 //필수입력사항
                 .t-ast {
-                    @include txtAst(13px){
-                        &:before {
-                            font-size: 18px;
-                        }
-                    };
+                    @include txtAst(13px);
+                    &:before {
+                        font-size: 18px;
+                    }
                 }
                 
                 //정보수정

@@ -158,7 +158,7 @@
             }
         }
         
-        @content
+        @content;
     }
 }
 
@@ -197,7 +197,7 @@
         width: $wd;
         height: $ht;
         background: $bg;
-        @content
+        @content;
     }
 }
 //button
@@ -335,7 +335,7 @@
             }
         }
     }
-    @content
+    @content;
 }
 
 //btn menu 
@@ -369,11 +369,11 @@
         span {
             display: none;
         }
-        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background: $lnk-sprite;
         background-position: $on-bg-ps;
     }
     
-    @content
+    @content;
 }
 
 //text detail - 1+1, GIFT, SALE 
@@ -410,7 +410,7 @@
         @include position(absolute, $top, $left);
         color: $fg;
     }
-    @content
+    //@content;
 }
 
 //text !
@@ -456,7 +456,7 @@
         background: #fff;
     }
     input.ip-chk:checked + span {
-        background: #fff url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background: #fff $lnk-sprite;
         background-position: -1px -225px;
     }
     
@@ -470,7 +470,7 @@
         }
     }
     
-    @content
+    @content;
 }
 
 //checkbox02 - box out check
@@ -507,7 +507,7 @@
         display: block;
         width: $wd;
         height: $wt;
-        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background: $lnk-sprite;
         background-position: -76px -173px;
     }
     
@@ -521,7 +521,7 @@
         }
     }
     
-    @content
+    @content;
 }
 
 //ico heart + cert 
@@ -577,7 +577,7 @@
                 }
             }
         }
-        @content
+        @content;
     }
 }
 
@@ -632,7 +632,7 @@
             height: $wt;
             margin-top: -($wt/2);
             vertical-align: middle;
-            background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+            background: $lnk-sprite;
         }
 
         &.pore {
@@ -957,7 +957,7 @@
                 &.sq {
                     width: $wd;
                     text-align: center;
-                    background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                    background: $lnk-sprite;
                     background-position: -140px 0;
                     span {
                         font-size: $n-fs;
@@ -1102,7 +1102,7 @@
         }
     }
 
-    @content
+    @content;
 }
 
 //리뷰 
@@ -1491,7 +1491,7 @@
                             font-size: 0;
                             vertical-align: middle;
                             text-indent: -999px;
-                            background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                            background: $lnk-sprite;
                             background-position: -140px -121px;
                         }
                         &:hover {
@@ -1537,7 +1537,7 @@
             }
             &[class*='btn-']{
                 width: 8px;
-                background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                background: $lnk-sprite;
                 &[class*='btn-m-']{
                     width: $ht;
                 }
@@ -1827,7 +1827,7 @@
                 }
             }
         }
-        @content
+        @content;
     }    
 }
 
@@ -1871,7 +1871,7 @@
                 }
             }
         }
-        @content
+        @content;
     }
 }
 
@@ -1924,7 +1924,7 @@
             }
         }
     }
-    @content
+    @content;
 }
 
 //tbl col 02 - td border 
@@ -1992,7 +1992,7 @@
             }
         }
     }
-    @content
+    @content;
 }
 
 //tbl col - pay line 
@@ -2027,7 +2027,7 @@
             }
         }
     }
-    @content
+    @content;
 }
 
 //tbl col scroll
@@ -2088,7 +2088,7 @@
             height: $ht;
         }
     }
-    @content
+    @content;
 }
 
 //table - prd detail
@@ -2139,7 +2139,7 @@
             }
         }
         
-        @content
+        @content;
     }
 }
 
@@ -2221,7 +2221,7 @@
                 width: 7px;
                 height: $ht;
                 margin-top: -($ht/2);
-                background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+                background: $lnk-sprite;
             }
         }
         .link {
@@ -2313,6 +2313,6 @@
             }
         }
         
-        @content
+        @content;
     }
 }

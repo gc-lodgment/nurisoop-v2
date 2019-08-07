@@ -14,7 +14,7 @@
         height: 25px;
         font-size: 0;
         text-indent: -999px;
-        background: url(http://static.nurisoop.co.kr/img/renew/common/img_sprites.png) no-repeat;
+        background: $lnk-sprite;
         background-position: 1px -83px;
         &.white {
             background-position: -111px -83px;
@@ -934,11 +934,10 @@
                                 th, td {
                                     .t-ast {
                                         @include bx;
-                                        @include txtAst(13px, 5px){
-                                            &:before {
-                                                color: $fg-red-03;
-                                            }
-                                        };
+                                        @include txtAst(13px, 5px);
+                                        &:before {
+                                            color: $fg-red-03;
+                                        }
                                     }
                                     
                                     .fake-ast {

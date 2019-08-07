@@ -401,18 +401,12 @@
                                                                 @include position(absolute, 0, 0, 0, 0);
                                                                 display: block;
                                                                 text-align: center;
-                                                                -webkit-transform: translate(50%, 50%); 
-                                                                -ms-transform: translate(50%, 50%); 
-                                                                -o-transform: translate(50%, 50%); 
                                                                 transform: translate(50%, 50%);
                                                                 img {
                                                                     @include position(absolute, 0, 0);
                                                                     display: block;
                                                                     max-width: inherit;
-                                                                    height: 100%;
-                                                                    -webkit-transform: translate(-50%, -50%); 
-                                                                    -ms-transform: translate(-50%, -50%); 
-                                                                    -o-transform: translate(-50%, -50%); 
+                                                                    height: 100%; 
                                                                     transform: translate(-50%, -50%); 
                                                                     .ie8 & {
                                                                         position: relative;
