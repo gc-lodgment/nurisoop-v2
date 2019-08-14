@@ -2563,6 +2563,536 @@
             }
         }
     }
+    
+    /* 비회원 주문조회&교환신청 */
+    &.inquire {
+        $ht:28px; 
+        padding-bottom: 145px;
+        
+        //top
+        .top-sect {
+            padding-bottom: 59px;
+        }
+        
+        // - 리스트
+        .txt-list {
+            @include bx;
+            li {
+                font-size: 13px;
+                font-weight: 300;
+                line-height: 1.5;
+                color: $fg-gray-01;
+                @include line-row-2;
+            }
+        }
+        
+        //테이블
+        .tbl-top-box {
+            @include bx;
+            @include clearfix;
+            padding: 38px 0 12px;
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: 0;
+            vertical-align: middle;
+            color: $fg-gray-01;
+            .tbl-tit {
+                font-size: 14px;
+                font-weight: 400;
+                text-align: left;
+                line-height: 1;
+                color: $fg-black;
+            }
+            .t-ast {
+                display: inline-block;
+                font-size: 14px;
+                margin-right: 8px;
+                &.t-ness {
+                    color: $fg-black;
+                    &:before {
+                        color: $fg-red-03;
+                    }   
+                }
+            }
+
+            //사은품 !
+            .info-box {
+                padding-top: 10px;
+                @include exmarkBox;
+                .info-txt {
+                    margin-top: 10px;
+                    padding-left: 6px;
+                    font-size: 13px;
+                }
+                .info-exmark {
+                    @include txtExMak($fg:$fg-red-03, $top:12px, $left:20px);
+                }
+            }
+
+            .top-row {
+                @include bx;
+                .tbl-tit {
+                    display: inline-block;
+                }
+                .chk-txt {
+                    @include bx;
+                    @include chkbox;
+                    margin-left: 13px;
+                    padding-left: 17px;
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+            }
+
+            //처음일때 padding 0
+            &.fir {
+                padding-top: 0;
+            }
+        }
+        .tbl-area {
+            //table btn
+            .btn-com {
+                @include btn-gray-bor-02(80px, 27px);
+                font-weight: 300;
+                &.btn-change {
+                    width: 70px;
+                }
+            }
+            .btn-green {
+                @include btn-green-bg(70px, 27px, 13px);
+            }
+
+            .tbl-col {
+                @include bx;
+                @include tbl-bor(1px);
+                .tbl {
+                    @include tbl-ch-head {
+                        th {
+                            @include t-line-l;
+                            @include t-col-style(7px 0, 14px);
+                        }
+                    }
+                    @include tbl-ch-body {
+                        td {
+                            @include t-line-l;
+                            @include t-col-style(10px 0 9px, 14px, $fg:$fg-black);
+                            .btn-com {
+                                margin-top: 5px;
+                                &.btn-change {
+                                    margin-top: 10px;
+                                }
+                            }
+                            .btn-green {
+                                margin-top: 7px;
+                            }
+
+                            .img-prd {
+                                display: inline-block;
+                                width: 80px;
+                                height: 80px;
+                                //margin: 11px auto;
+
+                                & + span {
+                                    display: inline-block;
+                                    padding-left: 15px;
+                                }
+                            }
+
+                            .num-box {
+                                width: 70px;
+                                height: 27px;
+                                border: 0;
+                                .ip-txt {
+                                    width: 48px;
+                                    height: 27px;
+                                    padding: 0 5px;
+                                    font-size: 14px;
+                                    line-height: 25px;
+                                    text-align: right;
+                                    color: $fg-gray-01;
+                                    border: 1px solid $bor-gray-03;
+                                }
+                                span {
+                                    height: 14px;
+                                    border: 1px solid $bor-gray-03;
+                                    &.up {
+                                        background-position: -151px -224px;
+                                    }
+                                    &.down {
+                                        background-position: -176px -224px;
+                                    }
+                                }
+                            }
+
+                            //금액
+                            .bot-box {
+                                $ft:22px;
+                                @include bx;
+                                @include clearfix;
+                                padding: 12px 12px 12px 10px;
+                                text-align: left;
+                                line-height: 0;
+
+                                .txt {
+                                    @include bx;
+                                    float: left;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    line-height: $ft;
+                                }
+                                .buy-txt {
+                                    @include bx;
+                                    float: right;
+                                    display: inline-block;
+                                    letter-spacing: 0;
+                                    vertical-align: middle;
+                                    line-height: $ft;
+                                    span, em {
+                                        display: inline-block;
+                                        font-weight: bold;
+                                        line-height: $ft;
+                                        .ie & {
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    .t-point {
+                                        letter-spacing: -0.5px;
+                                        color: $fg-red-04;
+                                        em {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tbl-row {
+                .tbl {
+                    @include tbl-ch-body{
+                        th, td {
+                            .t-ast {
+                                padding-left: 17px;
+                            }
+                            .fake-ast {
+                                padding-left: 17px;
+                            }
+                        }
+                        td {
+                            .row {
+                                .btn-com {
+                                    margin-left: 13px;
+                                }
+                                .btn-green {
+                                    margin-left: 8px;
+                                }
+                            }
+                        }  
+                    };
+
+                }
+            }
+        }
+        
+        //Notice
+        .info-area {
+            @include infoArea;
+        }
+        
+        
+        //주문조회
+        .inquire-sect {
+            .container {
+                @include tab($num:5, $a-pd:10px 0 12px){
+                    margin-bottom: 29px;
+                    .tab-list {
+                        border-top: 1px solid $bor-gray-01;
+                        border-right: 1px solid $bor-gray-01;
+                        li {
+                            margin-top: -1px;
+                        }
+                    }
+                };
+                
+                .inquire-area {
+                    //상단
+                    .top-box {
+
+                        @include bx;
+                        @incldue clearfix;
+                        padding: 15px 15px 14px;
+                        border: 1px solid $bor-gray-03;
+
+                        div[class*='-box'] {
+                            @include bx;
+                            float: left;
+                            display: inline-block;
+
+                            &.srch-box {
+                                //select
+                                .form-sel {
+                                    @include sel-com(137px, $ht, 0 20px 0 0);
+                                    
+                                    .ie8 & {
+                                        width: 150px;
+                                    }
+                                }
+                            }
+
+                            &.day-box {
+                                @incldue clearfix;
+                                @include line($ht:13px, $bg:$bor-gray-03);
+                                padding-left: 21px;
+                                &:first-child {
+                                    &:before {
+                                        content: none;
+                                    }
+                                }
+                                .btn-day {
+                                    @include bx;
+                                    float: left;
+                                    width: 53px;
+                                    height: $ht;
+                                    margin-left: -1px;
+                                    font-size: 13px;
+                                    font-weight: 300;
+                                    line-height: ($ht)-(2);
+                                    text-align: center;
+                                    color: $fg-gray-01;
+                                    border: 1px solid $bor-gray-03;
+                                    background: #fff;
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+                                    &.on {
+                                        z-index: 1;
+                                        border-color: $bor-black-01;
+                                    }
+                                }
+                            }
+
+                            &.cal-box {
+                                @include bx;
+                                margin: -1px 17px 0 20px;
+                                .row {
+                                    @include cal;
+                                }
+                                .cal-txt {
+                                    display: inline-block;
+                                    padding: 0 5px;
+                                    font-size: 13px;
+                                    line-height: 28px;
+                                    color: $fg-gray-01;
+                                }
+                            }
+                        }
+
+                        .btn-srch {
+                            @include btn-gray-bor-02(70px, $ht);
+                        }
+                    }
+
+                    .txt-box {
+                        padding: 17px 0;
+                    }
+                    
+                    .tbl-area{
+                        .tbl-col {
+                            .tbl {
+                                @include tbl-ch-body {
+                                    td {
+                                        .link-txt {
+                                            text-align: center;
+                                            padding: 0;
+                                            &.prd-name {
+                                                padding: 0 22px;
+                                                text-align: left;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    /* page num */
+                    .page-area {
+                        @include pagenation(30px);
+                    }
+
+                }
+            }
+                
+            /* 주문상세조회 */
+            &.view {
+                .container {
+                    .tbl-area {
+                        text-align: center;
+
+                        &:first-child {
+                            padding-top: 0;
+                        }
+                        
+                        .tbl-col {
+                            .tbl {
+                                @include tbl-ch-head {
+                                    th {
+                                        padding: 17px 0;
+                                    }
+                                }
+                                @include tbl-ch-body {
+                                    td {
+                                        padding: 5px 0 4px;
+                                        .link-txt {
+                                            &.prd-name {
+                                                padding-top: 11px;
+                                                padding-bottom: 11px;
+                                                font-size: 15px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    
+                        .tbl-row {
+                            .tbl {
+                                @include tbl-ch-body{
+                                    th {
+                                        @include t-col-style(15px 15px 15px 20px, 14px, $fg:$fg-black);
+                                    }  
+                                    td {
+                                        @include t-col-style(10px 15px 10px 20px, 14px, $fg:$fg-black);
+                                        .row {
+                                            .txt {
+                                                display: inline-block;
+                                                vertical-align: middle;
+                                            }
+                                            .fs-18 {
+                                                font-size: 18px;
+                                            }
+                                            
+                                        }
+                                    }  
+                                };
+
+                            }
+                        }
+        
+                        & + .tbl-area {
+                            margin-top: 10px;
+                        }
+
+                        //주문정보
+                        &.order-area {
+                            margin-top: 0;
+                            .tbl-row {
+                                @include tbl-bor(1px);
+                            }
+                        }
+
+                        //결제정보
+                        &.pay-area {
+                            .tbl-row {
+                                @include tbl-bor(1px, $t-bor-bg:$bor-gray-03, $b-bor-bg:$bor-black-01);
+                            }
+                        }
+                    }
+                    
+                    .btn-box {
+                        @include bx;
+                        @include clearfix;
+                        margin-top: 20px;
+                        .btn-list {
+                            @include btn-green-bg(140px, 40px, 15px);
+                        }
+                    }
+                    
+                    .info-area {
+                        margin-top: 70px;
+                    }
+                }
+            }
+        }
+        
+        //교환신청
+        .change-sect {
+            .container {
+                .tbl-area {
+                    text-align: center;
+                    
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                    
+                    .tbl-col {
+                        .tbl {
+                            @include tbl-ch-body {
+                                td {
+                                    .link-txt {
+                                        text-align: center;
+                                        padding: 0;
+                                        &.prd-name {
+                                            padding: 11px 22px;
+                                            text-align: left;
+                                            .img-prd + span {
+                                                padding-left: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .tbl-row {
+                        @include tbl-bor(1px);
+                        .tbl {
+                            @include tbl-ch-body{
+                                th {
+                                    @include t-col-style(13px 15px 12px 22px, 14px, $fg:$fg-black);
+                                }  
+                                td {
+                                    @include t-col-style(10px 15px 10px 20px, 14px);
+                                    .row {
+                                        .form-sel {
+                                            margin-right: 20px;
+                                        }
+                                    }
+                                }  
+                            };
+                        }
+                    }
+                    
+                    .btn-box {
+                        $wd:140px;
+                        $ht:40px;
+                        $fs:15px;
+                        
+                        @include bx;
+                        @include clearfix;
+                        display: inline-block;
+                        margin-top: 30px;
+                        a {
+                            float: left;
+                            &.btn-green {
+                                @include btn-green-bg($wd, $ht, $fs);
+                            }
+                            &.btn-list {
+                                @include btn-gray-bor($wd, $ht, $fs);
+                            }
+                            
+                            & + a {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
