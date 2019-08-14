@@ -9,25 +9,87 @@
     
     /* sub top */
     @include sub-top;
-                        
+                
     /* table */
     .tbl-col {
-        @include bx;
-        @include th-col-1;
-        @include tbl-col-gray;
-    }
+        @include tbl-bor(1px);
+        .tbl {
+            @include tbl-ch-head {
+                th {
+                    @include th-line-s;
+                    @include t-col-style($fw:400);
+                }
+            }
+            @include tbl-ch-body {
+                td {
+                    @include t-col-style(15px 0, $fg:$fg-gray-04);
+                }
+            }
+        }
+    }      
 
     /* page num */
     .page-area {
         @include pagenation;
         margin-top: 10px;
+    } 
+    
+    
+    .board-sect {
+        .container {
+            @include tab($num:5, $a-pd:10px 0 12px);  
+                        
+            /* 검색영역 */
+            .top-box {
+                @include bx;
+                @include clearfix;
+                padding-bottom: 12px;
+            }
+
+            /* 하단 검색 + page */
+            .bot-area {
+                @include bx;
+                @include clearfix;
+                margin-top: 50px;
+                .srch-box {
+                    @include position(absolute, 0, 0);
+                }
+
+                .page-area {
+                    margin-top: 0;
+                    padding-top: 0;
+                    line-height: 28px;
+                }
+
+                .btn-box {
+                    @include position(absolute, 0, $right:0);
+                    .btn-write {
+                        @include btn-green-bg(100px, 28px, 14px);
+                    }
+                }
+            } 
+            
+            /* 1:1 문의하기 & 상품문의 */
+            .contact-area {
+                .txt-box {
+                    .txt-list {
+                        @include bx;
+                        li {
+                            font-size: 13px;
+                            font-weight: 300;
+                            line-height: 1.5;
+                            color: $fg-gray-01;
+                            @include line-row-2;
+                        }
+                    }
+                }
+            }
+        }
     }
     
     &.list {
         .board-sect {
             .container {
-                @include tab($num:5, $a-pd:10px 0 12px);
-                
                 .board-area {
                     @include bx;
                     padding-top: 50px;
@@ -43,37 +105,6 @@
                         float: left;
                         @include ip-srch;
                     }
-                        
-                    /* 검색영역 */
-                    .top-box {
-                        @include bx;
-                        @include clearfix;
-                        padding-bottom: 12px;
-                    }
-                    
-                    /* 하단 검색 + page */
-                    .bot-area {
-                        @include bx;
-                        @include clearfix;
-                        margin-top: 50px;
-                        .srch-box {
-                            @include position(absolute, 0, 0);
-                        }
-
-                        .page-area {
-                            margin-top: 0;
-                            padding-top: 0;
-                            line-height: 28px;
-                        }
-
-                        .btn-box {
-                            @include position(absolute, 0, $right:0);
-                            .btn-write {
-                                @include btn-green-bg(100px, 28px, 14px);
-                            }
-                        }
-                    }
-                    
                     
                     /* 공지사항 */
                     .notice-area {
@@ -127,61 +158,67 @@
                         
                         .tbl-col {
                             .tbl {
-                                .q-box {
-                                    .ico-q {
-                                        @include bx;
-                                        padding-left: 33px;
-                                        .q {
-                                            @include position(absolute, 0, 0);
-                                            font-size: 15px;
-                                            font-weight: 500;
-                                            color: $fg-green-01;
+                                @include tbl-ch-body {
+                                    //질문
+                                    &.q-box {
+                                        .ico-q {
+                                            @include bx;
+                                            padding-left: 33px;
+                                            .q {
+                                                @include position(absolute, 0, 0);
+                                                font-size: 15px;
+                                                font-weight: 500;
+                                                color: $fg-green-01;
+                                            }
+                                            letter-spacing: -0.2px;
                                         }
-                                        letter-spacing: -0.2px;
+
+                                        &.on {
+                                            td {
+                                                border-bottom: 0;
+                                            }
+                                        }
                                     }
                                     
-                                    &.on {
+                                    //답변
+                                    &.a-box { 
                                         td {
-                                            border-bottom: 0;
-                                        }
-                                    }
-                                }
-                                .a-box {
-                                    background: $bg-gray-02;
-                                    td {
-                                        padding: 30px 0 25px 21%;
-                                        .a-txt-box {
-                                            @include bx;
-                                            padding: 0 70px;
-                                            text-align: left;
-                                            .txt-box {
+                                            padding: 30px 0 25px 21%;
+                                            border-top: 0;
+                                            background: $bg-gray-02;
+                                            .a-txt-box {
                                                 @include bx;
-                                                padding-left: 33px;
-                                                &.ico-a {
-                                                    .a {
-                                                        @include position(absolute, 3px, 0);
-                                                        font-size: 15px;
-                                                        font-weight: 500;
-                                                        color: $fg-red-03;
+                                                padding: 0 70px;
+                                                text-align: left;
+                                                .txt-box {
+                                                    @include bx;
+                                                    padding-left: 33px;
+                                                    &.ico-a {
+                                                        .a {
+                                                            @include position(absolute, 3px, 0);
+                                                            font-size: 15px;
+                                                            font-weight: 500;
+                                                            color: $fg-red-03;
+                                                        }
                                                     }
-                                                }
-                                                .txt {
-                                                    margin-top: 21px;
-                                                    font-size: 15px;
-                                                    font-weight: 300;
-                                                    line-height: 1.5;
-                                                    letter-spacing: -0.2px;
-                                                    word-break: keep-all;
-                                                    color: $fg-black;
-                                                }
-                                                .a + .txt {
-                                                    margin-top: 0;
-                                                }
-                                                
-                                                .btn-link {
-                                                    margin-left: 15px;
-                                                    padding: 0;
-                                                    @include btn-gray-bor(110px, $fs:15px, $fg:$fg-black, $bor-g:$bor-gray-09);
+                                                    .txt {
+                                                        margin-top: 21px;
+                                                        font-size: 15px;
+                                                        font-weight: 300;
+                                                        line-height: 1.5;
+                                                        letter-spacing: -0.2px;
+                                                        word-break: keep-all;
+                                                        color: $fg-black;
+                                                    }
+                                                    .a + .txt {
+                                                        margin-top: 0;
+                                                    }
+
+                                                    .btn-link {
+                                                        margin-left: 15px;
+                                                        padding: 0;
+                                                        @include btn-gray-bor(110px, $fs:15px, $fg:$fg-black, $bor-g:$bor-gray-09);
+                                                    }
                                                 }
                                             }
                                         }
@@ -193,18 +230,6 @@
                     
                     /* 1:1 문의하기 & 상품문의 */
                     .contact-area {
-                        .txt-box {
-                            .txt-list {
-                                @include bx;
-                                li {
-                                    font-size: 13px;
-                                    font-weight: 300;
-                                    line-height: 1.5;
-                                    color: $fg-gray-01;
-                                    @include line-row-2;
-                                }
-                            }
-                        }
                         
                         .day-top-box {
                             @include bx;
@@ -286,45 +311,48 @@
                         
                         .tbl-col {
                             .tbl {
-                                td {
-                                    height: 50px;
-                                    padding: 7px 0 7px;
-                                    .img-prd {
-                                        @include bx;
-                                        overflow: hidden;
-                                        display: inline-block;
-                                        padding: 2px;
-                                        width: 35px;
-                                        height: 35px;
-                                        vertical-align: middle;
-                                        line-height: 0;
-                                        background: $bg-gray-02;
-                                        img {
+                                @include tbl-ch-body {
+                                    td {
+                                        height: 50px;
+                                        padding: 7px 0;
+                                        .img-prd {
                                             @include bx;
+                                            overflow: hidden;
+                                            display: inline-block;
+                                            padding: 2px;
+                                            width: 35px;
+                                            height: 35px;
+                                            vertical-align: middle;
                                             line-height: 0;
+                                            background: $bg-gray-02;
+                                            img {
+                                                @include bx;
+                                                line-height: 0;
+                                            }
                                         }
-                                    }
-                                    a {
-                                        padding: 0 40px;
-                                        span {
-                                            margin-left: 4px;
-                                            &:first-child {
-                                                margin-left: 11px;
+                                        .link-txt {
+                                            padding: 0 40px;
+                                            span {
+                                                margin-left: 4px;
+                                                &:first-child {
+                                                    margin-left: 11px;
+                                                }
                                             }
                                         }
                                     }
-                                } 
-                                .answer {
-                                    td {
-                                        a {
-                                            padding: 0 40px 0 51px;
+                                    
+                                    &.answer {
+                                        td {
+                                            .link-txt {
+                                                padding: 0 40px 0 51px;
+                                            }
                                         }
                                     }
-                                }
                                 
-                                /* 미답변 */
-                                .nope {
-                                    height: 300px;
+                                     //미답변 
+                                    &.nope {
+                                        height: 300px;
+                                    }
                                 }
                             }
                         }
@@ -366,28 +394,44 @@
                 }
             }
         }
-        
-        /* 글쓰기 */
-        &.write {
-            .board-sect {
-                .container {
-                    .board-area {
-                        padding-top: 45px;
-                        .contact-area {
-                            .txt-box {
-                                margin-bottom: 25px;
-                            } 
-                            @include tbl-row($th-pd:14px 15px 13px 29px, $th-fg:$fg-gray-04, $td-pd:10px 29px, $td-fg:$fg-black) {
-                                .btn-com {
-                                    @include btn-gray-bor-02;
-                                }
-                            };
-                            .btn-box {
-                                margin-top: 49px;
-                                text-align: center;
-                                .btn-new { 
-                                    @include btn-green-bg;
-                                }
+    }
+    
+    /* 글쓰기 */
+    &.write {
+        .board-sect {
+            .container {
+                .board-area {
+                    @include bx;
+                    padding-top: 45px;
+                    .contact-area {
+                        .txt-box {
+                            margin-bottom: 25px;
+                        } 
+
+                        .tbl-row {
+                            @include tbl-bor;
+                            .tbl {
+                                @include tbl-ch-body{
+                                    th {
+                                        @include t-col-style(14px 15px 13px 29px, $fg:$fg-gray-04);
+                                    }  
+                                    td {
+                                        @include t-col-style(10px 29px, $fg:$fg-black);
+                                        .row {
+                                            .btn-com {
+                                                @include btn-gray-bor-02;
+                                            }
+                                        }
+                                    }  
+                                };
+                            }
+                        }
+
+                        .btn-box {
+                            margin-top: 49px;
+                            text-align: center;
+                            .btn-new { 
+                                @include btn-green-bg;
                             }
                         }
                     }
@@ -400,7 +444,6 @@
     &.view {
         .view-sect {
             .container {
-                
                 .view-area {
                     @include bx;
                     @include clearfix;
@@ -509,23 +552,26 @@
                     
                     .tbl-col {
                         .tbl {
-                            .on {
-                                position: relative;
-                                td {
-                                    border-top: 2px solid $bor-red-01;
-                                    border-bottom: 2px solid $bor-red-01;
-                                    &:first-child {
-                                        position: static;
-                                        border-left: 2px solid $bor-red-01;
-                                        &:before {
-                                            @include position(absolute, $right:0);
-                                            position: absolute;
-                                            content: '';
-                                            display: block;
-                                            width: 2px;
-                                            height: 51px;
-                                            margin-top: -16px;
-                                            background: $bor-red-01;
+                            @include tbl-ch-body {
+                                
+                                &.on {
+                                    position: relative;
+                                    td {
+                                        border-top: 2px solid $bor-red-01;
+                                        border-bottom: 2px solid $bor-red-01;
+                                        &:first-child {
+                                            position: static;
+                                            border-left: 2px solid $bor-red-01;
+                                            &:before {
+                                                z-index: 1;
+                                                content: '';
+                                                @include position(absolute, $right:0);
+                                                display: block;
+                                                width: 2px;
+                                                height: 51px;
+                                                margin-top: -16px;
+                                                background: $bor-red-01;
+                                            }
                                         }
                                     }
                                 }

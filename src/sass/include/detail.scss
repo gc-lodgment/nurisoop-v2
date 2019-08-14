@@ -203,32 +203,51 @@
                             }
                         }
                         
-                        @include tbl-col-prd;
-                        
-                        .price-total {
-                            @include bx;
-                            @include clearfix;
-                            padding: 21px 0 23px;
-                            border-bottom: 1px solid $bor-gray-03;
-                            .total-box {
-                                float: right;
-                                span {
-                                    display: inline-block;
-                                    font-size: 14px;
-                                    line-height: 22px;
-                                    vertical-align: middle;
+                        //detail-table
+                        .tbl-col { 
+                            @include tbl-bor(1px, $b-bor-bg:$bor-gray-03);
+                            .tbl {
+                                @include tbl-ch-head {
+                                    th {
+                                        @include t-col-style(10px 22px, 13px);
+                                    }
                                 }
-                                em {
-                                    padding: 0 9px 0 10px;
-                                    font-size: 22px;
-                                    line-height: 1;
-                                    vertical-align: middle;
-                                    &.fg-grn {
-                                        color: $fg-green-01;
+                                @include tbl-ch-body {
+                                    td {
+                                        @include t-col-style(20px, 16px, $fg:$fg-black);
+                                        &.price-total {
+                                            @include bx;
+                                            @include clearfix;
+                                            padding: 21px 0 23px;
+                                            .total-box { 
+                                                float: right;
+                                                span {
+                                                    display: inline-block;
+                                                    font-size: 14px;
+                                                    font-weight: 400;
+                                                    line-height: 22px;
+                                                    vertical-align: middle;
+                                                }
+                                                em {
+                                                    padding: 0 9px 0 10px;
+                                                    font-size: 22px;
+                                                    font-weight: 400;
+                                                    line-height: 1;
+                                                    vertical-align: middle;
+                                                    &.fg-grn {
+                                                        color: $fg-green-01;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:first-child td {
+                                        border-top-color: $bor-gray-04;
                                     }
                                 }
                             }
                         }
+                        
                     }
                     
                     //버튼
@@ -270,24 +289,17 @@
                     
                     //굿상품
                     .gd-box {
-                        .tbl {
-                            border-top: 1px solid $bor-gray-03;
-                            th, td {
-                                font-size: 14px;
-                                border-bottom: 1px solid $bor-gray-03;
-                            }
-                            thead {
-                                tr {
+                        .tbl-col {
+                            @include tbl-bor(1px, $t-bor-bg:$bor-gray-03, $b-bor-bg:$bor-gray-03);
+                            .tbl {
+                                @include tbl-ch-head {
                                     th {
-                                        padding: 10px 0;
-                                        font-weight: 500;
+                                        @include t-col-style(10px 0, 14px, 500, $fg-black);
                                     }
                                 }
-                            }
-                            tbody {
-                                tr {
+                                @include tbl-ch-body {
                                     td {
-                                        padding: 10px 20px;
+                                        @include t-col-style(10px 20px, 14px, $fg:$fg-black);
                                         .img {
                                             @include bx;
                                             width: 87px;
@@ -679,7 +691,19 @@
                                 line-height: 1;
                             }
                             
-                            @include tbl-row;
+                            .tbl-row {
+                                @include tbl-bor;
+                                .tbl {
+                                    @include tbl-ch-body{
+                                        th {
+                                            @include t-col-style(19px 15px 17px 29px, $fg:$fg-black);
+                                        }
+                                        td {
+                                            @include t-col-style(10px 15px 10px 29px, $fg:$fg-gray-09);
+                                        }
+                                    }
+                                }
+                            }
                             
                             .using-box {
                                 @include bx;
@@ -713,43 +737,49 @@
                     //배송/샘플 안내 
                     .ssinfo-area {
                         padding: 50px 0 70px;
-                        @include tbl-row(0){
+                        
+                        .tbl-row {
+                            @include tbl-bor(1px, $bor-gray-03);
                             .tbl {
-                                border: 1px solid $bor-gray-03;
-                                border-bottom: 0;
-                                td {
-                                    padding-top: 25px;
-                                    padding-bottom: 24px;
-                                }
-                                .fg-red {
-                                    color: $fg-red-03 !important;
-                                }
-                                
-                                .info-tit {
-                                    padding: 26px 0 3px;
-                                    color: $fg-black;
-                                    
-                                    &:first-child {
-                                        margin-top: -25px;
+                                @include tbl-ch-body{
+                                    th {
+                                        @include t-col-style(19px 15px 17px 29px, $fg:$fg-black);
+                                        border-left: 1px solid $bor-gray-03;
                                     }
-                                }
-                                
-                                .info-txt {
-                                    word-break: keep-all;
-                                    line-height: 1.7;
-                                }
-                                
-                                .info-list {
-                                    li {
-                                        @include bx;
-                                        padding-left: 10px;
-                                        word-break: keep-all;
-                                        line-height: 1.7;
-                                        @include line-row-2(5px, $t:12px, $bg:#777);
+                                    td {
+                                        @include t-col-style(25px 15px 24px 29px, $fg:$fg-gray-09);
+                                        border-right: 1px solid $bor-gray-03;
+                                        .info-tit {
+                                            padding: 26px 0 3px;
+                                            color: $fg-black;
+
+                                            &:first-child {
+                                                margin-top: -25px;
+                                            }
+                                        }
+
+                                        .info-txt {
+                                            word-break: keep-all;
+                                            line-height: 1.7;
+                                        }
+
+                                        .info-list {
+                                            li {
+                                                @include bx;
+                                                padding-left: 10px;
+                                                word-break: keep-all;
+                                                line-height: 1.7;
+                                                @include line-row-2(5px, $t:12px, $bg:#777);
+                                            }
+                                        }
+
+                                        .fg-red {
+                                            color: $fg-red-03 !important;
+                                        }
                                     }
                                 }
                             }
-                        };
+                        }
                     }
                 }
             }

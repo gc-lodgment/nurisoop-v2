@@ -86,6 +86,10 @@
             }
         }
 
+        //처음일때 padding 0
+        &.fir {
+            padding-top: 0;
+        }
     }
     
     .tbl-area {
@@ -103,10 +107,18 @@
         
         .tbl-col {
             @include bx;
-            @include th-col-2;
-            @include tbl-col-gray-02{
-                .tbl {
+            @include tbl-bor(1px);
+            .tbl {
+                @include tbl-ch-head {
+                    th {
+                        @include t-line-l;
+                        @include t-col-style(7px 0, 14px);
+                    }
+                }
+                @include tbl-ch-body {
                     td {
+                        @include t-line-l;
+                        @include t-col-style(10px 0 9px, 14px, $fg:$fg-black);
                         .btn-com {
                             margin-top: 5px;
                             &.btn-change {
@@ -121,7 +133,7 @@
                             display: inline-block;
                             width: 80px;
                             height: 80px;
-                            margin: 11px auto;
+                            //margin: 11px auto;
 
                             & + span {
                                 display: inline-block;
@@ -197,33 +209,36 @@
                         }
                     }
                 }
-            }; 
+            }
         }
         
         .tbl-row {
             .tbl {
-                .t-ast {
-                    display: inline-block;
-                    padding-left: 17px;
-                    &:before {
-                        font-weight: 500;
-                        color: $fg-red-03;
-                    }   
-                }
-                .fake-ast {
-                    padding-left: 17px;
-                }
-                td {
-                    .btn-com {
-                        margin-left: 13px;
+                @include tbl-ch-body{
+                    th, td {
+                        .t-ast {
+                            padding-left: 17px;
+                        }
+                        .fake-ast {
+                            padding-left: 17px;
+                        }
                     }
-                    .btn-green {
-                        margin-left: 8px;
-                    }
-                }
+                    td {
+                        .row {
+                            .btn-com {
+                                margin-left: 13px;
+                            }
+                            .btn-green {
+                                margin-left: 8px;
+                            }
+                        }
+                    }  
+                };
+
             }
         }
     }
+    
     .tbl-area-2 {
         .btn-com {
             @include btn-gray-bor-02(80px, 27px);
@@ -231,32 +246,52 @@
         }
         .tbl-col {
             @include bx;
-            @include th-col-white
-            @include tbl-col-pay
+            @include tbl-bor(1px, $b-bor-bg:$bor-black-01);
+            .tbl {
+                .row-pop {
+                    @include bx;
+                    display: inline-block;
+                }
+                @include tbl-ch-head {
+                    th {
+                        @include t-line-l;
+                        @include t-col-style(18px 0, 14px, 400, $fg-gray-04);
+                    }
+                }
+                @include tbl-ch-body {
+                    td {
+                        @include t-line-l;
+                        @include t-col-style(26px 0 31px, 22px, 500, $fg-black);
+
+                        .ie & {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
         }
         
-        
-        @include tbl-row(0, $fs:13px, $th-pd:15px 15px 15px 20px, $th-fg:$fg-black-02, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black-02){
-            .tbl {
+        .tbl-row {
+            @include tbl-bor(1px);
+            @include tbl-ch-body{
                 th {
-                    font-size: 14px;
-                    border-right: 1px solid $bor-gray-03;
+                    @include t-col-style(15px 15px 15px 20px, 14px, $fg:$fg-black-02);
                     .price-all {
                         font-weight: 400;
 
                     }
-                }
+                }  
                 td {
+                    @include t-col-style(10px 15px 10px 20px, 13px, $fg:$fg-black-02);
                     .row {
-                        
                         .price-all {
                             font-size: 17px;
                         }
-                        
+
                         .txt-list {
                             margin: 6px 0;
                         }
-                        
+
                         &.money-row {
                             .ip-txt {
                                 width: 118px;
@@ -268,7 +303,7 @@
                                     color: $fg-red-05;
                                 }
                             }
-                            
+
                             .ml {
                                 margin-left: 15px;
                             }
@@ -281,51 +316,19 @@
                             }
 
                         }
-                        
+
                         &.coupon-row {
                             display: inline-block;
                         }
-                        
-                    }
-                }
-            }
-        };
-    }
-    
-    .tbl-row.type-2 {
-        .tbl {
-            .row {
-                &.pay-row {
-                    .pay-tit {
-                        font-weight: bold;
-                    }
-                    .pay-box {
-                        @include bx;
-                        margin-top: 4px;
-                        .pay-txt {
-                            font-size: 13px;
-                            line-height: 1.4;
-                            color: $fg-gray-01;
-                            span, em {
-                                color: $fg-black;
-                            }
 
-                            .btn-bank {
-                                @include btn-bor-com(120px);
-                                margin-left: 5px;
-                                vertical-align: inherit;
-                                &:hover {
-                                    border-color: $bor-green-01;
-                                    color: #fff;
-                                    background: $bg-green-01;
-                                }
-                            }
-
-                        }
                     }
-                }
-            }
-        }                              
+                }  
+            };
+        }
+        
+        .tbl-col + .tbl-row {
+            border-top-width: 0px;
+        }
     }
        
     //Notice
@@ -431,6 +434,25 @@
                     .txt-box {
                         padding: 17px 0;
                     }
+                    
+                    .tbl-area{
+                        .tbl-col {
+                            .tbl {
+                                @include tbl-ch-body {
+                                    td {
+                                        .link-txt {
+                                            text-align: center;
+                                            padding: 0;
+                                            &.prd-name {
+                                                padding: 0 22px;
+                                                text-align: left;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
 
                     /* page num */
                     .page-area {
@@ -449,55 +471,70 @@
                         &:first-child {
                             padding-top: 0;
                         }
-
-                        @include tbl-row(0, $fs:14px, $th-pd:15px 15px 15px 20px, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black){
-                            border-top: 1px solid $bor-black-01;
-                            .tbl {
-                                th {
-                                    border-right: 1px solid $bor-gray-03;
-                                }
-                                td {
-                                    .row {
-                                        .txt {
-                                            display: inline-block;
-                                            vertical-align: middle;
-                                        }
-                                        .fs-18 {
-                                            font-size: 18px;
-                                        }
-                                    }
-                                }
-                            }
-
-                            &.type-2 {
-                                border-top-color: $bor-gray-03;
-                                .tbl {
-                                    border-collapse: inherit;
-                                    .bor-black {
-                                        th, td {
-                                            border-bottom-color: $bor-black-01;
-                                        }
-                                    }
-                                }
-                            }
-                        };
                         
                         .tbl-col {
                             .tbl {
-                                thead {
+                                @include tbl-ch-head {
                                     th {
-                                        padding: 17px 0 17px;
+                                        padding: 17px 0;
                                     }
                                 }
-                                
-                                td {
-                                    padding: 5px 0 4px;
+                                @include tbl-ch-body {
+                                    td {
+                                        padding: 5px 0 4px;
+                                        .link-txt {
+                                            &.prd-name {
+                                                padding-top: 11px;
+                                                padding-bottom: 11px;
+                                                font-size: 15px;
+                                            }
+                                        }
+                                    }
                                 }
+                            }
+                        }
+                    
+                        .tbl-row {
+                            .tbl {
+                                @include tbl-ch-body{
+                                    th {
+                                        @include t-col-style(15px 15px 15px 20px, 14px, $fg:$fg-black);
+                                    }  
+                                    td {
+                                        @include t-col-style(10px 15px 10px 20px, 14px, $fg:$fg-black);
+                                        .row {
+                                            .txt {
+                                                display: inline-block;
+                                                vertical-align: middle;
+                                            }
+                                            .fs-18 {
+                                                font-size: 18px;
+                                            }
+                                            
+                                        }
+                                    }  
+                                };
+
                             }
                         }
         
                         & + .tbl-area {
                             margin-top: 10px;
+                        }
+
+                        //주문정보
+                        &.order-area {
+                            margin-top: 0;
+                            .tbl-row {
+                                @include tbl-bor(1px);
+                            }
+                        }
+
+                        //결제정보
+                        &.pay-area {
+                            .tbl-row {
+                                @include tbl-bor(1px, $t-bor-bg:$bor-gray-03, $b-bor-bg:$bor-black-01);
+                            }
                         }
                     }
                     
@@ -530,21 +567,44 @@
                         padding-top: 0;
                     }
                     
-                    @include tbl-row(0, $fs:14px, $th-pd:13px 15px 12px 22px, $th-bg:#fff, $td-pd:10px 15px 10px 20px){
-                        border-top: 1px solid $bor-black-01;
+                    .tbl-col {
                         .tbl {
-                            th {
-                                border-right: 1px solid $bor-gray-03;
-                            }
-                            td {
-                                .row {
-                                    .form-sel {
-                                        margin-right: 20px;
+                            @include tbl-ch-body {
+                                td {
+                                    .link-txt {
+                                        text-align: center;
+                                        padding: 0;
+                                        &.prd-name {
+                                            padding: 11px 22px;
+                                            text-align: left;
+                                            .img-prd + span {
+                                                padding-left: 0;
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
-                    };
+                    }
+                    
+                    .tbl-row {
+                        @include tbl-bor(1px);
+                        .tbl {
+                            @include tbl-ch-body{
+                                th {
+                                    @include t-col-style(13px 15px 12px 22px, 14px, $fg:$fg-black);
+                                }  
+                                td {
+                                    @include t-col-style(10px 15px 10px 20px, 14px);
+                                    .row {
+                                        .form-sel {
+                                            margin-right: 20px;
+                                        }
+                                    }
+                                }  
+                            };
+                        }
+                    }
                     
                     .btn-box {
                         $wd:140px;
@@ -670,74 +730,85 @@
                 .tbl-area {
                     .tbl-col {
                         .tbl {
-                            .ip-chk {
-                                display: inline-block;
-                                .btn-chk {
-                                    left: 50%;
-                                    margin-left: -6px;
-                                }
-                            }
-                            .link-txt {
-                                &.prd-name {
-                                    .img-prd {
-                                        margin: 0 18px 0 0;
-                                    }
-                                }
-                            }
-                            
-                            //상품정보
-                            .prd-box {
-                                @include bx;
-                                @include clearfix;
-                                
-                                .prd-row {
-                                    @include bx;
-                                    float: left;
-                                    .link-txt {
+                            @include tbl-ch-body {
+                                td {
+                                    .ip-chk {
                                         display: inline-block;
-                                        padding: 0;
-                                        .img-prd {
-                                            margin: 0 20px;
+                                        .btn-chk {
+                                            left: 50%;
+                                            margin-left: -7px;
+                                            margin-top: -4px;
                                         }
+                                    }
+                                    .link-txt {
                                         &.prd-name {
-                                            padding-top: 4px;
-                                            line-height: 1;
+                                            font-size: 15px;
+                                            .img-prd {
+                                                margin: 0 18px 0 0;
+                                            }
                                         }
                                     }
-                                    .btn-box {
+
+                                    //상품정보
+                                    .prd-box {
                                         @include bx;
-                                        margin-top: 15px;
-                                        padding-top: 16px;
-                                        border-top: 1px solid $bor-gray-03;
-                                        .btn-com {
-                                            margin-top: 0;
-                                            &.btn-wish {
-                                                
+                                        @include clearfix;
+
+                                        .prd-row {
+                                            @include bx;
+                                            float: left;
+                                            .link-txt {
+                                                display: inline-block;
+                                                padding: 0;
+                                                .img-prd {
+                                                    margin: 0 20px;
+                                                }
+                                                &.prd-name {
+                                                    padding-top: 4px;
+                                                    line-height: 1;
+                                                }
                                             }
-                                            &.btn-del {
-                                                width: 70px;
+                                            .btn-box {
+                                                @include bx;
+                                                margin-top: 15px;
+                                                padding-top: 16px;
+                                                border-top: 1px solid $bor-gray-03;
+                                                .btn-com {
+                                                    margin-top: 0;
+                                                    &.btn-wish {
+
+                                                    }
+                                                    &.btn-del {
+                                                        width: 70px;
+                                                    }
+
+                                                    & + .btn-com {
+                                                        margin-left: 2px;
+                                                    }
+                                                }
                                             }
-                                            
-                                            & + .btn-com {
-                                                margin-left: 2px;
+
+                                            &.prd-txt {
+                                                width: -webkit-calc( 100% - 120px );
+                                                width: -moz-calc( 100% - 120px );
+                                                width: calc( 100% - 120px );
+                                                text-align: left;
                                             }
                                         }
-                                    }
-                                    
-                                    &.prd-txt {
-                                        width: -webkit-calc( 100% - 120px );
-                                        width: -moz-calc( 100% - 120px );
-                                        width: calc( 100% - 120px );
-                                        text-align: left;
                                     }
                                 }
                             }
                         }
                     }
                     
-                    @include tbl-row(1px){
-                        .tbl {
+                    .tbl-row {
+                        @include tbl-bor(1px);
+                        @include tbl-ch-body{
+                            th {
+                                @include t-col-style(10px 15px 9px 29px, 15px, $fg:$fg-black);
+                            }  
                             td {
+                                @include t-col-style(10px 15px 11px 31px, 15px, $fg:$fg-gray-09);
                                 .row {
                                     .form-sel, .ip-txt {
                                         font-size: 13px;
@@ -761,28 +832,32 @@
                                     }
                                     
                                 }
-                            }
-                        }
-                    };
+                            }  
+                        };
+                    }
                     
                     &.prd-tbl-area {
                         .tbl-col {
                             .tbl {
-                                th {
-                                    padding: 17px 0;
-                                    
+                                @include tbl-ch-head {
+                                    th {
+                                        padding: 17px 0;
+
+                                    }
                                 }
-                                td {
-                                    padding: 16px 0 14px;
-                                    .bot-box {
-                                        padding: 1px 12px 4px 10px;
-                                    }
-                                    .price-line {
-                                        @include bx;
-                                        @include line-row($bg:$bg-gray-09);
-                                    }
-                                    &.nope {
-                                        padding: 101px 0;
+                                @include tbl-ch-body {
+                                    td {
+                                        padding: 16px 0 14px;
+                                        .bot-box {
+                                            padding: 1px 12px 4px 10px;
+                                        }
+                                        .price-line {
+                                            @include bx;
+                                            @include line-row($bg:$bg-gray-09);
+                                        }
+                                        &.nope {
+                                            padding: 101px 0;
+                                        }
                                     }
                                 }
                             }
@@ -1023,45 +1098,47 @@
                                             }
                                             
                                             .rec-row {
-                                                @include tbl-row(0, $fs:14px, $th-pd:5px 10px 5px, $th-fg:$fg-gray-01, $th-bg:#fff, $td-pd:5px 10px 5px) {
-                                                    margin-top: 8px;
+                                                margin-top: 8px;
+                                                .tbl-row {
+                                                    @include tbl-bor(1px, $bor-gray-03);
                                                     .tbl {
-                                                        border-top: 1px solid $bor-gray-03;
-                                                        th {
-                                                            border-right: 1px solid $bor-gray-03;
-                                                        }
-                                                        td {
-                                                            .row {
-                                                                
-                                                                .type-tab {
-                                                                    li {
-                                                                        margin-left: 15px;
-                                                                        &:first-child {
-                                                                            margin-left: 0;
-                                                                        }
-                                                                        .srch-txt {
-                                                                            font-weight: 300;
-                                                                            color: $fg-gray-06;
+                                                        @include tbl-ch-body{
+                                                            th {
+                                                                @include t-col-style(5px 10px 5px, 14px, $fg:$fg-gray-01);
+                                                            }  
+                                                            td {
+                                                                @include t-col-style(5px 10px 5px, 14px);
+
+                                                                .row {
+                                                                    .type-tab {
+                                                                        li {
+                                                                            margin-left: 15px;
+                                                                            &:first-child {
+                                                                                margin-left: 0;
+                                                                            }
+                                                                            .srch-txt {
+                                                                                font-weight: 300;
+                                                                                color: $fg-gray-06;
+                                                                            }
                                                                         }
                                                                     }
-                                                                }
-                                                                
-                                                                .ip-txt {
-                                                                    width: 245px;
-                                                                    &.w-1 {
-                                                                        width: 68px;
+
+                                                                    .ip-txt {
+                                                                        width: 245px;
+                                                                        &.w-1 {
+                                                                            width: 68px;
+                                                                        }
+                                                                    }
+
+                                                                    .txt-hyphen {
+                                                                        display: inline-block;
+                                                                        padding: 0 6px;
                                                                     }
                                                                 }
-                                                                
-                                                                .txt-hyphen {
-                                                                    display: inline-block;
-                                                                    padding: 0 6px;
-                                                                }
-                                                            }
-                                                        }
+                                                            }  
+                                                        };
                                                     }
-                                                };
-                                                    
+                                                }
                                             }
                                         }
                                     }
@@ -1210,22 +1287,20 @@
                 padding-bottom: 16px;
                 .container {
                     .tbl-area {
-                        .tbl {
-                            th {
-                                padding: 10px 15px 9px 29px;
-                            }
-                            td {
-                                padding: 10px 15px 11px 31px;
-                            }
-                        }
-                        
                         &.gift-area {
-                            .tbl {
-                                th {
-                                    padding: 10px 0 11px 0;
-                                }
-                                td {
-                                    padding: 10px 0 9px 0;
+                            .tbl-col {
+                                .tbl {
+                                    @include tbl-ch-head {
+                                        th {
+                                            padding: 10px 0 11px 0;
+                                        }
+                                    }
+                                    @include tbl-ch-body {
+                                        td {
+                                            padding-right: 0;
+                                            padding-left: 0;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -1443,40 +1518,25 @@
                     
                     .tbl-area {
                         .tbl {
-                            thead {
-                                tr {
-                                    th {
-                                        padding: 11px 0;
-                                    }
+                            @include tbl-ch-head {
+                                th {
+                                    padding: 11px 0;
                                 }
                             }
                         }
                     }
                     .tbl-area-2 {
                         margin-top: 0;
+                        
                         .tbl-row {
-                            &.type-2 {
-                                border-top: 1px solid $bor-black-01;
-                            }
                             .tbl {
-                                tbody {
-                                    tr {
-                                        th {
-                                            color: $fg-black;
+                                @include tbl-ch-body{
+                                    td {
+                                        .row {
+                                            font-size: 14px;
                                         }
-                                        td {
-                                            .row {
-                                                font-size: 14px;
-                                                color: $fg-black;
-                                                &.pay-row {
-                                                    .pay-tit {
-                                                        font-size: 15px;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                    }  
+                                };
                             }
                         }
                     }
@@ -1499,15 +1559,5 @@
                 }
             }
         }
-    }
-}
-
-/*
- * ie8
- */
-.ie8 {
-    /* 콘텐츠 영역 */
-    .contents { 
-        
     }
 }

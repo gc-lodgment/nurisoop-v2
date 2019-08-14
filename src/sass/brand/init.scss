@@ -175,9 +175,23 @@
         
         /* table */
         .tbl-col {
-            @include bx;
-            @include th-col-1;
-            @include tbl-col-gray($a-pd:0 55px);
+            @include tbl-bor(1px);
+            .tbl {
+                @include tbl-ch-head {
+                    th {
+                        @include th-line-s;
+                        @include t-col-style($fw:400);
+                    }
+                }
+                @include tbl-ch-body {
+                    td {
+                        @include t-col-style(15px 0, $fg:$fg-gray-04);
+                        .link-txt {
+                            padding: 0 55px;
+                        }
+                    }
+                }
+            }
         }
 
         /* page num */

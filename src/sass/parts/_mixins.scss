@@ -67,32 +67,7 @@
 }
 
 //tab
-@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:18px 0 17px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:$fg-black, $bg:#fff, $bg-on:#fff){
-    // num = li가 여러개일 경우, li가 한개일경우 $tab-li-wd 값 설정
-    @if( $num  == null ){
-        .tab-box {
-            .tab-list {
-                li {
-                    width: $tab-li-wd;
-                }
-            }
-            
-        }
-    }@else {
-        .tab-box {
-            .tab-list {
-                width: $tab-wd;
-                li {
-                    @if( $num  == 3 ){
-                        width: 33.3333333%;
-                    }@else {
-                        width: ($tab-wd/$num);
-                    }
-                }
-            }
-            
-        }
-    }
+@mixin tab($bor-w-on:2px, $bor-g-on:$bor-black-01, $tab-wd:100%, $tab-li-wd:null, $num:null, $bor-w:1px, $bor-g:$bor-gray-01, $a-pd:18px 0 17px, $fs:16px, $fg:$fg-gray-03, $fg-hover:$fg-gray-01, $fg-on:$fg-black, $bg:#fff, $bg-on:#fff, $w-l:null){
     
     .tab-box {
         @include bx;
@@ -112,7 +87,6 @@
                 padding-top: ($bor-w-on)-($bor-w);
                 border: $bor-w solid $bor-g;
                 border-bottom: 0;
-                border-left: 0;
                 background: $bg;
                 a {
                     @include bx;
@@ -159,6 +133,34 @@
         }
         
         @content;
+    }
+    
+    // num = li가 여러개일 경우, li가 한개일경우 $tab-li-wd 값 설정
+    @if( $num  == null ){
+        .tab-box {
+            .tab-list {
+                li {
+                    width: $tab-li-wd;
+                    border-left-width: 1px;
+                }
+            }
+            
+        }
+    }@else {
+        .tab-box {
+            .tab-list {
+                width: $tab-wd;
+                li {
+                    border-left-width: 0;
+                    @if( $num  == 3 ){
+                        width: 33.3333333%;
+                    }@else {
+                        width: ($tab-wd/$num);
+                    }
+                }
+            }
+            
+        }
     }
 }
 
@@ -1624,503 +1626,63 @@
     }
 }
 
-//table row
-@mixin tbl-row($bor-t-w:2px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:19px 15px 17px 29px, $th-fg:$fg-black, $th-bg:$bg-gray-02, $td-pd:10px 15px 10px 29px, $td-fg:$fg-gray-09, $td-bg:#fff, $i-ht:28px, $i-fg:$fg-gray-01){
-    .tbl-row {
-        @include bx;
-        width: 100%;
-        .tbl {
-            border-top: $bor-t-w solid $bor-t-bg;
-            th, td {
-                font-size: $fs;
-                font-weight: 300;
-                text-align: left;
-                border-bottom: 1px solid $bor-b-bg;
-            }
-            th {
-                padding: $th-pd;
-                color: $th-fg;
-                background: $th-bg;
-            }
-            td {
-                position: relative;
-                padding: $td-pd;
-                color: $td-fg;
-                background: $td-bg;
-                
-                .row {
-                    @include bx;
-                    .form-sel, .ip-txt, .ip-cal, .ta-txt {
-                        @include bx;
-                        color: $i-fg;
-                        vertical-align: middle;
-                        border: 1px solid $bor-b-bg;
-                    }
-                    .form-sel, .ip-txt, .ip-cal {
-                        height: $i-ht;
-                        padding: 0 10px;
-                        line-height: $i-ht;
-                    }
-                    .form-sel {
-                        @include sel-com(197px, $i-ht, 0);
-                        &.w-1 {
-                            width: 66px;
-                        }
-                        &.w-2 {
-                            width: 137px;
-                        }
-                        &.w-3 {
-                            width: 247px;
-                        }
-                        
-                        .ie9 &, .ie8 & {
-                            padding-right: 0;
-                        }
-                    }
-                    .ip-txt {
-                        width: 247px;
-                        &.all {
-                            width: 100%;
-                        }
-                        &.w-1 {
-                            width: 66px;
-                        }
-                        &.w-2 {
-                            width: 276px;
-                        }
-                        &.w-3 {
-                            width: 515px;
-                        }
-                    }
-                    .ip-cal {
-                        width: 94px;
-                        margin-right: 3px;
-                    }
-                    .ta-txt {
-                        width: 100%;
-                        height: 256px;
-                        padding: 10px;
-                        
-                        &.h-1 {
-                            height: 158px;
-                        }
-                        &.type-2 {
-                            width: 740px;
-                            height: 126px;
-                        }
-                    }
-                    
-                    //텍스트
-                    .p-point, .chk-txt {
-                        @include bx;
-                        display: inline-block;
-                        font-size: 13px;
-                        letter-spacing: 0;
-                        vertical-align: middle;
-                        line-height: $i-ht;
-                        &.fg-red {
-                            color: $fg-red-03;
-                        }
-                    }
-                    .p-point {
-                        padding-left: 9px;
-                        &:before {
-                            @include position(absolute, 3px, 0);
-                            content: '*';
-                            display: inline-block;
-                        }
-                    }
-                    
-                    .txt-adr {
-                        padding-left: 8px;
-                        vertical-align: middle;
-                    }
-                    
-                    .p-line {
-                        @include bx;
-                        padding-left: 10px;
-                        font-size: 14px;
-                        letter-spacing: 0;
-                        vertical-align: middle;
-                        line-height: 1.5;
-                        color: $fg-gray-04;
-                        &:before {
-                            content: '';
-                            @include position(absolute, 11px, 0);
-                            width: 4px;
-                            height: 1px;
-                            background: $fg-gray-04;
-                        }
-                    }
-                    
-                    .chk-txt {
-                        padding-left: 17px;
-                        @include chkbox;
-                    }
-                    
-                    .s-1{
-                        padding: 0 6px;  
-                        font-size: 20px;
-                        vertical-align: middle;
-                        letter-spacing: 0;
-                        color: $i-fg;
-                    }
-                    
-                    .txt-hyphen {
-                        display: inline-block;
-                        padding: 0 7px;
-                    }
-                    
-                    a, button {
-                        &.btn-file-del {
-                            margin-left: 25px;
-                            font-size: 14px;
-                        }
-                        
-                        /*@include trasBase(1);
-                        &:hover {
-                            @include trasBase(0.6);
-                        }*/
-                    }
-
-                    .btn-phone, .btn-adr, .btn-adrbk, .btn-nick-chk {
-                        @include btn-gray-bor-02;
-                        margin-left: 15px;
-                    }
-                    
-                    //간격 
-                    input + .btn-com, input + label {
-                        margin-left: 8px;
-                    }
-                    
-                    .row-file {
-                        margin-bottom: 13px;
-                    }
-                    
-                    &.chk-like-radio {
-                        .form-sel {
-                            float: none;
-                            margin-right: 10px;
-                        }
-                    }
-                    
-                    & + .row {
-                        margin-top: 13px;
-                    
-                        &.type-2 {
-                            margin-top: 9px;
-                        }
-                    }
-                    
-                    & + .row.file-box {
-                        margin-top: 0;
-                    }
-                    
-                    &.row-pop {
-                        display: inline-block;
-                        .btn-com {
-                            @include btn-gray-bor-02(80px, 27px);
-                            margin-left: 19px;
-                            font-weight: 300;
-                        }
-                    }
-                }
-            }
-        }
-        @content;
-    }    
-}
-
-//tbl col th gray - th line (짧은 라인)
-@mixin th-col-1($fs:15px, $bor-b-bg:$bor-gray-03, $th-pd:17px 0, $th-fg:$fg-black, $th-bg:$bg-gray-02){
+//table col head
+@mixin tbl-ch-head {
     thead {
         tr {
-            th {
-                padding: $th-pd;
-                font-size: $fs;
-                font-weight: 400;
-                color: $th-fg;
-                border-bottom: 1px solid $bor-b-bg;
-                background: $th-bg;
-                @include line($ht:12px, $bg:$bor-gray-09);
-                &:first-child {
-                    &:before {
-                        content: none;
-                    }
-                }
-            }
+            @content;
         }
     }
 }
-
-//tbl col th gray - th line 
-@mixin th-col-2($fs:14px, $bor-bg:$bor-gray-03, $th-pd:7px 0, $th-fg:$fg-gray-01, $th-bg:$bg-gray-02){
-    thead {
+//table col+row body
+@mixin tbl-ch-body {
+    tbody {
         tr {
-            th {
-                padding: $th-pd;
-                font-size: $fs;
-                font-weight: 300;
-                line-height: 1.4;
-                color: $th-fg;
-                border-left: 1px solid $bor-bg;
-                border-bottom: 1px solid $bor-bg;
-                    background: $th-bg;
-                &:first-child {
-                    border-left: 0;
-                }
-            }
-        }
-        @content;
-    }
-}
-
-//tbl col th white
-@mixin th-col-white($th-pd:18px 0 18px, $th-fs:14px, $th-fg:$fg-gray-04){
-    
-    thead {
-        tr {
-            th {
-                padding: $th-pd;
-                font-size: $th-fs;
-                font-weight: 400;
-                color: $th-fg;
-                span {
-                    vertical-align: middle;
-
-                    & + .btn-com {
-                        margin-left: 10px;
-                    }
-                }
-            }
+            @content;
         }
     }
 }
 
-//tbl col - no line
-@mixin tbl-col-gray($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:15px, $bor-b-bg:$bor-gray-03, $td-pd:15px 0, $td-fg:$fg-gray-04, $a-pd:0 70px){
-    .tbl {
-        border-top: $bor-t-w solid $bor-t-bg;
-        th, td {
-            font-size: $fs;
-            border-bottom: 1px solid $bor-b-bg;
-        }
-        tbody {
-            tr {
-                td {
-                    padding: $td-pd;
-                    color: $td-fg;
-                    .link-txt {
-                        display: block;
-                        padding: $a-pd;
-                        text-align: left;
-                        color: inherit;
-                        @include trasBase(1);
-                    }
-                    a.link-txt:hover {
-                        @include trasBase(0.6);
-                    }
-                }
-            }
-        }
-    }
-    @content;
+//table bor 
+@mixin tbl-bor($t-w:2px, $t-bor-bg:$bor-black-01, $b-w:1px, $b-bor-bg:$bor-gray-03){
+    border-top: $t-w solid $t-bor-bg;
+    border-bottom: $b-w solid $b-bor-bg;
 }
 
-//tbl col 02 - td border 
-@mixin tbl-col-gray-02($bor-t-w:1px, $bor-t-bg:$bor-black-01, $fs:14px, $bor-bg:$bor-gray-03, $td-pd:10px 0 9px, $td-fg:$fg-black, $a-pd:0 11px, $a-name-fs:15px, $a-name-pd:0 22px){
-    border-top: $bor-t-w solid $bor-t-bg;
-    .tbl {
-        tbody {
-            tr {
-                td {
-                    padding: $td-pd;
-                    font-size: $fs;
-                    font-weight: 300;
-                    line-height: 1.4;
-                    color: $td-fg;
-                    border-left: 1px solid $bor-bg;
-                    border-bottom: 1px solid $bor-bg;
-                    &:first-child {
-                        border-left: 0
-                    }
-                    .img-prd {
-                        &.img-gift {
-                            margin: 2px auto 3px;
-                        }
-                    }
-                    .link-txt {
-                        @include bx;
-                        display: block;
-                        padding: $a-pd;
-                        text-align: left;
-                        color: inherit;
-                        @include trasBase(1);
-                        &.prd-name {
-                            padding: $a-name-pd;
-                            font-size: $a-name-fs;
-                            font-weight: 500;
-                            letter-spacing: 0;
-                            .img-prd {
-                                margin-right: 18px;
-                            }
-                        }
-                        &.ip-chk {
-                            @include chkbox($left:22px);
-                            .btn-chk + .img-prd {
-                                margin-left: 30px;
-                            }
-                        }
-
-                        &.fw-400 {
-                            font-weight: 400;
-                        }
-                    }
-                    a.link-txt:hover {
-                        @include trasBase(0.6);
-                    }
-                    .txt {
-                        color: $fg-gray-01;
-                    }
-                }
-
-                &.pd-zero {
-                    td {
-                        padding: 0;
-                    }
-                }
-            }
-        }
-    }
-    @content;
+//table other style
+@mixin t-col-style($pd:17px 0, $fs:15px, $fw:300, $fg:$fg-gray-01){
+    padding: $pd;
+    font-size: $fs;
+    font-weight: $fw;
+    color: $fg;
 }
 
-//tbl col - pay line 
-@mixin tbl-col-pay($bor-t-w:1px, $bor-t-bg:$bor-black-01, $bor-b-bg:$bor-gray-03, $td-pd:26px 0 31px, $td-fs:22px, $td-fg:$fg-black){
-    .tbl {
-        border-collapse: initial;
-        border-top: $bor-t-w solid $bor-t-bg;
-        border-bottom: $bor-t-w solid $bor-t-bg;
-        th, td {
-            border-left: 1px solid $bor-b-bg;
-            &:first-child {
-                border-left: 0;
-            }
-            .row-pop {
-                @include bx;
-                display: inline-block
-            }
-        }
-        tbody {
-            tr {
-                td {
-                    padding: $td-pd;
-                    font-size: $td-fs;
-                    font-weight: 500;
-                    color: $td-fg;
-                    border-top: 1px solid $bor-b-bg;
-
-                    .ie & {
-                        font-weight: bold;
-                    }
-                }
-            }
-        }
+//th,td line - long 
+//@mixin t-line-l($itm:false, $bg:$bor-gray-03){
+@mixin t-line-l($bg:$bor-gray-03){
+    border-left: 1px solid $bg;
+    &:first-child {
+        border-left-width: 0;
     }
-    @content;
+    // itm false - left 0
+   /* @if( $itm == false ){
+        &:first-child {
+            border-left-width: 0;
+        }
+    }*/
 }
 
-//tbl col scroll
-@mixin tbl-scr($ht:206px, $bor-w:1px, $bor-bg:$bor-gray-03, $fs:13px, $fg:$fg-black, $bg:#fff, $th-pd:10px 0 11px, $td-pd:28px 18px){
-    border-bottom: $bor-w solid $bor-bg;
-    .tbl-scr {
-        @include bx;
-        border-top: $bor-w solid $bor-bg;
-        .tbl {
-            th, td {
-                font-size: $fs;
-                font-weight: 300;
-                text-align: center;
-                color: $fg;
-                background: $bg;
-                line-height: 1.4;
-            }
-            thead {
-                tr {
-                    th {
-                        padding: $th-pd;
-                        border-left: $bor-w solid $bor-bg;
-                        
-                        &:first-child {
-                            border-left: 0;
-                        }
-                    }
-                }
-            }
-            tbody {
-                tr {
-                    td {
-                        padding: $td-pd;
-                        border-top: $bor-w solid $bor-bg;
-                        
-                        .lst {
-                            padding-left: 23px;
-                        }
-                        
-                        &:first-child {
-                            padding-left: 0;
-                            padding-right: 0;
-                        }
-                    }
-                    
-                    &:first-child {
-                        td {
-                            border-top: 0;
-                        }
-                    }
-                }
-            }
-        }
-        
-        &.tbody {
-            overflow: hidden;
-            overflow-y: scroll;
-            height: $ht;
-        }
-    }
-    @content;
-}
-
-//table - prd detail
-@mixin tbl-col-prd($bor-t-w:1px, $bor-t-bg:$bor-black-01, $th-pd:10px 22px, $th-fs:13px, $th-fg:$fg-gray-01, $th-bor-bg:$bor-gray-04, $td-pd:20px 20px, $td-fs:16px, $td-fg:$fg-gray-01, $td-bor-bg:$bor-gray-03){
-    .tbl-col {
-        @include bx;
-        .tbl {
-            border-top: $bor-t-w solid $bor-t-bg;
-
-            thead {
-                tr {
-                    th {
-                        padding: $th-pd;
-                        font-size: $th-fs;
-                        color: $th-fg;
-                        border-bottom: 1px solid $th-bor-bg;
-                    }
-                }
-            }
-
-            tbody {
-                tr {
-                    td {
-                        padding: $td-pd;
-                        font-weight: $td-fs;
-                        border-bottom: 1px solid $td-bor-bg;
-                    }
-                }
-            }
+//th line - short 
+@mixin th-line-s($ht:12px, $bg:$bor-gray-09){
+    @include line($ht:$ht, $bg:$bg);
+    &:first-child {
+        &:before {
+            content: none;
         }
     }
 }
+
+
 
 //sub - top tit / 이벤트, 상품후기, 고객센터 등
 @mixin sub-top($pd:54px 0 62px, $fs:20px, $pd-t:12px, $txt-fs:15px, $txt-fg:$fg-gray-03){

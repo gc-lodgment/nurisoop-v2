@@ -166,157 +166,141 @@
             .container {
                 padding-top: 64px;
                 
-                .tbl-ship {
-                    @include bx;
+                .tbl-col { 
                     margin-top: 38px;
+                    @include tbl-bor(1px, $t-bor-bg:$bor-gray-03);
                     .tbl {
+                        @include tbl-ch-head {
+                            th {
+                                height: 140px;
+                                padding-top: 3px;
+                                border-right: 1px solid $bor-gray-03;
+                                &:first-child {
+                                    border-left: 1px solid $bor-gray-03;
+                                }
+                                
+                                .ship-txt {
+                                    padding-top: 73px;
+                                    font-size: 16px;
+                                    font-weight: 400;    
+                                    line-height: 1;
+                                    letter-spacing: 0;
+                                    word-break: break-all;
+                                    letter-spacing: 0;
+                                }
 
-                        .ie8 & {
-                            border-collapse: collapse;
-                        }
-                        th, td {
-                            @include bx;
-                            border: 1px solid $bor-gray-03;
-                        }
-                        thead {
-                            tr {
-                                th {
-                                    height: 140px;
-                                    padding-top: 3px;
+                                &.bnk { 
+                                    overflow: hidden;
+                                    padding-top: 0;
+                                    .line {
+                                        @include bx;
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                        text-align: left;
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/backslash.png);
+                                        background-size: 100% 100%;
+                                    }
+                                }
+
+                                &.grd-01 {
                                     .ship-txt {
-                                        padding-top: 73px;
-                                        font-size: 16px;
-                                        font-weight: 400;    
-                                        line-height: 1;
-                                        letter-spacing: 0;
-                                        word-break: break-all;
-                                        letter-spacing: 0;
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_01.png) no-repeat center top;
                                     }
-                                    
-                                    &.bnk {
-                                        overflow: hidden;
-                                        padding-top: 0;
-                                        .line {
-                                            @include bx;
-                                            display: block;
-                                            width: 100%;
-                                            height: 100%;
-                                            text-align: left;
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/backslash.png);
-                                            background-size: 100% 100%;
-                                        }
+                                }
+
+                                &.grd-02 {
+                                    .ship-txt {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_02.png) no-repeat center top;
                                     }
-                                    
-                                    &.grd-01 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_01.png) no-repeat center top;
-                                        }
+                                }
+
+                                &.grd-03 {
+                                    .ship-txt {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_03.png) no-repeat center top;
                                     }
-                                    
-                                    &.grd-02 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_02.png) no-repeat center top;
-                                        }
+                                }
+
+                                &.grd-04 {
+                                    .ship-txt {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_04.png) no-repeat center top;
                                     }
-                                    
-                                    &.grd-03 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_03.png) no-repeat center top;
-                                        }
+                                }
+
+                                &.grd-05 {
+                                    .ship-txt {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_05.png) no-repeat center top;
                                     }
-                                    
-                                    &.grd-04 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_04.png) no-repeat center top;
-                                        }
+                                }
+
+                                &.grd-06 {
+                                    .ship-txt {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_06.png) no-repeat center top;
                                     }
-                                    
-                                    &.grd-05 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_05.png) no-repeat center top;
-                                        }
+                                }
+
+                                &.grd-07 {
+                                    .ship-txt {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_07.png) no-repeat center top;
                                     }
-                                    
-                                    &.grd-06 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_06.png) no-repeat center top;
-                                        }
-                                    }
-                                    
-                                    &.grd-07 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_07.png) no-repeat center top;
-                                        }
-                                    }
-                                    
-                                    &.grd-08 {
-                                        .ship-txt {
-                                            background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_08.png) no-repeat center top;
-                                        }
+                                }
+
+                                &.grd-08 {
+                                    .ship-txt {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/member/icon_membership_08.png) no-repeat center top;
                                     }
                                 }
                             }
                         }
-                        tbody {
-                            tr {
-                                th, td {
-                                    height: 98px;
-                                    .fg-grn {
-                                        color: $fg-green-02;
-                                    }
-                                }
-                                th {
-                                    em {
-                                        display: block;
-                                        font-size: 400;
-                                        font-size: 17px;
-                                    }
-                                    span {
-                                        display: inline-block;
-                                        font-size: 14px;
-                                        font-size: 400;
-                                        color: $fg-gray-03;
-                                        
-                                        .ie8 & {
-                                            letter-spacing: -1.4px;
-                                        }
-                                    }
-                                    em + span {
-                                        padding-top: 5px;
-                                    }
-                                }
-                                td {
-                                    padding: 20px 0;
-                                    font-size: 15px;
-                                    font-weight: 400;
-                                    line-height: 1.3;
-                                    color: $fg-gray-01;
-                                    em {
-                                        
-                                    }
-                                    
-                                    .tbl-list {
-                                        @include bx;
-                                        display: inline-block;
-                                        padding: 4px 0;
-                                        text-align: left;
-                                        li {
-                                            line-height: 1.7;
-                                            letter-spacing: 0;
-                                            @include line-row-2(11px, 4px, $t:12px);
-                                            &.f-bd {
-                                                font-weight: 500;
-                                                color: $fg-black;
-                                                &:before {
-                                                    background: $bg-black-01;
-                                                }
-                                            }
-                                        }
-                                    }
+                        @include tbl-ch-body {
+                            th, td {
+                                height: 98px;
+                                border-right: 1px solid $bor-gray-03;
+                                .fg-grn {
+                                    color: $fg-green-02;
                                 }
                                 
-                                &.tr-new-member {
-                                    td {
+                            }
+                            th {
+                                border-left: 1px solid $bor-gray-03;
+                                em {
+                                    display: block;
+                                    font-size: 400;
+                                    font-size: 17px;
+                                }
+                                span {
+                                    display: inline-block;
+                                    font-size: 14px;
+                                    font-size: 400;
+                                    color: $fg-gray-03;
+
+                                    .ie8 & {
+                                        letter-spacing: -1.4px;
+                                    }
+                                }
+                                em + span {
+                                    padding-top: 5px;
+                                }
+                                
+                            }
+                            td {
+                                @include t-col-style(20px 0, $fw:400);
+                                .tbl-list {
+                                    @include bx;
+                                    display: inline-block;
+                                    padding: 4px 0;
+                                    text-align: left;
+                                    li {
+                                        line-height: 1.7;
+                                        letter-spacing: 0;
+                                        @include line-row-2(11px, 4px, $t:12px);
+                                        &.f-bd {
+                                            font-weight: 500;
+                                            color: $fg-black;
+                                            &:before {
+                                                background: $bg-black-01;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -747,91 +731,87 @@
                         }
                     }
                     
-                    @include tbl-row($th-pd:12px 15px 12px 28px, $td-pd:10px 31px){
+                    .tbl-row {
+                        @include tbl-bor;
                         .tbl {
-                            th, td {
-                                .t-ast {
-                                    @include bx;
-                                    @include txtAst(13px, 5px);
-                                    &:before {
-                                        color: $fg-red-03;
-                                    }
-                                }
+                            @include tbl-ch-body{
+                                th {
+                                    @include t-col-style(12px 15px 12px 28px, $fg:$fg-black);
                                 
-                                .fc-green {
-                                    font-size: 13px;
-                                    color: $fg-green-01;
-                                    &.t-ast {
-                                        &:before {
-                                            color: $fg-green-01;
-                                        }
-                                    }
-                                }
-                            }
-                            
-                            td {
-                                .row {
-                                    line-height: 0;
-                                    
-                                    .ip-cal, .ico-cal {
-                                        cursor: pointer;
-                                    }
-                                    
-                                    .txt-hyphen {
-                                        display: inline-block;
-                                        padding: 0 6px;
-                                        font-size: 20px;
-                                        font-weight: 100;
-                                        color: $fg-gray-01;
-                                    }
-
-                                    .t-point {
-                                        display: inline-block;
-                                        margin-left: 25px;
+                                    .fc-green {
                                         font-size: 13px;
-                                        color: $fg-red-03;
-                                        
-                                        &:before {
-                                            top: 3px;
+                                        color: $fg-green-01;
+                                        &.t-ast {
+                                            &:before {
+                                                color: $fg-green-01;
+                                            }
                                         }
                                     }
+                                }  
+                                td {
+                                    @include t-col-style(10px 31px, $fg:$fg-gray-09);
+                                    .row {
+                                        line-height: 0;
 
-                                    .chk-txt {
-                                        @include bx;
-                                        @include chkbox;
-                                        padding: 0 0 0 18px;
-                                        font-size: 13px;
-                                        font-weight: 300;
-                                        color: $fg-gray-01;
-                                        input {
-                                            left: 0;
+                                        .ip-cal, .ico-cal {
+                                            cursor: pointer;
                                         }
-                                    }
 
-                                    .chk-txt + .chk-txt {
-                                        margin-left: 15px;
-                                    }
-                                    
-                                    .skin-type-box {
-                                        padding: 4px 0;
+                                        .txt-hyphen {
+                                            display: inline-block;
+                                            padding: 0 6px;
+                                            font-size: 20px;
+                                            font-weight: 100;
+                                            color: $fg-gray-01;
+                                        }
+
+                                        .t-point {
+                                            display: inline-block;
+                                            margin-left: 25px;
+                                            font-size: 13px;
+                                            color: $fg-red-03;
+
+                                            &:before {
+                                                top: 3px;
+                                            }
+                                        }
+
+                                        .chk-txt {
+                                            @include bx;
+                                            @include chkbox;
+                                            padding: 0 0 0 18px;
+                                            font-size: 13px;
+                                            font-weight: 300;
+                                            color: $fg-gray-01;
+                                            input {
+                                                left: 0;
+                                            }
+                                        }
 
                                         .chk-txt + .chk-txt {
-                                            margin-left: 26px;
+                                            margin-left: 15px;
+                                        }
+
+                                        .skin-type-box {
+                                            padding: 4px 0;
+
+                                            .chk-txt + .chk-txt {
+                                                margin-left: 26px;
+                                            }
+                                        }
+
+                                        .ip-txt + .ip-txt {
+                                            margin-left: 7px;
+                                        }
+
+                                        & + .row {
+                                            margin-top: 10px;
                                         }
                                     }
-
-                                    .ip-txt + .ip-txt {
-                                        margin-left: 7px;
-                                    }
-                                    
-                                    & + .row {
-                                        margin-top: 10px;
-                                    }
-                                }
-                                
-                            }
+                                }  
+                            };
                         }
-                    };
+                    }
                     
                     .btn-box {
                         margin: 30px auto 0;
@@ -1269,6 +1249,7 @@
                         display: inline-block;
                         font-size: 14px;
                         margin-right: 8px;
+                        @include txtAst(13px);
                         &.t-ness {
                             color: $fg-black;
                             &:before {
@@ -1399,165 +1380,97 @@
                 .tbl-area {
                     margin-top: 25px;
                     .tbl-col {
-                        @include bx;
-                        @include th-col-2(15px, $th-pd:17px 0, $th-fg:$fg-black);
-                        @include tbl-col-gray-02($fs:15px, $td-pd:13px 0 16px, $a-pd:0 41px){
-                            .btn-link {
-                                @include bx;
-                                color: $fg-red-03;
-                                &:before {
-                                    content: '';
-                                    @include position(absolute, $left:2%, $bottom:-4px);
-                                    display: block;
-                                    width: 96%;
-                                    height: 1px;
-                                    background: $bor-red-01;
+                        @include tbl-bor(1px);
+                        .tbl {
+                            @include tbl-ch-head {
+                                th {
+                                    @include t-line-l;
+                                    @include t-col-style($fw:400, $fg:$fg-black);
                                 }
                             }
-                            .tbl {
-                                thead {
-                                    tr {
-                                        th {
-                                            font-weight: 400;
-                                        }
-                                    }
-                                }
-                                tbody {
-                                    tr {
-                                        td {
-                                            .link-txt {
-                                                line-height: 2.1;
-                                                //color: $fg-black;
+                            @include tbl-ch-body {
+                                td {
+                                    @include t-line-l;
+                                    @include t-col-style(13px 0 16px, $fg:$fg-black);
 
-                                                &.prd-name {
-                                                    .img-prd {
-                                                        display: inline-block;
-                                                        width: 80px;
-                                                        height: 80px;
+                                    .link-txt {
+                                        padding: 0 41px;
+                                        line-height: 2.1;
 
-                                                        & + span {
-                                                            display: inline-block;
-                                                            padding-left: 15px;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            //chk
-                                            .chk-txt {
-                                                @include bx;
-                                                @include chkbox;
-                                                padding-left: 12px; 
-                                                line-height: 1;
-                                            }
+                                        &.prd-name {
+                                            padding: 0 22px;
+                                            .img-prd {
+                                                display: inline-block;
+                                                width: 80px;
+                                                height: 80px;
 
-                                            //금액
-                                            .bot-box {
-                                                $ft:20px;
-                                                @include bx;
-                                                @include clearfix;
-                                                padding: 12px 12px 12px 10px;
-                                                text-align: left;
-                                                line-height: 0;
-
-                                                .txt {
-                                                    @include bx;
-                                                    float: left;
+                                                & + span {
                                                     display: inline-block;
-                                                    vertical-align: middle;
-                                                    line-height: $ft;
+                                                    padding-left: 15px;
                                                 }
-                                                .buy-txt {
-                                                    @include bx;
-                                                    float: right;
-                                                    display: inline-block;
-                                                    letter-spacing: 0;
-                                                    vertical-align: middle;
-                                                    line-height: $ft;
-                                                    span, em {
-                                                        display: inline-block;
-                                                        font-weight: bold;
-                                                        line-height: $ft;
-                                                        .ie & {
-                                                            font-weight: bold;
-                                                        }
-                                                    }
-                                                    .t-point {
-                                                        letter-spacing: -0.5px;
-                                                        color: $fg-red-04;
-                                                        em {
-                                                            font-size: 18px;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            > span {
-                                                color: $fg-gray-05;
                                             }
                                         }
                                     }
-                                }
+                                    
+                                    //chk
+                                    .chk-txt {
+                                        @include bx;
+                                        @include chkbox;
+                                        padding-left: 12px; 
+                                        line-height: 1;
+                                    }
 
-                                &.type-2 {
-                                    thead {
-                                        tr {
-                                            th {
-                                                padding: 7px 0;
+                                    //금액
+                                    .bot-box {
+                                        $ft:20px;
+                                        @include bx;
+                                        @include clearfix;
+                                        padding: 12px 12px 12px 10px;
+                                        text-align: left;
+                                        line-height: 0;
+
+                                        .txt {
+                                            @include bx;
+                                            float: left;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            line-height: $ft;
+                                        }
+                                        .buy-txt {
+                                            @include bx;
+                                            float: right;
+                                            display: inline-block;
+                                            letter-spacing: 0;
+                                            vertical-align: middle;
+                                            line-height: $ft;
+                                            span, em {
+                                                display: inline-block;
+                                                font-weight: bold;
+                                                line-height: $ft;
+                                                .ie & {
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                            .t-point {
+                                                letter-spacing: -0.5px;
+                                                color: $fg-red-04;
+                                                em {
+                                                    font-size: 18px;
+                                                }
                                             }
                                         }
                                     }
-                                    tbody {
-                                        tr {
-                                            td {
-                                                padding: 32px 0 30px;
-                                            }
-                                        }
+                                    > span {
+                                        color: $fg-gray-05;
                                     }
                                 }
                             }
-                        };
+                        }
                     }
                 }
                 
-                /* table th line */
+                /* table 2 */
                 .tbl-area-2 {
-                    .tbl-col {
-                        @include bx;
-                        @include th-col-1;
-                        @include tbl-col-gray($a-pd:0 41px){
-                            .tbl {
-                                tbody {
-                                    tr {
-                                        td {
-                                            .link-txt {
-                                                
-                                                span {
-                                                    margin-left: 4px;
-                                                    &:first-child {
-                                                        margin-left: 11px;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        //답변
-                                        &.answer {
-                                            td {
-                                                .link-txt {
-                                                    padding: 0 40px 0 51px;
-                                                }
-                                            }
-                                        }
-                                        //게시글이 없는 경우
-                                        &.nope {
-                                            td {
-                                                height: 300px;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        };
-                    }
-                    
                     /* 하단 검색 */
                     .bot-area {
                         @include bx;
@@ -1597,100 +1510,30 @@
                         }
                     }
                 }
-
-                /* table row : basic white */
-                @include tbl-row(0, $fs:13px, $th-pd:12px 15px 12px 20px, $th-fg:$fg-black-02, $th-bg:#fff, $td-pd:10px 15px 10px 20px, $td-fg:$fg-black-02){
-                    border-top: 1px solid $bor-black-01;
-                    .tbl {
-                        th {
-                            font-size: 14px;
-                            border-right: 1px solid $bor-gray-03;
-                            .price-all {
-                                font-weight: 400;
-
-                            }
-                        }
-                        td {
-                            .btn-com {
-                                margin-left: 10px;
-                                vertical-align: initial;
-                            }
-                            .price-all {
-                                font-size: 18px;
-
-                            }
-                            .row {
-                                &.pay-row {
-                                    .pay-tit {
-                                        font-size: 14px;
-                                        font-weight: bold;
-                                    }
-                                    .pay-box {
-                                        @include bx;
-                                        margin-top: 4px;
-                                        .pay-txt {
-                                            font-size: 13px;
-                                            line-height: 1.4;
-                                            color: $fg-gray-01;
-                                            span, em {
-                                                color: $fg-black;
-                                            }
-
-                                            .btn-bank {
-                                                @include btn-bor-com(120px);
-                                                margin-left: 5px;
-                                                vertical-align: inherit;
-                                                &:hover {
-                                                    border-color: $bor-green-01;
-                                                    color: #fff;
-                                                    background: $bg-green-01;
-                                                }
-                                            }
-
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 
-                    //type2
-                    &.type-2 {
-                        border-top: 0;
-                        border-bottom: 1px solid $bor-black-01;
-                        .tbl {
-                            border-top: 1px solid $bor-gray-03;
-
-                            tr {
-                                th, td {
-                                    border-top: 1px solid $bor-gray-03;
-                                    border-bottom: 0;
-                                }
-
-                                &:first-child {
-                                    th, td {
-                                        border-top: 0;
-                                    }
-                                }
-                                &.br-t {
-                                    th, td {
-                                        border-top: 1px solid $bor-black-01;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    
-                    //th bg gray
-                    &.gray {
-                        .tbl {
+                //마이페이지 table row 공통
+                .tbl-row {
+                    .tbl {
+                        @include tbl-ch-body{
                             th {
-                                border-right: 0;
-                                background: $bg-gray-02;
-                            }
-                        }
+                                .price-all {
+                                    font-weight: 400;
+
+                                }
+                            }  
+                            td {
+                                .btn-com {
+                                    margin-left: 10px;
+                                    vertical-align: initial;
+                                }
+                                .price-all {
+                                    font-size: 18px;
+
+                                }
+                            }  
+                        };
                     }
-                };
+                }
 
                 /* page num */
                 .page-area {
@@ -1855,10 +1698,76 @@
                 }
             }
             
+            /* 주문내역/배송조회 */
+            &.inquire {
+                .container {
+                    .tbl-area {
+                        .tbl-col {
+                            .tbl {
+                                @include tbl-ch-head {
+                                    th {
+                                        padding: 7px 0;
+                                    }
+                                }
+                                @include tbl-ch-body {
+                                    td {
+                                        padding: 32px 0 30px;
+                                        .btn-link {
+                                            @include bx;
+                                            color: $fg-red-03;
+                                            &:before {
+                                                content: '';
+                                                @include position(absolute, $left:2%, $bottom:-4px);
+                                                display: block;
+                                                width: 96%;
+                                                height: 1px;
+                                                background: $bor-red-01;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    
+                        .tbl-row {
+                            .tbl {
+                                @include tbl-ch-body{
+                                    th {
+                                        @include t-col-style(12px 15px 12px 20px, 14px, $fg:$fg-black-02);
+                                    }  
+                                    td {
+                                        @include t-col-style(10px 15px 10px 20px, 13px, $fg:$fg-black-02);
+                                    }  
+                                };
+
+                            }
+                        }
+                    }
+                    
+                    //주문정보
+                    .order-area {
+                        margin-top: 0;
+                        .tbl-row {
+                            @include tbl-bor(1px);
+                        }
+                    }
+                    
+                    //결제정보
+                    .pay-area {
+                        .tbl-row {
+                            @include tbl-bor(1px, $t-bor-bg:$bor-gray-03, $b-bor-bg:$bor-black-01);
+                        }
+                    }
+                }
+            }
+            
             /* 위시리스트 */
             &.wish {
-                .btn-area {
-                    margin-top: 20px;
+                .container {
+                    .btn-area {
+                        margin-top: 20px;
+                    }
                 }
             }
             
@@ -1964,15 +1873,12 @@
                 .tbl-area {
                     .tbl-col {
                         .tbl {
-                            tbody {
-                                tr {
-                                    td {
-                                        color: $fg-gray-04;
-                                    }
+                            @include tbl-ch-body {
+                                td {
+                                     color: $fg-gray-04;
                                 }
                             }
                         }
-                        
                     }
                 }
             }
@@ -1997,28 +1903,25 @@
                 .tbl-area {
                     .tbl-col {
                         .tbl {
-                            tbody {
-                                tr {
-                                    td {
-                                        padding: 5px 0 3px;
-                                        color: $fg-gray-04;
-                                        .link-txt {
-                                            padding: 5px 15px 5px;
-                                        }
-                                        //유효기간 만료
-                                        .end {
-                                            color: #d10000;
-                                        }
-                                        //할인,적립
-                                        .pt {
-                                            font-weight: 400;
-                                            color: $fg-black;
-                                        }
+                            @include tbl-ch-body {
+                                td {
+                                    padding: 5px 0 3px;
+                                    color: $fg-gray-04;
+                                    .link-txt {
+                                        padding: 5px 15px 5px;
+                                    }
+                                    //유효기간 만료
+                                    .end {
+                                        color: #d10000;
+                                    }
+                                    //할인,적립
+                                    .pt {
+                                        font-weight: 400;
+                                        color: $fg-black;
                                     }
                                 }
                             }
                         }
-                        
                     }
                 }
                 
@@ -2201,105 +2104,149 @@
             &.board {
                 /* 목록 */
                 &.list {
-                    .tbl-top-box {
-                        margin-top: 26px;
-                    }
-                    .tbl-area-2 {
-                        margin-top: 11px;
-                    }
-                }
-                
-                /* 뷰 */
-                &.view {
-                    .view-area {
-                        @include bx;
-                        margin-top: 50px;
-                        //tit
-                        .top-box {
-                            @include view-top;
-                            .view-num-box {
-                                .view-num {
-                                    span {
-                                        font-weight: 300;
-                                        letter-spacing: 0;
+                    .container {
+                        .tbl-top-box {
+                            margin-top: 26px;
+                        }
+
+                        .tbl-area-2 {
+                            .tbl-col {
+                                margin-top: 11px;
+                                @include tbl-bor(1px);
+                                .tbl {
+                                    @include tbl-ch-head {
+                                        th {
+                                            @include th-line-s;
+                                            @include t-col-style($fw:400, $fg:$fg-black);
+                                        }
+                                    }
+                                    @include tbl-ch-body {
+                                        td {
+                                            @include t-col-style(15px 0, $fg:$fg-gray-04);
+                                            .link-txt {
+                                                padding: 0 41px;
+                                                span {
+                                                    margin-left: 4px;
+                                                    &:first-child {
+                                                        margin-left: 11px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        //답변
+                                        &.answer {
+                                            td {
+                                                .link-txt {
+                                                    padding: 0 40px 0 51px;
+                                                }
+                                            }
+                                        }
+                                        //게시글이 없는 경우
+                                        &.nope {
+                                            td {
+                                                height: 300px;
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
-                        
-                        //cont
-                        .view-box {
-                            @include bx
-                            min-height: 176px;
-                            padding: 10px 0;
-                            text-align: left;
-                            border-bottom: 1px solid $bor-gray-03;
-                            .txt {
-                                font-size: 15px;
-                                font-weight: 300;
-                                line-height: 1.6;
-                                letter-spacing: 0;
-                                color: $fg-gray-04;
-                            }
-                        }
-                        
-                        //answer
-                        .answer-box {
-                            @include bx;
-                            padding: 18px 0 28px;
-                            border-bottom: 1px solid $bor-gray-03;
-                            .answer-top {
-                                @include bx;
-                                margin-bottom: 15px;
-                                .mmg-name {
-                                    display: inline-block;
-                                    font-size: 14px;
-                                    font-weight: 600;
-                                    color: $fg-gray-01;
-
-                                }
-                                .date {
-                                    @include bx;
-                                    display: inline-block;
-                                    margin-left: 16px;
-                                    padding-left: 17px;
-                                    font-size: 12px;
-                                    font-weight: 300;
-                                    color: $fg-gray-03;
-                                    @include line($ht:12px, $bg:$bor-gray-03);
-                                }
-                            }
-                            .txt {
-                                font-size: 14px;
-                                font-weight: 300;
-                                line-height: 1.6;
-                                color: $fg-gray-01;
-                            }
-                        }
                     }
-                    //button
-                    .btn-area {
-                        @include bx;
-                        margin-top: 20px;
-                        text-align: center;
-                        .btn-box {
-                            $wd:100px;
-                            $ht:30px;
-                            $fs:14px;
+                }
+
+                /* 뷰 */
+                &.view {
+                    .container {
+                        .view-area {
                             @include bx;
-                            @include clearfix;
-                            display: inline-block;
-                            .btn-list {
-                                @include btn-gray-bor($wd, $ht, $fs, $bor-g:$bor-gray-09);
+                            margin-top: 50px;
+                            //tit
+                            .top-box {
+                                @include view-top;
+                                .view-num-box {
+                                    .view-num {
+                                        span {
+                                            font-weight: 300;
+                                            letter-spacing: 0;
+                                        }
+                                    }
+                                }
                             }
-                            .btn-del {
-                                @include btn-gray-bg($wd, $ht, $fs);
+
+                            //cont
+                            .view-box {
+                                @include bx
+                                min-height: 176px;
+                                padding: 10px 0;
+                                text-align: left;
+                                border-bottom: 1px solid $bor-gray-03;
+                                .txt {
+                                    font-size: 15px;
+                                    font-weight: 300;
+                                    line-height: 1.6;
+                                    letter-spacing: 0;
+                                    color: $fg-gray-04;
+                                }
                             }
-                            a, button {
-                                float: left;
-                                margin-left: 10px;
-                                &:first-child {
-                                    margin-left: 0;
+
+                            //answer
+                            .answer-box {
+                                @include bx;
+                                padding: 18px 0 28px;
+                                border-bottom: 1px solid $bor-gray-03;
+                                .answer-top {
+                                    @include bx;
+                                    margin-bottom: 15px;
+                                    .mmg-name {
+                                        display: inline-block;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        color: $fg-gray-01;
+
+                                    }
+                                    .date {
+                                        @include bx;
+                                        display: inline-block;
+                                        margin-left: 16px;
+                                        padding-left: 17px;
+                                        font-size: 12px;
+                                        font-weight: 300;
+                                        color: $fg-gray-03;
+                                        @include line($ht:12px, $bg:$bor-gray-03);
+                                    }
+                                }
+                                .txt {
+                                    font-size: 14px;
+                                    font-weight: 300;
+                                    line-height: 1.6;
+                                    color: $fg-gray-01;
+                                }
+                            }
+                        }
+                        //button
+                        .btn-area {
+                            @include bx;
+                            margin-top: 20px;
+                            text-align: center;
+                            .btn-box {
+                                $wd:100px;
+                                $ht:30px;
+                                $fs:14px;
+                                @include bx;
+                                @include clearfix;
+                                display: inline-block;
+                                .btn-list {
+                                    @include btn-gray-bor($wd, $ht, $fs, $bor-g:$bor-gray-09);
+                                }
+                                .btn-del {
+                                    @include btn-gray-bg($wd, $ht, $fs);
+                                }
+                                a, button {
+                                    float: left;
+                                    margin-left: 10px;
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
                                 }
                             }
                         }
@@ -2390,11 +2337,14 @@
                     }
                 }
                 
-                //필수입력사항
-                .t-ast {
-                    @include txtAst(13px);
-                    &:before {
-                        font-size: 18px;
+                .tbl-top-box {
+                    .top-row {
+                        //필수입력사항
+                        .t-ast {
+                            &:before {
+                                font-size: 18px;
+                            }
+                        }
                     }
                 }
                 
@@ -2405,88 +2355,87 @@
                     .tbl-top-box {
                         padding-bottom: 9px;
                     }
+                    
                     .tbl-row {
-                        border-top-width: 2px;
+                        @include tbl-bor;
                         .tbl {
-                            th {
-                                padding: 14px 10px 15px 29px;
-                                font-size: 15px;
-                                span, label {
-                                    position: relative;
-                                    display: inline-block;
-                                    padding-left: 17px;
-                                }
-                                .t-ast {
-                                    &:before {
-                                        color: $fg-red-03;
-                                    }   
-                                }
-                            }
-                            td {
-                                color: $fg-gray-01;
-                                padding: 10px 10px 10px 29px;
-                                .row {
-                                    > p {
-                                        font-size: 14px;
+                            @include tbl-ch-body{
+                                th {
+                                    @include t-col-style(14px 10px 15px 29px, $fg:$fg-black-02);
+                                    .t-ast {
+                                        padding-left: 17px;
                                     }
-                                    //input 우측 텍스트
-                                    .s-t {
-                                        display: inline-block;
-                                        padding-left: 7px;
+                                    .fake-ast {
+                                        padding-left: 17px;
                                     }
-                                    //하단으로 떨어지는 텍스트
-                                    .agree-txt{
-                                        margin-top: 7px;
-                                        font-size: 13px;
-                                    }
-                                    .form-sel {
-                                        font-size: 13px;
-                                    }
-                                    //radio
-                                    .srch-txt {
-                                        @include bx;
-                                        font-size: 13px;
-                                        font-weight: 300;
-                                        color: $fg-gray-01;
-                                        input[type="radio"] {
-                                            cursor: pointer;
-                                            margin-right: 3px;
-                                        }
-                                        
-                                        & + .srch-txt {
-                                            margin-left: 25px;
-                                        }
-                                    }
-                                    //checkbox
-                                    .chk-txt {
-                                        & + .chk-txt {
-                                            margin-left: 25px;
-                                        }
-                                    }
+                                }  
+                                td {
+                                    @include t-col-style(10px 10px 10px 29px, 13px);
                                     
-                                    &.agree-row {
-                                        padding: 4px 0;
+                                    .row {
+                                        > p {
+                                            font-size: 14px;
+                                        }
+                                        //input 우측 텍스트
+                                        .s-t {
+                                            display: inline-block;
+                                            padding-left: 7px;
+                                        }
+                                        //하단으로 떨어지는 텍스트
+                                        .agree-txt{
+                                            margin-top: 7px;
+                                            font-size: 13px;
+                                        }
+                                        .form-sel {
+                                            font-size: 13px;
+                                        }
+                                        //radio
+                                        .srch-txt {
+                                            @include bx;
+                                            font-size: 13px;
+                                            font-weight: 300;
+                                            color: $fg-gray-01;
+                                            input[type="radio"] {
+                                                cursor: pointer;
+                                                margin-right: 3px;
+                                            }
+
+                                            & + .srch-txt {
+                                                margin-left: 25px;
+                                            }
+                                        }
+                                        //checkbox
+                                        .chk-txt {
+                                            & + .chk-txt {
+                                                margin-left: 25px;
+                                            }
+                                        }
+
+                                        &.agree-row {
+                                            padding: 4px 0;
+                                        }
                                     }
-                                }
-                            }
+                                }  
+                            };
                         }
                     }
                     
                     &.add-info {
                         .tbl-row {
                             .tbl {
-                                th {
-                                    padding-left: 15px;
-                                    .fc-green {
-                                        font-size: 13px;
-                                        color: $fg-green-01;
-                                        &.t-ast {
-                                            &:before {
-                                                color: $fg-green-01;
+                                @include tbl-ch-body{
+                                    th {
+                                        .fc-green {
+                                            font-size: 13px;
+                                            color: $fg-green-01;
+                                            &.t-ast {
+                                                &:before {
+                                                    color: $fg-green-01;
+                                                }
                                             }
                                         }
-                                    }
-                                }
+                                    }  
+                                };
                             }
                         }
                     }
@@ -2570,43 +2519,44 @@
                 //정보수정
                 .lv-area {
                     @include bx;
+                    
                     .tbl-row {
-                        border-top-width: 2px;
+                        @include tbl-bor;
                         .tbl {
-                            th {
-                                padding: 14px 10px 15px 30px;
-                                font-size: 15px;
-                            }
-                            td {
-                                color: $fg-gray-01;
-                                padding: 10px 10px 10px 30px;
-                                .row {
-                                    > p {
-                                        font-size: 14px;
-                                    }
-                                    //radio
-                                    .srch-txt {
-                                        @include bx;
-                                        display: inline-block;
-                                        width: 228px;
-                                        font-size: 13px;
-                                        font-weight: 300;
-                                        color: $fg-gray-01;
-                                        input[type="radio"] {
-                                            cursor: pointer;
-                                            margin-right: 6px;
+                            @include tbl-ch-body{
+                                th {
+                                    @include t-col-style(14px 10px 15px 30px, $fg:$fg-black-02);
+                                }  
+                                td {
+                                    @include t-col-style(10px 10px 10px 30px, 13px);
+                                    .row {
+                                        > p {
+                                            font-size: 14px;
+                                        }
+                                        //radio
+                                        .srch-txt {
+                                            @include bx;
+                                            display: inline-block;
+                                            width: 228px;
+                                            font-size: 13px;
+                                            font-weight: 300;
+                                            color: $fg-gray-01;
+                                            input[type="radio"] {
+                                                cursor: pointer;
+                                                margin-right: 6px;
+                                            }
+                                        }
+
+                                        &.srch-row {
+                                            padding-top: 18px;
+
+                                            & + .srch-row {
+                                                padding-top: 15px;
+                                            }
                                         }
                                     }
-                                    
-                                    &.srch-row {
-                                        padding-top: 18px;
-                                        
-                                        & + .srch-row {
-                                            padding-top: 15px;
-                                        }
-                                    }
-                                }
-                            }
+                                }  
+                            };
                         }
                     }
                 }
@@ -2694,25 +2644,27 @@
                         
                         .tbl-row {
                             .tbl {
-                                th, td {
-                                    .t-ast {
-                                        &:before {
-                                            top: 3px
-                                        }
-                                    }
-                                }
-
-                                td {
-                                    .row {
-                                        .t-point {
+                                @include tbl-ch-body{
+                                    th, td {
+                                        .t-ast {
                                             &:before {
-                                                top: 1px;
+                                                top: 3px;
                                             }
                                         }
-
                                     }
 
-                                }
+                                    td {
+                                        .row {
+                                            .t-point {
+                                                &:before {
+                                                    top: 1px;
+                                                }
+                                            }
+
+                                        }
+
+                                    } 
+                                };
                             }
                         }
                     }

@@ -21,7 +21,7 @@
             
             <!-- 테이블 -->
             <div class="tbl-scr-area">
-                <div class="tbl-scr thead">
+                <div class="tbl-col">
                     <table class="tbl">
                         <colgroup>
                             <col style="width: 3%;">
@@ -33,7 +33,7 @@
                             <col style="width: *">
                             <col style="width: 9%;">
                         </colgroup>
-                        <thead>
+                        <thead class="white">
                             <tr>
                                 <th>
                                     <label class="pop-chk">
@@ -52,7 +52,7 @@
                         </thead>
                     </table>
                 </div>
-                <div class="tbl-scr tbody">
+                <div class="tbl-col scr">
                     <table class="tbl">
                         <colgroup>
                             <col style="width: 3%;">
@@ -94,6 +94,25 @@
                                 <td><a href="#none" class="btn-gray w-1 h-1">고정</a></td>
                                 <td>미지정</td>
                                 <td>홍길동</td>
+                                <td>297-</td>
+                                <td>010-1234-5678</td>
+                                <td>(06178)서울특별시 강남구 테헤란로82길 15 디아이타워</td>
+                                <td>
+                                    <div class="lst">
+                                        <a href="#none" class="btn-green w-1 h-1">적용</a><a href="javascript:comPopOpen('#popAdrAdd');" class="btn-com-2 w-1 h-1">수정</a>
+                                    </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td>
+                                    <label class="pop-chk">
+                                        <input type="checkbox" name="adr1" class="ip-chk">
+                                        <span class="btn-chk"></span>
+                                    </label>    
+                                </td>
+                                <td><a href="#none" class="btn-gray w-1 h-1">고정</a></td>
+                                <td>미지정</td>
+                                <td>김철수</td>
                                 <td>297-</td>
                                 <td>010-1234-5678</td>
                                 <td>(06178)서울특별시 강남구 테헤란로82길 15 디아이타워</td>
@@ -185,7 +204,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th><span class="fake-ast">일반전화</span></th>
+                                <th><span>일반전화</span></th>
                                 <td>
                                     <div class="row">
                                         <select name="" id="" class="form-sel w-1">
@@ -198,7 +217,7 @@
                                         <input type="text" id="n-phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> 
                             <tr>
                                 <th><span class="t-ast">휴대전화</span></th>
                                 <td>

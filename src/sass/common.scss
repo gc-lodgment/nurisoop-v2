@@ -1252,6 +1252,358 @@ $hd-ht: ($gnb-ht+31);
     }
 }
 
+/* 테이블 col */
+.tbl-col {
+    @include bx;
+    .tbl {
+        thead {
+            tr {
+                th {
+                    text-align: center;
+                    border-bottom: 0;
+                    background: $bor-gray-06;
+                }
+            }
+
+            //th 배경 흰색
+            &.white {
+                tr {
+                    th {
+                        background: #fff;
+                        span {
+                            vertical-align: middle;
+
+                            & + .btn-com {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        @include tbl-ch-body{
+            th, td {
+                text-align: center;
+                border-top: 1px solid $bor-gray-03;
+                background: #fff;
+            }
+            td {
+                .img-prd {
+                    &.img-gift {
+                        margin: 2px auto 3px;
+                    }
+                }
+                .link-txt {
+                    display: block;
+                    padding: 0 70px;
+                    text-align: left;
+                    color: inherit;
+                    @include trasBase(1);
+                    &.type-2 {
+                        @include bx;
+                        padding: 0 11px;
+                    }
+                    &.prd-name {
+                        padding: 0 22px;
+                        //font-size: 15px;
+                        font-weight: 500;
+                        letter-spacing: 0;
+                        .img-prd {
+                            margin-right: 18px;
+                        }
+                    }
+                    &.ip-chk {
+                        @include chkbox($left:22px);
+                        .btn-chk + .img-prd {
+                            margin-left: 30px;
+                        }
+                    }
+
+                    &.fw-400 {
+                        font-weight: 400;
+                    }
+                }
+                a.link-txt:hover {
+                    @include trasBase(0.6);
+                }
+                .txt {
+                    color: $fg-gray-01;
+                }
+                &.pd-zero {
+                    td {
+                        padding: 0 !important;
+                    }
+                }
+            }
+        };
+    }
+        
+    //스크롤일경우 분리 후, 멀티클래스 추가 - 예시) pop_order
+    &.scr {
+        overflow: hidden;
+        overflow-y: scroll;
+        height: 206px;
+    }
+}
+
+/* 테이블 row */
+.tbl-row {
+    @include bx;
+    width: 100%;
+    .tbl {
+        @include tbl-ch-body{
+            th, td {
+                text-align: left;
+                border-top: 1px solid $bor-gray-03;
+                .t-ast {
+                    @include bx;
+                    @include txtAst(13px, 5px);
+                    &:before {
+                        color: $fg-red-03;
+                    }
+                }
+                .fake-ast {
+                    padding-left: 13px;
+                }
+            }
+            th {
+                background: $bg-gray-02;
+            }
+            td {
+                $i-ht : 28px;
+                .row {
+                    @include bx;
+                    .form-sel, .ip-txt, .ip-cal, .ta-txt {
+                        @include bx;
+                        color: $fg-gray-01;
+                        vertical-align: middle;
+                        border: 1px solid $bor-gray-03;
+                    }
+                    .form-sel, .ip-txt, .ip-cal {
+                        height: $i-ht;
+                        padding: 0 10px;
+                        line-height: $i-ht;
+                    }
+                    .form-sel {
+                        @include sel-com(197px, $i-ht, 0);
+                        &.w-1 {
+                            width: 66px;
+                        }
+                        &.w-2 {
+                            width: 137px;
+                        }
+                        &.w-3 {
+                            width: 247px;
+                        }
+
+                        .ie9 &, .ie8 & {
+                            padding-right: 0;
+                        }
+                    }
+                    .ip-txt {
+                        width: 247px;
+                        &.all {
+                            width: 100%;
+                        }
+                        &.w-1 {
+                            width: 66px;
+                        }
+                        &.w-2 {
+                            width: 276px;
+                        }
+                        &.w-3 {
+                            width: 515px;
+                        }
+                    }
+                    .ip-cal {
+                        width: 94px;
+                        margin-right: 3px;
+                    }
+                    .ta-txt {
+                        width: 100%;
+                        height: 256px;
+                        padding: 10px;
+
+                        &.h-1 {
+                            height: 158px;
+                        }
+                        &.type-2 {
+                            width: 740px;
+                            height: 126px;
+                        }
+                    }
+
+                    //텍스트
+                    .p-point, .chk-txt {
+                        @include bx;
+                        display: inline-block;
+                        font-size: 13px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        line-height: $i-ht;
+                        &.fg-red {
+                            color: $fg-red-03;
+                        }
+                    }
+                    .p-point {
+                        padding-left: 9px;
+                        &:before {
+                            @include position(absolute, 3px, 0);
+                            content: '*';
+                            display: inline-block;
+                        }
+                    }
+                    .chk-txt {
+                        padding-left: 17px;
+                        @include chkbox;
+                    }
+
+                    .txt-adr {
+                        padding-left: 8px;
+                        vertical-align: middle;
+                    }
+
+                    .p-line {
+                        @include bx;
+                        padding-left: 10px;
+                        font-size: 14px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        line-height: 1.5;
+                        color: $fg-gray-04;
+                        &:before {
+                            content: '';
+                            @include position(absolute, 11px, 0);
+                            width: 4px;
+                            height: 1px;
+                            background: $fg-gray-04;
+                        }
+                    }
+
+
+                    .s-1{
+                        padding: 0 6px;  
+                        font-size: 20px;
+                        vertical-align: middle;
+                        letter-spacing: 0;
+                        color: $fg-gray-01;
+                    }
+
+                    .txt-hyphen {
+                        display: inline-block;
+                        padding: 0 7px;
+                    }
+
+                    a, button {
+                        &.btn-file-del {
+                            margin-left: 25px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .btn-phone, .btn-adr, .btn-adrbk, .btn-nick-chk {
+                        @include btn-gray-bor-02;
+                        margin-left: 15px;
+                    }
+
+                    //간격 
+                    input + .btn-com, input + label {
+                        margin-left: 8px;
+                    }
+
+                    .row-file {
+                        margin-bottom: 13px;
+                    }
+
+                    &.chk-like-radio {
+                        .form-sel {
+                            float: none;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    & + .row {
+                        margin-top: 13px;
+
+                        &.type-2 {
+                            margin-top: 9px;
+                        }
+                    }
+
+                    & + .row.file-box {
+                        margin-top: 0;
+                    }
+
+                    &.row-pop {
+                        display: inline-block;
+                        .btn-com {
+                            @include btn-gray-bor-02(80px, 27px);
+                            margin-left: 19px;
+                            font-weight: 300;
+                        }
+                    }
+                    
+                    &.pay-row {
+                        .pay-tit {
+                            font-size: 14px;
+                            font-weight: bold;
+                        }
+                        .pay-box {
+                            @include bx;
+                            margin-top: 4px;
+                            .pay-txt {
+                                font-size: 13px;
+                                line-height: 1.4;
+                                color: $fg-gray-01;
+                                span, em {
+                                    color: $fg-black;
+                                }
+
+                                .btn-bank {
+                                    @include btn-bor-com(120px);
+                                    margin-left: 5px;
+                                    vertical-align: inherit;
+                                    &:hover {
+                                        border-color: $bor-green-01;
+                                        color: #fff;
+                                        background: $bg-green-01;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:first-child {
+                th, td {
+                    border-top: 0;
+                }
+            }
+            
+            &.br-t {
+                th, td {
+                    border-top: 1px solid $bor-black-01;
+                }
+            }
+        };
+
+        //th 배경 흰색
+        &.white {
+            @include tbl-ch-body{
+                    th {
+                    border-right: 1px solid $bor-gray-03;
+                    background: #fff;
+                }
+            };
+        }
+    }
+}
+
+
+
 /* content 영역 */
 .contents {
     @include bx;
