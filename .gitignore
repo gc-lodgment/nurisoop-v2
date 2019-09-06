@@ -8,6 +8,7 @@ _media/
 _tmp/
 img/
 dist/
+sp_img/
 
 # Logs
 logs
