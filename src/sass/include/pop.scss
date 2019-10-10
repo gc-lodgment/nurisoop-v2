@@ -781,53 +781,6 @@
         }
     }
     
-    /* 쿠폰적용하기 */
-    &.pop-coupon {
-        z-index: 897;
-        left: auto;
-        right: -615px;
-        .pop-container {
-            width: 600px;
-            margin-bottom: 0;
-            .pop-cont {
-                .tbl-col {
-                    @include tbl-bor(1px, $b-w:1px, $b-bor-bg:$bor-gray-03);
-                    .tbl {
-                        border-bottom: 0;
-                        @include tbl-ch-head {
-                            th {
-                                @include t-line-l;
-                                @include t-col-style(7px 0, 13px);
-                                text-align: center;
-                                border-right: 0;
-                                border-bottom: 0;
-                                background: $bg-gray-02;
-                            }
-                        }
-                        @include tbl-ch-body {
-                            td {
-                                position: relative;
-                                @include t-col-style(14px 10px 13px, 13px);
-                                text-align: center;
-                                border-left: 0;
-                                border-bottom: 0;
-                            }
-                            &.nope {
-                                td {
-                                    padding: 22px 0 19px;
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                .btn-area {
-                    margin-top: 50px;
-                }
-            }
-        }
-    }
-    
     /* 청약철회방침 전체보기 */
     &.pop-pay-policy {
         top: auto;
@@ -1232,6 +1185,57 @@
                     
                     .btn-area {
                         margin-top: 43px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contents {
+    .pop-wrap-2 {
+        /* 쿠폰적용하기 */
+        &.pop-coupon {
+            z-index: 897;
+            left: auto;
+            right: -615px;
+            .pop-container {
+                width: 600px;
+                margin-bottom: 0;
+                .pop-cont {
+                    .tbl-col {
+                        @include tbl-bor(1px, $b-w:1px, $b-bor-bg:$bor-gray-03);
+                        .tbl {
+                            border-bottom: 0;
+                            @include tbl-ch-head {
+                                th {
+                                    @include t-line-l;
+                                    @include t-col-style(7px 0, 13px);
+                                    text-align: center;
+                                    border-right: 0;
+                                    border-bottom: 0;
+                                    background: $bg-gray-02;
+                                }
+                            }
+                            @include tbl-ch-body {
+                                td {
+                                    position: relative;
+                                    @include t-col-style(14px 10px 13px, 13px);
+                                    text-align: center;
+                                    border-left: 0; 
+                                    border-bottom: 0;
+                                }
+                                &.nope {
+                                    td {
+                                        padding: 22px 0 19px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .btn-area {
+                        margin-top: 50px;
                     }
                 }
             }

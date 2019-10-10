@@ -60,17 +60,17 @@
                                             <div class="row chk-like-radio">
                                                 <input type="text" id="email" class="ip-txt" placeholder="" value="">
                                                 <span class="txt-at">@</span>
-                                                <input type="text" id="email" class="ip-txt" placeholder="" value="">
-                                                <select name="" id="" class="form-sel w-2">
+                                                <input type="text" class="ip-txt" placeholder="" value="" title="이메일 주소">
+                                                <select name="" id="" class="form-sel w-2" title="이메일 주소 선택">
                                                     <option value="">직접입력</option>
                                                     <option value="">naver.com</option>
                                                 </select>
-                                                <label class="chk-txt"><input type="checkbox" name="email" class="ip-chk"><span class="btn-chk"></span>이메일로 답변을 받겠습니다.</label>
+                                                <label class="chk-txt"><input type="checkbox" name="emailChk" class="ip-chk"><span class="btn-chk"></span>이메일로 답변을 받겠습니다.</label>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th><label for="tit">제목</label></th>
+                                        <th>제목</th>
                                         <td>
                                             <div class="row">[포레스트 녹삼초 폼클렌저] 문의합니다.</div>
                                         </td>
@@ -89,15 +89,9 @@
                                             <!-- 처음엔 안뜨고 파일 수정할 경우나 파일을 다시 올릴경우 누적해서 이미지 올릴 수 있음 -->
                                             <div id="txtFile" class="row">
                                             </div>
-                                            <!--<div id="txtFile" class="row">
-                                                <p class="row-file">
-                                                    <span class="num-txt ico-file-02"><span></span><em>누리숲 스킨로션02.jpg</em></span> 
-                                                    <a href="javascript:;" class="btn-file-del ico-file-cls fileTxtDel"><span></span>삭제</a>
-                                                </p>
-                                            </div>-->
                                             
                                             <div class="row file-box">
-                                                <input type="text" id="" class="ip-txt ip-file" placeholder="" disabled="disabled">
+                                                <input type="text" id="" class="ip-txt ip-file" placeholder="" disabled="disabled" title="파일선택">
                                                 <input type="file" id="ipFiles" class="ip-file-none" accept="image/gif, image/jpg, image/jpeg, image/png"> 
                                                 <label for="ipFiles" class="btn-com btn-file">파일선택</label>
                                             </div>
@@ -110,7 +104,7 @@
                                         <th><label for="pw">비밀글</label></th>
                                         <td>
                                             <div class="row">
-                                                <input type="password" id="pw" class="ip-txt" placeholder="패스워드 입력">
+                                                <input type="password" id="pw" class="ip-txt" title="패스워드" placeholder="패스워드 입력">
                                             </div>
                                         </td>
                                     </tr>

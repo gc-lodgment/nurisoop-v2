@@ -37,6 +37,7 @@
                             <tr>
                                 <th>
                                     <label class="pop-chk">
+                                        <span class="hidden">배송 주소록 전체선택</span>
                                         <input type="checkbox" name="adrAll" class="ip-chk">
                                         <span class="btn-chk"></span>
                                     </label>
@@ -68,6 +69,7 @@
                             <tr>
                                 <td>
                                     <label class="pop-chk">
+                                        <span class="hidden">배송 주소록 선택</span>
                                         <input type="checkbox" name="adr1" class="ip-chk">
                                         <span class="btn-chk"></span>
                                     </label>    
@@ -87,6 +89,7 @@
                             <tr>
                                 <td>
                                     <label class="pop-chk">
+                                        <span class="hidden">배송 주소록 선택</span>
                                         <input type="checkbox" name="adr1" class="ip-chk">
                                         <span class="btn-chk"></span>
                                     </label>    
@@ -106,6 +109,7 @@
                             <tr>
                                 <td>
                                     <label class="pop-chk">
+                                        <span class="hidden">배송 주소록 선택</span>
                                         <input type="checkbox" name="adr1" class="ip-chk">
                                         <span class="btn-chk"></span>
                                     </label>    
@@ -190,31 +194,31 @@
                                 <th><span class="t-ast">주소</span></th>
                                 <td>
                                     <div class="row">
-                                        <input type="text" id="adr1" class="ip-txt w-1" placeholder="" value="" readonly>
+                                        <input type="text" class="ip-txt w-1" placeholder="" value="" title="우편번호 앞자리" readonly>
                                         <span class="txt-hyphen">-</span>
-                                        <input type="text" id="adr2" class="ip-txt w-1" placeholder="" value="" readonly>
+                                        <input type="text" class="ip-txt w-1" placeholder="" value="" title="우편번호 뒷자리" readonly>
                                         <a href="javascript:comPopOpen('#popAdr');" class="btn-adr">우편번호 검색</a>
                                     </div>
                                     <div class="row type-2">
-                                        <input type="text" id="adr3" class="ip-txt w-3" placeholder="" value="" readonly><span class="txt-adr">기본주소</span>
+                                        <input type="text" id="adr3" class="ip-txt w-3" placeholder="" value="" title="기본 주소" readonly><span class="txt-adr">기본주소</span>
                                     </div>
                                     <div class="row type-2">
-                                        <input type="text" id="adr4" class="ip-txt w-3" placeholder="" value=""><span class="txt-adr">나머지주소</span>
+                                        <input type="text" id="adr4" class="ip-txt w-3" placeholder="" value="" title="나머지 주소"><span class="txt-adr">나머지주소</span>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <th><span>일반전화</span></th>
-                                <td>
+                                <td>  
                                     <div class="row">
-                                        <select name="" id="" class="form-sel w-1">
+                                        <select name="" id="" class="form-sel w-1" title="일반전화 첫번째 자리 선택">
                                             <option value="">02</option>
                                             <option value="">031</option>
                                         </select>
                                         <span class="txt-hyphen">-</span>
-                                        <input type="text" id="n-phone2" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        <input type="text" class="ip-txt w-1" placeholder="" value="" title="일반전화 두번째 자리" maxlength="4">
                                         <span class="txt-hyphen">-</span>
-                                        <input type="text" id="n-phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        <input type="text" class="ip-txt w-1" placeholder="" value="" title="일반전화 세번째 자리" maxlength="4">
                                     </div>
                                 </td>
                             </tr> 
@@ -222,14 +226,14 @@
                                 <th><span class="t-ast">휴대전화</span></th>
                                 <td>
                                     <div class="row">
-                                        <select name="" id="" class="form-sel w-1">
+                                        <select name="" id="" class="form-sel w-1" title="휴대전화 첫번째 자리 선택">
                                             <option value="">010</option>
                                             <option value="">011</option>
                                         </select>
                                         <span class="txt-hyphen">-</span>
-                                        <input type="text" id="phone2" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        <input type="text"  class="ip-txt w-1" placeholder="" value="" title="휴대전화 두번째 자리" maxlength="4">
                                         <span class="txt-hyphen">-</span>
-                                        <input type="text" id="phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                        <input type="text" class="ip-txt w-1" placeholder="" value="" title="휴대전화 세번째 자리" maxlength="4">
                                     </div>
                                 </td>
                             </tr>
@@ -272,7 +276,7 @@
             <div class="top-area">
                 <div class="tab-box poptab">
                     <ul class="tab-list">
-                        <li class="nth-1 on"><a href="#newAdr">새 우편번호</a></li>
+                        <li class="nth-1 on"><a href="#newAdr">새 우편번호</a></li> 
                         <li class="nth-2"><a href="#oldAdr">구) 우편번호</a></li>
                     </ul>
                 </div>
@@ -283,7 +287,7 @@
                     </div>
                     <div class="srch-td">
                         <p class="srch-row">
-                            <input type="text" class="ip-txt">
+                            <input type="text" class="ip-txt" title="검색">
                             <button type="button" class="btn-srch">검색</button>
                         </p>
                         <p class="srch-txt">도로명+건물번호(예:테헤란로82길 15)&ensp;l&ensp;읍/면/동/리+지번(예:서린동154)</p>

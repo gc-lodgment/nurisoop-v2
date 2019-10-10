@@ -195,169 +195,167 @@
                     .tbl-col {
                         @include bx;
                         @include tbl-bor(1px);
-                        .tbl {
-                            @include tbl-ch-head {
-                                th {
-                                    @include t-line-l;
-                                    @include t-col-style(7px 0, 14px);
-                                }
+                        @include tbl-ch-head {
+                            th {
+                                @include t-line-l;
+                                @include t-col-style(7px 0, 14px);
                             }
-                            @include tbl-ch-body {
-                                td {
-                                    @include t-line-l;
-                                    @include t-col-style(10px 0 9px, 14px, $fg:$fg-black);
-                                    .btn-com {
-                                        margin-top: 5px;
-                                        &.btn-change {
-                                            margin-top: 10px;
+                        }
+                        @include tbl-ch-body {
+                            td {
+                                @include t-line-l;
+                                @include t-col-style(10px 0 9px, 14px, $fg:$fg-black);
+                                .btn-com {
+                                    margin-top: 5px;
+                                    &.btn-change {
+                                        margin-top: 10px;
+                                    }
+                                }
+                                .btn-green {
+                                    margin-top: 7px;
+                                }
+
+                                .ip-chk {
+                                    display: inline-block;
+                                    .btn-chk {
+                                        left: 50%;
+                                        margin-left: -7px;
+                                        margin-top: -4px;
+                                    }
+                                }
+
+                                .link-txt {
+                                    &.prd-name {
+                                        font-size: 15px;
+                                        .img-prd {
+                                            margin: 0 18px 0 0;
                                         }
                                     }
-                                    .btn-green {
-                                        margin-top: 7px;
-                                    }
-                                    
-                                    .ip-chk {
+                                }
+
+                                .img-prd {
+                                    display: inline-block;
+                                    width: 80px;
+                                    height: 80px;
+                                    //margin: 11px auto;
+
+                                    & + span {
                                         display: inline-block;
-                                        .btn-chk {
-                                            left: 50%;
-                                            margin-left: -7px;
-                                            margin-top: -4px;
-                                        }
+                                        padding-left: 15px;
                                     }
-                                    
-                                    .link-txt {
-                                        &.prd-name {
-                                            font-size: 15px;
-                                            .img-prd {
-                                                margin: 0 18px 0 0;
-                                            }
-                                        }
-                                    }
+                                }
 
-                                    .img-prd {
-                                        display: inline-block;
-                                        width: 80px;
-                                        height: 80px;
-                                        //margin: 11px auto;
-
-                                        & + span {
-                                            display: inline-block;
-                                            padding-left: 15px;
-                                        }
-                                    }
-
-                                    .num-box {
-                                        width: 70px;
+                                .num-box {
+                                    width: 70px;
+                                    height: 27px;
+                                    border: 0;
+                                    .ip-txt {
+                                        width: 48px;
                                         height: 27px;
-                                        border: 0;
-                                        .ip-txt {
-                                            width: 48px;
-                                            height: 27px;
-                                            padding: 0 5px;
-                                            font-size: 14px;
-                                            line-height: 25px;
-                                            text-align: right;
-                                            color: $fg-gray-01;
-                                            border: 1px solid $bor-gray-03;
+                                        padding: 0 5px;
+                                        font-size: 14px;
+                                        line-height: 25px;
+                                        text-align: right;
+                                        color: $fg-gray-01;
+                                        border: 1px solid $bor-gray-03;
+                                    }
+                                    span {
+                                        height: 14px;
+                                        border: 1px solid $bor-gray-03;
+                                        &.up {
+                                            background-position: -151px -224px;
                                         }
-                                        span {
-                                            height: 14px;
-                                            border: 1px solid $bor-gray-03;
-                                            &.up {
-                                                background-position: -151px -224px;
-                                            }
-                                            &.down {
-                                                background-position: -176px -224px;
-                                            }
+                                        &.down {
+                                            background-position: -176px -224px;
                                         }
                                     }
+                                }
 
-                                    //금액
-                                    .bot-box {
-                                        $ft:22px;
+                                //금액
+                                .bot-box {
+                                    $ft:22px;
+                                    @include bx;
+                                    @include clearfix;
+                                    padding: 12px 12px 12px 10px;
+                                    text-align: left;
+                                    line-height: 0;
+
+                                    .txt {
                                         @include bx;
-                                        @include clearfix;
-                                        padding: 12px 12px 12px 10px;
-                                        text-align: left;
-                                        line-height: 0;
-
-                                        .txt {
-                                            @include bx;
-                                            float: left;
+                                        float: left;
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        line-height: $ft;
+                                    }
+                                    .buy-txt {
+                                        @include bx;
+                                        float: right;
+                                        display: inline-block;
+                                        letter-spacing: 0;
+                                        vertical-align: middle;
+                                        line-height: $ft;
+                                        span, em {
                                             display: inline-block;
-                                            vertical-align: middle;
+                                            font-weight: bold;
                                             line-height: $ft;
-                                        }
-                                        .buy-txt {
-                                            @include bx;
-                                            float: right;
-                                            display: inline-block;
-                                            letter-spacing: 0;
-                                            vertical-align: middle;
-                                            line-height: $ft;
-                                            span, em {
-                                                display: inline-block;
+                                            .ie & {
                                                 font-weight: bold;
-                                                line-height: $ft;
-                                                .ie & {
-                                                    font-weight: bold;
-                                                }
                                             }
-                                            .t-point {
-                                                letter-spacing: -0.5px;
-                                                color: $fg-red-04;
-                                                em {
-                                                    font-size: 20px;
-                                                }
+                                        }
+                                        .t-point {
+                                            letter-spacing: -0.5px;
+                                            color: $fg-red-04;
+                                            em {
+                                                font-size: 20px;
                                             }
                                         }
                                     }
+                                }
 
-                                    //상품정보
-                                    .prd-box {
+                                //상품정보
+                                .prd-box {
+                                    @include bx;
+                                    @include clearfix;
+
+                                    .prd-row {
                                         @include bx;
-                                        @include clearfix;
-
-                                        .prd-row {
+                                        float: left;
+                                        .link-txt {
+                                            display: inline-block;
+                                            padding: 0;
+                                            .img-prd {
+                                                margin: 0 20px;
+                                            }
+                                            &.prd-name {
+                                                padding-top: 4px;
+                                                line-height: 1;
+                                            }
+                                        }
+                                        .btn-box {
                                             @include bx;
-                                            float: left;
-                                            .link-txt {
-                                                display: inline-block;
-                                                padding: 0;
-                                                .img-prd {
-                                                    margin: 0 20px;
-                                                }
-                                                &.prd-name {
-                                                    padding-top: 4px;
-                                                    line-height: 1;
-                                                }
-                                            }
-                                            .btn-box {
-                                                @include bx;
-                                                margin-top: 15px;
-                                                padding-top: 16px;
-                                                border-top: 1px solid $bor-gray-03;
-                                                .btn-com {
-                                                    margin-top: 0;
-                                                    &.btn-wish {
+                                            margin-top: 15px;
+                                            padding-top: 16px;
+                                            border-top: 1px solid $bor-gray-03;
+                                            .btn-com {
+                                                margin-top: 0;
+                                                &.btn-wish {
 
-                                                    }
-                                                    &.btn-del {
-                                                        width: 70px;
-                                                    }
+                                                }
+                                                &.btn-del {
+                                                    width: 70px;
+                                                }
 
-                                                    & + .btn-com {
-                                                        margin-left: 2px;
-                                                    }
+                                                & + .btn-com {
+                                                    margin-left: 2px;
                                                 }
                                             }
+                                        }
 
-                                            &.prd-txt {
-                                                width: -webkit-calc( 100% - 120px );
-                                                width: -moz-calc( 100% - 120px );
-                                                width: calc( 100% - 120px );
-                                                text-align: left;
-                                            }
+                                        &.prd-txt {
+                                            width: -webkit-calc( 100% - 120px );
+                                            width: -moz-calc( 100% - 120px );
+                                            width: calc( 100% - 120px );
+                                            text-align: left;
                                         }
                                     }
                                 }
@@ -533,25 +531,23 @@
                     .tbl-col {
                         @include bx;
                         @include tbl-bor(1px, $b-bor-bg:$bor-black-01);
-                        .tbl {
-                            .row-pop {
-                                @include bx;
-                                display: inline-block;
+                        .row-pop {
+                            @include bx;
+                            display: inline-block;
+                        }
+                        @include tbl-ch-head {
+                            th {
+                                @include t-line-l;
+                                @include t-col-style(18px 0, 14px, 400, $fg-gray-04);
                             }
-                            @include tbl-ch-head {
-                                th {
-                                    @include t-line-l;
-                                    @include t-col-style(18px 0, 14px, 400, $fg-gray-04);
-                                }
-                            }
-                            @include tbl-ch-body {
-                                td {
-                                    @include t-line-l;
-                                    @include t-col-style(26px 0 31px, 22px, 500, $fg-black);
+                        }
+                        @include tbl-ch-body {
+                            td {
+                                @include t-line-l;
+                                @include t-col-style(26px 0 31px, 22px, 500, $fg-black);
 
-                                    .ie & {
-                                        font-weight: bold;
-                                    }
+                                .ie & {
+                                    font-weight: bold;
                                 }
                             }
                         }

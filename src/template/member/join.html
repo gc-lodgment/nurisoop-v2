@@ -42,8 +42,8 @@
                                         <div class="row chk-like-radio">
                                             <input type="text" id="email" class="ip-txt" placeholder="" value="">
                                             <span class="txt-at">@</span>
-                                            <input type="text" id="email" class="ip-txt" placeholder="" value="">
-                                            <select name="" id="" class="form-sel w-2">
+                                            <input type="text" class="ip-txt" placeholder="" value="" title="이메일 주소">
+                                            <select name="" id="" class="form-sel w-2" title="이메일 주소 선택">
                                                 <option value="">직접입력</option>
                                                 <option value="">naver.com</option>
                                             </select>
@@ -64,7 +64,7 @@
                                     <th><span class="t-ast">생년월일</span></th>
                                     <td>
                                         <div class="row">
-                                            <input id="searchStartDate" type="text" class="ip-cal date-ui" value="">
+                                            <input id="searchStartDate" type="text" class="ip-cal date-ui" value="" title="생년월일">
                                             <span class="ico-cal date-ui"></span>
                                             <span class="t-point t-ast">생년월일을 입력해주셔야 생일 달 매월 1일 생일 쿠폰이 발급됩니다.</span>
                                         </div>
@@ -74,14 +74,14 @@
                                     <th><span class="t-ast">핸드폰번호</span></th>
                                     <td>
                                         <div class="row">
-                                            <select name="" id="" class="form-sel w-1">
+                                            <select name="" id="" class="form-sel w-1" title="핸드폰번호 첫번째 자리 선택">
                                                 <option value="">02</option>
                                                 <option value="">031</option>
                                             </select>
                                             <span class="txt-hyphen">-</span>
-                                            <input type="text" id="phone2" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                            <input type="text" class="ip-txt w-1" placeholder="" value="" title="핸드폰번호 두번째 자리" maxlength="4">
                                             <span class="txt-hyphen">-</span>
-                                            <input type="text" id="phone3" class="ip-txt w-1" placeholder="" value="" maxlength="4">
+                                            <input type="text" class="ip-txt w-1" placeholder="" value="" title="핸드폰번호 세번째 자리" maxlength="4">
                                             <a href="#none" class="btn-phone">인증하기</a>
                                         </div>
                                     </td>
@@ -90,16 +90,16 @@
                                     <th><span class="t-ast">주소</span></th>
                                     <td>
                                         <div class="row">
-                                            <input type="text" id="d-adr1" class="ip-txt w-1" placeholder="" value="" readonly>
+                                            <input type="text" class="ip-txt w-1" placeholder="" value="" title="우편번호 앞자리" readonly>
                                             <span class="txt-hyphen">-</span>
-                                            <input type="text" id="d-adr2" class="ip-txt w-1" placeholder="" value="" readonly>
+                                            <input type="text" class="ip-txt w-1" placeholder="" value="" title="우편번호 뒷자리" readonly>
                                             <a href="javascript:comPopOpen('#popAdr');" class="btn-adr">우편번호 검색</a>
                                         </div>
                                         <div class="row">
-                                            <input type="text" id="d-adr3" class="ip-txt w-3" placeholder="" value="" readonly><span class="txt-adr">기본주소</span>
+                                            <input type="text" class="ip-txt w-3" placeholder="" value="" title="기본주소" readonly><span class="txt-adr">기본주소</span>
                                         </div>
                                         <div class="row">
-                                            <input type="text" id="d-adr4" class="ip-txt w-3" placeholder="" value=""><span class="txt-adr">나머지주소</span>
+                                            <input type="text" class="ip-txt w-3" placeholder="" value="" title="나머지주소" ><span class="txt-adr">나머지주소</span>
                                         </div>
                                     </td>
                                 </tr>

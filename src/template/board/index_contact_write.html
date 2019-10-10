@@ -58,7 +58,7 @@
                                         <th>질문유형</th>
                                         <td>
                                            <div class="row">
-                                                <select name="" id="" class="form-sel">
+                                                <select name="" id="" class="form-sel" title="질문유형">
                                                     <option value="">상담내용을 선택하세요</option>
                                                     <option value="">상담내용을 선택하세요1</option>
                                                 </select>
@@ -81,28 +81,28 @@
                                             <div class="row chk-like-radio">
                                                 <input type="text" id="email" class="ip-txt" placeholder="" value="">
                                                 <span class="txt-at">@</span>
-                                                <input type="text" id="email" class="ip-txt" placeholder="" value="">
-                                                <select name="" id="" class="form-sel w-2">
+                                                <input type="text" class="ip-txt" placeholder="" value="" title="이메일 주소">
+                                                <select name="" id="" class="form-sel w-2" title="이메일 주소 선택">
                                                     <option value="">직접입력</option>
                                                     <option value="">naver.com</option>
                                                 </select>
-                                                <label class="chk-txt"><input type="checkbox" name="email" class="ip-chk"><span class="btn-chk"></span>이메일로 답변을 받겠습니다.</label>
+                                                <label class="chk-txt"><input type="checkbox" name="emailChk" class="ip-chk"><span class="btn-chk"></span>이메일로 답변을 받겠습니다.</label>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th><label for="sms">SMS</label></th>
+                                        <th>SMS</th>
                                         <td>
                                             <div class="row">
-                                                <select name="" id="" class="form-sel w-1">
+                                                <select name="" id="" class="form-sel w-1" title="전화번호 첫번째 자리 선택">
                                                     <option value="">010</option>
                                                     <option value="">011</option>
                                                 </select>
                                                 <span class="s-1">-</span>
-                                                <input type="tel" id="sms-2" class="ip-txt w-1" placeholder="">
+                                                <input id="sms-2" class="ip-txt w-1" placeholder="" title="전화번호 두번째 자리">
                                                 <span class="s-1">-</span>
-                                                <input type="tel" id="sms-3" class="ip-txt w-1" placeholder="">
-                                                <label class="chk-txt"><input type="checkbox" name="sms" class="ip-chk"><span class="btn-chk"></span>카카오 알림톡으로 답변알림을 받겠습니다.</label>
+                                                <input id="sms-3" class="ip-txt w-1" placeholder="" title="전화번호 세번째 자리">
+                                                <label class="chk-txt"><input type="checkbox" name="smsChk" class="ip-chk"><span class="btn-chk"></span>카카오 알림톡으로 답변알림을 받겠습니다.</label>
                                             </div>
                                         </td>
                                     </tr>
@@ -136,7 +136,7 @@
                                             </div>-->
                                             
                                             <div class="row file-box">
-                                                <input type="text" id="" class="ip-txt ip-file" placeholder="" disabled="disabled">
+                                                <input type="text" id="" class="ip-txt ip-file" placeholder="" disabled="disabled" title="파일선택">
                                                 <input type="file" id="ipFiles" class="ip-file-none" accept="image/gif, image/jpg, image/jpeg, image/png"> 
                                                 <label for="ipFiles" class="btn-com btn-file">파일선택</label>
                                             </div>
@@ -149,7 +149,7 @@
                                         <th><label for="pw">비밀글</label></th>
                                         <td>
                                             <div class="row">
-                                                <input type="password" id="pw" class="ip-txt" placeholder="패스워드 입력">
+                                                <input type="password" id="pw" class="ip-txt" title="패스워드" placeholder="패스워드 입력">
                                             </div>
                                         </td>
                                     </tr>

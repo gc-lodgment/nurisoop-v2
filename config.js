@@ -19,7 +19,7 @@ module.exports = function() {
 		sass = {
 			src: source + '/sass/**/!(_)*.{scss,sass}',
 			parts: source + '/sass/**/_*.{scss,sass}',
-			dest      : development + '/static/css'
+			dest      : development + '/static/css/renew'
 		},
 
 		// Css 경로
@@ -31,7 +31,7 @@ module.exports = function() {
 		// JS 경로
 		js = {
 			src : source + '/js/**/*.js',
-			dest: development + '/static/js'
+			dest: development + '/static/js/renew'
 		},
 
 		// Img 경로
