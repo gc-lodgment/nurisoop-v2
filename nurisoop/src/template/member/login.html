@@ -1,65 +1,66 @@
 @@include('../include/_head.html', {
-	"page": "member"
+"page": "member"
 })
 
 <body class="page-member">
 
-<div class="wrapper">
-	@@include('../include/_header.html')
+  <div class="wrapper">
+    @@include('../include/_header.html')
 
-	<div class="contents login">
-        <div class="top-sect">
-            <div class="container">
-                <h2 class="sub-tit">로그인</h2>
-                <p class="sub-txt">로그인을 하시면 누리숲의 다양한 정보와 혜택을 누리실 수 있습니다.</p>
-            </div>
+    <div class="contents login">
+      <div class="top-sect">
+        <div class="container">
+          <h2 class="sub-tit">로그인</h2>
+          <p class="sub-txt">로그인을 하시면 누리숲의 다양한 정보와 혜택을 누리실 수 있습니다.</p>
         </div>
-	
-	    <div class="login-sect">
-	        <div class="container">
-	            <div class="row sns-login">
-	                @@include('../include/login/_sns.html')
-	            </div>
-	            <div class="row member-login">
-	                <h3 class="login-tit">누리숲 기존 회원 로그인</h3>
-	                <div class="login-area">
-                        <ul class="login-tab">
-                            <li class="member"><label class="srch-txt"><input type="radio" name="login" checked>기존회원 로그인</label></li>
-                            <li class="non-member"><label class="srch-txt"><input type="radio" name="login">비회원 주문조회</label></li>
-                        </ul>
+      </div>
 
-                        <!-- 회원 로그인 -->
-                        <div class="login-box member" style="display: block;">
-                            <p class="p-row"><label for="id" class="hidden">아이디</label><input type="text" id="id" class="ip-txt" placeholder="아이디" value=""></p>
-                            <p class="p-row"><label for="pw" cla ss="hidden">비밀번호</label><input type="password" id="pw" class="ip-txt" placeholder="비밀번호" value=""></p>
-                            <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
-                        </div>
+      <div class="login-sect">
+        <div class="container">
+          <div class="row sns-login">
+            @@include('../include/login/_sns.html')
+          </div>
+          <div class="row member-login">
+            <h3 class="login-tit">누리숲 기존 회원 로그인</h3>
+            <div class="login-area">
+              <ul class="login-tab">
+                <li class="member"><label class="srch-txt"><input type="radio" name="login" checked>기존회원 로그인</label></li>
+                <li class="non-member"><label class="srch-txt"><input type="radio" name="login">비회원 주문조회</label></li>
+              </ul>
 
-                        <!-- 비회원 주문조회 -->
-                        <div class="login-box non-member" style="display: none;">
-                            <p class="p-row"><input type="text" class="ip-txt" placeholder="주문자명" title="주문자명" value=""></p>
-                            <p class="p-row"><input type="text" class="ip-txt" placeholder="주문번호" title="주문번호" value=""></p>
-                            <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
-                        </div>
+              <!-- 회원 로그인 -->
+              <div class="login-box member" style="display: block;">
+                <p class="p-row"><label for="id" class="hidden">아이디</label><input type="text" id="id" class="ip-txt" placeholder="아이디" value=""></p>
+                <p class="p-row"><label for="pw" class="hidden">비밀번호</label><input type="password" id="pw" class="ip-txt" placeholder="비밀번호" value=""></p>
+                <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
+              </div>
 
-                        <div class="login-txt-box">
-                            <label class="chk-txt"><input type="checkbox" name="email" class="ip-chk"><span class="btn-chk"></span>로그인 상태 유지</label>
-                            <p class="txt-lock"><span></span>보안접속</p>
-                        </div>
-	                </div>
-	                <div class="login-btn-box">
-	                    <ul class="login-link-list">
-	                        <li><a href="./find_id_01.html">아이디찾기</a></li>
-	                        <li><a href="./find_pw_00.html">비밀번호찾기</a></li>
-	                    </ul>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div> 
-	
-	@@include('../include/_footer.html') 
-</div>
+              <!-- 비회원 주문조회 -->
+              <div class="login-box non-member" style="display: none;">
+                <p class="p-row"><input type="text" class="ip-txt" placeholder="주문자명" title="주문자명" value=""></p>
+                <p class="p-row"><input type="text" class="ip-txt" placeholder="주문번호" title="주문번호" value=""></p>
+                <p class="p-row"><a href="#none" class="btn-login">로그인</a></p>
+              </div>
+
+              <div class="login-txt-box">
+                <label class="chk-txt"><input type="checkbox" name="email" class="ip-chk"><span class="btn-chk"></span>로그인 상태 유지</label>
+                <p class="txt-lock"><span></span>보안접속</p>
+              </div>
+            </div>
+            <div class="login-btn-box">
+              <ul class="login-link-list">
+                <li><a href="./find_id_01.html">아이디찾기</a></li>
+                <li><a href="./find_pw_00.html">비밀번호찾기</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @@include('../include/_footer.html')
+  </div>
 
 </body>
+
 </html>
