@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "템플릿 엔진",
   "author": "joon <vxggangxv@naver.com>",
+  "scripts": {
+    "rebuild": "gulp cleanDist && gulp build"
+  },
   "dependencies": {
     "npm": "^6.5.0"
   },
