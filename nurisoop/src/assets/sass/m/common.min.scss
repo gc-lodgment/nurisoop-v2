@@ -19,6 +19,16 @@ body {
     color: $font-color;
 }
 
+html.expand body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
 .header,
 .container,
 .footer {
@@ -36,7 +46,352 @@ body {
 // --------------------
 // header 영역
 // --------------------
+.header {
+    z-index: 10;
+    width: 100%;
 
+    .group-f {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .gnb {
+        position: relative;
+        width: 100%;
+        height: $hd-ht-m;
+        // @include pos(fixed, 0, 0);
+        // border-bottom: 1px solid #fff;
+        // background-color: rgba(0, 0, 0, .35);
+        box-sizing: border-box;
+
+        .gnb-area {
+            height: 100%;
+        }
+
+        .logo-cover {
+            // z-index: 11;
+            @include va-bef(100%);
+            text-align: center;
+            // box-shadow: 0 3px 6px rgba(0, 0, 0, .12);
+
+            .logo {
+                .logo-img {
+                    position: relative;
+                    top: 2px;
+                    height: 28px;
+                }
+            }
+        }
+
+        .tool-cover {
+            @include va-bef(100%);
+            position: absolute;
+            top: 0;
+            right: 15px;
+
+            .cart-cover {
+                position: relative;
+
+                img {
+                    height: 28px;
+                }
+
+                .no {
+                    position: absolute;
+                    top: 3px;
+                    right: -1px;
+                    width: 20px;
+                    text-align: center;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .nav-tab {
+            // z-index: 12;
+            @include pos(absolute, 0px, 0);
+            @include ap-reset;
+            @include size(50px, 100%);
+
+            .bar {
+                @include center-block;
+                width: 20px;
+                height: 2px;
+                background-color: #999;
+                // background-color: #fff;
+
+                &:nth-child(2) {
+                    background-color: #75B8B1;
+                }
+
+                &:not(:first-child) {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .nav-bar {
+            z-index: 10;
+            @include pos(fixed, 0);
+            // position: fixed;
+            @include sizes(100%);
+            left: -100%;
+            transition: right .3s ease;
+            overflow-y: auto;
+            // background-color: rgba(0, 0, 0, .5);
+            // display: none;
+            // opacity: 0;
+            // visibility: hidden;
+            // transition: opacity .3s ease;
+
+            &:before {
+                content: '';
+                display: none;
+                @include pos(fixed, 0, 0);
+                @include sizes(100%);
+                background-color: rgba(0, 0, 0, .5);
+            }
+
+            &.active {
+                left: 0;
+                // display: block;
+                // opacity: 1;
+                // visibility: visible;
+
+                &:before {
+                    display: block;
+                }
+
+                .main-nav {
+                    .close-btn {
+                        display: block;
+                    }
+
+                    // right: 0px;
+                }
+            }
+
+            // .nav-scrollbar {
+            //     overflow-y: auto;
+            // }
+
+            .main-nav {
+                @include pos(absolute, 0);
+                left: 0;
+                @include size(88%, 100%);
+                // width: 100%;
+                // padding: 90px 20px 0;
+                padding: 35px 20px 0;
+                padding-bottom: 20px;
+                box-sizing: border-box;
+                background-color: #fff;
+                // transition: all .13s ease;
+                overflow-y: auto;
+
+                .close-btn {
+                    display: none;
+                    z-index: 1;
+                    position: fixed;
+                    top: 1.5%;
+                    // right: -10%;
+                    right: 2.5%;
+
+                    img {
+                        width: 24px;
+                    }
+                }
+
+                .nav-logo {
+                    text-align: center;
+
+                    .logo {
+                        .logo-img {
+                            height: 33px;
+                        }
+                    }
+                }
+
+                .login-btn-cover {
+                    margin-top: 20px;
+                    text-align: center;
+                    font-size: 0;
+
+                    .btn {
+                        border-radius: 0;
+                        width: calc(50% - 5px);
+                        font-size: 15px;
+                        font-weight: 300;
+
+                        &+.btn {
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .outline-btn {
+                        border-color: #999;
+                        background-color: #fff;
+                        color: #000;
+                    }
+
+                    .black-btn {
+                        background-color: #333;
+                    }
+                }
+
+                .shortcut-cover {
+                    margin-top: 10px;
+                    padding: 8px 0 10px;
+                    background-color: #f0f0f0;
+
+                    .shortcut-list {
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: space-around;
+
+                        .shortcut-item {
+                            .picture {
+                                text-align: center;
+
+
+                                .img-cover {
+                                    position: relative;
+
+                                    img {
+                                        height: 22px;
+
+                                        &.todaysee,
+                                        &.cart {
+                                            height: 25px;
+                                        }
+                                    }
+
+                                    .no {
+                                        position: absolute;
+                                        top: 2px;
+                                        left: -2px;
+                                        width: 20px;
+                                        text-align: center;
+                                        color: #fff;
+                                        font-size: 10px;
+                                        font-weight: 300;
+                                    }
+                                }
+
+                                .name {
+                                    display: block;
+                                    margin-top: 2px;
+                                    font-size: 12px;
+                                    // font-weight: 300;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .menu {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-top: 25px;
+
+                    >li {
+                        flex-basis: calc(50% - 10px);
+
+                        &:nth-child(2n) {
+                            margin-left: 20px;
+                        }
+
+                        &:nth-child(2n)~li {
+                            margin-top: 10px;
+                        }
+
+                        .item-title {
+                            padding-bottom: 5px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            border-bottom: 1px solid #dcdcdc;
+                        }
+
+                        >a {
+                            display: block;
+                            margin: 5px 0;
+                            font-size: 14px;
+                            font-weight: 300;
+
+                            &:first-of-type {
+                                margin-top: 10px;
+                            }
+
+                            &.on {
+                                background-color: #ebebeb;
+                            }
+                        }
+                    }
+                }
+
+                .event-cover {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-top: 25px;
+
+                    .event-item {
+                        flex-basis: calc(50% - 5px);
+                        padding: 10px;
+                        padding-right: 0;
+                        // height: 130px;
+                        border: 1px solid #e6e6e6;
+                        box-sizing: border-box;
+                        font-size: 0;
+
+                        >* {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+
+                        >img {
+                            width: 40px;
+                            // margin-right: 10px;
+                        }
+
+                        .title {
+                            width: calc(100% - 40px);
+                            line-height: 1.2;
+
+                            >* {
+                                display: block;
+                                margin: 0 auto;
+                            }
+
+                            .st {
+                                font-size: 11px;
+                                color: #999999;
+                                font-weight: 300;
+                                letter-spacing: -0.5px;
+                            }
+
+                            .txt {
+                                font-size: 12px;
+                                letter-spacing: -1px;
+                            }
+                        }
+
+                        &.sample .title>* {
+                            width: 42px;
+                        }
+
+                        &.event .title>* {
+                            width: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
 
 // --------------------
 // footer 영역

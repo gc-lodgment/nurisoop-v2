@@ -9,7 +9,7 @@ $screen-md-width: 992px;
 $screen-lg-pd: 20px;
 $screen-lg-width: 1180px;
 
-$hd-ht-m: 45px;
+$hd-ht-m: 65px;
 $hd-ht-pc: 80px;
 
 $font-stack: ('Noto Sans KR', sans-serif);
@@ -19,7 +19,7 @@ $font-ntss: ("Noto Sans KR", Sans-serif);
 $font-dt: (Dotum, Sans-serif);
 $font-jfss: ('Josefin Sans', sans-serif);
 
-$font-color: #141414;
+$font-color: #333;
 
 // $primary-color: #003f7c;
 $primary-color: #7954ff;
@@ -41,6 +41,7 @@ $btn-orange-dark: #eea236;
 $btn-red: #d9534f;
 $btn-red-dark: #d43f3a;
 $btn-gray: gray;
+$btn-black: black;
 
 $c-white: #fff;
 $c-green: #74b02f;
@@ -50,3 +51,5 @@ $c-lightbrown: #d35e00;
 $c-blue: #5961e8;
 $c-darkblue: #315b84;
 $c-purple: #7954ff;
+
+$font-gray: #999;

@@ -513,6 +513,12 @@
     }
 }
 
+@mixin btn-color-simple($bg: null, $c: null, $bdc: #fff) {
+    background-color: $bg;
+    color: $c;
+    border-color: $bdc;
+}
+
 @mixin simple-btn($ht: 30px, $pd: null, $fz: null) {
     display: inline-block;
     height: $ht;
