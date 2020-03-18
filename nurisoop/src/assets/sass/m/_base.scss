@@ -204,7 +204,12 @@ img.bor {
 
     &.btn-default {
         @include btn-color(#fff);
-        color: #333;
+
+        &,
+        &.outline {
+            border-color: $btn-gray;
+            color: #333;
+        }
     }
 
     &.btn-primary {
@@ -245,6 +250,10 @@ img.bor {
         &:hover {
             border-color: transparent;
         }
+    }
+
+    &.no-bd-r {
+        border-radius: 0;
     }
 
     .btn-group-lg &,

@@ -82,10 +82,11 @@ var common = {
         var gnb = $('#gnb');
         var goTop = $('#goTop');
         var headerHt = gnb.outerHeight();
+        var submenuHt = $('#submenu').outerHeight();
         // console.log(headerHt);
         $(window).on('scroll', function () {
             var scr = $(window).scrollTop();
-            if (scr > headerHt) {
+            if (scr > headerHt + submenuHt) {
                 gnb.addClass('affix');
             } else {
                 gnb.removeClass('affix');

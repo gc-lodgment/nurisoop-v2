@@ -15,8 +15,8 @@
 body {
     font-family: $font-stack;
     font-display: swap;
-    // letter-spacing: -0.3px;
     color: $font-color;
+    letter-spacing: -0.3px;
 }
 
 html.expand body {
@@ -25,8 +25,13 @@ html.expand body {
 }
 
 .wrapper {
-    max-width: 768px;
     margin: 0 auto;
+}
+
+// 임시 설정
+.header .gnb,
+.wrapper {
+    max-width: 360px;
 }
 
 .header,
@@ -49,6 +54,7 @@ html.expand body {
 .header {
     z-index: 10;
     width: 100%;
+    height: $hd-ht-m + $submenu-ht-m;
 
     .group-f {
         padding-left: 15px;
@@ -59,10 +65,26 @@ html.expand body {
         position: relative;
         width: 100%;
         height: $hd-ht-m;
+        background-color: #fff;
+        border-bottom: 1px solid $bor-gray;
         // @include pos(fixed, 0, 0);
-        // border-bottom: 1px solid #fff;
         // background-color: rgba(0, 0, 0, .35);
         box-sizing: border-box;
+
+        &.affix {
+            height: $hd-ht-m-down;
+            animation: gnbFadeIn 0.3s alternate;
+        }
+
+        @keyframes gnbFadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
 
         .gnb-area {
             height: 100%;
@@ -387,6 +409,50 @@ html.expand body {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .submenu-wrapper {
+        .submenu-list {
+            display: flex;
+            // justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+
+            >li {
+                position: relative;
+
+                >a {
+                    display: inline-block;
+                    // padding: 10px 20px;
+                    padding: 12.5px 0;
+                    font-size: 15px;
+                }
+
+                &.space {
+                    @include size(1px, 15px);
+                    margin: 0 -10px;
+                    background-color: $bor-gray;
+                }
+
+                // &:not(:first-child):before {
+                //     position: absolute;
+                //     // left: 50%;
+                //     left: 0;
+                //     // margin-left: -15px;
+                //     top: 50%;
+                //     transform: translateY(-50%);
+                //     content: '';
+                //     display: inline-block;
+                //     width: 1px;
+                //     height: 15px;
+                //     background-color: $bor-gray;
+                //     background-color: #000;
+
+                //     // font-weight: 100;
+                //     // color: $bor-gray;
+                // }
             }
         }
     }
