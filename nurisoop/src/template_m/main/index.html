@@ -4,7 +4,7 @@
     <section class="sec main-visual-sec">
         <h1 class="sr-only">누리숲 대표 상품 소개</h1>
         <div class="visual-wrapper">
-            <div class="visual-content">
+            <div class="visual-cont">
                 <div class="banner-list-wrapper">
                     <ul class="banner-list">
                         <li class="banner-item">
@@ -19,7 +19,7 @@
 
     <section class="sec main-sample-sec">
         <div class="sample-wrapper">
-            <div class="sample-content">
+            <div class="sample-cont">
                 <div class="sample-picture">
                     <img src="http://static.nurisoop.co.kr/img/renew/main/img_top_free.png" alt="샘플">
                     <h1 class="title">
@@ -37,7 +37,7 @@
 
     <section class="sec main-best-sec sec-pd">
         <div class="best-wrapper">
-            <div class="best-content">
+            <div class="best-cont">
                 <h1 class="sec-title">베스트셀러</h1>
                 <div class="best-list-wrapper">
                     <ul class="best-list">
@@ -62,7 +62,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="prd-content group">
+            <div class="prd-cont group">
                 <a href="" class="prd-item big"><img src="../../img/main/img_mid_03.jpg" alt="상품"></a>
                 <a href="" class="prd-item small"><img src="../../img/main/img_mid_01.jpg" alt="상품"></a>
                 <a href="" class="prd-item small"><img src="../../img/main/img_mid_02.jpg" alt="상품"></a>
@@ -73,48 +73,134 @@
 
     <section class="sec main-review-sec sec-pd">
         <div class="review-wrapper">
-            <div class="review-content">
+            <div class="review-cont">
                 <h1 class="sec-title">리얼 베스트 후기</h1>
-                <div class="review-list-wrapper">
-                    <ul class="review-list">
-                        <li class="review-item">
-                            <div class="photo-row">
-                                <img src="../../img/review/img_review_03.jpg" alt="상품후기사진" class="photo">
-                            </div>
-                            <div class="heart-row">
-                                <a href="javascript:;">
-                                    좋아좋아요
-                                    <span class="icon">
-                                        <i class="mdi mdi-heart"></i>
-                                        <i class="mdi mdi-heart-outline"></i>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="name-row">
-                                <figure class="thumbnail-cover">
-                                    <img src="../../img/common/product/item/formcleanser.png" alt="상품사진 " class="thumbnail">
-                                </figure>
-                                <span class="name">누리숲 폰클렌져</span>
-                            </div>
-                            <div class="content-row">
-                                사계절 내내 빼놓지 않고<br>
-                                사용해요! 산지 얼마 안된 것 같은데 벌써<br>
-                                바닥을 드러내고 있어서 또...
-                            </div>
-                            <div class="grade-row">
-                                <span class="name">ste***</span>
-                                <span class="grade-cover">
-                                    <span class="grade">평점 <span class="c">5.0</span></span>
-                                    <span class="comment">댓글 <span class="c">1</span></span>
+                <!-- 4개 -->
+                <ul class="review-list">
+                    @@for (var i = 0; i < 4; i++) { <li class="review-item">
+                        <div class="review-photo">
+                            <img src="../../img/review/img_review_03.jpg" alt="상품후기사진" class="photo">
+                        </div>
+                        <div class="review-favorite">
+                            <a href="javascript:;">
+                                좋아좋아요
+                                <span class="icon">
+                                    <!-- 찜 아이콘 -->
+                                    <i class="mdi mdi-heart"></i>
+                                    <!-- <i class="mdi mdi-heart-outline"></i> -->
                                 </span>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="review-name">
+                            <figure class="thumbnail-cover">
+                                <img src="../../img/common/product/item/formcleanser.png" alt="상품사진 " class="thumbnail">
+                            </figure>
+                            <span class="name-cover">누리숲 폰클렌져</span>
+                        </div>
+                        <div class="review-text">
+                            사계절 내내 빼놓지 않고<br>
+                            사용해요! 산지 얼마 안된 것<br>
+                            같은데 벌써 바닥을 드러내고 있어서 또...
+                        </div>
+                        <div class="review-grade">
+                            <span class="name">ste***</span>
+                            <span class="grade-cover">
+                                <span class="grade">평점 <span class="c">5.0</span></span>
+                                <span class="comment">댓글 <span class="c">1</span></span>
+                            </span>
+                        </div>
+                        </li>
+                        }
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- /.sec main-review-sec -->
+
+    <section class="sec main-popular-sec">
+        <div class="popular-wrapper">
+            <div class="popular-cont">
+                <h1 class="sr-only">BEST 인기, NEW 신상, 시즌 PICK 상품 리스트</h1>
+                <div class="popular-tabs">
+                    <!-- 해당 탭 클래스 on -->
+                    <ul class="tablist">
+                        <li class="tab on"><a href="">BEST 인기</a></li>
+                        <li class="tab"><a href="">NEW 신상</a></li>
+                        <li class="tab"><a href="">시즌 PICK</a></li>
+                    </ul>
+                    <div class="tabpanel group">
+                        <ul class="prd-list">
+                            @@for (var i=0; i < 2; i ++) { <li class="prd-item">
+                                <figure class="prd-thumbnail">
+                                    <img src="../../img/common/product/item/formcleanser.png" alt="인기상품" class="thumbnail">
+                                    <span class="sale">15%</span>
+                                </figure>
+                                <div class="prd-name">
+                                    포레스트 녹삼초 폼클렌져
+                                </div>
+                                <div class="prd-price">
+                                    <s>10,000원</s> <span class="fw-m">8,500원</span>
+                                </div>
+                                </li>
+                                <li class="prd-item">
+                                    <figure class="prd-thumbnail">
+                                        <img src="../../img/common/product/item/formcleanser.png" alt="인기상품" class="thumbnail">
+                                        <span class="sale">15%</span>
+                                    </figure>
+                                    <div class="prd-name">
+                                        포레스트 녹삼초 폼클렌져 폼클렌져
+                                    </div>
+                                    <div class="prd-price">
+                                        <s>10,000원</s> <span class="fw-m">8,500원</span>
+                                    </div>
+                                </li>
+                                }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.sec main-popular-sec -->
+
+    <section class="sec main-hotdeal-sec sec-pd">
+        <div class="hotdeal-wrapper">
+            <div class="hotdeal-cont group">
+                <h1 class="sec-title">핫딜존</h1>
+                <div class="hotdeal-list-wrapper">
+                    <ul class="hotdeal-list">
+                        <li class="hotdeal-item">
+                            <a href="" class="item-wrapper">
+                                <figure class="hotdeal-thumbnail">
+                                    <img src="../../img/common/product/item/repair_cream_on.png" alt="핫딜상품" class="thumbnail">
+                                    <span class="badge gift">GIFT</span>
+                                </figure>
+                                <div class="hotdeal-info">
+                                    <div class="name">[1+1] 포레스트 리페어 크림</div>
+                                    <div class="exp">(exp:20.04.15/<br>교환 및 환불불가)</div>
+                                    <div class="add">(증정) 누리촉촉<br>마스크팩2매</div>
+                                    <!-- <div class="line"></div> -->
+                                    <hr class="line">
+                                    <div class="price-cover">
+                                        <span class="sale">53%</span>
+                                        <span class="price">
+                                            <s>50,000 원</s>
+                                            <span class="fw-m">21,000원</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- /.sec main-review-sec -->
+    <!-- /.sec main-hotdeal-sec -->
+
+    <div class="main-botbn-wrapper">
+        <a href="" class="botbn-item"><img src="../../img/m/main/bot_bn.jpg" alt="포레스트리페어크림"></a>
+    </div>
 </main>
 <!-- /.main.container -->
 

@@ -288,6 +288,7 @@ exports.cleanTemplate = cleanTemplate;
 exports.cleanDist = cleanDist;
 exports.cleanTest = cleanTest;
 exports.cleanParts = cleanParts;
+exports.cleanImg = cleanImg;
 exports.img = img;
 exports.sprite = sprite;
 exports.etc = etc;

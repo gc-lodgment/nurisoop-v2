@@ -106,7 +106,7 @@ img.bor {
 }
 
 [class*=wrapper],
-[class*=content],
+[class*=cont],
 .sec {
     position: relative;
 }
@@ -355,12 +355,17 @@ a.btn>* {
     font-family: $font-jfss !important;
 }
 
-.fw-b {
-    font-weight: 700 !important;
-}
 
 .fw-n {
     font-weight: 400 !important;
+}
+
+.fw-m {
+    font-weight: 500 !important;
+}
+
+.fw-b {
+    font-weight: 700 !important;
 }
 
 .ta-center {
@@ -417,6 +422,12 @@ a.btn>* {
 
 .w-auto {
     width: auto;
+}
+
+hr.line {
+    margin: 0;
+    border: none;
+    border-top: 1px solid $bor-gray;
 }
 
 // animate css

@@ -462,6 +462,135 @@ html.expand body {
 // --------------------
 // footer 영역
 // --------------------
+.footer {
+    border-top: 1px solid #999;
+
+    .terms-list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid #dcdcdc;
+
+        >li {
+            text-align: center;
+
+            font-size: 12px;
+
+            >a {
+                display: block;
+                padding: 7px 0;
+            }
+
+            &.terms-item {
+                color: #666666;
+            }
+
+            &.privacy {
+                color: #333333;
+            }
+
+            &.space {
+                margin: 0 -4px;
+                color: #dcdcdc;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .footer-area {
+        >* {
+            padding: 10px 0;
+            border-bottom: 1px solid $bor-gray;
+        }
+
+        .info-list {
+            display: flex;
+            width: calc(50% - 5px);
+
+            .info-bank {
+                margin-left: 10px;
+            }
+        }
+
+        .address {
+            font-size: 11px;
+            color: #999;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: -0.7px;
+            padding-left: 5px;
+
+            .space {
+                margin: 0 3px;
+            }
+        }
+
+        .certi-list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 0 !important;
+
+            .certi-item {
+                width: 25%;
+                text-align: center;
+
+                &:nth-child(4)~a {
+                    margin-top: 10px;
+                }
+
+                img {
+                    height: 20px;
+
+                    &.kibo {
+                        height: 24px;
+                    }
+
+                    &.innobiz {
+                        height: 19px;
+                    }
+
+                    &.mma {
+                        height: 18px;
+                    }
+
+                    &.tax {
+                        height: 24px;
+                    }
+
+                    &.seoul {
+                        height: 24px;
+                    }
+
+                    &.ftc {
+                        height: 17px;
+                    }
+
+                    &.cj {
+                        height: 27px;
+                    }
+
+                    &.kb {
+                        height: 34px;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        display: block;
+        padding: 13px 0;
+        background-color: #ebebeb;
+        font-size: 12px;
+        color: #999999;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
 
 
 .shortcut-container {

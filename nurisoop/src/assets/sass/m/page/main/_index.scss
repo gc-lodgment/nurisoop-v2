@@ -1,6 +1,6 @@
 // 공통 요소
 .sec-pd {
-    padding: 15px 0;
+    padding-top: 15px;
 }
 
 .sec-title {
@@ -13,7 +13,7 @@
 // 메인 비쥬얼 영역
 .main-visual-sec {
     .visual-wrapper {
-        .visual-content {
+        .visual-cont {
             .banner-lsit {
                 .banner-item {
                     position: relative;
@@ -26,10 +26,10 @@
 // 샘플 신청 영역
 .main-sample-sec {
     .sample-wrapper {
-        .sample-content {
+        .sample-cont {
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
             padding: 12px 15px;
             padding-right: 10px;
             border-top: 1px solid $bor-gray;
@@ -76,7 +76,7 @@
 // 베스트 셀러 영역
 .main-best-sec {
     .best-wrapper {
-        .best-content {
+        .best-cont {
             .best-list {
                 .best-item {
                     &:not(:first-child) {
@@ -102,7 +102,7 @@
             }
         }
 
-        .prd-content {
+        .prd-cont {
             margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
@@ -125,4 +125,311 @@
             }
         }
     }
+}
+
+// 리뷰 영역
+.main-review-sec {
+    .review-wrapper {
+        .review-cont {
+            .review-list {
+                display: flex;
+                flex-wrap: wrap;
+
+                .review-item {
+                    width: calc(50% - 5px);
+                    padding: 10px;
+                    border: 1px solid $bor-gray;
+                    box-sizing: border-box;
+                    font-size: 12px;
+
+                    &:nth-child(2n)~li {
+                        margin-top: 10px;
+                    }
+
+                    &:nth-child(2n) {
+                        margin-left: 10px;
+                    }
+
+
+
+                    [class*=review-]:not(:last-child) {
+                        border-bottom: 1px solid $bor-gray;
+                    }
+
+                    .review-text,
+                    .review-favorite {
+                        padding: 7px 0;
+                    }
+
+                    .review-name {
+                        padding: 5px 0;
+                    }
+
+                    .review-grade {
+                        padding-top: 7px;
+                    }
+
+                    .review-favorite {
+                        font-size: 13px;
+                    }
+
+                    .review-name {
+                        position: relative;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        font-size: 12px;
+                        color: #888888;
+                        font-weight: 300;
+
+                        .thumbnail-cover {
+                            @include va-bef(26px);
+                            width: 30px;
+                            height: 30px;
+                            padding: 2px;
+                            background-color: #f0f0f0;
+                            border-radius: 50%;
+                            box-sizing: border-box;
+                        }
+
+                        .name-cover {
+                            width: calc(100% - 30px - 5px);
+                            max-width: 125px;
+                            margin-left: 5px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+
+                    .review-text {
+                        color: #666666;
+                        font-weight: 300;
+                        line-height: 1.3;
+                    }
+
+                    .review-grade {
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: 500;
+
+                        .grade-cover {
+                            color: #888888;
+                            font-weight: 300;
+
+                            .c {
+                                color: $font-color;
+                                font-weight: 500;
+                            }
+
+                            span:first-child+span {
+                                margin-left: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 인기 상품 탭
+.main-popular-sec {
+    padding-top: 30px;
+
+    .popular-wrapper {
+        .popular-cont {
+            .popular-tabs {
+                .tablist {
+                    display: flex;
+
+                    .tab {
+                        width: 33.33%;
+                        padding: 10px 0;
+                        border: 1px solid $bor-gray;
+                        border-bottom-color: $font-color;
+                        font-size: 13px;
+                        color: #999999;
+                        text-align: center;
+
+                        &.on {
+                            color: $font-color;
+                            border-color: $font-color;
+                            border-bottom-color: #fff;
+                        }
+                    }
+                }
+
+                .tabpanel {
+                    margin-top: 15px;
+
+                    .prd-list {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .prd-item {
+                            width: calc(50% - 5px);
+                            // min-height: 245px;
+
+                            &:nth-child(2n)~li {
+                                margin-top: 15px;
+                            }
+
+                            &:nth-child(2n) {
+                                margin-left: 10px;
+                            }
+
+                            .prd-thumbnail {
+                                position: relative;
+                                background-color: #f0f0f0;
+
+                                .sale {
+                                    display: inline-block;
+                                    @include va-bef(35px);
+                                    width: 35px;
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    background-color: #000000;
+                                    font-size: 12px;
+                                    color: #ffffff;
+                                    text-align: center;
+                                }
+                            }
+
+                            .prd-name,
+                            .prd-price {
+                                line-height: 1.3;
+                                text-align: center;
+                                letter-spacing: -0.7px;
+                            }
+
+                            .prd-name {
+                                margin-top: 15px;
+                                font-size: 14px;
+                            }
+
+                            .prd-price {
+                                margin-top: 10px;
+                                font-size: 15px;
+
+                                s {
+                                    margin-right: 5px;
+                                    font-size: 13px;
+                                    color: #999;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 핫딜존 영역
+.main-hotdeal-sec {
+    .hotdeal-wrapper {
+        .hotdeal-cont {
+            .hotdeal-list {
+                .hotdeal-item {
+                    .item-wrapper {
+                        position: relative;
+                        display: flex;
+
+                        >* {
+                            position: relative;
+                            width: 50%;
+                            box-sizing: border-box;
+                        }
+
+                        &:before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            @include sizes(100%);
+                            border: 1px solid $bor-gray;
+                            border-left: 0;
+                            box-sizing: border-box;
+                        }
+
+                        .hotdeal-thumbnail {
+
+                            .badge {
+                                display: inline-block;
+                                padding: 6px 8px;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                background-color: #619a41;
+                                letter-spacing: 0;
+
+                                &.gift {
+                                    font-size: 13px;
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+
+                        .hotdeal-info {
+                            padding: 12px 15px 0;
+                            line-height: 1.3;
+                            font-size: 13px;
+                            letter-spacing: -0.7px;
+
+                            .name {}
+
+                            .exp {}
+
+                            .add {
+                                margin-top: 10px;
+                                font-size: 12px;
+                                font-weight: 300;
+                            }
+
+                            .line {
+                                margin: 10px 0;
+                            }
+
+                            .price-cover {
+                                display: flex;
+                                align-items: center;
+
+                                .sale {
+                                    display: inline-block;
+                                    @include va-bef(35px);
+                                    width: 35px;
+                                    background-color: #000000;
+                                    font-size: 12px;
+                                    color: #ffffff;
+                                    text-align: center;
+                                }
+
+                                .price {
+                                    margin-left: 10px;
+
+                                    s {
+                                        color: #888;
+                                    }
+
+                                    span {
+                                        display: block;
+                                        font-size: 15px;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+
+// 바텀 배너 영역
+.main-botbn-wrapper {
+    margin: 30px 0;
 }

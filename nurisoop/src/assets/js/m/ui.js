@@ -54,7 +54,7 @@ var common = {
         }
     },
     init: function () {
-        common.load();
+        // common.load();
         common.scroll();
         common.nav();
         // common.resize();
