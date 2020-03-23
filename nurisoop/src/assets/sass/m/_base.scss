@@ -806,3 +806,25 @@ hr.line {
 }
 
 // custom
+//전체삭제에 들어가는 리셋모양 아이콘
+$lnk-sprite: url('http://static.nurisoop.co.kr/img/renew/common/img_sprites.png') no-repeat;
+
+.ico {
+    display: inline-block;
+    background: $lnk-sprite;
+    background-size: 225px;
+
+    &.ico-call {
+        // $b-ht: 20px;
+        width: 22px;
+        height: 20px;
+        // margin-top: -($b-ht/2);
+        background-position: 0 -60px;
+    }
+
+    &.ico-mail {
+        width: 15px;
+        height: 15px;
+        background-position: -28px -66px;
+    }
+}

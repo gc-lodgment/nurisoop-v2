@@ -55,9 +55,10 @@ var common = {
     },
     init: function () {
         // common.load();
+        // common.resize();
         common.scroll();
         common.nav();
-        // common.resize();
+        common.search();
     },
     resize: function () {
         $(window)
@@ -155,6 +156,16 @@ var common = {
             bodyScroll.on();
         });
         // targetHide.self('#navBar');
+    },
+    search: function () {
+        var $searchLayer = $('#searchLayer');
+        var $searchToggle = $('#searchToggle');
+        $searchToggle.on('click', function () {
+            $searchLayer.fadeIn('fast');
+        });
+        $searchLayer.find('.close-btn').on('click', function () {
+            $searchLayer.fadeOut('fast');
+        });
     }
 };
 
