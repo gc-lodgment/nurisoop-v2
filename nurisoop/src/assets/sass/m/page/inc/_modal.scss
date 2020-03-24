@@ -1,0 +1,80 @@
+// 광고/제휴문의 모달 영역
+.inquiry-modal {
+    .modal-container {
+        width: 95%;
+        background-color: #fff;
+        padding: 0 15px;
+        box-sizing: border-box;
+
+        .modal-header {
+            position: relative;
+            // padding: 25px 0 20px;
+            padding: 20px 0;
+
+            .title {
+                font-size: 17px;
+                font-weight: 500px;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 7px;
+                right: -5px;
+                font-size: 35px;
+                color: #999999;
+                font-weight: 100;
+                line-height: 1;
+            }
+        }
+
+        .modal-body {
+
+            .edit-tbl {
+                width: 100%;
+                border-top: 1px solid #333;
+
+                tr {
+                    border: 1px solid #dcdcdc;
+                    border-top: 0;
+                }
+
+                th,
+                td {
+                    vertical-align: middle;
+                }
+
+                th {
+                    background-color: #f0f0f0;
+                    font-size: 13px;
+                    color: #888888;
+                }
+
+                td {
+                    padding: 7px 10px;
+                    font-size: 12px;
+                }
+
+                .form-input {}
+
+                .st-row {
+                    margin-top: 5px;
+                    color: #888;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .modal-footer {
+            padding: 15px 0 25px;
+            text-align: center;
+
+            .btn {
+                width: 130px;
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

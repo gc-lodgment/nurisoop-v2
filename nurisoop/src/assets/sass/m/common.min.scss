@@ -31,7 +31,7 @@ html.expand body {
 // 임시 설정
 .header .gnb,
 .wrapper {
-    max-width: 360px;
+    // max-width: 360px;
 }
 
 .header,
@@ -827,6 +827,11 @@ html.expand body {
         width: 55px;
     }
 
+}
+
+// 바텀 배너 영역
+.botbn-wrapper {
+    margin: 30px 0;
 }
 
 /* 로딩 애니메이션 */

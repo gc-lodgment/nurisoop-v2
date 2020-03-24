@@ -5,7 +5,7 @@ $(function () {
     tabsFn();
     dataFn();
     common.init();
-    // if ($('#mainPage').length) main.init();
+    if ($('#mainPage').length) main.init();
     // if ($('#supportPage').length) support.init();
 });
 
@@ -172,25 +172,45 @@ var common = {
 // mainUI
 var main = {
     init: function () {
-        this.openbnPopupList();
-        this.partnersCardList();
         this.visualBannerList();
-        this.newsbarNewsList();
-        this.guideVideoList();
-        this.roadmapList();
-        this.newsList();
-        this.wayPoint();
+        this.bestList();
+        this.hotdealList();
+        // this.openbnPopupList();
+        // this.partnersCardList();
+        // this.newsbarNewsList();
+        // this.guideVideoList();
+        // this.roadmapList();
+        // this.newsList();
+        // this.wayPoint();
         // main.load();
         // main.visualActions();
         // main.facilityPictureList();
         // main.lookCardList();
     },
-    openbnPopupList: function () {
-        $('#openbnPopupList').slick({
+    visualBannerList: function () {
+        $('#visualBannerList').slick({
             autoplay: true,
             autoplaySpeed: 5000,
-            prevArrow: '',
-            nextArrow: ''
+            arrows: false,
+            dots: true,
+            appendDots: '#visualBannerDots'
+        });
+    },
+    bestList: function () {
+        $('#bestList').slick({
+            // autoplay: true,
+            autoplaySpeed: 5000,
+            variableWidth: true,
+            arrows: false,
+        });
+    },
+    hotdealList: function () {
+        $('#hotdealList').slick({
+            // autoplay: true,
+            autoplaySpeed: 5000,
+            appendArrows: '#hotdealListArrow',
+            prevArrow: '<button type="button" class="slick-prev"><img src="../../img/common/btn_arw_left_04.png" alt="이전"></button>',
+            nextArrow: '<button type="button" class="slick-next"><img src="../../img/common/btn_arw_right_04.png" alt="다음"></button>'
         });
     },
     partnersCardList: function () {
@@ -206,16 +226,6 @@ var main = {
                     slidesToShow: 2
                 }
             }]
-        });
-    },
-    visualBannerList: function () {
-        $('#visualBannerList').slick({
-            autoplay: true,
-            autoplaySpeed: 5000,
-            appendArrows: '#bannerArrow',
-            prevArrow: '<button type="button" class="slick-prev"><img src="/images/icon/btn_prev.png" alt="이전"></button>',
-            nextArrow: '<button type="button" class="slick-next"><img src="/images/icon/btn_next.png" alt="다음"></button>'
-            // infinite: false,
         });
     },
     newsbarNewsList: function () {

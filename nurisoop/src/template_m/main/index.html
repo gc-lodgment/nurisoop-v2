@@ -6,11 +6,15 @@
         <div class="visual-wrapper">
             <div class="visual-cont">
                 <div class="banner-list-wrapper">
-                    <ul class="banner-list">
+                    <ul class="banner-list" id='visualBannerList'>
                         <li class="banner-item">
                             <a href="" class="picture"><img src="../../img/m/main/bn_01.jpg" alt="자연에서 추출한 순수성분 누리숲"></a>
                         </li>
+                        <li class="banner-item">
+                            <a href="" class="picture"><img src="../../img/m/main/bn_02.jpg" alt="누리촉촉 워터밸런스 리뉴얼"></a>
+                        </li>
                     </ul>
+                    <div id="visualBannerDots"></div>
                 </div>
             </div>
         </div>
@@ -40,14 +44,14 @@
             <div class="best-cont">
                 <h1 class="sec-title">베스트셀러</h1>
                 <div class="best-list-wrapper">
-                    <ul class="best-list">
+                    <ul class="best-list" id="bestList">
                         <li class="best-item">
                             <a href="">
                                 <img src="../../img/m/common/badge_1.png" alt="1등" class="badge">
                                 <img src="../../img/common/product/item/repair_cream.png" alt="1등상품" class="img">
                             </a>
                         </li>
-                        <!-- <li class="best-item">
+                        <li class="best-item">
                             <a href="">
                                 <img src="../../img/m/common/badge_2.png" alt="2등" class="badge">
                                 <img src="../../img/common/product/item/repair_skin.png" alt="2등상품" class="img">
@@ -58,9 +62,31 @@
                                 <img src="../../img/m/common/badge_3.png" alt="3등" class="badge">
                                 <img src="../../img/common/product/item/nuriberry_emulsion.png" alt="3등상품" class="img">
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
+                <!-- <div class="best-list-wrapper swiper-container" id="bestBannerList">
+                    <ul class="best-list swiper-wrapper">
+                        <li class="best-item swiper-slide">
+                            <a href="">
+                                <img src="../../img/m/common/badge_1.png" alt="1등" class="badge">
+                                <img src="../../img/common/product/item/repair_cream.png" alt="1등상품" class="img">
+                            </a>
+                        </li>
+                        <li class="best-item swiper-slide">
+                            <a href="">
+                                <img src="../../img/m/common/badge_2.png" alt="2등" class="badge">
+                                <img src="../../img/common/product/item/repair_skin.png" alt="2등상품" class="img">
+                            </a>
+                        </li>
+                        <li class="best-item swiper-slide">
+                            <a href="">
+                                <img src="../../img/m/common/badge_3.png" alt="3등" class="badge">
+                                <img src="../../img/common/product/item/nuriberry_emulsion.png" alt="3등상품" class="img">
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
             </div>
             <div class="prd-cont group">
                 <a href="" class="prd-item big"><img src="../../img/main/img_mid_03.jpg" alt="상품"></a>
@@ -73,7 +99,7 @@
 
     <section class="sec main-review-sec sec-pd">
         <div class="review-wrapper">
-            <div class="review-cont">
+            <div class="review-cont group">
                 <h1 class="sec-title">리얼 베스트 후기</h1>
                 <!-- 4개 -->
                 <ul class="review-list">
@@ -168,7 +194,7 @@
             <div class="hotdeal-cont group">
                 <h1 class="sec-title">핫딜존</h1>
                 <div class="hotdeal-list-wrapper">
-                    <ul class="hotdeal-list">
+                    <ul class="hotdeal-list" id="hotdealList">
                         <li class="hotdeal-item">
                             <a href="" class="item-wrapper">
                                 <figure class="hotdeal-thumbnail">
@@ -192,6 +218,7 @@
                             </a>
                         </li>
                     </ul>
+                    <div id="hotdealListArrow" class="hotdeal-list-arrow"></div>
                 </div>
             </div>
         </div>

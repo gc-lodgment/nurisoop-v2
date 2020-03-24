@@ -14,6 +14,43 @@
 .main-visual-sec {
     .visual-wrapper {
         .visual-cont {
+
+            .slick-dotted.slick-slider {
+                margin-bottom: 0;
+            }
+
+            #visualBannerDots {
+                position: absolute;
+                width: 100%;
+
+                .slick-dots {
+                    bottom: 20px;
+
+                    >li {
+                        @include sizes(8px);
+                        margin: 0 3px;
+
+                        button {
+                            width: 100%;
+                            height: 100%;
+                            padding: 0;
+
+                            &:before {
+                                opacity: 1;
+                                background-color: #bbb;
+                                border-color: transparent;
+                            }
+                        }
+
+                        &.slick-active {
+                            button:before {
+                                background-color: $font-color;
+                            }
+                        }
+                    }
+                }
+            }
+
             .banner-lsit {
                 .banner-item {
                     position: relative;
@@ -77,11 +114,11 @@
 .main-best-sec {
     .best-wrapper {
         .best-cont {
+            padding-left: 15px;
+
             .best-list {
                 .best-item {
-                    &:not(:first-child) {
-                        margin-left: 5px;
-                    }
+                    width: 150px;
 
                     >a {
                         position: relative;
@@ -331,6 +368,31 @@
 .main-hotdeal-sec {
     .hotdeal-wrapper {
         .hotdeal-cont {
+            .hotdeal-list-arrow {
+                position: absolute;
+                width: 100%;
+                top: 50%;
+
+                .slick-prev,
+                .slick-next {
+                    @include size(21px, 35px);
+                    box-sizing: border-box;
+                    background-color: rgba(0, 0, 0, .5);
+
+                    img {
+                        width: 9px;
+                    }
+                }
+
+                .slick-prev {
+                    left: 0;
+                }
+
+                .slick-next {
+                    right: 0;
+                }
+            }
+
             .hotdeal-list {
                 .hotdeal-item {
                     .item-wrapper {
@@ -427,9 +489,4 @@
             }
         }
     }
-}
-
-// 바텀 배너 영역
-.main-botbn-wrapper {
-    margin: 30px 0;
 }

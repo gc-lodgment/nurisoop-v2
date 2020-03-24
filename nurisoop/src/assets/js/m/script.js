@@ -40,10 +40,11 @@ function dropselectFn() {
 }
 
 function fileformFn() {
+    var $filename = $('.fileform-wrapper .filename');
+    var $deleteBtn = $('.fileform-wrapper .delete-btn');
     $('.fileform').on('change', function () {
         var files = this.files;
         // var limitSize = 5 * 1024 * 1024; // 파일 크기 제한
-        var $filename = $('.fileform-wrapper .filename');
         if (files[0] == undefined) {
             $filename.text('선택된 파일없음');
             return;
@@ -57,13 +58,21 @@ function fileformFn() {
             // if (files[i].size > limitSize) return alert('파일크기가 5MB 보다 작아야합니다.');
         }
         if (files.length > 1 && files.length < 6) {
-            $filename.text(files.length + '개 파일');
+            $filename.html('<img src="../../img/m/common/icon/save.png" alt="저장"/ class="save"> ' + files.length + '개 파일');
             return;
         } else if (files.length >= 6) {
             alert('최대 5개까지 가능합니다.');
             return;
         }
-        $filename.text(files[0].name);
+        $filename.html('<img src="../../img/m/common/icon/save.png" alt="저장"/ class="save"> ' + files[0].name);
+    });
+    $deleteBtn.on('click', function () {
+        // console.log($('.fileform')[0].files);
+        if ($('.fileform')[0].files.length) {
+            $('.fileform').val('');
+            // console.log($('.fileform')[0].files);
+            $filename.html('선택된 파일 없음');
+        }
     });
 }
 
