@@ -6,6 +6,7 @@ $(function () {
     dataFn();
     common.init();
     if ($('#mainPage').length) main.init();
+    if ($('#policyPage').length) policy.init();
     // if ($('#supportPage').length) support.init();
 });
 
@@ -370,6 +371,18 @@ var main = {
         //         }
         //     );
         // });
+    }
+};
+
+// policyUI
+var policy = {
+    init: function () {
+        this.policyList();
+    },
+    policyList: function () {
+        $('#policyList .policy-item .part-title').on('click', function () {
+            $(this).parent().toggleClass('on');
+        });
     }
 };
 

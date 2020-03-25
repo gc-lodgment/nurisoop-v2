@@ -414,6 +414,8 @@ html.expand body {
     }
 
     .submenu-wrapper {
+        border-bottom: 1px solid $bor-gray;
+
         .submenu-list {
             display: flex;
             // justify-content: center;

@@ -1,0 +1,57 @@
+@@include('../inc/_top.html', { "pageName": "brand" })
+
+<main id="container" class="container" role="main">
+    <section class="sec brand-news-sec list">
+        <div class="news-wrapper">
+            <div class="news-cont">
+                <h1 class="sec-title">
+                    누리숲 뉴스
+                    <span class="sec-title-st">
+                        누리숲에서 뷰티 이슈와 피부건강 소식을<br>신속하게 전달해드립니다.
+                    </span>
+                </h1>
+                <table class="tbl-comm list-tbl">
+                    <tbody>
+                        <tr>
+                            <!-- 공지 있으경우 클래스 notice -->
+                            <td class="notice">
+                                <p class="cell title"><span class="badge notice">공지</span>[필독] 가을철 피부를 위해 주목해야 할 성분, 'EGF'란?</p>
+                                <p class="cell date">2020.03.20</p>
+                            </td>
+                        </tr>
+                        @@for (var i=0; i < 9; i ++) { <tr>
+                            <td>
+                                <p class="cell title">가을철 피부를 위해 주목해야 할 성분, 'EGF'란?</p>
+                                <p class="cell date">2020.03.20</p>
+                            </td>
+                            </tr>
+                            }
+                    </tbody>
+                </table>
+                <div class="news-search-area pd-m">
+                    <select name="" id="" class="form-select category-select">
+                        <option value="">전체</option>
+                        <option value="">제목</option>
+                        <option value="">내용</option>
+                    </select>
+                    <input type="text" class="form-input search-input">
+                </div>
+                <div class="pagenation type1" id="pagenation">
+                    <a href="" class="pprev arrow-end">&laquo;</a>
+                    <a href="" class="prev arrow">&lsaquo;</a>
+                    <a class="no on" href="">1</a>
+                    <a class="no" href="">2</a>
+                    <a class="no" href="">3</a>
+                    <a class="no" href="">4</a>
+                    <a class="no" href="">5</a>
+                    <a href="" class="next arrow">&rsaquo;</a>
+                    <a href="" class="nnext arrow-end">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.sec.brand-news-sec -->
+</main>
+<!-- /.main.container -->
+
+@@include('../inc/_bottom.html')

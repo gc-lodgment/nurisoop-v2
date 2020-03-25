@@ -1,0 +1,57 @@
+.policy-sec {
+    .sec-title {
+        padding: 20px 0;
+    }
+
+    .policy-wrapper {
+        .policy-cont {
+
+            .policy-list,
+            .policy-list-st {
+                font-size: 12px;
+                color: $font-gray;
+                line-height: 1.4;
+            }
+
+            .policy-list {
+                border-top: 1px solid #333;
+
+                .policy-item {
+                    border: 1px solid #dcdcdc;
+                    border-top: 0;
+
+                    >div {
+                        padding: 8px 10px;
+                    }
+
+                    .part-title {
+                        background: url(http://static.nurisoop.co.kr/img/renew/common/btn_fam_sel.png) no-repeat;
+                        background-position: right 5px;
+                        background-size: 20px;
+                    }
+
+                    .part-text {
+                        display: none;
+                        border-top: 1px solid #dcdcdc;
+                    }
+
+                    &.on {
+                        .part-title {
+                            background-position: right -25px;
+                            color: $c-aquagreen;
+                        }
+
+                        .part-text {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .policy-list-st {
+                margin-top: 15px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

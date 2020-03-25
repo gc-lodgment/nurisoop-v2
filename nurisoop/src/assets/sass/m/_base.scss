@@ -128,6 +128,7 @@ img.bor {
     margin-bottom: 0 !important;
 }
 
+.pd-m,
 .group {
     padding-left: 15px;
     padding-right: 15px;
@@ -230,7 +231,7 @@ img.bor {
         &,
         &.outline {
             border-color: $btn-gray;
-            color: #333;
+            color: $font-color;
         }
     }
 
@@ -264,6 +265,10 @@ img.bor {
 
     &.btn-gray {
         @include btn-color($btn-gray);
+
+        &.outline {
+            color: $font-color;
+        }
     }
 
     &.btn-black {

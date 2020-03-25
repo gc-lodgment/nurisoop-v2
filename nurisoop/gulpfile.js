@@ -13,6 +13,7 @@ const htmlbeautify = require('gulp-html-beautify');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
+const sourcemaps = require("gulp-sourcemaps");
 const csso = require('gulp-csso');
 const autoprefixer = require('gulp-autoprefixer');
 const del = require('del');
@@ -105,32 +106,38 @@ function templateMAll() {
 };
 // {outputStyle: nested} expanded, compact, compressed
 function sassDev() {
-    return src(config.sass.src, {
-            sourcemaps: true
-        })
+    return src(config.sass.src)
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(dest(config.sass.dest, {
-            sourcemaps: true
-        }))
+        .pipe(
+            sourcemaps.write(".", {
+                includeContent: false,
+                sourceRoot: __dirname
+            })
+        )
+        .pipe(dest(config.sass.dest))
         .pipe(browserSync.stream({
             match: '**/*.css'
         }));
 };
 
 function sassDevAll() {
-    return src([config.sass.src, config.sass.parts], {
-            sourcemaps: true
-        })
+    return src([config.sass.src, config.sass.parts])
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(dest(config.sass.dest, {
-            sourcemaps: true
-        }))
+        .pipe(
+            sourcemaps.write(".", {
+                includeContent: false,
+                sourceRoot: __dirname
+            })
+        )
+        .pipe(dest(config.sass.dest))
         .pipe(browserSync.stream({
             match: '**/*.css'
         }));

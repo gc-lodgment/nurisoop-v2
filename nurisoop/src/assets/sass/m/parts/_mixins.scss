@@ -665,4 +665,24 @@
     border-bottom: none;
 }
 
+@mixin arr-up($wd: 8px, $deg: -45deg, $bdc: #000) {
+    @include dp;
+    @include sizes($wd);
+    top: 2px;
+    border: 2px solid $bdc;
+    transform: rotate($deg);
+    border-left: none;
+    border-bottom: none;
+}
+
+@mixin arr-down($wd: 8px, $deg: -45deg, $bdc: #000) {
+    @include dp;
+    @include sizes($wd);
+    top: -3px;
+    border: 2px solid $bdc;
+    transform: rotate($deg);
+    border-right: none;
+    border-top: none;
+}
+
 // custom ui
