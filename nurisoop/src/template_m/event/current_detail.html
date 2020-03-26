@@ -1,0 +1,60 @@
+@@include('../inc/_top.html', { "pageName": "event" })
+
+<main id="container" class="container" role="main">
+    <section class="sec event-sec">
+        <div class="current-wrapper">
+            <div class="current-cont">
+                @@include('./_sec_title.html')
+
+                <div class="event-tabpanel current-detail-panel">
+                    <table class="tbl-comm-type1 detail-tbl">
+                        <thead>
+                            <tr>
+                                <th class="ta-left">
+                                    <p class="cell title">후기쓰고 적립금 받자!</p>
+                                    <p class="cell date"><span class="c-gray">기간 :</span> 매주</p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="content">
+                                    <figure class="img">
+                                        <img src="http://static.nurisoop.co.kr/images/event/review/review_01.jpg" alt="후기쓰고 적립금 받자">
+                                    </figure>
+                                    <figure class="img">
+                                        <img src="http://static.nurisoop.co.kr/images/event/review/review_02.jpg" alt="후기쓰고 적립금 받자">
+                                    </figure>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev">
+                                    <span class="arrow"></span> <span class="c-gray">이전글</span>
+                                    <span class="text">
+                                        1+1 위클리 이벤트
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="next">
+                                    <span class="arrow"></span> <span class="c-gray">다음글</span>
+                                    <span class="text">
+                                        1+1 위클리 이벤트
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tbl-actions-type1">
+                    <a href="./current_list.html" class="btn btn-default outline list-btn">목록</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.sec.event-current-sec -->
+</main>
+<!-- /.main.container -->
+
+@@include('../inc/_bottom.html')

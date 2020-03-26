@@ -141,7 +141,7 @@ html.expand body {
                 @include center-block;
                 width: 20px;
                 height: 2px;
-                background-color: #999;
+                background-color: $font-gray;
                 // background-color: #fff;
 
                 &:nth-child(2) {
@@ -252,7 +252,7 @@ html.expand body {
                     }
 
                     .outline-btn {
-                        border-color: #999;
+                        border-color: $font-gray;
                         background-color: #fff;
                         color: #000;
                     }
@@ -621,7 +621,7 @@ html.expand body {
 
         .address {
             font-size: 11px;
-            color: #999;
+            color: $font-gray;
             font-weight: 300;
             line-height: 1.5;
             letter-spacing: -0.7px;

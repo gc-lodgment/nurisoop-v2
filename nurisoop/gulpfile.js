@@ -189,6 +189,14 @@ function img() {
         .pipe(dest(config.img.dest));
 }
 
+function imgM() {
+    return src(config.img_m.src, {
+            since: lastRun(img)
+        })
+        .pipe(imagemin())
+        .pipe(dest(config.img_m.dest));
+}
+
 function sprite(cb) {
     // var spriteData = src('src/img/sprite/login/*') // custom grouping
     var spriteData = src(config.img.src_sprite)
@@ -267,6 +275,11 @@ function cleanImg(cb) {
     cb();
 };
 
+function cleanImgM(cb) {
+    del(config.img_m.dest);
+    cb();
+};
+
 const assets_local = '/assets';
 const assets_server = 'http://toxnsldxn.cafe24.com/template/assets';
 const views_local = '/views';
@@ -296,7 +309,9 @@ exports.cleanDist = cleanDist;
 exports.cleanTest = cleanTest;
 exports.cleanParts = cleanParts;
 exports.cleanImg = cleanImg;
+exports.cleanImgM = cleanImgM;
 exports.img = img;
+exports.imgM = imgM;
 exports.sprite = sprite;
 exports.etc = etc;
 exports.testPathServer = testPathServer;

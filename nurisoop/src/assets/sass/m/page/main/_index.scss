@@ -94,7 +94,7 @@
                         display: block;
                         margin-top: 5px;
                         font-size: 13px;
-                        color: #888888;
+                        color: $font-gray;
                         font-weight: 300;
                     }
                 }
@@ -216,7 +216,7 @@
                         flex-wrap: wrap;
                         align-items: center;
                         font-size: 12px;
-                        color: #888888;
+                        color: $font-gray;
                         font-weight: 300;
 
                         .thumbnail-cover {
@@ -251,7 +251,7 @@
                         font-weight: 500;
 
                         .grade-cover {
-                            color: #888888;
+                            color: $font-gray;
                             font-weight: 300;
 
                             .c {
@@ -471,7 +471,7 @@
                                     margin-left: 10px;
 
                                     s {
-                                        color: #888;
+                                        color: $font-gray;
                                     }
 
                                     span {
