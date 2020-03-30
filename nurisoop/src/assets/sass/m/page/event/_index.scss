@@ -12,6 +12,15 @@
     th,
     td {
         padding: 10px 12px;
+        text-align: left;
+    }
+
+    th {
+        line-height: 1.3;
+
+        .date {
+            margin-top: 7px;
+        }
     }
 
     td {
@@ -20,6 +29,10 @@
                 padding-left: 40px;
             }
         }
+    }
+
+    .c-gray {
+        color: $font-gray;
     }
 
     .date {
@@ -49,10 +62,6 @@
 }
 
 .tbl-comm-type1.detail-tbl {
-    .c-gray {
-        color: $font-gray;
-    }
-
     th {
         font-size: 15px;
     }
@@ -144,7 +153,7 @@
             top: 3px;
             font-size: 30px;
             font-weight: 100;
-            color: #919191;
+            color: #bbb;
             line-height: 0;
         }
 
@@ -204,13 +213,16 @@
         letter-spacing: -1px;
     }
 
+    // 진행중 이벤트
     .event-tabpanel.current-list-panel {
-        .current-item {
+        .item {
             &:not(:first-child) {
                 margin-top: 25px;
             }
 
-            .event-thumbnail {}
+            .event-thumbnail {
+                border: 1px solid $tbl-bor-gray;
+            }
 
             .event-info {
                 line-height: 1.3;
@@ -242,129 +254,302 @@
                 }
             }
         }
-
     }
 
-    .current-wrapper {
-        .current-cont {}
+    // 출첵 이벤트
+    .event-tabpanel.attendance-detail-panel {
+        .attendance-detailcontent {
+            background-color: #E4F095;
+
+            .title-area {
+
+                .title-actions-wrapper {
+                    justify-content: space-between;
+                    padding: 0 10px 0 15px;
+
+                    .title-actions {
+                        margin-top: 25px;
+                        letter-spacing: -1px;
+
+                        .check-base {
+                            display: block;
+                            width: 210px;
+                            border-radius: 30px;
+                            color: #ffffff;
+                            text-align: center;
+
+                            &.alarm {
+                                padding: 6px 0;
+                                background-color: #454545;
+                                font-size: 12px;
+                                font-weight: 300;
+                            }
+
+                            &.check-btn {
+                                margin-top: 5px;
+                                padding: 8px 0;
+                                background-color: #c03240;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    .stamp-img {
+                        width: 80px;
+                    }
+                }
+            }
+
+            .calendar-area {
+                position: relative;
+                width: 320px;
+                height: 365px;
+                margin: 5px auto 20px;
+                background: url(http://static.nurisoop.co.kr/images/m/calendar_bg.png) no-repeat center / contain;
+
+                .calendar-date-cover {
+                    width: 100%;
+                    position: absolute;
+                    padding-top: 6%;
+                    text-align: center;
+
+                    .calendar-date {
+                        display: inline-block;
+                        margin: 0 10px;
+                        font-size: 13px;
+                        color: #ffffff;
+                        vertical-align: middle;
+                    }
+                }
+
+                .calendar-tbl {
+                    position: absolute;
+                    left: 6px;
+                    bottom: 5px;
+                    width: calc(100% - 12px);
+                    margin: 0 auto;
+                    table-layout: fixed;
+                    background-color: #4B5654;
+                    border-top: 1px solid #4B5654;
+                    // border-left: 1px solid #4B5654;
+
+                    col {
+                        width: calc(100% / 7);
+                    }
+
+                    tr {
+                        border-bottom: 1px solid #4B5654;
+                    }
+
+                    td {
+                        padding: 0;
+                        height: 53px;
+                        background-color: #ffffff;
+
+                        &:not(:last-child) {
+                            border-right: 1px solid #4B5654;
+                        }
+
+                        .day {
+                            display: inline-block;
+                            margin-top: 3px;
+                            margin-left: 5px;
+                            padding: 2px 5px;
+                            border-radius: 4px;
+                            background-color: #efefef;
+                            font-size: 11px;
+                            line-height: 1;
+                        }
+
+                        .stamp {
+                            display: block;
+                            width: 28px;
+                            margin: 3px auto 0;
+                        }
+                    }
+                }
+            }
+
+
+        }
     }
 
-    .attendance-wrapper {
-        .attendance-cont {
-            .attendance-detailcontent {
-                background-color: #E4F095;
+    // 위클리 이벤트
+    .event-tabpanel.weekly-detail-panel {
+        .weekly-detailcontent {
+            .prd-area {
+                .prd-intro {
+                    padding-top: 15px;
+                    height: 281px;
+                    box-sizing: border-box;
+                    background: url(http://static.nurisoop.co.kr/images/event/20180308_weekly/weekly_machine_m.png) no-repeat center top / cover;
+                    text-align: center;
 
-                .title-area {
+                    .nurisoop {
+                        height: 18px;
+                    }
 
-                    .title-actions-wrapper {
-                        justify-content: space-between;
-                        padding: 0 10px 0 15px;
+                    .intro-item {
+                        display: block;
+                        position: relative;
+                        margin: 12px auto 0;
+                        padding: 5px;
+                        width: 315px;
+                        border: 5px solid #ffe3ea;
+                        background: rgba(241, 100, 142, 0.75);
+                        border-radius: 15px;
+                        box-sizing: border-box;
 
-                        .title-actions {
-                            margin-top: 25px;
-                            letter-spacing: -1px;
+                        .intro-item-in {
+                            display: flex;
+                            position: relative;
+                            margin: 0 auto;
+                            padding: 5px 2.5px;
+                            width: 100%;
+                            min-width: 270px;
+                            min-height: 165px;
+                            box-sizing: border-box;
+                            background-color: rgba(0, 0, 0, .55);
+                            border-radius: 4px;
+                            box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, .55);
+                            // background: url(http://static.nurisoop.co.kr/images/event/20180308_weekly/weekly_machine_list_m.png) no-repeat center top / contain;
 
-                            .check-base {
-                                display: block;
-                                width: 210px;
-                                border-radius: 30px;
-                                color: #ffffff;
+                            .item-cover {
+                                margin: 0 2.5px;
+                                padding: 5px 3px;
+                                width: 33.33%;
+                                background-color: #fff;
+                                font-size: 11.5px;
+                                line-height: 1.2;
+                                letter-spacing: -1px;
                                 text-align: center;
 
-                                &.alarm {
-                                    padding: 6px 0;
-                                    background-color: #454545;
-                                    font-size: 12px;
-                                    font-weight: 300;
+                                .item-period {
+                                    height: 26px;
+                                    overflow: hidden;
                                 }
 
-                                &.check-btn {
+                                .item-thumbnail {
+                                    img {
+                                        width: 60px;
+                                    }
+                                }
+
+                                .item-name {
+                                    height: 40px;
+                                    overflow: hidden;
+                                }
+
+                                .comming {
+                                    position: relative;
+                                    top: 25px;
+                                    width: 75px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                .prd-intro-st {
+                    padding: 15px 20px;
+                    font-size: 12px;
+                    letter-spacing: -1px;
+                }
+
+                .prd-intro-detail {
+                    .detail-item {
+                        .item-cover {
+                            display: flex;
+                            align-items: center;
+                            padding: 10px 0;
+
+                            .item-thumbnail,
+                            .item-info {
+                                box-sizing: border-box;
+                            }
+
+                            .item-thumbnail {
+                                width: 95px;
+                            }
+
+                            .item-info {
+                                width: calc(100% - 80px);
+                                font-size: 12px;
+                                line-height: 1.2;
+
+                                .st,
+                                .name {
+                                    letter-spacing: -1px;
+                                }
+
+                                .st {
+                                    color: $font-black-64;
+                                }
+
+                                .name {
+                                    margin-top: 3px;
+                                    // min-height: 25px;
+                                }
+
+                                .price {
                                     margin-top: 5px;
-                                    padding: 8px 0;
-                                    background-color: #c03240;
-                                    font-size: 14px;
+
+                                    s {
+                                        margin-right: 5px;
+                                    }
+
+                                    .c-red {
+                                        font-size: 13.5px;
+                                    }
+                                }
+
+                                .buy-btn {
+                                    display: inline-block;
+                                    margin-top: 5px;
+                                    width: 95px;
                                 }
                             }
                         }
-
-                        .stamp-img {
-                            width: 80px;
-                        }
                     }
                 }
-
-                .calendar-area {
-                    position: relative;
-                    width: 320px;
-                    height: 365px;
-                    margin: 5px auto 20px;
-                    background: url(http://static.nurisoop.co.kr/images/m/calendar_bg.png) no-repeat center / contain;
-
-                    .calendar-date-cover {
-                        width: 100%;
-                        position: absolute;
-                        padding-top: 6%;
-                        text-align: center;
-
-                        .calendar-date {
-                            display: inline-block;
-                            margin: 0 10px;
-                            font-size: 13px;
-                            color: #ffffff;
-                            vertical-align: middle;
-                        }
-                    }
-
-                    .calendar-tbl {
-                        position: absolute;
-                        left: 6px;
-                        bottom: 5px;
-                        width: calc(100% - 12px);
-                        margin: 0 auto;
-                        table-layout: fixed;
-                        background-color: #4B5654;
-                        border-top: 1px solid #4B5654;
-                        // border-left: 1px solid #4B5654;
-
-                        col {
-                            width: calc(100% / 7);
-                        }
-
-                        tr {
-                            border-bottom: 1px solid #4B5654;
-                        }
-
-                        td {
-                            padding: 0;
-                            height: 53px;
-                            background-color: #ffffff;
-
-                            &:not(:last-child) {
-                                border-right: 1px solid #4B5654;
-                            }
-
-                            .day {
-                                display: inline-block;
-                                margin-top: 3px;
-                                margin-left: 5px;
-                                padding: 2px 5px;
-                                border-radius: 4px;
-                                background-color: #efefef;
-                                font-size: 11px;
-                                line-height: 1;
-                            }
-
-                            .stamp {
-                                display: block;
-                                width: 28px;
-                                margin: 3px auto 0;
-                            }
-                        }
-                    }
-                }
-
-
             }
         }
     }
+
+    // 당첨자발표
+    .event-tabpanel.winner-detail-panel {
+        .winner-detailcontent {
+            letter-spacing: -0.7px;
+            padding: 20px 0;
+
+            .title-area {
+                display: block;
+                width: 68%;
+                min-width: 225px;
+                margin: 0px auto 10px;
+            }
+
+            .text-area {
+                padding: 20px 0;
+                background-color: #faf1e9;
+                font-size: 13px;
+                color: #694932;
+
+                .name-list {
+                    margin-top: 20px;
+                }
+
+                .line {
+                    margin: 25px 15px;
+                    height: 2px;
+                    border-top: 1px dashed #694932;
+                    border-bottom: 1px dashed #694932;
+                }
+            }
+        }
+    }
+
+    // 지난 이벤트
+    .event-tabpanel.prev-list-panel {}
 }

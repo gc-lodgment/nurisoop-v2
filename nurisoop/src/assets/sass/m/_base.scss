@@ -386,6 +386,9 @@ a.btn>* {
     font-family: $font-jfss !important;
 }
 
+.fw-l {
+    font-weight: 300 !important;
+}
 
 .fw-n {
     font-weight: 400 !important;
@@ -451,6 +454,10 @@ a.btn>* {
     border-radius: 0 !important;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .w-auto {
     width: auto;
 }
@@ -459,6 +466,10 @@ hr.line {
     margin: 0;
     border: none;
     border-top: 1px solid $bor-gray;
+}
+
+.pd-0 {
+    padding: 0 !important;
 }
 
 // animate css

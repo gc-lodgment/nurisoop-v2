@@ -7,28 +7,33 @@
 @import "include/pop";
 
 body {
-	font-family: $font-stack; 
+    font-family: $font-stack;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: -0.5px;
-	line-height: 1.3; 
-	color: $primary-color;
+    line-height: 1.3;
+    color: $primary-color;
 }
-input, select, textarea {
+
+input,
+select,
+textarea {
     @include trasBase(1);
-	font-family: $font-stack; 
+    font-family: $font-stack;
 }
 
 input::placeholder {
     color: $fg-gray-07;
     letter-spacing: -0.5px;
     vertical-align: middle;
-	font-family: $font-stack; 
+    font-family: $font-stack;
 }
+
 input[type='password']::placeholder {
     font-size: 15px;
-	font-family: $font-godic; 
+    font-family: $font-godic;
 }
+
 input:disabled {
     background: $bg-gray-02;
 }
@@ -36,16 +41,21 @@ input:disabled {
 textarea {
     resize: none;
 }
+
 textarea::placeholder {
     color: $fg-gray-07;
     letter-spacing: -0.5px;
-	font-family: $font-stack; 
+    font-family: $font-stack;
 }
-          
-.form-sel:hover, .ip-txt:hover, .ip-cal:hover, .ta-txt:hover {
+
+.form-sel:hover,
+.ip-txt:hover,
+.ip-cal:hover,
+.ta-txt:hover {
     @include trasBase(1);
     border-color: $bor-black-01 !important;
 }
+
 input:disabled:hover {
     border-color: $bor-gray-03 !important;
 }
@@ -55,18 +65,21 @@ table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    th, td {
+
+    th,
+    td {
         @include bx;
         font-weight: 300;
         text-align: center;
         vertical-align: middle;
     }
+
     .ie & {
         border-collapse: inherit;
     }
 }
 
-/* common */    
+/* common */
 /*.hidden {
     z-index: -1;
     position: absolute;
@@ -85,10 +98,10 @@ table {
     width: 100%;
     height: 100%;
     background: $bg-gray-02;
-    img {
 
-    }   
-}  
+    img {}
+}
+
 //total txt
 .txt-total {
     span {
@@ -98,6 +111,7 @@ table {
         letter-spacing: 0;
         font-weight: 300;
         color: $fg-gray-01;
+
         em {
             font-weight: 500;
             color: $fg-black;
@@ -118,9 +132,10 @@ table {
     background: #fff url(http://static.nurisoop.co.kr/img/renew/common/icon_btn_pd.png) no-repeat;
     background-position: -85px -42px;
 }
+
 //전체삭제에 들어가는 리셋모양 아이콘
 .ico-reset {
-    $wt:15px;
+    $wt: 15px;
     @include position(absolute, 50%, 0);
     display: inline-block;
     box-sizing: border-box;
@@ -130,6 +145,7 @@ table {
     background: $lnk-sprite;
     background-position: -50px -173px;
 }
+
 //자물쇠 아이콘
 .ico-lock {
     display: inline-block;
@@ -138,6 +154,7 @@ table {
     background: $lnk-sprite;
     background-position: 0px -247px;
 }
+
 //new 아이콘 - 진회색
 .ico-new {
     display: inline-block;
@@ -146,6 +163,7 @@ table {
     background: $lnk-sprite;
     background-position: -46px -248px;
 }
+
 //file 첨부되어있다는 것을 알려주는 아이콘
 .ico-file {
     display: inline-block;
@@ -154,13 +172,15 @@ table {
     background: $lnk-sprite;
     background-position: -22px -247px;
 }
+
 //고객센터 view 본문 file 아이콘
 .ico-file-02 {
     @include bx;
     margin-left: 3px;
     padding-left: 22px;
+
     span {
-        $wt:15px;
+        $wt: 15px;
         @include position(absolute, 50%, 0);
         display: inline-block;
         box-sizing: border-box;
@@ -171,6 +191,7 @@ table {
         background-position: -23px -173px;
     }
 }
+
 //달력 아이콘
 .ico-cal {
     display: inline-block;
@@ -180,6 +201,7 @@ table {
     background: $lnk-sprite;
     background-position: -84px -44px;
 }
+
 //모바일 리뷰 아이콘
 .ico-phone {
     span {
@@ -193,9 +215,10 @@ table {
         background-position: -1px -173px;
     }
 }
+
 //srch cls 
 .ico-srch-cls {
-    $wt:11px;
+    $wt: 11px;
     @include position(absolute, 50%, $right:0);
     display: inline-block;
     box-sizing: border-box;
@@ -205,13 +228,15 @@ table {
     background: $lnk-sprite;
     background-position: -89px -83px;
 }
+
 //file cls 
 .ico-file-cls {
     @include bx;
     padding-left: 17px;
     color: $fg-black;
+
     span {
-        $wt:11px;
+        $wt: 11px;
         @include position(absolute, 50%, 0);
         display: inline-block;
         box-sizing: border-box;
@@ -222,14 +247,16 @@ table {
         background-position: -65px -84px;
     }
 }
+
 //pic 
 .ico-file-pic {
     @include bx;
     display: inline-block;
     padding-left: 35px;
     vertical-align: middle;
+
     span {
-        $wt:23px;
+        $wt: 23px;
         @include position(absolute, 50%, 0);
         display: inline-block;
         box-sizing: border-box;
@@ -245,9 +272,10 @@ table {
 .ico-more {
     box-sizing: border-box;
     padding-left: 10px;
+
     span {
-        $wt:10px;
-        $ht:2px;
+        $wt: 10px;
+        $ht: 2px;
         @include position(absolute, 50%, 12px);
         box-sizing: border-box;
         display: inline-block;
@@ -255,6 +283,7 @@ table {
         height: $ht;
         //margin-top: -($ht/2);
         background: $bg-green-01;
+
         &:before {
             content: '';
             @include position(absolute, -4px, 50%);
@@ -264,10 +293,10 @@ table {
             height: $wt;
             margin-left: -($ht/2);
             background: $bg-green-01;
-            
+
         }
     }
-    
+
 }
 
 //text
@@ -283,47 +312,57 @@ table {
     color: #fff;
     background: $bg-gray-03;
     @include trasBase(1);
-}  
+}
+
 //누리숲pick 숫자
 .best-num {
-    $wt:49px;
+    $wt: 49px;
     z-index: 6;
     @include bx;
     @include position(absolute, $left: 0, $bottom: 0);
     width: $wt;
     height: $wt;
-    padding: 5px 0 0 0; 
+    padding: 5px 0 0 0;
     text-align: center;
     border: 1px solid $bor-gray-03;
     background: #fff;
-    
+
     span {
         display: block;
         letter-spacing: 0;
         line-height: 1;
+
         &.best-txt {
             font-size: 11px;
             color: $fg-gray-04;
         }
+
         &.num-txt {
             padding-top: 2px;
             font-size: 24px;
             font-weight: 500;
         }
     }
-    
+
     &.red {
         background: $bg-red-01;
+
         span {
-            &.best-txt, &.num-txt {
+
+            &.best-txt,
+            &.num-txt {
                 color: #fff;
             }
         }
     }
+
     &.green {
         background: $bg-green-01;
+
         span {
-            &.best-txt, &.num-txt {
+
+            &.best-txt,
+            &.num-txt {
                 color: #fff;
             }
         }
@@ -338,10 +377,12 @@ table {
     height: 30px;
     background: $lnk-sprite;
     background-position: -182px 0;
+
     span {
         font-size: 0;
         text-indent: -999px;
     }
+
     &.on {
         background-position: -224px 0;
     }
@@ -355,6 +396,7 @@ table {
     margin: 0 auto;
     line-height: 0;
     border: 1px solid $bor-gray-03;
+
     .ip-txt {
         @include position(absolute, 0, 0);
         box-sizing: border-box;
@@ -363,10 +405,12 @@ table {
         font-size: 15px;
         font-weight: 300;
         line-height: 23px;
+
         .firefox & {
             width: 43px;
         }
     }
+
     span {
         @include position(absolute, $right:0);
         box-sizing: border-box;
@@ -375,10 +419,12 @@ table {
         height: 12px;
         background: #fff $lnk-sprite;
         border-left: 1px solid $bor-gray-03;
+
         &.up {
             top: 0;
             background-position: -67px -224px;
         }
+
         &.down {
             bottom: 0;
             border-top: 1px solid $bor-gray-03;
@@ -389,6 +435,7 @@ table {
 
 .file-box {
     @include bx;
+
     .ip-file-none {
         z-index: 1;
         overflow: hidden;
@@ -400,11 +447,12 @@ table {
         //-webkit-appearance: none; 
         appearance: none;
     }
+
     .ip-file {
         z-index: 2;
         background: #fff;
     }
-    
+
     .btn-pic {
         z-index: 3;
         @include bx;
@@ -418,17 +466,19 @@ table {
         vertical-align: middle;
         border: 1px solid $bor-gray-03;
         background: $bg-gray-02;
-        > span {
+
+        >span {
             height: 50px;
             line-height: 50px;
         }
     }
-    
+
     //img
     .img-file-box {
         @include bx;
         @include clearfix;
         margin: 0 -10px;
+
         .btn-pop-file-cls {
             @include bx;
             float: left;
@@ -436,7 +486,7 @@ table {
             width: 98px;
             height: 98px;
             border: 1px solid $bor-gray-03;
-            
+
             &:before {
                 z-index: 5;
                 @include position(absolute, 3px, $right:3px);
@@ -447,23 +497,26 @@ table {
                 background: $lnk-sprite;
                 background-position: -38px -83px;
             }
-            
+
             .img-row {
                 z-index: 4;
                 @include bx;
                 overflow: hidden;
                 padding-top: 100%;
+
                 span {
                     @include position(absolute, 0, 0, 0, 0);
                     display: block;
                     text-align: center;
                     transform: translate(50%, 50%);
+
                     img {
                         @include position(absolute, 0, 0);
                         display: block;
                         max-width: inherit;
                         height: 100%;
-                        transform: translate(-50%, -50%); 
+                        transform: translate(-50%, -50%);
+
                         .ie8 & {
                             position: relative;
                             display: inline-block;
@@ -472,7 +525,7 @@ table {
                 }
             }
         }
-        
+
     }
 
 }
@@ -481,32 +534,37 @@ table {
 .fl-left {
     float: left;
 }
+
 .fl-right {
     float: right;
 }
+
 .f-bd {
     font-weight: 500;
-    
+
     .ie8 & {
         font-weight: bold;
     }
 }
+
 .tl-left {
     text-align: left !important;
 }
+
 .tl-center {
     text-align: center !important;
 }
+
 .tl-right {
     text-align: right !important;
 }
-    
+
 .pt-0 {
     padding-top: 0 !important;
 }
 
 /* com wid */
-@mixin com-wd{
+@mixin com-wd {
     @include bx;
     @include clearfix;
     display: block;
@@ -525,7 +583,7 @@ $hd-ht: ($gnb-ht+31);
     width: 100%;
     line-height: 0;
     background: #fff;
-    
+
     //sub menu
     .sub-menu {
         @include position(absolute, $left:0);
@@ -536,16 +594,17 @@ $hd-ht: ($gnb-ht+31);
         padding: 10px;
         border: 1px solid $bor-gray-03;
         background: #fff;
+
         li {
             clear: both;
             float: none;
             display: block;
             border-top: 1px solid $bor-gray-06;
-            
+
             &:first-child {
                 border-top: 0;
             }
-            
+
             a {
                 @include bx;
                 display: block;
@@ -558,15 +617,15 @@ $hd-ht: ($gnb-ht+31);
                 text-align: left;
                 color: $fg-gray-01;
                 @include trasBase(1);
-                
+
                 &:hover {
                     @include trasBase(1, $fg:#323232, $bg:$bg-gray-02);
-                    
+
                 }
             }
         }
     }
-    
+
     //until
     .until-area {
         @include bx;
@@ -574,28 +633,34 @@ $hd-ht: ($gnb-ht+31);
         width: 100%;
         text-align: right;
         border-bottom: 1px solid $bor-gray-01;
+
         .until-box {
             @include com-wd;
             height: 30px;
+
             .until-list {
                 @include bx;
                 @include clearfix;
                 display: inline-block;
-                > li {
+
+                >li {
                     @include bx;
                     float: left;
                     text-align: center;
-                    > a {
+
+                    >a {
                         @include bx;
                         display: block;
                         padding: 0 21px;
                         font-size: 12px;
                         line-height: 30px;
                         color: $fg-gray-01;
+
                         &:hover {
                             color: $fg-gray-02;
                             @include trasBase(1);
                         }
+
                         //회원가입
                         .txt-pt {
                             position: absolute;
@@ -620,7 +685,7 @@ $hd-ht: ($gnb-ht+31);
                     }
 
                     &.lst {
-                        > a {
+                        >a {
                             padding-right: 0;
                         }
                     }
@@ -628,42 +693,51 @@ $hd-ht: ($gnb-ht+31);
             }
         }
     }
-    
+
     //gnb
     .gnb {
         @include bx;
         @include clearfix;
-        
+
         .top-area {
             @include bx;
             @include clearfix;
             border-bottom: 1px solid $bor-gray-04;
+
             .top-box {
                 @include com-wd;
                 padding: 40px 0 39px;
                 text-align: center;
+
                 .btn-menu {
                     @include btn-menu {
                         margin-top: -11px;
+
                         &.on {
                             margin-top: -12px;
                         }
-                    };
+                    }
+
+                    ;
                 }
+
                 .logo {
                     display: inline-block;
+
                     a {
                         display: block;
+
                         &:hover {
                             @include trasBase(0.6);
                         }
                     }
                 }
-                
+
                 .box-right {
                     @include bx;
                     @include position(absolute, 50%, $right:0);
                     margin-top: -19px;
+
                     .srch-box {
                         @include bx;
                         @include clearfix;
@@ -676,6 +750,7 @@ $hd-ht: ($gnb-ht+31);
                         padding-left: 10px;
                         background: $lnk-menu-srch;
                         background-position: right 0;
+
                         .ip-txt {
                             @include bx;
                             display: none;
@@ -686,6 +761,7 @@ $hd-ht: ($gnb-ht+31);
                             padding-right: 10px;
                             line-height: 34px;
                         }
+
                         .btn-srch {
                             @include bx;
                             display: block;
@@ -693,6 +769,7 @@ $hd-ht: ($gnb-ht+31);
                             float: right;
                             width: 36px;
                             height: 36px;
+
                             span {
                                 @include position(absolute, 50%, 50%);
                                 display: inline-block;
@@ -703,7 +780,7 @@ $hd-ht: ($gnb-ht+31);
                                 margin: -18px 0 0 -18px;
                             }
                         }
-                            
+
                         &:before {
                             @include position(absolute, 0, 0);
                             content: '';
@@ -714,7 +791,7 @@ $hd-ht: ($gnb-ht+31);
                             background: $lnk-menu-srch;
                             background-position: right -48px;
                             @include trasBase(0, $time:0.5s);
-                            
+
                             .ie8 & {
                                 background: none;
                             }
@@ -722,28 +799,30 @@ $hd-ht: ($gnb-ht+31);
 
                         &.on {
                             background: none;
+
                             .ip-txt {
                                 display: block;
                             }
+
                             a {
                                 background: none;
                             }
-                            
+
                             &:before {
                                 @include trasBase(1, $time:0.5s);
-                            
+
                                 .ie8 & {
                                     background: $lnk-menu-srch;
                                     background-position: right -48px;
                                 }
                             }
-                            
+
                             &:hover {
                                 @include trasBase;
                             }
                         }
                     }
-                    
+
                     .btn-cart {
                         @include bx;
                         float: right;
@@ -753,6 +832,7 @@ $hd-ht: ($gnb-ht+31);
                         margin-left: 30px;
                         background: $lnk-sprite;
                         background-position: 0 -40px;
+
                         .txt {
                             @include position(absolute, 4px, $right:0px);
                             display: block;
@@ -770,35 +850,41 @@ $hd-ht: ($gnb-ht+31);
                 }
             }
         }
-        
+
         //메뉴
         .gnb-area {
             @include bx;
             border-bottom: 1px solid $bor-gray-03;
+
             .gnb-box {
                 @include bx;
                 @include clearfix;
                 @include com-wd;
+
                 .gnb-list {
                     @include bx;
                     @include clearfix;
+
                     //width: 470px;
-                    > li {
+                    >li {
                         @include bx;
                         float: left;
                         //width: 25%;
                         //padding: 0 40px;
                         text-align: center;
-                        > a {
+
+                        >a {
                             @include bx;
                             display: inline-block;
                             height: 48px;
                             line-height: 48px;
                             @include trasBase(1);
+
                             &.fg-grn {
                                 font-weight: 600;
                                 color: $fg-green-01;
                             }
+
                             &:hover {
                                 @include trasBase(0.6);
                             }
@@ -812,22 +898,22 @@ $hd-ht: ($gnb-ht+31);
                             padding-right: 0 !important;
                         }
                     }
-                    
+
                     &.fl-left {
-                        > li {
+                        >li {
                             padding: 0 39.5px;
                         }
                     }
-                    
+
                     &.fl-right {
-                        > li {
+                        >li {
                             padding: 0 38px 0 37px;
                         }
                     }
                 }
             }
         }
-        
+
         //상세메뉴부분
         .menu-area {
             @include com-wd;
@@ -838,6 +924,7 @@ $hd-ht: ($gnb-ht+31);
             line-height: 1.3;
             border-top: 0;
             background: #fff;
+
             .top-menu {
                 @include bx;
                 @include clearfix;
@@ -846,35 +933,41 @@ $hd-ht: ($gnb-ht+31);
                 line-height: 20px;
                 color: $fg-gray-01;
                 border-bottom: 1px solid $bor-gray-03;
+
                 .p-all {
                     @include bx;
                     float: left;
                     padding: 0 15px;
                     @include line(5px, 20px, $bg-black-01);
                 }
+
                 .top-list {
                     @include bx;
                     float: left;
                     margin-left: 39px;
+
                     li {
                         @include bx;
                         float: left;
+
                         a {
                             @include bx;
                             display: block;
                             padding: 0 29px 0 28px;
+
                             &:hover {
-                               @include trasBase(0.6);
+                                @include trasBase(0.6);
                             }
                         }
+
                         @include line($ht:15px, $bg:$bor-gray-03);
-                        
+
                         &:first-child {
                             &:before {
                                 content: none;
                             }
                         }
-                        
+
                         &.ico-best {
                             &:before {
                                 @include position(absolute, 50%, 0);
@@ -890,23 +983,25 @@ $hd-ht: ($gnb-ht+31);
                     }
                 }
             }
-                
+
             .menu-box {
                 @include bx;
                 @include clearfix;
                 padding: 32px 30px 39px 28px;
+
                 .menu-list {
                     @include bx;
                     @include clearfix;
-                    > li {
+
+                    >li {
                         @include bx;
                         float: left;
                         width: 20%;
                         padding: 0 23px;
-                        
+
                         .list-box {
                             cursor: pointer;
-                            
+
                             .dep-01 {
                                 display: block;
                                 font-size: 15px;
@@ -914,8 +1009,10 @@ $hd-ht: ($gnb-ht+31);
                                 font-weight: 500;
                                 border-bottom: 1px solid $bor-gray-03;
                             }
+
                             .sub-menu-list {
                                 margin-top: 12px;
+
                                 li {
                                     a {
                                         display: block;
@@ -927,15 +1024,17 @@ $hd-ht: ($gnb-ht+31);
                                     }
                                 }
                             }
-                            
+
                             &:hover {
                                 .dep-01 {
                                     border-bottom-color: #333;
                                     @include trasBase(1);
+
                                     &:hover {
                                         @include trasBase(0.6);
                                     }
                                 }
+
                                 .sub-menu-list {
                                     li {
                                         a {
@@ -965,27 +1064,32 @@ $hd-ht: ($gnb-ht+31);
     //overflow: hidden;
     height: 100%;
     right: -170px;
-    
+
     .quick-left {
         @include bx;
         float: left;
         margin-right: 5px;
+
         .quick-list {
             @include bx;
+
             li {
-                $wt:40px;
+                $wt: 40px;
                 @include bx;
                 cursor: pointer;
                 width: $wt;
                 height: $wt;
                 margin-top: 2px;
                 background: $bg-black-01;
+
                 &:first-child {
                     margin-top: 0;
                 }
+
                 .quick-txt {
                     @include bx;
                     display: block;
+
                     span {
                         display: block;
                         overflow: hidden;
@@ -997,6 +1101,7 @@ $hd-ht: ($gnb-ht+31);
                         background: url(http://static.nurisoop.co.kr/img/renew/common/ico_btn_quick.png) no-repeat;
                         background-position: -37px -5px;
                     }
+
                     em {
                         @include position(absolute, 11px, 2px);
                         display: inline-block;
@@ -1007,20 +1112,21 @@ $hd-ht: ($gnb-ht+31);
                         color: #fff;
                     }
                 }
+
                 &.menu {
                     .btn-menu {
                         @include btn-menu(20px, 18px, 50%, -7px, 1px, 6px, #fff, -146px -82px);
-                        span {
-                        }
+
+                        span {}
                     }
                 }
+
                 &.hotdeal {
-                   .quick-txt {
-                        span {
-                            
-                        }
+                    .quick-txt {
+                        span {}
                     }
                 }
+
                 &.order {
                     .quick-txt {
                         span {
@@ -1028,6 +1134,7 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.cart {
                     .quick-txt {
                         span {
@@ -1035,6 +1142,7 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.notice {
                     .quick-txt {
                         span {
@@ -1042,6 +1150,7 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.kakao {
                     .quick-txt {
                         span {
@@ -1049,14 +1158,17 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.today {
                     cursor: auto;
+
                     .quick-txt {
                         span {
                             background-position: -37px -315px;
                         }
                     }
                 }
+
                 &.top {
                     .quick-txt {
                         span {
@@ -1069,16 +1181,15 @@ $hd-ht: ($gnb-ht+31);
                             line-height: 1;
                             letter-spacing: -0.7px;
                             background-position: -37px -363px;
-                            &:before {
-                                
-                            }
+
+                            &:before {}
                         }
                     }
                 }
             }
         }
     }
-    
+
     .quick-right {
         @include bx;
         //display: none;
@@ -1088,22 +1199,26 @@ $hd-ht: ($gnb-ht+31);
         border-left: 1px solid $bor-gray-03;
         border-right: 1px solid $bor-gray-03;
         background: #fff;
-        
+
         .quick-list {
             @include bx;
-            > li {
+
+            >li {
                 @include bx;
                 border-bottom: 1px solid $bor-gray-02;
-                .quick-txt { 
-                    $ht:50px;
+
+                .quick-txt {
+                    $ht: 50px;
                     @include bx;
                     display: block;
                     height: $ht;
                     padding: 0 30px 0 56px;
                     @include trasBase(1);
+
                     span {
                         font-size: 14px;
                         line-height: $ht;
+
                         &.bg {
                             @include position(absolute, 0, 30px);
                             display: block;
@@ -1113,14 +1228,16 @@ $hd-ht: ($gnb-ht+31);
                             background-position: 0 0;
                         }
                     }
-                    
+
                 }
-                
+
                 .slide-box {
                     @include bx;
                     padding: 0 24px 20px;
+
                     .quick-slide-list {
                         @include bx;
+
                         .slide {
                             a {
                                 @include bx;
@@ -1128,19 +1245,23 @@ $hd-ht: ($gnb-ht+31);
                                 width: 120px;
                                 height: 120px;
                                 background: $bg-gray-02;
+
                                 img {
                                     @include bx;
                                 }
                             }
                         }
                     }
+
                     .bx-controls {
-                        $wt:18px;
+                        $wt: 18px;
                         @include bx;
                         margin-top: 7px;
                         text-align: center;
+
                         .bx-controls-direction {
                             @include bx;
+
                             a {
                                 @include position(absolute, 3px);
                                 box-sizing: border-box;
@@ -1148,18 +1269,22 @@ $hd-ht: ($gnb-ht+31);
                                 height: $wt;
                                 border: 1px solid $bor-gray-03;
                                 background: $bg-gray-02;
+
                                 img {
                                     @include position(absolute, 50%, 50%);
                                     margin: -5px 0 0 -3.5px;
                                 }
+
                                 &.bx-prev {
                                     left: 19px;
                                 }
+
                                 &.bx-next {
                                     right: 19px;
                                 }
                             }
                         }
+
                         .bx-pager.bx-default-pager {
                             display: inline-block;
                             font-size: 13px;
@@ -1168,24 +1293,23 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
-                
-                > a {
+
+                >a {
                     &:hover {
                         @include trasBase(1, $fg-green-01);
                     }
                 }
-                
-                &.hotdeal {
-                    .quick-txt { 
-                        span {
-                            &.bg {
 
-                            }
+                &.hotdeal {
+                    .quick-txt {
+                        span {
+                            &.bg {}
                         }
                     }
                 }
+
                 &.order {
-                    .quick-txt { 
+                    .quick-txt {
                         span {
                             &.bg {
                                 background-position: 0 -62px;
@@ -1193,8 +1317,9 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.cart {
-                    .quick-txt { 
+                    .quick-txt {
                         span {
                             &.bg {
                                 background-position: 0 -124px;
@@ -1202,8 +1327,9 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.notice {
-                    .quick-txt { 
+                    .quick-txt {
                         span {
                             &.bg {
                                 background-position: 0 -186px;
@@ -1211,8 +1337,9 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.kakao {
-                    .quick-txt { 
+                    .quick-txt {
                         span {
                             &.bg {
                                 background-position: 0 -248px;
@@ -1220,8 +1347,9 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.question {
-                    .quick-txt { 
+                    .quick-txt {
                         span {
                             &.bg {
                                 background-position: 0 -310px;
@@ -1229,8 +1357,9 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
                 }
+
                 &.today {
-                    .quick-txt { 
+                    .quick-txt {
                         span {
                             &.bg {
                                 background-position: 0 -371px;
@@ -1240,21 +1369,25 @@ $hd-ht: ($gnb-ht+31);
                 }
             }
         }
-        
+
         .contact-box {
             padding: 28px 10px 0 18px;
+
             p {
                 line-height: 1;
                 color: $fg-gray-01;
+
                 &.ct-tit {
                     font-size: 15px;
                     font-weight: 500;
                     color: $fg-black;
                 }
+
                 &.ct-call {
                     padding: 17px 0 7px;
                     font-size: 17px;
                 }
+
                 &.ct-txt {
                     font-size: 13px;
                     line-height: 1.4;
@@ -1267,6 +1400,7 @@ $hd-ht: ($gnb-ht+31);
 /* 테이블 col */
 .tbl-col {
     @include bx;
+
     .tbl {
         thead {
             tr {
@@ -1282,10 +1416,11 @@ $hd-ht: ($gnb-ht+31);
                 tr {
                     th {
                         background: #fff;
+
                         span {
                             vertical-align: middle;
 
-                            & + .btn-com {
+                            &+.btn-com {
                                 margin-left: 10px;
                             }
                         }
@@ -1293,41 +1428,50 @@ $hd-ht: ($gnb-ht+31);
                 }
             }
         }
-        
-        @include tbl-ch-body{
-            th, td {
+
+        @include tbl-ch-body {
+
+            th,
+            td {
                 text-align: center;
                 border-top: 1px solid $bor-gray-03;
                 background: #fff;
             }
+
             td {
                 .img-prd {
                     &.img-gift {
                         margin: 2px auto 3px;
                     }
                 }
+
                 .link-txt {
                     display: block;
                     padding: 0 70px;
                     text-align: left;
                     color: inherit;
                     @include trasBase(1);
+
                     &.type-2 {
                         @include bx;
                         padding: 0 11px;
                     }
+
                     &.prd-name {
                         padding: 0 22px;
                         //font-size: 15px;
                         font-weight: 500;
                         letter-spacing: 0;
+
                         .img-prd {
                             margin-right: 18px;
                         }
                     }
+
                     &.ip-chk {
                         @include chkbox($left:22px);
-                        .btn-chk + .img-prd {
+
+                        .btn-chk+.img-prd {
                             margin-left: 30px;
                         }
                     }
@@ -1336,21 +1480,26 @@ $hd-ht: ($gnb-ht+31);
                         font-weight: 400;
                     }
                 }
+
                 a.link-txt:hover {
                     @include trasBase(0.6);
                 }
+
                 .txt {
                     color: $fg-gray-01;
                 }
+
                 &.pd-zero {
                     td {
                         padding: 0 !important;
                     }
                 }
             }
-        };
+        }
+
+        ;
     }
-        
+
     //스크롤일경우 분리 후, 멀티클래스 추가 - 예시) pop_order
     &.scr {
         overflow: hidden;
@@ -1363,75 +1512,103 @@ $hd-ht: ($gnb-ht+31);
 .tbl-row {
     @include bx;
     width: 100%;
+
     .tbl {
-        @include tbl-ch-body{
-            th, td {
+        @include tbl-ch-body {
+
+            th,
+            td {
                 text-align: left;
                 border-top: 1px solid $bor-gray-03;
+
                 .t-ast {
                     @include bx;
                     @include txtAst(13px, 5px);
+
                     &:before {
                         color: $fg-red-03;
                     }
                 }
+
                 .fake-ast {
                     padding-left: 13px;
                 }
             }
+
             th {
                 background: $bg-gray-02;
             }
+
             td {
-                $i-ht : 28px;
+                $i-ht: 28px;
+
                 .row {
                     @include bx;
-                    .form-sel, .ip-txt, .ip-cal, .ta-txt {
+
+                    .form-sel,
+                    .ip-txt,
+                    .ip-cal,
+                    .ta-txt {
                         @include bx;
                         color: $fg-gray-01;
                         vertical-align: middle;
                         border: 1px solid $bor-gray-03;
                     }
-                    .form-sel, .ip-txt, .ip-cal {
+
+                    .form-sel,
+                    .ip-txt,
+                    .ip-cal {
                         height: $i-ht;
                         padding: 0 10px;
                         line-height: $i-ht;
                     }
+
                     .form-sel {
                         @include sel-com(197px, $i-ht, 0);
+
                         &.w-1 {
                             width: 66px;
                         }
+
                         &.w-2 {
                             width: 137px;
                         }
+
                         &.w-3 {
                             width: 247px;
                         }
 
-                        .ie9 &, .ie8 & {
+                        .ie9 &,
+                        .ie8 & {
                             padding-right: 0;
                         }
                     }
+
                     .ip-txt {
                         width: 247px;
+
                         &.all {
                             width: 100%;
                         }
+
                         &.w-1 {
                             width: 66px;
                         }
+
                         &.w-2 {
                             width: 276px;
                         }
+
                         &.w-3 {
                             width: 515px;
                         }
                     }
+
                     .ip-cal {
                         width: 94px;
                         margin-right: 3px;
                     }
+
                     .ta-txt {
                         width: 100%;
                         height: 256px;
@@ -1440,6 +1617,7 @@ $hd-ht: ($gnb-ht+31);
                         &.h-1 {
                             height: 158px;
                         }
+
                         &.type-2 {
                             width: 740px;
                             height: 126px;
@@ -1447,25 +1625,30 @@ $hd-ht: ($gnb-ht+31);
                     }
 
                     //텍스트
-                    .p-point, .chk-txt {
+                    .p-point,
+                    .chk-txt {
                         @include bx;
                         display: inline-block;
                         font-size: 13px;
                         letter-spacing: 0;
                         vertical-align: middle;
                         line-height: $i-ht;
+
                         &.fg-red {
                             color: $fg-red-03;
                         }
                     }
+
                     .p-point {
                         padding-left: 9px;
+
                         &:before {
                             @include position(absolute, 3px, 0);
                             content: '*';
                             display: inline-block;
                         }
                     }
+
                     .chk-txt {
                         padding-left: 17px;
                         @include chkbox;
@@ -1484,6 +1667,7 @@ $hd-ht: ($gnb-ht+31);
                         vertical-align: middle;
                         line-height: 1.5;
                         color: $fg-gray-04;
+
                         &:before {
                             content: '';
                             @include position(absolute, 11px, 0);
@@ -1494,8 +1678,8 @@ $hd-ht: ($gnb-ht+31);
                     }
 
 
-                    .s-1{
-                        padding: 0 6px;  
+                    .s-1 {
+                        padding: 0 6px;
                         font-size: 20px;
                         vertical-align: middle;
                         letter-spacing: 0;
@@ -1507,20 +1691,25 @@ $hd-ht: ($gnb-ht+31);
                         padding: 0 7px;
                     }
 
-                    a, button {
+                    a,
+                    button {
                         &.btn-file-del {
                             margin-left: 25px;
                             font-size: 14px;
                         }
                     }
 
-                    .btn-phone, .btn-adr, .btn-adrbk, .btn-nick-chk {
+                    .btn-phone,
+                    .btn-adr,
+                    .btn-adrbk,
+                    .btn-nick-chk {
                         @include btn-gray-bor-02;
                         margin-left: 15px;
                     }
 
                     //간격 
-                    input + .btn-com, input + label {
+                    input+.btn-com,
+                    input+label {
                         margin-left: 8px;
                     }
 
@@ -1535,7 +1724,7 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
 
-                    & + .row {
+                    &+.row {
                         margin-top: 13px;
 
                         &.type-2 {
@@ -1543,32 +1732,37 @@ $hd-ht: ($gnb-ht+31);
                         }
                     }
 
-                    & + .row.file-box {
+                    &+.row.file-box {
                         margin-top: 0;
                     }
 
                     &.row-pop {
                         display: inline-block;
+
                         .btn-com {
                             @include btn-gray-bor-02(80px, 27px);
                             margin-left: 19px;
                             font-weight: 300;
                         }
                     }
-                    
+
                     &.pay-row {
                         .pay-tit {
                             font-size: 14px;
                             font-weight: bold;
                         }
+
                         .pay-box {
                             @include bx;
                             margin-top: 4px;
+
                             .pay-txt {
                                 font-size: 13px;
                                 line-height: 1.4;
                                 color: $fg-gray-01;
-                                span, em {
+
+                                span,
+                                em {
                                     color: $fg-black;
                                 }
 
@@ -1576,6 +1770,7 @@ $hd-ht: ($gnb-ht+31);
                                     @include btn-bor-com(120px);
                                     margin-left: 5px;
                                     vertical-align: inherit;
+
                                     &:hover {
                                         border-color: $bor-green-01;
                                         color: #fff;
@@ -1590,26 +1785,34 @@ $hd-ht: ($gnb-ht+31);
             }
 
             &:first-child {
-                th, td {
+
+                th,
+                td {
                     border-top: 0;
                 }
             }
-            
+
             &.br-t {
-                th, td {
+
+                th,
+                td {
                     border-top: 1px solid $bor-black-01;
                 }
             }
-        };
+        }
+
+        ;
 
         //th 배경 흰색
         &.white {
-            @include tbl-ch-body{
-                    th {
+            @include tbl-ch-body {
+                th {
                     border-right: 1px solid $bor-gray-03;
                     background: #fff;
                 }
-            };
+            }
+
+            ;
         }
     }
 }
@@ -1620,54 +1823,62 @@ $hd-ht: ($gnb-ht+31);
 .contents {
     @include bx;
     margin-top: $hd-ht;
-    
+
     div[class*='-sect'] {
         @include bx;
+
         .container {
             @include com-wd;
-            
+
         }
-            
+
         /* navigation */
         &.lnb-sect {
             .container {
                 .lnb-box {
                     z-index: 1;
                     @include position(absolute, 17px, $right:0);
-                    .btn-link, .txt {
+
+                    .btn-link,
+                    .txt {
                         display: inline-block;
                         font-size: 14px;
                         font-weight: 300;
                         line-height: 1;
                         color: $fg-gray-03;
                     }
+
                     .btn-link {
                         @include trasBase(1, $fg-gray-03);
+
                         &:hover {
-                           @include trasBase(1, $fg-black); 
+                            @include trasBase(1, $fg-black);
                         }
                     }
                 }
             }
         }
-        
-        
+
+
         /* mypage lnb */
         &.mp-lnb-sect {
             .container {
                 .mp-lnb-area {
                     @include bx;
                     border-top: 2px solid $bor-black-01;
+
                     .mp-area {
                         @include bx;
                         @include clearfix;
                         border-bottom: 1px solid $bor-gray-03;
                         border-right: 1px solid $bor-gray-03;
+
                         .grade-area {
                             @include bx;
                             @include clearfix;
                             float: left;
                             width: 47%;
+
                             //width: 582px;
                             .row {
                                 @include bx;
@@ -1678,20 +1889,24 @@ $hd-ht: ($gnb-ht+31);
                                     padding: 33px 22px 67px;
                                     border-left: 1px solid $bor-gray-03;
                                     border-right: 1px solid $bor-gray-03;
+
                                     .pt-txt {
                                         @include bx;
                                         display: table;
                                         width: 100%;
                                         margin-top: 21px;
+
                                         &:first-child {
                                             margin-top: 0;
                                         }
+
                                         span {
                                             @include bx;
                                             display: table-cell;
                                             letter-spacing: -0.7px;
                                             vertical-align: middle;
                                             color: $fg-black;
+
                                             &.s-1 {
                                                 text-align: left;
                                                 font-size: 16px;
@@ -1701,11 +1916,13 @@ $hd-ht: ($gnb-ht+31);
                                                     font-weight: bold;
                                                 }
                                             }
+
                                             &.s-2 {
                                                 min-width: 90px;
                                                 text-align: right;
                                                 font-size: 15px;
                                                 font-weight: 300;
+
                                                 em {
                                                     display: inline-block;
                                                     margin-right: 1px;
@@ -1740,9 +1957,11 @@ $hd-ht: ($gnb-ht+31);
                                         margin-top: 2px;
                                         text-align: center;
                                         background: url(http://static.nurisoop.co.kr/img/renew/member/bg_myGrade.png) no-repeat center;
+
                                         .img {
                                             display: table-cell;
                                             vertical-align: middle;
+
                                             img {
                                                 width: 50%;
                                             }
@@ -1753,11 +1972,13 @@ $hd-ht: ($gnb-ht+31);
                                         @include bx;
                                         float: left;
                                         padding-left: 16px;
+
                                         .gd-tit {
                                             padding-bottom: 17px;
                                             font-size: 21px;
                                             font-weight: 300;
                                             letter-spacing: -1.3px;
+
                                             em {
                                                 font-weight: 500;
                                                 color: $fg-red-03;
@@ -1767,17 +1988,20 @@ $hd-ht: ($gnb-ht+31);
                                                 }
                                             }
                                         }
+
                                         .gd-txt {
                                             .p-1 {
                                                 margin-top: 5px;
                                                 font-size: 14px;
                                                 letter-spacing: 0;
+
                                                 em {
                                                     display: inline-block;
                                                     padding-right: 3px;
                                                     font-weight: 400;
                                                     color: $fg-black-03;
                                                 }
+
                                                 span {
                                                     display: inline-block;
                                                     font-weight: 300;
@@ -1817,13 +2041,18 @@ $hd-ht: ($gnb-ht+31);
 
                                 .mp-menu {
                                     @include bx;
-                                    > li {
+
+                                    >li {
                                         @include bx;
+
                                         @include line-row-2(11px, 4px, $t:7px, $bg:$fg-green-03) {
                                             display: none;
-                                        };
+                                        }
+
+                                        ;
                                         margin: 17px 0 0 5px;
                                         line-height: 0;
+
                                         a {
                                             @include bx;
                                             display: inline-block;
@@ -1832,6 +2061,7 @@ $hd-ht: ($gnb-ht+31);
                                             line-height: 1;
                                             color: $fg-gray-06;
                                             @include trasBase(1);
+
                                             &:hover {
                                                 @include trasBase;
                                             }
@@ -1841,6 +2071,7 @@ $hd-ht: ($gnb-ht+31);
                                             &:before {
                                                 display: block;
                                             }
+
                                             a {
                                                 font-weight: 400;
                                                 color: $fg-green-03;
@@ -1854,15 +2085,16 @@ $hd-ht: ($gnb-ht+31);
                                     width: 332px;
                                     padding-right: 50px;
                                     border-left: 0;
+
                                     .mp-menu {
                                         float: left;
-                                        li {
 
-                                        }
+                                        li {}
 
                                         &.lst {
                                             float: right;
-                                            > li {
+
+                                            >li {
                                                 margin-left: 0;
                                             }
                                         }
@@ -1883,14 +2115,14 @@ $hd-ht: ($gnb-ht+31);
             }
         }
     }
-    
+
     &.prd-list {
-        
+
         /* 서브 탑 배너 */
         .sub-top-sect {
             padding: 20px 0;
         }
-        
+
         /* 타이틀 */
         .sub-tit {
             padding: 19px 0 31px;
@@ -1908,21 +2140,26 @@ $hd-ht: ($gnb-ht+31);
     @include bx;
     border-top: 1px solid $bor-gray-04;
     background: #fff;
+
     .top-area {
         @include bx;
         padding: 8px 0 11px;
         border-bottom: 1px solid $bor-gray-03;
+
         .top-box {
             @include bx;
             @include com-wd;
+
             .menu-box {
                 .menu-list {
                     @include bx;
                     @include clearfix;
                     padding: 4px 0 5px;
+
                     li {
                         @include bx;
                         float: left;
+
                         a {
                             @include bx;
                             display: block;
@@ -1930,14 +2167,18 @@ $hd-ht: ($gnb-ht+31);
                             font-size: 14px;
                             color: $fg-gray-01;
                             @include trasBase(1);
+
                             &.f-bd {
                                 color: $fg-black;
                             }
+
                             &:hover {
                                 @include trasBase(0.6);
                             }
                         }
+
                         @include line($ht:16px, $bg:$bor-gray-03);
+
                         &:before {
                             margin-top: -6px;
                         }
@@ -1946,6 +2187,7 @@ $hd-ht: ($gnb-ht+31);
                             a {
                                 padding-left: 0;
                             }
+
                             &:before {
                                 content: none;
                             }
@@ -1958,10 +2200,12 @@ $hd-ht: ($gnb-ht+31);
                 @include bx;
                 @include position(absolute, 0, $right:0);
                 width: 170px;
-                .family-btn-box { 
+
+                .family-btn-box {
                     @include bx;
                     height: 30px;
                     border: 1px solid $bor-gray-03;
+
                     .btn-family {
                         @include bx;
                         display: block;
@@ -1974,23 +2218,27 @@ $hd-ht: ($gnb-ht+31);
                     }
 
                     &.on {
-                        border-color: $bor-black-01;;
+                        border-color: $bor-black-01;
                         border-bottom-color: $bor-gray-03;
                         @include trasBase(1);
+
                         a {
                             color: $fg-gray-01;
                             background-position: right -39px;
                         }
                     }
                 }
+
                 #family_list {
                     z-index: 52;
                     display: none;
                     overflow: hidden;
                     @include bx;
                     height: 218px;
+                    background-color: #fff;
                     border: 1px solid $bor-black-01;
                     border-top: 0;
+
                     iframe {
                         height: 100%;
                         border: 0;
@@ -1999,23 +2247,23 @@ $hd-ht: ($gnb-ht+31);
             }
         }
     }
-    
+
     /* 중간영역 */
     .ft-sect {
         @include bx;
-        
+
         .ft-area {
             @include bx;
             @include clearfix;
             @include com-wd;
             padding: 50px 0 46px;
-            
+
             .row {
-                $f-ht : 344px;
+                $f-ht: 344px;
                 @include bx;
                 float: left;
                 height: $f-ht;
-                
+
                 .ft-tit {
                     display: block;
                     padding-bottom: 9px;
@@ -2024,14 +2272,15 @@ $hd-ht: ($gnb-ht+31);
                     letter-spacing: -0.5px;
                     line-height: 1;
                 }
-                
+
                 .ft-box {
                     @include bx;
                     @include clearfix;
                     margin-top: 0px;
+
                     .ft-tit {
                         border-bottom: 1px solid $bor-gray-01;
-                        
+
                         .ft-sub-tit {
                             display: inline-block;
                             float: right;
@@ -2041,47 +2290,53 @@ $hd-ht: ($gnb-ht+31);
                             color: $fg-gray-01;
                         }
                     }
-                    
+
                     //cust
                     p[class*='ico-'] {
                         @include bx;
                         margin: 20px 0 16px;
+
                         &:before {
                             @include position(absolute, 50%, 0);
                             content: '';
                             display: inline-block;
                             background: $lnk-sprite;
                         }
+
                         span {
                             vertical-align: middle;
                             font-weight: bold;
                         }
-                        
+
                         &.ico-call {
                             margin-left: 2px;
+
                             &:before {
-                                $b-ht:40px;
+                                $b-ht: 40px;
                                 width: 44px;
                                 height: $b-ht;
                                 margin-top: -($b-ht/2);
                                 background-position: 0 -120px;
                             }
+
                             span {
                                 padding-left: 55px;
                                 font-size: 28px;
                                 line-height: 40px;
                             }
                         }
-                    
+
                         &.ico-mail {
                             margin-top: 18px;
+
                             &:before {
-                                $b-ht:30px;
+                                $b-ht: 30px;
                                 width: $b-ht;
                                 height: $b-ht;
                                 margin-top: -($b-ht/2);
                                 background-position: -56px -132px;
                             }
+
                             span {
                                 padding-left: 45px;
                                 font-size: 20px;
@@ -2090,7 +2345,7 @@ $hd-ht: ($gnb-ht+31);
                             }
                         }
                     }
-                    
+
                     .txt-call {
                         span {
                             display: inline-block;
@@ -2099,10 +2354,10 @@ $hd-ht: ($gnb-ht+31);
                             letter-spacing: -0.2px;
                             line-height: 1.6;
                             color: $fg-gray-01;
-                            
+
                             em {
                                 color: $fg-red-01;
-                                
+
                                 &.l-line:before {
                                     display: inline-block;
                                     content: '/';
@@ -2110,39 +2365,43 @@ $hd-ht: ($gnb-ht+31);
                                     color: $fg-gray-01;
                                 }
                             }
-                            
-                            & + span {
+
+                            &+span {
                                 margin-left: 16px;
                             }
                         }
                     }
-                    
+
                     //bank
                     .bank-list {
                         @include bx;
                         @include clearfix;
                         margin-top: 5px;
+
                         li {
                             @include bx;
                             margin-top: 15px;
+
                             span {
                                 font-size: 15px;
                                 line-height: 22px;
+
                                 &.bk-tit {
                                     padding-right: 9px;
                                     font-weight: 500;
                                 }
-                                
+
                                 &.bk-num {
                                     font-weight: 300;
                                     letter-spacing: 0;
                                     color: $fg-gray-01;
                                 }
                             }
-                            
+
                             .btn-bank {
                                 @include position(absolute, 0, $right:0);
                                 @include btn-bor-com(120px);
+
                                 &:hover {
                                     border-color: $bor-green-01;
                                     color: #fff;
@@ -2151,19 +2410,22 @@ $hd-ht: ($gnb-ht+31);
                             }
                         }
                     }
-                    
+
                     //notice
                     .notice-list {
                         @include bx;
                         @include clearfix;
                         margin-top: 17px;
+
                         li {
                             a {
                                 @include bx;
                                 display: block;
+
                                 span {
                                     font-size: 14px;
                                     line-height: 1.7;
+
                                     &.bd-tit {
                                         display: block;
                                         overflow: hidden;
@@ -2173,6 +2435,7 @@ $hd-ht: ($gnb-ht+31);
                                         word-wrap: normal;
                                         color: $fg-gray-01;
                                     }
+
                                     &.bd-day {
                                         @include position(absolute, 0, $right:0);
                                         display: inline-block;
@@ -2180,52 +2443,55 @@ $hd-ht: ($gnb-ht+31);
                                         color: $fg-gray-03;
                                     }
                                 }
-                                
+
                                 &:hover {
                                     @include trasBase(0.6);
                                 }
                             }
                         }
                     }
-                    
-                    
+
+
                     &:first-child {
                         height: 229px;
                     }
                 }
-                
+
                 @include line ($ht:$f-ht);
+
                 &:first-child {
                     &:before {
                         content: none;
                     }
                 }
-                
+
                 &.cust-box {
                     width: 31.5%;
                     padding: 0 70px 0 0;
                 }
-                
+
                 &.notice-box {
                     width: 37%;
                     padding: 0 70px;
                 }
-                
+
                 &.event-box {
                     width: 31.5%;
                     padding: 0 0 0 70px;
-                    
+
                     /* slide btn */
                     .bx-controls {
                         position: absolute;
                         top: -2px;
                         right: 0;
+
                         .bx-pager {
                             .bx-pager-item {
                                 @include bx;
                                 display: inline-block;
                                 width: 10px;
                                 height: 10px;
+
                                 a {
                                     position: absolute;
                                     display: inline-block;
@@ -2235,25 +2501,27 @@ $hd-ht: ($gnb-ht+31);
                                     text-indent: -999px;
                                     background: $lnk-sprite;
                                     background-position: -45px -224px;
+
                                     &.active {
                                         background-position: -23px -224px;
                                     }
                                 }
-                                
-                                & + .bx-pager-item {
+
+                                &+.bx-pager-item {
                                     margin-left: 5px;
                                 }
                             }
                         }
                     }
-                    
+
                     //event board
                     .board-list {
-                        $wt:56px;
+                        $wt: 56px;
                         @include bx;
                         @include clearfix;
                         margin-top: 43px;
                         display: inline-block;
+
                         li {
                             @include bx;
                             float: left;
@@ -2262,6 +2530,7 @@ $hd-ht: ($gnb-ht+31);
                             margin-left: 11px;
                             border: 1px solid $bor-gray-02;
                             background: $bg-gray-02;
+
                             &:first-child {
                                 margin-left: 0;
                             }
@@ -2273,6 +2542,7 @@ $hd-ht: ($gnb-ht+31);
                                 height: 100%;
                                 text-align: center;
                                 background: url(http://static.nurisoop.co.kr/img/renew/common/btn_ft_etc.png) no-repeat;
+
                                 .txt {
                                     @include position(absolute, $left:0, $bottom:-27px);
                                     display: none;
@@ -2290,6 +2560,7 @@ $hd-ht: ($gnb-ht+31);
                             &.sample {
                                 .btn-link {
                                     background-position: 0 0;
+
                                     &:hover {
                                         background-position: 0 -68px;
                                     }
@@ -2299,6 +2570,7 @@ $hd-ht: ($gnb-ht+31);
                             &.coupon {
                                 .btn-link {
                                     background-position: -68px 0;
+
                                     &:hover {
                                         background-position: -68px -68px;
                                     }
@@ -2309,6 +2581,7 @@ $hd-ht: ($gnb-ht+31);
                             &.question {
                                 .btn-link {
                                     background-position: -136px 0;
+
                                     &:hover {
                                         background-position: -136px -68px;
                                     }
@@ -2319,6 +2592,7 @@ $hd-ht: ($gnb-ht+31);
                             &.review {
                                 .btn-link {
                                     background-position: -204px 0;
+
                                     &:hover {
                                         background-position: -204px -68px;
                                     }
@@ -2329,6 +2603,7 @@ $hd-ht: ($gnb-ht+31);
                             &.order {
                                 .btn-link {
                                     background-position: -272px 0;
+
                                     &:hover {
                                         background-position: -272px -68px;
                                     }
@@ -2339,6 +2614,7 @@ $hd-ht: ($gnb-ht+31);
                             &:hover {
                                 border-color: $bor-green-01;
                                 @include trasBase(1, $time:0.7s, $bg:$bg-green-01);
+
                                 .txt {
                                     display: block;
                                     @include trasBase(1, $time:0.5s);
@@ -2350,15 +2626,16 @@ $hd-ht: ($gnb-ht+31);
             }
         }
     }
-    
+
     .bot-area {
         @include bx;
         border-top: 1px solid $bor-gray-03;
+
         .info-box {
             @include bx;
             @include clearfix;
             @include com-wd;
-            
+
             .adr-box {
                 padding: 26px 0 29px;
                 font-size: 14px;
@@ -2367,6 +2644,7 @@ $hd-ht: ($gnb-ht+31);
                 vertical-align: middle;
                 color: $fg-gray-03;
                 border-bottom: 1px solid $bor-gray-01;
+
                 .l-line {
                     display: inline-block;
                     margin: 0 13px 0 13px;
@@ -2374,6 +2652,7 @@ $hd-ht: ($gnb-ht+31);
                     height: 11px;
                     background: $bor-gray-04;
                 }
+
                 .btn-link {
                     position: relative;
                     @include btn-bor-com($fg:inherit);
@@ -2381,63 +2660,74 @@ $hd-ht: ($gnb-ht+31);
                     margin-left: 7px;
                 }
             }
-            
+
             .ft-list-box {
                 @include bx;
                 @include clearfix;
                 padding: 30px 0 33px;
+
                 .row {
                     @include bx;
                     display: inline-block;
+
                     &.cert-box {
                         float: left;
+
                         .cert-list {
                             @include bx;
                             display: table;
+
                             li {
                                 @include bx;
                                 display: table-cell;
                                 padding: 0 20px;
+
                                 &:first-child {
                                     padding-left: 0;
                                 }
-                                img {
 
-                                }
-                                
+                                img {}
+
                                 a:hover {
                                     @include trasBase;
                                 }
-                                
+
                                 &.mk-mma {
                                     padding-left: 17px;
                                 }
+
                                 &.mk-tax {
-                                    padding: 0 18px 0 5px; 
+                                    padding: 0 18px 0 5px;
                                 }
+
                                 &.mk-ftc {
-                                    padding: 0 14px 0 23px; 
+                                    padding: 0 14px 0 23px;
                                 }
+
                                 &.mk-kb {
-                                    padding-left: 13px; 
+                                    padding-left: 13px;
                                 }
                             }
                         }
                     }
-                    
+
                     &.sns-box {
                         float: right;
+
                         .sns-list {
                             @include bx;
                             @include clearfix;
+
                             li {
                                 @include bx;
                                 float: left;
                                 margin-left: 10px;
+
                                 a {
                                     $wt: 35px;
                                     @include bx;
                                     display: block;
+
                                     span {
                                         font-size: 0;
                                         text-indent: -999px;
@@ -2448,6 +2738,7 @@ $hd-ht: ($gnb-ht+31);
                                         background: url(http://static.nurisoop.co.kr/img/renew/common/btn_ft_sns.png) no-repeat;
                                         @include trasBase(1, $time:0.7s);
                                     }
+
                                     &:before {
                                         @include position(absolute, 0, 0);
                                         content: '';
@@ -2458,85 +2749,93 @@ $hd-ht: ($gnb-ht+31);
                                         background: url(http://static.nurisoop.co.kr/img/renew/common/btn_ft_sns.png) no-repeat;
                                         @include trasBase(0, $time:0.7s);
                                     }
+
                                     &:hover {
                                         span {
                                             @include trasBase(0, $time:0.7s);
                                         }
+
                                         &:before {
                                             @include trasBase(1, $time:0.7s);
                                         }
                                     }
                                 }
-                                
+
                                 &.blog {
                                     a {
                                         span {
                                             background-position: 0 0;
                                         }
+
                                         &:before {
                                             background-position: 0 -47px;
                                         }
                                     }
                                 }
-                                
+
                                 &.fb {
                                     a {
                                         span {
                                             background-position: -47px 0;
                                         }
+
                                         &:before {
                                             background-position: -47px -47px;
                                         }
                                     }
-                                    
+
                                 }
-                                
+
                                 &.twit {
                                     a {
                                         span {
                                             background-position: -94px 0;
                                         }
+
                                         &:before {
                                             background-position: -94px -47px;
                                         }
                                     }
-                                    
+
                                 }
-                                
+
                                 &.ktalk {
                                     a {
                                         span {
                                             background-position: -141px 0;
                                         }
+
                                         &:before {
                                             background-position: -141px -47px;
                                         }
                                     }
-                                    
+
                                 }
-                                
+
                                 &.kstory {
                                     a {
                                         span {
                                             background-position: -188px 0;
                                         }
+
                                         &:before {
                                             background-position: -188px -47px;
                                         }
                                     }
-                                    
+
                                 }
-                                
+
                                 &.insta {
                                     a {
                                         span {
                                             background-position: -235px 0;
                                         }
+
                                         &:before {
                                             background-position: -235px -47px;
                                         }
                                     }
-                                    
+
                                 }
                             }
                         }
@@ -2544,11 +2843,12 @@ $hd-ht: ($gnb-ht+31);
                 }
             }
         }
-        
+
         .copy-box {
             @include bx;
             padding: 22px 0 24px;
             background: $bg-gray-01;
+
             .copy {
                 @include com-wd;
                 font-size: 14px;
@@ -2564,13 +2864,15 @@ $hd-ht: ($gnb-ht+31);
 /* datepicker */
 .ui-datepicker {
     * {
-	    font-family: $font-stack; 
+        font-family: $font-stack;
     }
+
     @include bx;
     margin-top: -1px;
     padding: 3px;
     border-radius: 0;
     border: 1px solid #c7c7c7;
+
     //제목
     .ui-datepicker-header {
         @include bx;
@@ -2579,12 +2881,14 @@ $hd-ht: ($gnb-ht+31);
         border: 0;
         border-radius: 0;
         background: $bg-gray-01;
+
         .ui-corner-all {
             @include position(absolute, 50%);
             cursor: pointer;
             width: 7px;
             height: 10px;
             margin-top: -5px;
+
             .ui-icon {
                 width: 100%;
                 height: 100%;
@@ -2594,34 +2898,42 @@ $hd-ht: ($gnb-ht+31);
                 margin-left: 0;
                 background: url(http://static.nurisoop.co.kr/img/renew/common/btn_cal.png) no-repeat;
             }
+
             &:hover {
                 border: 0;
             }
+
             &.ui-datepicker-prev {
                 left: 10px;
+
                 .ui-icon {
                     @include bx;
                     background-position: 0 0;
                 }
+
                 &:hover {
                     .ui-icon {
                         background-position: 0 -16px;
                     }
                 }
             }
+
             &.ui-datepicker-next {
                 right: 7px;
+
                 .ui-icon {
                     background-position: -13px 0;
                 }
+
                 &:hover {
                     .ui-icon {
                         background-position: -13px -16px;
                     }
                 }
             }
-            
+
         }
+
         .ui-datepicker-title {
             span {
                 font-size: 14px;
@@ -2630,12 +2942,13 @@ $hd-ht: ($gnb-ht+31);
             }
         }
     }
-    
+
     //달력
     .ui-datepicker-calendar {
         font-size: auto;
         margin: 3px 0 10px;
         padding: 0;
+
         thead {
             th {
                 span {
@@ -2647,9 +2960,12 @@ $hd-ht: ($gnb-ht+31);
                 }
             }
         }
+
         tbody {
             td {
-                a, span {
+
+                a,
+                span {
                     @include bx;
                     display: inline-block;
                     width: 27px;
@@ -2661,18 +2977,25 @@ $hd-ht: ($gnb-ht+31);
                     color: $fg-gray-06;
                     border: 0;
                     background: #fff;
-                    &.ui-state-default, &.ui-state-highlight {
+
+                    &.ui-state-default,
+                    &.ui-state-highlight {
                         color: $fg-gray-06;
-                    }  
+                    }
+
                     &.ui-state-active {
                         color: #fff;
                         background: #01787c;
                     }
-                } 
+                }
+
                 //기간
                 &.ing {
-                    a, span {
+
+                    a,
+                    span {
                         background: #dcdcdc;
+
                         &.ui-state-active {
                             background: #01787c;
                         }
@@ -2685,14 +3008,16 @@ $hd-ht: ($gnb-ht+31);
 
 
 @media (max-width: 1450px) {
+
     /* header 영역 */
     //sub menu 위치 조정
     .header {
+
         //until
         .until-area {
             .until-box {
                 .until-list {
-                    > li {
+                    >li {
                         &.lst {
                             .sub-menu {
                                 left: auto;
@@ -2706,6 +3031,7 @@ $hd-ht: ($gnb-ht+31);
 
         //gnb
         .gnb {
+
             //메뉴
             .gnb-area {
                 .gnb-box {
@@ -2730,9 +3056,11 @@ $hd-ht: ($gnb-ht+31);
  * IE
  */
 .ie {
+
     /* content 영역 */
     .contents {
         div[class*='-sect'] {
+
             /* mypage lnb */
             &.mp-lnb-sect {
                 .container {
@@ -2742,6 +3070,7 @@ $hd-ht: ($gnb-ht+31);
                                 .row {
                                     .pt-box {
                                         padding-bottom: 66px;
+
                                         .pt-txt {
                                             span {
                                                 &.s-2 {
@@ -2753,11 +3082,13 @@ $hd-ht: ($gnb-ht+31);
                                             }
                                         }
                                     }
+
                                     &.my-gd-row {
                                         padding-bottom: 28px;
                                     }
                                 }
                             }
+
                             /*.mp-menu-area {
                                 .mp-menu-box {
                                     &.shop-info {
@@ -2788,7 +3119,7 @@ $hd-ht: ($gnb-ht+31);
             }
         }
     }
-   
+
     /* footer 영역 */
     .footer {
         .top-area {
@@ -2806,16 +3137,18 @@ $hd-ht: ($gnb-ht+31);
                 }
             }
         }
-    } 
+    }
 }
 
 /*
  * IE8
  */
 .ie8 {
+
     /* content 영역 */
     .contents {
         div[class*='-sect'] {
+
             /* mypage lnb */
             &.mp-lnb-sect {
                 .container {
@@ -2825,6 +3158,7 @@ $hd-ht: ($gnb-ht+31);
                                 .row {
                                     &.my-gd-row {
                                         padding-bottom: 31px;
+
                                         .gd-box {
                                             .gd-tit {
                                                 font-size: 20px;
@@ -2846,9 +3180,11 @@ $hd-ht: ($gnb-ht+31);
  * safari
  */
 .safari {
+
     /* content 영역 */
     .contents {
         div[class*='-sect'] {
+
             /* mypage lnb */
             &.mp-lnb-sect {
                 .container {
@@ -2859,6 +3195,7 @@ $hd-ht: ($gnb-ht+31);
                                     &.my-gd-row {
                                         width: 376px;
                                         padding-bottom: 31px;
+
                                         .gd-box {
                                             .gd-tit {
                                                 font-size: 20px;
@@ -2874,23 +3211,5 @@ $hd-ht: ($gnb-ht+31);
             }
         }
     }
-   
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
