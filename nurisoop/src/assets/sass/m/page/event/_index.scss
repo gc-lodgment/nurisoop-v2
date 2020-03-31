@@ -168,11 +168,7 @@
 }
 
 .event-sec {
-    .sec-title {
-        padding: 25px 0 20px;
-    }
-
-    .sec-title-st {
+    .sec-subtitle {
         display: block;
         margin-top: 10px;
         font-size: 12px;
@@ -191,12 +187,16 @@
         margin-bottom: 20px;
 
         .tab {
-            width: 25%;
-            padding: 10px 0;
+            flex-grow: 1;
             font-size: 12.5px;
             color: #646464;
             text-align: center;
             letter-spacing: -1px;
+
+            >a {
+                display: block;
+                padding: 10px 0;
+            }
 
             &:not(:first-child) {
                 border-left: 1px solid $font-gray;
@@ -484,7 +484,7 @@
                                 }
 
                                 .st {
-                                    color: $font-black-64;
+                                    color: $black-64;
                                 }
 
                                 .name {

@@ -203,6 +203,7 @@ var main = {
             autoplaySpeed: 5000,
             variableWidth: true,
             arrows: false,
+            infinite: false,
         });
     },
     hotdealList: function () {

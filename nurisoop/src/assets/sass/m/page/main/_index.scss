@@ -1,9 +1,9 @@
-// 공통 요소
-.sec-pd {
+// sec main 공통 요소
+.sec[class*=main-].sec-pd {
     padding-top: 15px;
 }
 
-.sec-title {
+.sec[class*=main-] .cont-title {
     padding: 15px 0 15px;
     font-size: 17px;
     font-weight: 500;

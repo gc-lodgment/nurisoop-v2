@@ -27,7 +27,7 @@ function bSync() {
         // watch: true,
         notify: false,
         port: 3030,
-        startPath: './views_m/main',
+        startPath: './www/main',
         server: {
             baseDir: './dist'
         }

@@ -831,11 +831,6 @@ html.expand body {
 
 }
 
-// 바텀 배너 영역
-.botbn-wrapper {
-    margin: 30px 0;
-}
-
 /* 로딩 애니메이션 */
 .lds-mask {
     z-index: 999;
@@ -915,7 +910,23 @@ html.expand body {
     }
 }
 
-
 @include screen-md {}
 
 @include screen-xs {}
+
+// 바텀 배너 영역
+.botbn-wrapper {
+    margin: 30px 0;
+}
+
+// sec title 공통
+$pages: ('policy', 'brand', 'event', 'review');
+
+@each $page in $pages {
+    .sec[class*=#{$page}-] .sec-title {
+        padding: 25px 0 20px;
+        font-size: 17px;
+        font-weight: 500;
+        text-align: center;
+    }
+}
