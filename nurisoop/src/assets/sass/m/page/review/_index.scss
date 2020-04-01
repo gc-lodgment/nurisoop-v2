@@ -18,7 +18,7 @@
         margin-bottom: 20px;
 
         .tab {
-            flex-grow: 1;
+            flex: 1;
             font-size: 12.5px;
             color: #646464;
             text-align: center;
@@ -27,6 +27,22 @@
             >a {
                 display: block;
                 padding: 10px 0;
+                height: 32px;
+                box-sizing: border-box;
+
+                &.best {
+                    background: url(../../../img/m/common/icon/icon_crown.png) no-repeat;
+                    background-size: 17.5px;
+                    background-position: left 10px center;
+                }
+            }
+
+            .crown {
+                position: relative;
+                top: -2px;
+                margin-left: -2px;
+                margin-right: 1px;
+                height: 15px;
             }
 
             &:not(:first-child) {
@@ -37,12 +53,140 @@
                 background-color: #000;
                 color: #ffffff;
             }
+
         }
     }
 
     .review-tabpanel {
         letter-spacing: -1px;
+        padding-bottom: 20px;
     }
 
+    // best 리뷰
     .review-tabpanel.best-list-panel {}
+
+    // normal 리뷰
+    .review-tabpanel.normal-list-panel {
+        .category-tablist {
+            padding: 9px 10px;
+            border: 1px solid $tbl-bor-gray;
+            font-size: 12px;
+            color: $black-64;
+            font-weight: 300;
+
+            .space {
+                margin: 0 8px;
+                color: $tbl-bor-gray;
+                font-weight: 100;
+            }
+
+
+            .tab {
+
+                &.on {
+                    color: $font-color;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .normal-review-list {
+            margin-top: 20px;
+            line-height: 1.428;
+
+            .normal-review-item {
+                font-size: 13px;
+                border-top: 1px solid $tbl-bor-gray;
+
+                .normal-review-post {
+                    display: flex;
+                    padding: 17px 15px;
+
+                    .post-thumbnail {
+                        background-color: #ececec;
+
+                        img {
+                            width: 85px;
+                        }
+                    }
+
+                    .post-text {
+                        margin-left: 15px;
+                        width: calc(100% - 85px - 15px);
+
+                        .el-wrapper.writer-el {
+                            margin-top: 1px;
+                            // display: flex;
+                            // justify-content: space-between;
+
+                            .star-cover {
+                                .star {
+                                    display: inline-block;
+                                    width: 12px;
+                                    height: 12px;
+                                    font-size: 0;
+                                    // text-indent: -999px;
+                                    background: url(http://static.nurisoop.co.kr/img/renew/common/icon_gd.png) no-repeat center;
+                                    background-size: 12px;
+
+                                    &.on {
+                                        background: url(http://static.nurisoop.co.kr/img/renew/common/icon_gd_on.png) no-repeat center;
+                                        background-size: 12px;
+                                    }
+
+                                    &:not(:first-child) {
+                                        margin-left: 1px;
+                                    }
+                                }
+                            }
+
+                            .space {
+                                margin: 0 5px;
+                                color: $tbl-bor-gray;
+                                font-weight: 100;
+                            }
+
+
+                            .date {
+                                float: right;
+                                font-size: 12px;
+                                color: $font-gray;
+                                font-weight: 300;
+                            }
+                        }
+
+                        .content {
+                            margin-top: 5px;
+                            height: 18px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        .el-wrapper.comment-el {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .comment {
+                                margin-top: 10px;
+                                font-size: 11px;
+                                color: $font-gray;
+
+                                .count {
+                                    margin-left: 2px;
+                                    color: $font-color;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                .normal-review-comment {
+                    border-top: 1px solid $tbl-bor-gray;
+                }
+            }
+        }
+    }
+
 }
