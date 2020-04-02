@@ -58,13 +58,13 @@ function fileformFn() {
             // if (files[i].size > limitSize) return alert('파일크기가 5MB 보다 작아야합니다.');
         }
         if (files.length > 1 && files.length < 6) {
-            $filename.html('<img src="../../img/m/common/icon/save.png" alt="저장"/ class="save"> ' + files.length + '개 파일');
+            $filename.html('<img src="../../img/m/common/save.png" alt="저장"/ class="save"> ' + files.length + '개 파일');
             return;
         } else if (files.length >= 6) {
             alert('최대 5개까지 가능합니다.');
             return;
         }
-        $filename.html('<img src="../../img/m/common/icon/save.png" alt="저장"/ class="save"> ' + files[0].name);
+        $filename.html('<img src="../../img/m/common/save.png" alt="저장"/ class="save"> ' + files[0].name);
     });
     $deleteBtn.on('click', function () {
         // console.log($('.fileform')[0].files);

@@ -93,16 +93,26 @@
         .normal-review-list {
             margin-top: 20px;
             line-height: 1.428;
+            border-top: 1px solid $tbl-bor-gray;
+            border-bottom: 1px solid $tbl-bor-gray;
 
             .normal-review-item {
                 font-size: 13px;
-                border-top: 1px solid $tbl-bor-gray;
+
+                &:not(:first-child) {
+                    border-top: 1px solid $tbl-bor-gray;
+                }
 
                 .normal-review-post {
                     display: flex;
-                    padding: 17px 15px;
+                    padding: 15px;
+                    // padding: 17px 15px;
 
                     .post-thumbnail {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 85px;
                         background-color: #ececec;
 
                         img {
@@ -161,14 +171,21 @@
                             overflow: hidden;
                             text-overflow: ellipsis;
                             white-space: nowrap;
+
+                            &.active {
+                                height: auto;
+                                overflow: initial;
+                                text-overflow: initial;
+                                white-space: initial;
+                            }
                         }
 
                         .el-wrapper.comment-el {
                             display: flex;
                             justify-content: space-between;
+                            margin-top: 10px;
 
                             .comment {
-                                margin-top: 10px;
                                 font-size: 11px;
                                 color: $font-gray;
 
@@ -177,13 +194,65 @@
                                     color: $font-color;
                                 }
                             }
+
+                            .comment-toggle {
+                                cursor: pointer;
+
+                                .down,
+                                .up {
+                                    right: 3px;
+                                }
+
+                                .down {
+                                    @include arr-down($wd: 6px, $bdc: #888);
+                                    display: block;
+                                    top: 2px;
+                                    border-width: 1px;
+                                }
+
+                                .up {
+                                    @include arr-up($wd: 6px, $bdc: #888);
+                                    display: none;
+                                    top: 6px;
+                                    border-width: 1px;
+                                }
+
+                                &.active {
+                                    .down {
+                                        display: none;
+                                    }
+
+                                    .up {
+                                        display: block;
+                                    }
+                                }
+                            }
                         }
 
                     }
                 }
 
                 .normal-review-comment {
+                    display: none;
+                    padding: 15px;
                     border-top: 1px solid $tbl-bor-gray;
+                    font-weight: 300;
+
+                    .el-wrapper.writer-el {
+                        .writer {}
+
+                        .space {
+                            margin: 0 7px;
+                            color: $tbl-bor-gray;
+                            font-weight: 100;
+                        }
+
+                        .date {
+                            font-size: 12px;
+                            color: $font-gray;
+                            font-weight: 300;
+                        }
+                    }
                 }
             }
         }

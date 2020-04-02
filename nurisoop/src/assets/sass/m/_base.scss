@@ -353,6 +353,14 @@ a.btn>* {
     position: fixed !important;
 }
 
+.p-absolute {
+    position: absolute !important;
+}
+
+.p-relative {
+    position: relative !important;
+}
+
 .split {
     position: relative;
     box-sizing: border-box;
@@ -643,6 +651,21 @@ hr.line {
     -webkit-transform: scale(1.1);
 }
 
+.modal-page {
+    transition: none;
+
+    .modal-wrapper {
+        display: block;
+        vertical-align: initial;
+    }
+
+    .modal-container,
+    &.modal.leave .modal-container {
+        transform: scale(1);
+        transition: none;
+    }
+}
+
 // .modal-enter {
 //     opacity: 0;
 // }
@@ -656,6 +679,14 @@ hr.line {
 //     -webkit-transform: scale(1.1);
 //     transform: scale(1.1);
 // }
+
+.back-bg {
+    @include back-bg;
+}
+
+.bg-no {
+    background: none !important;
+}
 
 // 글자 수 표시
 .texta-wrapper {

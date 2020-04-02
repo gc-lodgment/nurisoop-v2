@@ -6,7 +6,7 @@
             <div class="review-cont">
                 @@include('./_sec_title.html')
 
-                <div class="review-tabpanel normal-list-panel">
+                <div class="review-tabpanel normal-list-panel" id="normalListPanel">
                     <div class="category-tablist-wrapper pd-m">
                         <div class="category-tablist">
                             <!-- 해당 탭 클래스 on -->
@@ -17,7 +17,7 @@
                     </div>
 
                     <ul class="normal-review-list">
-                        <li class="normal-review-item">
+                        @@for (var i =0; i < 3; i ++) { <li class="normal-review-item">
                             <div class="normal-review-post">
                                 <figure class="post-thumbnail"><img src="../../img/common/product/item/repair_skin.png" alt="리페어스킨"></figure>
                                 <div class="post-text">
@@ -32,12 +32,15 @@
                                         </span>
                                         <span class="space">I</span>
                                         <span class="name">n****</span>
-                                        <span class="date">작성일: 2019.05.09</span>
+                                        <span class="date">작성일 : 2019.05.09</span>
                                     </div>
                                     <p class="content">좋아요! 또 구매했습니다.</p>
                                     <p class="el-wrapper comment-el">
                                         <span class="comment">댓글 <span class="count">1</span></span>
-                                        <span class="comment-toggle"></span>
+                                        <span class="comment-toggle">
+                                            <span class="down"></span>
+                                            <span class="up"></span>
+                                        </span>
                                     </p>
                                 </div>
                             </div>
@@ -47,23 +50,25 @@
                                     <span class="space">I</span>
                                     <span class="date">2020.03.20</span>
                                 </p>
-                                안녕하세요.<br>
-                                숲이들려주는 피부이야기, 누리숲입니다.<br>
-                                <br>
-                                고객님, 소중한 후기 감사합니다.<br>
-                                <br>
-                                발효씨벅톤오일은 좋은 성분을 파괴하지 않고 저온 발효처리하여 추출하<br>
-                                였기 때문에 산뜻하게 사용할 수 있답니다.<br>
-                                산자나무열매오일은 보습뿐만 아니라 비타민이 매우 풍부해 피부톤개선<br>
-                                에도 큰 도움을 드린답니다.<br>
-                                <br>
-                                후기 적립금 지급해드렸구요, 예쁜 피부 가꾸시고 또 찾아주세요.<br>
-                                <br>
-                                누리숲은 고객님의 건강하고 아름다운 피부를 위해 더욱 노력하겠습니다.<br>
-                                <br>
-                                감사합니다.<br>
+                                <div class="content">
+                                    안녕하세요.<br>
+                                    <br>
+                                    숲이들려주는 피부이야기, 누리숲입니다.<br>
+                                    <br>
+                                    고객님, 소중한 후기 감사합니다.<br>
+                                    <br>
+                                    발효씨벅톤오일은 좋은 성분을 파괴하지 않고 저온 발효처리하여 추출하였기 때문에 산뜻하게 사용할 수 있답니다.<br>
+                                    산자나무열매오일은 보습뿐만 아니라 비타민이 매우 풍부해 피부톤개선에도 큰 도움을 드린답니다.<br>
+                                    <br>
+                                    후기 적립금 지급해드렸구요, 예쁜 피부 가꾸시고 또 찾아주세요.<br>
+                                    <br>
+                                    누리숲은 고객님의 건강하고 아름다운 피부를 위해 더욱 노력하겠습니다.<br>
+                                    <br>
+                                    감사합니다.<br>
+                                </div>
                             </div>
-                        </li>
+                            </li>
+                            }
                     </ul>
                 </div>
             </div>
@@ -74,3 +79,11 @@
 <!-- /.main.container -->
 
 @@include('../inc/_bottom.html')
+
+<script>
+    $('body').on('click', '#normalListPanel .comment-toggle', function () {
+        $(this).toggleClass('active');
+        $(this).closest('.normal-review-post').find('.content').toggleClass('active');
+        $(this).closest('.normal-review-post').next().toggle();
+    });
+</script>

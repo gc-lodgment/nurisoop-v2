@@ -527,6 +527,9 @@ function dataFn() {
         switch (type) {
             case 'modal':
                 modalFn.enter(obj);
+                if (obj.hasClass('modal-page')) {
+                    $('#backDropBg').show();
+                }
                 break;
             default:
                 break;
@@ -538,6 +541,9 @@ function dataFn() {
         switch (type) {
             case 'modal':
                 modalFn.leave(obj);
+                if (obj.hasClass('modal-page')) {
+                    $('#backDropBg').hide();
+                }
                 break;
             default:
                 break;

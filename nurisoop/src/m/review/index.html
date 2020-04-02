@@ -11,7 +11,43 @@
                         <div class="review-wrapper">
                             <div class="review-cont">
                                 <ul class="review-list">
-                                    @@for (var i = 0; i < 4; i++) { <li class="review-item">
+                                    <li class="review-item">
+                                        <a href="javascript:;" data-target="review-write-modal" data-toggle="modal">
+                                            <div class="review-photo">
+                                                <img src="../../img/review/img_review_03.jpg" alt="상품후기사진" class="photo w-f">
+                                            </div>
+                                            <div class="review-favorite">
+                                                <a href="javascript:;">
+                                                    좋아좋아요. 리뷰 모달 클릭
+                                                    <span class="icon">
+                                                        <!-- 찜 아이콘 -->
+                                                        <i class="mdi mdi-heart"></i>
+                                                        <!-- <i class="mdi mdi-heart-outline"></i> -->
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="review-name">
+                                                <figure class="thumbnail-cover">
+                                                    <img src="../../img/common/product/item/formcleanser.png" alt="상품사진 " class="thumbnail">
+                                                </figure>
+                                                <span class="name-cover">누리숲 폰클렌져</span>
+                                            </div>
+                                            <div class="review-text">
+                                                사계절 내내 빼놓지 않고<br>
+                                                사용해요! 산지 얼마 안된 것<br>
+                                                같은데 벌써 바닥을 드러내고 있어서 또...
+                                            </div>
+                                            <div class="review-grade">
+                                                <span class="name">ste***</span>
+                                                <span class="grade-cover">
+                                                    <span class="grade">평점 <span class="c">5.0</span></span>
+                                                    <span class="comment">댓글 <span class="c">1</span></span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    @@for (var i = 0; i < 3; i++) { <li class="review-item">
                                         <div class="review-photo">
                                             <img src="../../img/review/img_review_03.jpg" alt="상품후기사진" class="photo w-f">
                                         </div>
@@ -58,3 +94,4 @@
 <!-- /.main.container -->
 
 @@include('../inc/_bottom.html')
+@@include('../inc/modal/_review_detail.html')
