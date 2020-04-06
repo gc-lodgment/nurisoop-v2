@@ -1,0 +1,62 @@
+<div class="modal modal-mask modal-page p-absolute bg-no review-write-modal" id="reviewWriteModal" role="dialog" aira-modal="true" tabindex="-1">
+    <div class="modal-wrapper">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="title">
+                    리뷰작성
+                </h2>
+                <button type="button" class="ap-reset close-btn" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="best-review-post">
+                    <div class="post-prd-info">
+                        <figure class="post-thumbnail"><img src="../../img/common/product/item/repair_skin.png" alt="리페어스킨"></figure>
+                        <div class="post-text">
+                            <p class="name">포레스트 리페어 스킨</p>
+                            <p class="price">10.500원</p>
+                            <div class="el-wrapper rating-el">
+                                <span class="rating">평점 <span class="count">4.0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="star-cover" id="starCover">
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star"></span>
+                        </div>
+                        <div class="title">
+                            <input type="text" class="form-input title" placeholder="제목입력">
+                        </div>
+                        <div class="content">
+                            <textarea name="" id="" cols="30" rows="10" class="form-textarea content" placeholder="내용을 입력하세요."></textarea>
+                        </div>
+                        <div class="photo">
+                            <div class="imgform-type1">
+                                <div class="imgform-wrapper">
+                                    <input type="file" id="imgForm" class="hide" accept="image/gif, image/jpg, image/jpeg, image/png">
+                                    <label for="imgForm" class="btn upload-btn">
+                                        <img src="../../img/m/common/camera.png" alt="카메라"><span>사진올리기 &plus;</span>
+                                    </label>
+                                    <div id="imgList" class="img-list">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-gray" data-dismiss="modal">작성취소</button>
+                <button type="button" class="btn btn-aquagreen" data-dismiss="modal">리뷰작성</button>
+                <p class="st">
+                    ※ 상품과 관련 없는 내용 또는 욕설/비방/중복 글은<br>
+                    관리자에 의해 수정 또는 삭제될 수 있습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.modal modal-name -->

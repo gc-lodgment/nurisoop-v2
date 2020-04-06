@@ -55,11 +55,12 @@ var common = {
         }
     },
     init: function () {
-        // common.load();
-        // common.resize();
-        common.scroll();
-        common.nav();
-        common.search();
+        // this.load();
+        // this.resize();
+        this.scroll();
+        this.nav();
+        this.search();
+        this.star();
     },
     resize: function () {
         $(window)
@@ -167,7 +168,20 @@ var common = {
         $searchLayer.find('.close-btn').on('click', function () {
             $searchLayer.fadeOut('fast');
         });
-    }
+    },
+    star: function () {
+        $('#starCover .star').on('click', function () {
+            var $starList = $('#starCover .star');
+            var idx = $(this).index();
+            $starList.each(function (i, item) {
+                if (i <= idx) {
+                    $(item).addClass('on');
+                } else {
+                    $(item).removeClass('on');
+                }
+            })
+        });
+    },
 };
 
 // mainUI
@@ -401,6 +415,54 @@ var support = {
     }
 };
 
+// reviewUI
+var review = {
+    init: function () {
+        this.star();
+        this.imgForm();
+    },
+
+    imgForm: function () {
+        var $imgForm = $('#imgForm');
+        var $imgList = $('#imgList');
+        var selectFiles = [];
+        $imgForm.on('change', function (e) {
+            // console.log($(this)[0].files);
+            var files = e.target.files;
+            var filesArr = Array.prototype.slice.call(files);
+
+            console.log(filesArr);
+            filesArr.forEach(function (item) {
+                // if (!item.type.match('image.*')) {
+                //     alert('이미지 파일을 업로드해주세요.')
+                //     return;
+                // }
+                $imgList.empty();
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var $html = '\
+                                <a href="javascript:;" class="item">' +
+                        '<img src="' + e.target.result + '" alt="상품">' +
+                        '<span class="x">&times;</span>' +
+                        '</a>';
+
+                    $imgList.append($html);
+                }
+
+                reader.readAsDataURL(item);
+            });
+        });
+        $('body').on('click', '#imgList .item', function () {
+            // console.log($imgForm);
+            // var idx = $(this).index();
+            console.log($imgForm[0].files);
+            $imgForm.val("");
+            $imgList.empty();
+            console.log($imgForm[0].files);
+        });
+    }
+};
+
 var targetHide = {
     self: function (obj) {
         $(obj).on('click', function (e) {
@@ -528,7 +590,7 @@ function dataFn() {
             case 'modal':
                 modalFn.enter(obj);
                 if (obj.hasClass('modal-page')) {
-                    $('#backDropBg').show();
+                    $('#backBg').show();
                 }
                 break;
             default:
@@ -542,7 +604,7 @@ function dataFn() {
             case 'modal':
                 modalFn.leave(obj);
                 if (obj.hasClass('modal-page')) {
-                    $('#backDropBg').hide();
+                    $('#backBg').hide();
                 }
                 break;
             default:

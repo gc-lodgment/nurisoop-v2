@@ -1,6 +1,7 @@
 $(function () {
     dropselectFn()
     fileformFn();
+    imgformFn();
     allChk();
 });
 
@@ -73,6 +74,46 @@ function fileformFn() {
             // console.log($('.fileform')[0].files);
             $filename.html('선택된 파일 없음');
         }
+    });
+}
+
+function imgformFn() {
+    var $imgForm = $('#imgForm');
+    var $imgList = $('#imgList');
+    var selectFiles = [];
+    $imgForm.on('change', function (e) {
+        // console.log($(this)[0].files);
+        var files = e.target.files;
+        var filesArr = Array.prototype.slice.call(files);
+
+        console.log(filesArr);
+        filesArr.forEach(function (item) {
+            // if (!item.type.match('image.*')) {
+            //     alert('이미지 파일을 업로드해주세요.')
+            //     return;
+            // }
+            $imgList.empty();
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var $html = '\
+                            <a href="javascript:;" class="item">' +
+                    '<img src="' + e.target.result + '" alt="상품">' +
+                    '<span class="x">&times;</span>' +
+                    '</a>';
+
+                $imgList.append($html);
+            }
+
+            reader.readAsDataURL(item);
+        });
+    });
+    $('body').on('click', '#imgList .item', function () {
+        // console.log($imgForm);
+        // var idx = $(this).index();
+        // console.log($imgForm[0].files);
+        $imgForm.val("");
+        $imgList.empty();
+        // console.log($imgForm[0].files);
     });
 }
 
